@@ -1,6 +1,6 @@
 # template for a general MicroSite built with mkdocs and the material theme
-site_name: Mkdocs Template Site
-site_description: 'Description of microsite'
+site_name: Conversational AI
+site_description: 'A college level course on creating chatbots using AI.'
 site_author: 'Dan McCreary'
 repo_name: 'GitHub Repo'
 site_url: 'https://dmccreary.github.io/conversational-ai/'
