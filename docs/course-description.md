@@ -6,8 +6,16 @@ quality_score: 95
 
 # Course Description for Conversational AI
 
-**Title:** Conversational AI
+**Title:** Conversational AI<br/>
 **Grade Level:** College Sophomores
+
+## Prerequisites
+
+- Students should have a background in basic Python programming, the use of a terminal a shell commands and have the ability to install the VSCode IDE on their computer.
+- Students will be required to use github to share their projects, so they must have a GitHub account.
+
+!!! Note
+    We have deliberately minimized the prerequisites for this course to allow non-computer science majors to take this course.  Students that are not familiar with the use of GitHub and shell commands will need to spend more time the first two weeks of class getting familiar with these tools.
 
 ## Course Overview
 
@@ -17,15 +25,18 @@ We then build more advanced chatbots that can call services.
 We briefly cover what traditional search is and some of the challenges of traditional keyword search.
 We then discuss semantic search and how it provides better results than traditional keyword search.
 We discuss how we measure search quality and introduce terms such as precision, recall and F-Measures.
+
 We then discuss search performance including reverse indexes and Page Rank.
 We then move into AI topics including LLMs, Tokenization and FAQs analysis.
 We then introduce the concept of logging chatbot results and feedback.
 We cover the use of chatbot logs to analyze the most frequent questions with incorrect answers.
 We discuss chatbot user interface tools.
+
 Our first project is building a simple chatbot that does keyword only search.
 Then we introduce embeddings, vector stores  NLP pipelines and the RAG pattern.
 We show the limitations of RAG and how to improve results with the GraphRAG pattern.
 We then show how GraphRAG depends on curated knowledge graphs and how these knowledge graphs can become the central nervous system of an organization. 
+
 Next, we discuss how ChatBots can be used to call database services.
 We discuss the process of matching questions to queries and extracting parameters from the questions.
 Finally we discuss the context of the user, security concerns and role-based access.
