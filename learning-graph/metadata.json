@@ -1,0 +1,10 @@
+{
+  "title": "Conversational AI Learning Graph",
+  "description": "A comprehensive learning graph for a college-level course on building conversational AI agents including chatbots, search technologies, RAG patterns, and GraphRAG implementations. Covers 200 concepts from AI fundamentals through advanced knowledge graph systems.",
+  "creator": "Dan McCreary",
+  "date": "2025-11-15",
+  "version": "1.0",
+  "format": "Learning Graph JSON v1.0",
+  "schema": "https://raw.githubusercontent.com/dmccreary/learning-graphs/refs/heads/main/src/schema/learning-graph-schema.json",
+  "license": "CC BY-NC-SA 4.0 DEED"
+}

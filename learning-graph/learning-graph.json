@@ -1,0 +1,2072 @@
+{
+  "metadata": {
+    "title": "Conversational AI Learning Graph",
+    "description": "A comprehensive learning graph for a college-level course on building conversational AI agents including chatbots, search technologies, RAG patterns, and GraphRAG implementations. Covers 200 concepts from AI fundamentals through advanced knowledge graph systems.",
+    "creator": "Dan McCreary",
+    "date": "2025-11-15",
+    "version": "1.0",
+    "format": "Learning Graph JSON v1.0",
+    "schema": "https://raw.githubusercontent.com/dmccreary/learning-graphs/refs/heads/main/src/schema/learning-graph-schema.json",
+    "license": "CC BY-NC-SA 4.0 DEED"
+  },
+  "groups": {
+    "FOUND": {
+      "classifierName": "Foundation Concepts",
+      "color": "#FF6B6B",
+      "font": {
+        "color": "black"
+      }
+    },
+    "SEARCH": {
+      "classifierName": "SEARCH",
+      "color": "#4ECDC4",
+      "font": {
+        "color": "black"
+      }
+    },
+    "METRIC": {
+      "classifierName": "METRIC",
+      "color": "#45B7D1",
+      "font": {
+        "color": "black"
+      }
+    },
+    "LLM": {
+      "classifierName": "LLM",
+      "color": "#F7B731",
+      "font": {
+        "color": "black"
+      }
+    },
+    "EMBED": {
+      "classifierName": "EMBED",
+      "color": "#5F27CD",
+      "font": {
+        "color": "black"
+      }
+    },
+    "CHAT": {
+      "classifierName": "CHAT",
+      "color": "#00D2D3",
+      "font": {
+        "color": "black"
+      }
+    },
+    "RAG": {
+      "classifierName": "RAG",
+      "color": "#54A0FF",
+      "font": {
+        "color": "black"
+      }
+    },
+    "GRAPH": {
+      "classifierName": "GRAPH",
+      "color": "#48DBFB",
+      "font": {
+        "color": "black"
+      }
+    },
+    "NLP": {
+      "classifierName": "NLP",
+      "color": "#1DD1A1",
+      "font": {
+        "color": "black"
+      }
+    },
+    "QUERY": {
+      "classifierName": "QUERY",
+      "color": "#FFA502",
+      "font": {
+        "color": "black"
+      }
+    },
+    "SEC": {
+      "classifierName": "SEC",
+      "color": "#EE5A6F",
+      "font": {
+        "color": "black"
+      }
+    },
+    "EVAL": {
+      "classifierName": "EVAL",
+      "color": "#C44569",
+      "font": {
+        "color": "black"
+      }
+    },
+    "TOOL": {
+      "classifierName": "TOOL",
+      "color": "#A55EEA",
+      "font": {
+        "color": "black"
+      }
+    }
+  },
+  "nodes": [
+    {
+      "id": 1,
+      "label": "Artificial Intelligence",
+      "group": "FOUND",
+      "shape": "box"
+    },
+    {
+      "id": 2,
+      "label": "AI Timeline",
+      "group": "FOUND"
+    },
+    {
+      "id": 3,
+      "label": "AI Doubling Rate",
+      "group": "FOUND"
+    },
+    {
+      "id": 4,
+      "label": "Moore's Law",
+      "group": "FOUND"
+    },
+    {
+      "id": 5,
+      "label": "Natural Language Processing",
+      "group": "FOUND"
+    },
+    {
+      "id": 6,
+      "label": "Text Processing",
+      "group": "FOUND"
+    },
+    {
+      "id": 7,
+      "label": "String Matching",
+      "group": "FOUND"
+    },
+    {
+      "id": 8,
+      "label": "Regular Expressions",
+      "group": "FOUND"
+    },
+    {
+      "id": 9,
+      "label": "Grep Command",
+      "group": "FOUND"
+    },
+    {
+      "id": 10,
+      "label": "Keyword Search",
+      "group": "SEARCH"
+    },
+    {
+      "id": 11,
+      "label": "Search Index",
+      "group": "SEARCH"
+    },
+    {
+      "id": 12,
+      "label": "Inverted Index",
+      "group": "SEARCH"
+    },
+    {
+      "id": 13,
+      "label": "Reverse Index",
+      "group": "SEARCH"
+    },
+    {
+      "id": 14,
+      "label": "Full-Text Search",
+      "group": "SEARCH"
+    },
+    {
+      "id": 15,
+      "label": "Boolean Search",
+      "group": "SEARCH"
+    },
+    {
+      "id": 16,
+      "label": "Search Query",
+      "group": "SEARCH"
+    },
+    {
+      "id": 17,
+      "label": "Query Parser",
+      "group": "SEARCH"
+    },
+    {
+      "id": 18,
+      "label": "Synonym Expansion",
+      "group": "SEARCH"
+    },
+    {
+      "id": 19,
+      "label": "Thesaurus",
+      "group": "SEARCH"
+    },
+    {
+      "id": 20,
+      "label": "Ontology",
+      "group": "SEARCH"
+    },
+    {
+      "id": 21,
+      "label": "Taxonomy",
+      "group": "SEARCH"
+    },
+    {
+      "id": 22,
+      "label": "Controlled Vocabulary",
+      "group": "SEARCH"
+    },
+    {
+      "id": 23,
+      "label": "Metadata",
+      "group": "SEARCH"
+    },
+    {
+      "id": 24,
+      "label": "Metadata Tagging",
+      "group": "SEARCH"
+    },
+    {
+      "id": 25,
+      "label": "Dublin Core",
+      "group": "SEARCH"
+    },
+    {
+      "id": 26,
+      "label": "Semantic Search",
+      "group": "SEARCH"
+    },
+    {
+      "id": 27,
+      "label": "Vector Similarity",
+      "group": "SEARCH"
+    },
+    {
+      "id": 28,
+      "label": "Cosine Similarity",
+      "group": "SEARCH"
+    },
+    {
+      "id": 29,
+      "label": "Euclidean Distance",
+      "group": "SEARCH"
+    },
+    {
+      "id": 30,
+      "label": "Search Ranking",
+      "group": "SEARCH"
+    },
+    {
+      "id": 31,
+      "label": "Page Rank Algorithm",
+      "group": "SEARCH"
+    },
+    {
+      "id": 32,
+      "label": "TF-IDF",
+      "group": "SEARCH"
+    },
+    {
+      "id": 33,
+      "label": "Term Frequency",
+      "group": "SEARCH"
+    },
+    {
+      "id": 34,
+      "label": "Document Frequency",
+      "group": "SEARCH"
+    },
+    {
+      "id": 35,
+      "label": "Search Precision",
+      "group": "METRIC"
+    },
+    {
+      "id": 36,
+      "label": "Search Recall",
+      "group": "METRIC"
+    },
+    {
+      "id": 37,
+      "label": "F-Measure",
+      "group": "METRIC"
+    },
+    {
+      "id": 38,
+      "label": "F1 Score",
+      "group": "METRIC"
+    },
+    {
+      "id": 39,
+      "label": "Confusion Matrix",
+      "group": "METRIC"
+    },
+    {
+      "id": 40,
+      "label": "True Positive",
+      "group": "METRIC"
+    },
+    {
+      "id": 41,
+      "label": "False Positive",
+      "group": "METRIC"
+    },
+    {
+      "id": 42,
+      "label": "Search Performance",
+      "group": "SEARCH"
+    },
+    {
+      "id": 43,
+      "label": "Query Optimization",
+      "group": "SEARCH"
+    },
+    {
+      "id": 44,
+      "label": "Index Performance",
+      "group": "SEARCH"
+    },
+    {
+      "id": 45,
+      "label": "Large Language Model",
+      "group": "LLM"
+    },
+    {
+      "id": 46,
+      "label": "Transformer Architecture",
+      "group": "LLM"
+    },
+    {
+      "id": 47,
+      "label": "Attention Mechanism",
+      "group": "LLM"
+    },
+    {
+      "id": 48,
+      "label": "Token",
+      "group": "LLM"
+    },
+    {
+      "id": 49,
+      "label": "Tokenization",
+      "group": "LLM"
+    },
+    {
+      "id": 50,
+      "label": "Subword Tokenization",
+      "group": "LLM"
+    },
+    {
+      "id": 51,
+      "label": "Byte Pair Encoding",
+      "group": "LLM"
+    },
+    {
+      "id": 52,
+      "label": "Word Embedding",
+      "group": "EMBED"
+    },
+    {
+      "id": 53,
+      "label": "Embedding Vector",
+      "group": "EMBED"
+    },
+    {
+      "id": 54,
+      "label": "Vector Space Model",
+      "group": "EMBED",
+      "shape": "box"
+    },
+    {
+      "id": 55,
+      "label": "Vector Dimension",
+      "group": "EMBED"
+    },
+    {
+      "id": 56,
+      "label": "Embedding Model",
+      "group": "EMBED"
+    },
+    {
+      "id": 57,
+      "label": "Word2Vec",
+      "group": "EMBED"
+    },
+    {
+      "id": 58,
+      "label": "GloVe",
+      "group": "EMBED"
+    },
+    {
+      "id": 59,
+      "label": "FastText",
+      "group": "EMBED"
+    },
+    {
+      "id": 60,
+      "label": "Sentence Embedding",
+      "group": "EMBED"
+    },
+    {
+      "id": 61,
+      "label": "Contextual Embedding",
+      "group": "EMBED"
+    },
+    {
+      "id": 62,
+      "label": "Vector Database",
+      "group": "EMBED"
+    },
+    {
+      "id": 63,
+      "label": "Vector Store",
+      "group": "EMBED"
+    },
+    {
+      "id": 64,
+      "label": "Vector Index",
+      "group": "EMBED"
+    },
+    {
+      "id": 65,
+      "label": "Approximate Nearest Neighbor",
+      "group": "EMBED"
+    },
+    {
+      "id": 66,
+      "label": "FAISS",
+      "group": "EMBED"
+    },
+    {
+      "id": 67,
+      "label": "Pinecone",
+      "group": "EMBED"
+    },
+    {
+      "id": 68,
+      "label": "Weaviate",
+      "group": "EMBED"
+    },
+    {
+      "id": 69,
+      "label": "Chatbot",
+      "group": "CHAT"
+    },
+    {
+      "id": 70,
+      "label": "Conversational Agent",
+      "group": "CHAT"
+    },
+    {
+      "id": 71,
+      "label": "Dialog System",
+      "group": "CHAT"
+    },
+    {
+      "id": 72,
+      "label": "Intent Recognition",
+      "group": "CHAT"
+    },
+    {
+      "id": 73,
+      "label": "Intent Modeling",
+      "group": "CHAT"
+    },
+    {
+      "id": 74,
+      "label": "Intent Classification",
+      "group": "CHAT"
+    },
+    {
+      "id": 75,
+      "label": "Entity Extraction",
+      "group": "CHAT"
+    },
+    {
+      "id": 76,
+      "label": "Named Entity Recognition",
+      "group": "CHAT"
+    },
+    {
+      "id": 77,
+      "label": "Entity Type",
+      "group": "CHAT"
+    },
+    {
+      "id": 78,
+      "label": "Entity Linking",
+      "group": "CHAT"
+    },
+    {
+      "id": 79,
+      "label": "FAQ",
+      "group": "CHAT"
+    },
+    {
+      "id": 80,
+      "label": "FAQ Analysis",
+      "group": "CHAT"
+    },
+    {
+      "id": 81,
+      "label": "Question-Answer Pair",
+      "group": "CHAT"
+    },
+    {
+      "id": 82,
+      "label": "User Query",
+      "group": "CHAT"
+    },
+    {
+      "id": 83,
+      "label": "User Intent",
+      "group": "CHAT"
+    },
+    {
+      "id": 84,
+      "label": "Chatbot Response",
+      "group": "CHAT"
+    },
+    {
+      "id": 85,
+      "label": "Response Generation",
+      "group": "CHAT"
+    },
+    {
+      "id": 86,
+      "label": "Response Quality",
+      "group": "CHAT"
+    },
+    {
+      "id": 87,
+      "label": "Response Latency",
+      "group": "CHAT"
+    },
+    {
+      "id": 88,
+      "label": "User Feedback",
+      "group": "CHAT"
+    },
+    {
+      "id": 89,
+      "label": "Feedback Button",
+      "group": "CHAT"
+    },
+    {
+      "id": 90,
+      "label": "Thumbs Up/Down",
+      "group": "CHAT"
+    },
+    {
+      "id": 91,
+      "label": "Feedback Loop",
+      "group": "CHAT"
+    },
+    {
+      "id": 92,
+      "label": "AI Flywheel",
+      "group": "CHAT"
+    },
+    {
+      "id": 93,
+      "label": "Continuous Improvement",
+      "group": "CHAT"
+    },
+    {
+      "id": 94,
+      "label": "User Interface",
+      "group": "CHAT",
+      "shape": "box"
+    },
+    {
+      "id": 95,
+      "label": "Chat Interface",
+      "group": "CHAT"
+    },
+    {
+      "id": 96,
+      "label": "Message Bubble",
+      "group": "CHAT"
+    },
+    {
+      "id": 97,
+      "label": "Chat History",
+      "group": "CHAT"
+    },
+    {
+      "id": 98,
+      "label": "Conversation Context",
+      "group": "CHAT"
+    },
+    {
+      "id": 99,
+      "label": "Session Management",
+      "group": "CHAT"
+    },
+    {
+      "id": 100,
+      "label": "Chatbot Framework",
+      "group": "CHAT"
+    },
+    {
+      "id": 101,
+      "label": "Rasa",
+      "group": "CHAT"
+    },
+    {
+      "id": 102,
+      "label": "Dialogflow",
+      "group": "CHAT"
+    },
+    {
+      "id": 103,
+      "label": "Botpress",
+      "group": "CHAT"
+    },
+    {
+      "id": 104,
+      "label": "LangChain",
+      "group": "CHAT"
+    },
+    {
+      "id": 105,
+      "label": "LlamaIndex",
+      "group": "CHAT"
+    },
+    {
+      "id": 106,
+      "label": "JavaScript Library",
+      "group": "CHAT",
+      "shape": "box"
+    },
+    {
+      "id": 107,
+      "label": "Node.js",
+      "group": "CHAT"
+    },
+    {
+      "id": 108,
+      "label": "React Chatbot",
+      "group": "CHAT"
+    },
+    {
+      "id": 109,
+      "label": "Chat Widget",
+      "group": "CHAT"
+    },
+    {
+      "id": 110,
+      "label": "External Knowledge",
+      "group": "RAG",
+      "shape": "box"
+    },
+    {
+      "id": 111,
+      "label": "Public Knowledge Base",
+      "group": "RAG"
+    },
+    {
+      "id": 112,
+      "label": "Internal Knowledge",
+      "group": "RAG"
+    },
+    {
+      "id": 113,
+      "label": "Private Documents",
+      "group": "RAG"
+    },
+    {
+      "id": 114,
+      "label": "Document Corpus",
+      "group": "RAG"
+    },
+    {
+      "id": 115,
+      "label": "RAG Pattern",
+      "group": "RAG"
+    },
+    {
+      "id": 116,
+      "label": "Retrieval Augmented Generation",
+      "group": "RAG"
+    },
+    {
+      "id": 117,
+      "label": "Retrieval Step",
+      "group": "RAG"
+    },
+    {
+      "id": 118,
+      "label": "Augmentation Step",
+      "group": "RAG"
+    },
+    {
+      "id": 119,
+      "label": "Generation Step",
+      "group": "RAG"
+    },
+    {
+      "id": 120,
+      "label": "Context Window",
+      "group": "RAG"
+    },
+    {
+      "id": 121,
+      "label": "Prompt Engineering",
+      "group": "RAG"
+    },
+    {
+      "id": 122,
+      "label": "System Prompt",
+      "group": "RAG"
+    },
+    {
+      "id": 123,
+      "label": "User Prompt",
+      "group": "RAG"
+    },
+    {
+      "id": 124,
+      "label": "RAG Limitations",
+      "group": "RAG"
+    },
+    {
+      "id": 125,
+      "label": "Context Length Limit",
+      "group": "RAG"
+    },
+    {
+      "id": 126,
+      "label": "Hallucination",
+      "group": "RAG"
+    },
+    {
+      "id": 127,
+      "label": "Factual Accuracy",
+      "group": "RAG"
+    },
+    {
+      "id": 128,
+      "label": "GraphRAG Pattern",
+      "group": "GRAPH"
+    },
+    {
+      "id": 129,
+      "label": "Knowledge Graph",
+      "group": "GRAPH",
+      "shape": "box"
+    },
+    {
+      "id": 130,
+      "label": "Graph Database",
+      "group": "GRAPH"
+    },
+    {
+      "id": 131,
+      "label": "Node",
+      "group": "GRAPH"
+    },
+    {
+      "id": 132,
+      "label": "Edge",
+      "group": "GRAPH"
+    },
+    {
+      "id": 133,
+      "label": "Triple",
+      "group": "GRAPH"
+    },
+    {
+      "id": 134,
+      "label": "Subject-Predicate-Object",
+      "group": "GRAPH"
+    },
+    {
+      "id": 135,
+      "label": "RDF",
+      "group": "GRAPH"
+    },
+    {
+      "id": 136,
+      "label": "Graph Query",
+      "group": "GRAPH"
+    },
+    {
+      "id": 137,
+      "label": "OpenCypher",
+      "group": "GRAPH"
+    },
+    {
+      "id": 138,
+      "label": "Cypher Query Language",
+      "group": "GRAPH"
+    },
+    {
+      "id": 139,
+      "label": "Neo4j",
+      "group": "GRAPH"
+    },
+    {
+      "id": 140,
+      "label": "Corporate Nervous System",
+      "group": "GRAPH"
+    },
+    {
+      "id": 141,
+      "label": "Organizational Knowledge",
+      "group": "GRAPH"
+    },
+    {
+      "id": 142,
+      "label": "Knowledge Management",
+      "group": "GRAPH"
+    },
+    {
+      "id": 143,
+      "label": "NLP Pipeline",
+      "group": "NLP"
+    },
+    {
+      "id": 144,
+      "label": "Text Preprocessing",
+      "group": "NLP"
+    },
+    {
+      "id": 145,
+      "label": "Text Normalization",
+      "group": "NLP"
+    },
+    {
+      "id": 146,
+      "label": "Stemming",
+      "group": "NLP"
+    },
+    {
+      "id": 147,
+      "label": "Lemmatization",
+      "group": "NLP"
+    },
+    {
+      "id": 148,
+      "label": "Part-of-Speech Tagging",
+      "group": "NLP"
+    },
+    {
+      "id": 149,
+      "label": "Dependency Parsing",
+      "group": "NLP"
+    },
+    {
+      "id": 150,
+      "label": "Coreference Resolution",
+      "group": "NLP"
+    },
+    {
+      "id": 151,
+      "label": "Database Query",
+      "group": "QUERY",
+      "shape": "box"
+    },
+    {
+      "id": 152,
+      "label": "SQL Query",
+      "group": "QUERY"
+    },
+    {
+      "id": 153,
+      "label": "Query Parameter",
+      "group": "QUERY"
+    },
+    {
+      "id": 154,
+      "label": "Parameter Extraction",
+      "group": "QUERY"
+    },
+    {
+      "id": 155,
+      "label": "Query Template",
+      "group": "QUERY"
+    },
+    {
+      "id": 156,
+      "label": "Parameterized Query",
+      "group": "QUERY"
+    },
+    {
+      "id": 157,
+      "label": "Query Execution",
+      "group": "QUERY"
+    },
+    {
+      "id": 158,
+      "label": "Query Description",
+      "group": "QUERY"
+    },
+    {
+      "id": 159,
+      "label": "Natural Language to SQL",
+      "group": "QUERY"
+    },
+    {
+      "id": 160,
+      "label": "Question to Query Mapping",
+      "group": "QUERY"
+    },
+    {
+      "id": 161,
+      "label": "Slot Filling",
+      "group": "QUERY"
+    },
+    {
+      "id": 162,
+      "label": "User Context",
+      "group": "CHAT"
+    },
+    {
+      "id": 163,
+      "label": "User Profile",
+      "group": "CHAT"
+    },
+    {
+      "id": 164,
+      "label": "User Preferences",
+      "group": "CHAT"
+    },
+    {
+      "id": 165,
+      "label": "User History",
+      "group": "CHAT"
+    },
+    {
+      "id": 166,
+      "label": "Personalization",
+      "group": "CHAT"
+    },
+    {
+      "id": 167,
+      "label": "Security",
+      "group": "SEC"
+    },
+    {
+      "id": 168,
+      "label": "Authentication",
+      "group": "SEC"
+    },
+    {
+      "id": 169,
+      "label": "Authorization",
+      "group": "SEC"
+    },
+    {
+      "id": 170,
+      "label": "User Permission",
+      "group": "SEC"
+    },
+    {
+      "id": 171,
+      "label": "Role-Based Access Control",
+      "group": "SEC"
+    },
+    {
+      "id": 172,
+      "label": "RBAC",
+      "group": "SEC"
+    },
+    {
+      "id": 173,
+      "label": "Access Policy",
+      "group": "SEC"
+    },
+    {
+      "id": 174,
+      "label": "Data Privacy",
+      "group": "SEC"
+    },
+    {
+      "id": 175,
+      "label": "PII",
+      "group": "SEC"
+    },
+    {
+      "id": 176,
+      "label": "Personally Identifiable Info",
+      "group": "SEC"
+    },
+    {
+      "id": 177,
+      "label": "GDPR",
+      "group": "SEC"
+    },
+    {
+      "id": 178,
+      "label": "Data Retention",
+      "group": "SEC"
+    },
+    {
+      "id": 179,
+      "label": "Log Storage",
+      "group": "SEC"
+    },
+    {
+      "id": 180,
+      "label": "Chat Log",
+      "group": "SEC"
+    },
+    {
+      "id": 181,
+      "label": "Logging System",
+      "group": "SEC"
+    },
+    {
+      "id": 182,
+      "label": "Log Analysis",
+      "group": "SEC"
+    },
+    {
+      "id": 183,
+      "label": "Query Frequency",
+      "group": "EVAL"
+    },
+    {
+      "id": 184,
+      "label": "Frequency Analysis",
+      "group": "EVAL"
+    },
+    {
+      "id": 185,
+      "label": "Pareto Analysis",
+      "group": "EVAL"
+    },
+    {
+      "id": 186,
+      "label": "80/20 Rule",
+      "group": "EVAL"
+    },
+    {
+      "id": 187,
+      "label": "Chatbot Metrics",
+      "group": "EVAL"
+    },
+    {
+      "id": 188,
+      "label": "KPI",
+      "group": "EVAL"
+    },
+    {
+      "id": 189,
+      "label": "Key Performance Indicator",
+      "group": "EVAL"
+    },
+    {
+      "id": 190,
+      "label": "Chatbot Dashboard",
+      "group": "EVAL"
+    },
+    {
+      "id": 191,
+      "label": "Acceptance Rate",
+      "group": "EVAL"
+    },
+    {
+      "id": 192,
+      "label": "User Satisfaction",
+      "group": "EVAL"
+    },
+    {
+      "id": 193,
+      "label": "Response Accuracy",
+      "group": "EVAL"
+    },
+    {
+      "id": 194,
+      "label": "Chatbot Evaluation",
+      "group": "EVAL"
+    },
+    {
+      "id": 195,
+      "label": "A/B Testing",
+      "group": "EVAL"
+    },
+    {
+      "id": 196,
+      "label": "Performance Tuning",
+      "group": "EVAL"
+    },
+    {
+      "id": 197,
+      "label": "Optimization",
+      "group": "EVAL"
+    },
+    {
+      "id": 198,
+      "label": "Team Project",
+      "group": "TOOL"
+    },
+    {
+      "id": 199,
+      "label": "Capstone Project",
+      "group": "TOOL"
+    },
+    {
+      "id": 200,
+      "label": "Chatbot Career",
+      "group": "TOOL"
+    }
+  ],
+  "edges": [
+    {
+      "from": 2,
+      "to": 1
+    },
+    {
+      "from": 3,
+      "to": 1
+    },
+    {
+      "from": 3,
+      "to": 2
+    },
+    {
+      "from": 4,
+      "to": 1
+    },
+    {
+      "from": 4,
+      "to": 3
+    },
+    {
+      "from": 5,
+      "to": 1
+    },
+    {
+      "from": 6,
+      "to": 5
+    },
+    {
+      "from": 7,
+      "to": 6
+    },
+    {
+      "from": 8,
+      "to": 7
+    },
+    {
+      "from": 9,
+      "to": 7
+    },
+    {
+      "from": 9,
+      "to": 8
+    },
+    {
+      "from": 10,
+      "to": 6
+    },
+    {
+      "from": 10,
+      "to": 11
+    },
+    {
+      "from": 11,
+      "to": 6
+    },
+    {
+      "from": 12,
+      "to": 11
+    },
+    {
+      "from": 13,
+      "to": 12
+    },
+    {
+      "from": 14,
+      "to": 10
+    },
+    {
+      "from": 14,
+      "to": 12
+    },
+    {
+      "from": 15,
+      "to": 10
+    },
+    {
+      "from": 16,
+      "to": 10
+    },
+    {
+      "from": 17,
+      "to": 16
+    },
+    {
+      "from": 18,
+      "to": 10
+    },
+    {
+      "from": 19,
+      "to": 18
+    },
+    {
+      "from": 20,
+      "to": 5
+    },
+    {
+      "from": 20,
+      "to": 129
+    },
+    {
+      "from": 21,
+      "to": 20
+    },
+    {
+      "from": 22,
+      "to": 21
+    },
+    {
+      "from": 23,
+      "to": 6
+    },
+    {
+      "from": 24,
+      "to": 23
+    },
+    {
+      "from": 25,
+      "to": 23
+    },
+    {
+      "from": 25,
+      "to": 24
+    },
+    {
+      "from": 26,
+      "to": 10
+    },
+    {
+      "from": 26,
+      "to": 52
+    },
+    {
+      "from": 27,
+      "to": 53
+    },
+    {
+      "from": 28,
+      "to": 27
+    },
+    {
+      "from": 29,
+      "to": 27
+    },
+    {
+      "from": 30,
+      "to": 10
+    },
+    {
+      "from": 31,
+      "to": 30
+    },
+    {
+      "from": 32,
+      "to": 33
+    },
+    {
+      "from": 32,
+      "to": 34
+    },
+    {
+      "from": 33,
+      "to": 10
+    },
+    {
+      "from": 34,
+      "to": 10
+    },
+    {
+      "from": 35,
+      "to": 10
+    },
+    {
+      "from": 36,
+      "to": 10
+    },
+    {
+      "from": 37,
+      "to": 35
+    },
+    {
+      "from": 37,
+      "to": 36
+    },
+    {
+      "from": 38,
+      "to": 37
+    },
+    {
+      "from": 39,
+      "to": 35
+    },
+    {
+      "from": 39,
+      "to": 36
+    },
+    {
+      "from": 40,
+      "to": 39
+    },
+    {
+      "from": 41,
+      "to": 39
+    },
+    {
+      "from": 42,
+      "to": 10
+    },
+    {
+      "from": 43,
+      "to": 16
+    },
+    {
+      "from": 43,
+      "to": 42
+    },
+    {
+      "from": 44,
+      "to": 11
+    },
+    {
+      "from": 44,
+      "to": 42
+    },
+    {
+      "from": 45,
+      "to": 1
+    },
+    {
+      "from": 45,
+      "to": 5
+    },
+    {
+      "from": 46,
+      "to": 45
+    },
+    {
+      "from": 47,
+      "to": 46
+    },
+    {
+      "from": 48,
+      "to": 5
+    },
+    {
+      "from": 49,
+      "to": 48
+    },
+    {
+      "from": 50,
+      "to": 49
+    },
+    {
+      "from": 51,
+      "to": 50
+    },
+    {
+      "from": 52,
+      "to": 48
+    },
+    {
+      "from": 52,
+      "to": 54
+    },
+    {
+      "from": 53,
+      "to": 52
+    },
+    {
+      "from": 55,
+      "to": 53
+    },
+    {
+      "from": 55,
+      "to": 54
+    },
+    {
+      "from": 56,
+      "to": 52
+    },
+    {
+      "from": 57,
+      "to": 56
+    },
+    {
+      "from": 58,
+      "to": 56
+    },
+    {
+      "from": 59,
+      "to": 56
+    },
+    {
+      "from": 60,
+      "to": 52
+    },
+    {
+      "from": 61,
+      "to": 60
+    },
+    {
+      "from": 62,
+      "to": 53
+    },
+    {
+      "from": 63,
+      "to": 62
+    },
+    {
+      "from": 64,
+      "to": 63
+    },
+    {
+      "from": 65,
+      "to": 64
+    },
+    {
+      "from": 66,
+      "to": 63
+    },
+    {
+      "from": 66,
+      "to": 65
+    },
+    {
+      "from": 67,
+      "to": 63
+    },
+    {
+      "from": 68,
+      "to": 63
+    },
+    {
+      "from": 69,
+      "to": 1
+    },
+    {
+      "from": 69,
+      "to": 5
+    },
+    {
+      "from": 70,
+      "to": 69
+    },
+    {
+      "from": 71,
+      "to": 70
+    },
+    {
+      "from": 72,
+      "to": 5
+    },
+    {
+      "from": 72,
+      "to": 69
+    },
+    {
+      "from": 73,
+      "to": 72
+    },
+    {
+      "from": 74,
+      "to": 73
+    },
+    {
+      "from": 75,
+      "to": 5
+    },
+    {
+      "from": 75,
+      "to": 6
+    },
+    {
+      "from": 76,
+      "to": 75
+    },
+    {
+      "from": 77,
+      "to": 76
+    },
+    {
+      "from": 78,
+      "to": 76
+    },
+    {
+      "from": 79,
+      "to": 69
+    },
+    {
+      "from": 80,
+      "to": 79
+    },
+    {
+      "from": 81,
+      "to": 79
+    },
+    {
+      "from": 82,
+      "to": 69
+    },
+    {
+      "from": 83,
+      "to": 72
+    },
+    {
+      "from": 83,
+      "to": 82
+    },
+    {
+      "from": 84,
+      "to": 69
+    },
+    {
+      "from": 85,
+      "to": 84
+    },
+    {
+      "from": 86,
+      "to": 84
+    },
+    {
+      "from": 87,
+      "to": 84
+    },
+    {
+      "from": 87,
+      "to": 42
+    },
+    {
+      "from": 88,
+      "to": 84
+    },
+    {
+      "from": 89,
+      "to": 88
+    },
+    {
+      "from": 90,
+      "to": 89
+    },
+    {
+      "from": 91,
+      "to": 88
+    },
+    {
+      "from": 92,
+      "to": 91
+    },
+    {
+      "from": 92,
+      "to": 93
+    },
+    {
+      "from": 93,
+      "to": 91
+    },
+    {
+      "from": 95,
+      "to": 94
+    },
+    {
+      "from": 96,
+      "to": 95
+    },
+    {
+      "from": 97,
+      "to": 95
+    },
+    {
+      "from": 98,
+      "to": 97
+    },
+    {
+      "from": 99,
+      "to": 98
+    },
+    {
+      "from": 100,
+      "to": 69
+    },
+    {
+      "from": 101,
+      "to": 100
+    },
+    {
+      "from": 102,
+      "to": 100
+    },
+    {
+      "from": 103,
+      "to": 100
+    },
+    {
+      "from": 104,
+      "to": 100
+    },
+    {
+      "from": 104,
+      "to": 45
+    },
+    {
+      "from": 105,
+      "to": 100
+    },
+    {
+      "from": 105,
+      "to": 45
+    },
+    {
+      "from": 107,
+      "to": 106
+    },
+    {
+      "from": 108,
+      "to": 106
+    },
+    {
+      "from": 108,
+      "to": 107
+    },
+    {
+      "from": 109,
+      "to": 95
+    },
+    {
+      "from": 109,
+      "to": 106
+    },
+    {
+      "from": 111,
+      "to": 110
+    },
+    {
+      "from": 112,
+      "to": 110
+    },
+    {
+      "from": 113,
+      "to": 112
+    },
+    {
+      "from": 114,
+      "to": 110
+    },
+    {
+      "from": 115,
+      "to": 45
+    },
+    {
+      "from": 115,
+      "to": 63
+    },
+    {
+      "from": 115,
+      "to": 114
+    },
+    {
+      "from": 116,
+      "to": 115
+    },
+    {
+      "from": 117,
+      "to": 115
+    },
+    {
+      "from": 118,
+      "to": 117
+    },
+    {
+      "from": 119,
+      "to": 118
+    },
+    {
+      "from": 120,
+      "to": 45
+    },
+    {
+      "from": 121,
+      "to": 45
+    },
+    {
+      "from": 122,
+      "to": 121
+    },
+    {
+      "from": 123,
+      "to": 121
+    },
+    {
+      "from": 124,
+      "to": 115
+    },
+    {
+      "from": 125,
+      "to": 120
+    },
+    {
+      "from": 126,
+      "to": 45
+    },
+    {
+      "from": 127,
+      "to": 86
+    },
+    {
+      "from": 127,
+      "to": 126
+    },
+    {
+      "from": 128,
+      "to": 115
+    },
+    {
+      "from": 128,
+      "to": 129
+    },
+    {
+      "from": 130,
+      "to": 129
+    },
+    {
+      "from": 131,
+      "to": 129
+    },
+    {
+      "from": 132,
+      "to": 129
+    },
+    {
+      "from": 133,
+      "to": 131
+    },
+    {
+      "from": 133,
+      "to": 132
+    },
+    {
+      "from": 134,
+      "to": 133
+    },
+    {
+      "from": 135,
+      "to": 133
+    },
+    {
+      "from": 136,
+      "to": 129
+    },
+    {
+      "from": 137,
+      "to": 136
+    },
+    {
+      "from": 138,
+      "to": 136
+    },
+    {
+      "from": 139,
+      "to": 130
+    },
+    {
+      "from": 140,
+      "to": 129
+    },
+    {
+      "from": 140,
+      "to": 142
+    },
+    {
+      "from": 141,
+      "to": 140
+    },
+    {
+      "from": 142,
+      "to": 110
+    },
+    {
+      "from": 143,
+      "to": 5
+    },
+    {
+      "from": 144,
+      "to": 6
+    },
+    {
+      "from": 144,
+      "to": 143
+    },
+    {
+      "from": 145,
+      "to": 144
+    },
+    {
+      "from": 146,
+      "to": 144
+    },
+    {
+      "from": 147,
+      "to": 144
+    },
+    {
+      "from": 148,
+      "to": 143
+    },
+    {
+      "from": 149,
+      "to": 143
+    },
+    {
+      "from": 150,
+      "to": 143
+    },
+    {
+      "from": 152,
+      "to": 151
+    },
+    {
+      "from": 153,
+      "to": 151
+    },
+    {
+      "from": 154,
+      "to": 153
+    },
+    {
+      "from": 155,
+      "to": 152
+    },
+    {
+      "from": 155,
+      "to": 153
+    },
+    {
+      "from": 156,
+      "to": 155
+    },
+    {
+      "from": 157,
+      "to": 151
+    },
+    {
+      "from": 158,
+      "to": 151
+    },
+    {
+      "from": 159,
+      "to": 5
+    },
+    {
+      "from": 159,
+      "to": 152
+    },
+    {
+      "from": 160,
+      "to": 159
+    },
+    {
+      "from": 160,
+      "to": 82
+    },
+    {
+      "from": 161,
+      "to": 154
+    },
+    {
+      "from": 162,
+      "to": 82
+    },
+    {
+      "from": 163,
+      "to": 162
+    },
+    {
+      "from": 164,
+      "to": 163
+    },
+    {
+      "from": 165,
+      "to": 163
+    },
+    {
+      "from": 166,
+      "to": 163
+    },
+    {
+      "from": 166,
+      "to": 164
+    },
+    {
+      "from": 167,
+      "to": 69
+    },
+    {
+      "from": 168,
+      "to": 167
+    },
+    {
+      "from": 169,
+      "to": 167
+    },
+    {
+      "from": 170,
+      "to": 169
+    },
+    {
+      "from": 171,
+      "to": 170
+    },
+    {
+      "from": 172,
+      "to": 171
+    },
+    {
+      "from": 173,
+      "to": 170
+    },
+    {
+      "from": 174,
+      "to": 167
+    },
+    {
+      "from": 175,
+      "to": 174
+    },
+    {
+      "from": 176,
+      "to": 175
+    },
+    {
+      "from": 177,
+      "to": 174
+    },
+    {
+      "from": 178,
+      "to": 174
+    },
+    {
+      "from": 179,
+      "to": 178
+    },
+    {
+      "from": 180,
+      "to": 97
+    },
+    {
+      "from": 180,
+      "to": 179
+    },
+    {
+      "from": 181,
+      "to": 179
+    },
+    {
+      "from": 182,
+      "to": 180
+    },
+    {
+      "from": 182,
+      "to": 181
+    },
+    {
+      "from": 183,
+      "to": 182
+    },
+    {
+      "from": 184,
+      "to": 183
+    },
+    {
+      "from": 185,
+      "to": 184
+    },
+    {
+      "from": 186,
+      "to": 185
+    },
+    {
+      "from": 187,
+      "to": 69
+    },
+    {
+      "from": 188,
+      "to": 187
+    },
+    {
+      "from": 189,
+      "to": 188
+    },
+    {
+      "from": 190,
+      "to": 187
+    },
+    {
+      "from": 191,
+      "to": 88
+    },
+    {
+      "from": 191,
+      "to": 187
+    },
+    {
+      "from": 192,
+      "to": 88
+    },
+    {
+      "from": 192,
+      "to": 187
+    },
+    {
+      "from": 193,
+      "to": 86
+    },
+    {
+      "from": 193,
+      "to": 187
+    },
+    {
+      "from": 194,
+      "to": 187
+    },
+    {
+      "from": 195,
+      "to": 194
+    },
+    {
+      "from": 196,
+      "to": 42
+    },
+    {
+      "from": 196,
+      "to": 187
+    },
+    {
+      "from": 197,
+      "to": 196
+    },
+    {
+      "from": 198,
+      "to": 69
+    },
+    {
+      "from": 199,
+      "to": 69
+    },
+    {
+      "from": 199,
+      "to": 115
+    },
+    {
+      "from": 199,
+      "to": 128
+    },
+    {
+      "from": 200,
+      "to": 69
+    }
+  ]
+}
