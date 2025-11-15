@@ -27,5 +27,5 @@ This file contains overall metrics for the intelligent textbook.
 - **Equations**: LaTeX expressions using $ and $$ delimiters
 - **MicroSims**: Directories in docs/sims/ with index.md files
 - **Total Words**: All words in markdown files (excluding code blocks and URLs)
-- **Links**: Markdown-formatted links [text](url)
+- **Links**: Markdown-formatted links `[text](url)`
 - **Equivalent Pages**: Based on 250 words/page + 0.25 page/diagram + 0.5 page/MicroSim

@@ -75,6 +75,8 @@ nav:
     - Quiz Generation Report: learning-graph/quiz-generation-report.md
     - Book Metrics: learning-graph/book-metrics.md
     - Chapter Metrics: learning-graph/chapter-metrics.md
+    - Diagram Table: learning-graph/diagram-table.md
+    - Diagram Details: learning-graph/diagram-details.md
 
   - Sample Prompts:
     - prompts/01-bloom-taxonomy-enrichment.md
