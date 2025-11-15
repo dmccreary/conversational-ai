@@ -23,7 +23,12 @@ nav:
     - Concept Taxonomy: learning-graph/concept-taxonomy.md
     - Taxonomy Distribution: learning-graph/taxonomy-distribution.md
     - Interactive Graph Viewer: sims/graph-viewer/index.md
-  - Glossary: glossary.md
+
+  - Prompts:
+    - prompts/01-bloom-taxonomy-enrichment.md
+    - prompts/01-run-the-course-description-analyzer-skill.md
+    - prompts/02-graph-viewer-legend.md
+- Glossary: glossary.md
   - How We Built This Site: how-we-built-this-site.md
   - References: references.md
   - Feedback: feedback.md
