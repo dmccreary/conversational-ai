@@ -14,20 +14,48 @@ nav:
 
   - Chapters:
     - Overview: chapters/index.md
-    - Chapter 1 - Foundations of AI and NLP: chapters/01-foundations-ai-nlp/index.md
-    - Chapter 2 - Search Technologies and Indexing: chapters/02-search-technologies-indexing/index.md
-    - Chapter 3 - Semantic Search and Quality Metrics: chapters/03-semantic-search-quality-metrics/index.md
-    - Chapter 4 - Large Language Models and Tokenization: chapters/04-large-language-models-tokenization/index.md
-    - Chapter 5 - Embeddings and Vector Databases: chapters/05-embeddings-vector-databases/index.md
-    - Chapter 6 - Building Chatbots and Intent Recognition: chapters/06-building-chatbots-intent/index.md
-    - Chapter 7 - Chatbot Frameworks and User Interfaces: chapters/07-chatbot-frameworks-ui/index.md
-    - Chapter 8 - User Feedback and Continuous Improvement: chapters/08-user-feedback-improvement/index.md
-    - Chapter 9 - The RAG Pattern: chapters/09-rag-pattern/index.md
-    - Chapter 10 - Knowledge Graphs and GraphRAG: chapters/10-knowledge-graphs-graphrag/index.md
-    - Chapter 11 - NLP Pipelines and Text Processing: chapters/11-nlp-pipelines-processing/index.md
-    - Chapter 12 - Database Queries and Parameter Extraction: chapters/12-database-queries-parameters/index.md
-    - Chapter 13 - Security Privacy and User Management: chapters/13-security-privacy-users/index.md
-    - Chapter 14 - Evaluation Optimization and Career Development: chapters/14-evaluation-optimization-careers/index.md
+    - Chapter 1 - Foundations of AI and NLP:
+      - Content: chapters/01-foundations-ai-nlp/index.md
+      - Quiz: chapters/01-foundations-ai-nlp/quiz.md
+    - Chapter 2 - Search Technologies and Indexing:
+      - Content: chapters/02-search-technologies-indexing/index.md
+      - Quiz: chapters/02-search-technologies-indexing/quiz.md
+    - Chapter 3 - Semantic Search and Quality Metrics:
+      - Content: chapters/03-semantic-search-quality-metrics/index.md
+      - Quiz: chapters/03-semantic-search-quality-metrics/quiz.md
+    - Chapter 4 - Large Language Models and Tokenization:
+      - Content: chapters/04-large-language-models-tokenization/index.md
+      - Quiz: chapters/04-large-language-models-tokenization/quiz.md
+    - Chapter 5 - Embeddings and Vector Databases:
+      - Content: chapters/05-embeddings-vector-databases/index.md
+      - Quiz: chapters/05-embeddings-vector-databases/quiz.md
+    - Chapter 6 - Building Chatbots and Intent Recognition:
+      - Content: chapters/06-building-chatbots-intent/index.md
+      - Quiz: chapters/06-building-chatbots-intent/quiz.md
+    - Chapter 7 - Chatbot Frameworks and User Interfaces:
+      - Content: chapters/07-chatbot-frameworks-ui/index.md
+      - Quiz: chapters/07-chatbot-frameworks-ui/quiz.md
+    - Chapter 8 - User Feedback and Continuous Improvement:
+      - Content: chapters/08-user-feedback-improvement/index.md
+      - Quiz: chapters/08-user-feedback-improvement/quiz.md
+    - Chapter 9 - The RAG Pattern:
+      - Content: chapters/09-rag-pattern/index.md
+      - Quiz: chapters/09-rag-pattern/quiz.md
+    - Chapter 10 - Knowledge Graphs and GraphRAG:
+      - Content: chapters/10-knowledge-graphs-graphrag/index.md
+      - Quiz: chapters/10-knowledge-graphs-graphrag/quiz.md
+    - Chapter 11 - NLP Pipelines and Text Processing:
+      - Content: chapters/11-nlp-pipelines-processing/index.md
+      - Quiz: chapters/11-nlp-pipelines-processing/quiz.md
+    - Chapter 12 - Database Queries and Parameter Extraction:
+      - Content: chapters/12-database-queries-parameters/index.md
+      - Quiz: chapters/12-database-queries-parameters/quiz.md
+    - Chapter 13 - Security Privacy and User Management:
+      - Content: chapters/13-security-privacy-users/index.md
+      - Quiz: chapters/13-security-privacy-users/quiz.md
+    - Chapter 14 - Evaluation Optimization and Career Development:
+      - Content: chapters/14-evaluation-optimization-careers/index.md
+      - Quiz: chapters/14-evaluation-optimization-careers/quiz.md
 
   - MicroSims:
     - List of Sims: sims/index.md
@@ -41,6 +69,10 @@ nav:
     - Concept Taxonomy: learning-graph/concept-taxonomy.md
     - Taxonomy Distribution: learning-graph/taxonomy-distribution.md
     - Interactive Graph Viewer: sims/graph-viewer/index.md
+    - Glossary Quality Report: learning-graph/glossary-quality-report.md
+    - FAQ Quality Report: learning-graph/faq-quality-report.md
+    - FAQ Coverage Gaps: learning-graph/faq-coverage-gaps.md
+    - Quiz Generation Report: learning-graph/quiz-generation-report.md
 
   - Prompts:
     - prompts/01-bloom-taxonomy-enrichment.md
