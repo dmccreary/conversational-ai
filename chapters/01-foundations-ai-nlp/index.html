@@ -1,0 +1,2396 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A college level course on creating chatbots using AI.">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/conversational-ai/chapters/01-foundations-ai-nlp/">
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../02-search-technologies-indexing/">
+      
+      
+      <link rel="icon" href="../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+    
+    
+      
+        <title>Chapter 1 - Foundations of AI and NLP - Conversational AI</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+      
+        <meta  property="og:type"  content="website" >
+      
+        <meta  property="og:title"  content="Chapter 1 - Foundations of AI and NLP - Conversational AI" >
+      
+        <meta  property="og:description"  content="A college level course on creating chatbots using AI." >
+      
+        <meta  property="og:image"  content="https://dmccreary.github.io/conversational-ai/assets/images/social/chapters/01-foundations-ai-nlp/index.png" >
+      
+        <meta  property="og:image:type"  content="image/png" >
+      
+        <meta  property="og:image:width"  content="1200" >
+      
+        <meta  property="og:image:height"  content="630" >
+      
+        <meta  property="og:url"  content="https://dmccreary.github.io/conversational-ai/chapters/01-foundations-ai-nlp/" >
+      
+        <meta  name="twitter:card"  content="summary_large_image" >
+      
+        <meta  name="twitter:title"  content="Chapter 1 - Foundations of AI and NLP - Conversational AI" >
+      
+        <meta  name="twitter:description"  content="A college level course on creating chatbots using AI." >
+      
+        <meta  name="twitter:image"  content="https://dmccreary.github.io/conversational-ai/assets/images/social/chapters/01-foundations-ai-nlp/index.png" >
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#foundations-of-artificial-intelligence-and-natural-language-processing" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Conversational AI" class="md-header__button md-logo" aria-label="Conversational AI" data-md-component="logo">
+      
+  <img src="../../img/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Conversational AI
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Chapter 1 - Foundations of AI and NLP
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/conversational-ai" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Conversational AI" class="md-nav__button md-logo" aria-label="Conversational AI" data-md-component="logo">
+      
+  <img src="../../img/logo.png" alt="logo">
+
+    </a>
+    Conversational AI
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/conversational-ai" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../About.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course-description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Chapters
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Chapter 1 - Foundations of AI and NLP
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 1 - Foundations of AI and NLP
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts Covered
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-to-artificial-intelligence" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction to Artificial Intelligence
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Introduction to Artificial Intelligence">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-artificial-intelligence" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is Artificial Intelligence?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-exponential-growth-of-ai-capabilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Exponential Growth of AI Capabilities
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Exponential Growth of AI Capabilities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#moores-law-and-computing-power" class="md-nav__link">
+    <span class="md-ellipsis">
+      Moore's Law and Computing Power
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ai-doubling-rate" class="md-nav__link">
+    <span class="md-ellipsis">
+      AI Doubling Rate
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#natural-language-processing-fundamentals" class="md-nav__link">
+    <span class="md-ellipsis">
+      Natural Language Processing Fundamentals
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Natural Language Processing Fundamentals">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#text-processing-basics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Text Processing Basics
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#string-matching-techniques" class="md-nav__link">
+    <span class="md-ellipsis">
+      String Matching Techniques
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="String Matching Techniques">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exact-matching" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exact Matching
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#case-insensitive-matching" class="md-nav__link">
+    <span class="md-ellipsis">
+      Case-Insensitive Matching
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#substring-search-and-position-finding" class="md-nav__link">
+    <span class="md-ellipsis">
+      Substring Search and Position Finding
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#regular-expressions-for-pattern-matching" class="md-nav__link">
+    <span class="md-ellipsis">
+      Regular Expressions for Pattern Matching
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Regular Expressions for Pattern Matching">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#python-regular-expression-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Python Regular Expression Examples
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-grep-command-pattern-search-in-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Grep Command: Pattern Search in Files
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Grep Command: Pattern Search in Files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-grep-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Grep Usage
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grep-with-regular-expressions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Grep with Regular Expressions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#practical-grep-applications-in-nlp-and-ai-development" class="md-nav__link">
+    <span class="md-ellipsis">
+      Practical Grep Applications in NLP and AI Development
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#connecting-foundations-to-conversational-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      Connecting Foundations to Conversational AI
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Takeaways
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-search-technologies-indexing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 2 - Search Technologies and Indexing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-semantic-search-quality-metrics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 3 - Semantic Search and Quality Metrics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-large-language-models-tokenization/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 4 - Large Language Models and Tokenization
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-embeddings-vector-databases/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 5 - Embeddings and Vector Databases
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-building-chatbots-intent/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 6 - Building Chatbots and Intent Recognition
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-chatbot-frameworks-ui/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 7 - Chatbot Frameworks and User Interfaces
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-user-feedback-improvement/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 8 - User Feedback and Continuous Improvement
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-rag-pattern/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 9 - The RAG Pattern
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-knowledge-graphs-graphrag/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 10 - Knowledge Graphs and GraphRAG
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-nlp-pipelines-processing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 11 - NLP Pipelines and Text Processing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-database-queries-parameters/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 12 - Database Queries and Parameter Extraction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-security-privacy-users/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 13 - Security Privacy and User Management
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-evaluation-optimization-careers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 14 - Evaluation Optimization and Career Development
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../sims/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    MicroSims
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../learning-graph/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Learning Graph
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../prompts/01-bloom-taxonomy-enrichment/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Prompts
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Glossary
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-we-built-this-site/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    How We Built This Site
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../references/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    References
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../feedback/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Feedback
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../license/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    License
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contact
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts Covered
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-to-artificial-intelligence" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction to Artificial Intelligence
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Introduction to Artificial Intelligence">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-artificial-intelligence" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is Artificial Intelligence?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-exponential-growth-of-ai-capabilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Exponential Growth of AI Capabilities
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Exponential Growth of AI Capabilities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#moores-law-and-computing-power" class="md-nav__link">
+    <span class="md-ellipsis">
+      Moore's Law and Computing Power
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ai-doubling-rate" class="md-nav__link">
+    <span class="md-ellipsis">
+      AI Doubling Rate
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#natural-language-processing-fundamentals" class="md-nav__link">
+    <span class="md-ellipsis">
+      Natural Language Processing Fundamentals
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Natural Language Processing Fundamentals">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#text-processing-basics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Text Processing Basics
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#string-matching-techniques" class="md-nav__link">
+    <span class="md-ellipsis">
+      String Matching Techniques
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="String Matching Techniques">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exact-matching" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exact Matching
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#case-insensitive-matching" class="md-nav__link">
+    <span class="md-ellipsis">
+      Case-Insensitive Matching
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#substring-search-and-position-finding" class="md-nav__link">
+    <span class="md-ellipsis">
+      Substring Search and Position Finding
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#regular-expressions-for-pattern-matching" class="md-nav__link">
+    <span class="md-ellipsis">
+      Regular Expressions for Pattern Matching
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Regular Expressions for Pattern Matching">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#python-regular-expression-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Python Regular Expression Examples
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-grep-command-pattern-search-in-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Grep Command: Pattern Search in Files
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Grep Command: Pattern Search in Files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-grep-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Grep Usage
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grep-with-regular-expressions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Grep with Regular Expressions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#practical-grep-applications-in-nlp-and-ai-development" class="md-nav__link">
+    <span class="md-ellipsis">
+      Practical Grep Applications in NLP and AI Development
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#connecting-foundations-to-conversational-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      Connecting Foundations to Conversational AI
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Takeaways
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/dmccreary/conversational-ai/blob/master/docs/chapters/01-foundations-ai-nlp/index.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="foundations-of-artificial-intelligence-and-natural-language-processing">Foundations of Artificial Intelligence and Natural Language Processing</h1>
+<h2 id="summary">Summary</h2>
+<p>This chapter introduces the foundational concepts of artificial intelligence and natural language processing that underpin all conversational AI systems. You will learn about the history and evolution of AI, key milestones in AI development, and fundamental NLP techniques for text processing. By the end of this chapter, you will understand core AI principles, the exponential growth of AI capabilities, and basic text manipulation techniques including string matching and regular expressions.</p>
+<h2 id="concepts-covered">Concepts Covered</h2>
+<p>This chapter covers the following 9 concepts from the learning graph:</p>
+<ol>
+<li>Artificial Intelligence</li>
+<li>AI Timeline</li>
+<li>AI Doubling Rate</li>
+<li>Moore's Law</li>
+<li>Natural Language Processing</li>
+<li>Text Processing</li>
+<li>String Matching</li>
+<li>Regular Expressions</li>
+<li>Grep Command</li>
+</ol>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>This chapter assumes only the prerequisites listed in the <a href="../../course-description/">course description</a>. No prior AI or NLP knowledge is required.</p>
+<hr />
+<h2 id="introduction-to-artificial-intelligence">Introduction to Artificial Intelligence</h2>
+<p>Artificial Intelligence (AI) represents one of the most transformative technological developments of the modern era, fundamentally changing how machines interact with information, make decisions, and communicate with humans. At its core, AI encompasses computational systems that can perform tasks traditionally requiring human intelligence, such as visual perception, speech recognition, decision-making, and language translation. This chapter establishes the foundational knowledge needed to understand conversational AI systems by exploring the historical evolution of AI, the exponential growth in computational capabilities, and the fundamental natural language processing techniques that enable machines to understand and generate human language.</p>
+<p>The field of AI has progressed from early theoretical foundations in the 1950s to today's sophisticated systems that power virtual assistants, chatbots, and language translation services. Understanding this progression provides crucial context for the conversational AI techniques we'll explore throughout this course. Moreover, grasping the exponential nature of AI advancement helps explain why capabilities that seemed impossible a decade ago are now commonplace in consumer applications.</p>
+<h3 id="what-is-artificial-intelligence">What is Artificial Intelligence?</h3>
+<p>Artificial Intelligence refers to the simulation of human intelligence processes by machines, particularly computer systems. These processes include learning (acquiring information and rules for using it), reasoning (using rules to reach approximate or definite conclusions), and self-correction. Modern AI systems typically fall into several categories:</p>
+<ul>
+<li><strong>Narrow AI (Weak AI):</strong> Systems designed to perform specific tasks, such as facial recognition, voice assistants, or recommendation algorithms</li>
+<li><strong>General AI (Strong AI):</strong> Hypothetical systems with human-like cognitive abilities across diverse domains (not yet achieved)</li>
+<li><strong>Machine Learning:</strong> AI systems that improve automatically through experience without being explicitly programmed</li>
+<li><strong>Deep Learning:</strong> ML approaches using neural networks with multiple layers to progressively extract higher-level features from raw input</li>
+</ul>
+<p>Contemporary conversational AI systems primarily leverage narrow AI techniques, specifically those from natural language processing and machine learning. These systems excel at understanding and generating human language within defined contexts, though they lack the general reasoning capabilities of human intelligence.</p>
+<details>
+    <summary>Evolution of Artificial Intelligence Timeline</summary>
+    Type: timeline
+
+    Purpose: Illustrate the major milestones in AI development from its inception to modern conversational AI systems
+
+    Time period: 1950-2025
+
+    Orientation: Horizontal
+
+    Events:
+    - 1950: Alan Turing publishes "Computing Machinery and Intelligence," proposing the Turing Test
+    - 1956: Dartmouth Conference coins the term "Artificial Intelligence" (John McCarthy, Marvin Minsky, et al.)
+    - 1957: Perceptron algorithm developed by Frank Rosenblatt (early neural network)
+    - 1966: ELIZA chatbot created by Joseph Weizenbaum (pattern matching conversation)
+    - 1969-1979: First AI Winter (reduced funding due to unmet expectations)
+    - 1980-1987: Expert systems boom (rule-based AI for specialized domains)
+    - 1987-1993: Second AI Winter (expert systems limitations, hardware constraints)
+    - 1997: IBM Deep Blue defeats world chess champion Garry Kasparov
+    - 2006: Geoffrey Hinton revitalizes deep learning with breakthrough in training deep networks
+    - 2011: IBM Watson wins Jeopardy! using natural language processing
+    - 2012: AlexNet wins ImageNet competition, sparking deep learning revolution
+    - 2014: Generative Adversarial Networks (GANs) introduced by Ian Goodfellow
+    - 2017: Transformer architecture published ("Attention Is All You Need" paper)
+    - 2018: BERT (Bidirectional Encoder Representations from Transformers) released by Google
+    - 2020: GPT-3 demonstrates few-shot learning with 175 billion parameters
+    - 2022: ChatGPT launches, bringing conversational AI to mainstream adoption
+    - 2023: GPT-4 and competing models achieve multimodal capabilities
+    - 2024-2025: Widespread enterprise adoption of conversational AI and RAG systems
+
+    Visual style: Horizontal timeline with alternating above/below placement
+
+    Color coding:
+    - Blue: Foundational research era (1950-1980)
+    - Red: AI Winter periods (1969-1979, 1987-1993)
+    - Orange: Expert systems and traditional AI (1980-2000)
+    - Purple: Modern ML renaissance (2000-2012)
+    - Green: Deep learning era (2012-2020)
+    - Gold: Transformer and LLM era (2017-present)
+
+    Interactive features:
+    - Hover over each milestone to see detailed description and impact
+    - Click to expand with key figures and publications
+    - Highlight different eras by clicking color-coded legend
+
+    Implementation: vis-timeline JavaScript library with custom styling
+</details>
+
+<p>The timeline above demonstrates several critical patterns in AI development. First, progress has been non-linear, with periods of rapid advancement followed by "AI winters" when funding and interest declined due to unmet expectations. Second, breakthrough moments often resulted from novel algorithms combined with increased computational power and available data. The 2012 deep learning revolution, for instance, succeeded because GPU computing made training large neural networks practical, while internet-scale datasets provided training material.</p>
+<h2 id="the-exponential-growth-of-ai-capabilities">The Exponential Growth of AI Capabilities</h2>
+<p>Understanding AI's rapid advancement requires examining two interconnected phenomena: Moore's Law and the AI doubling rate. These concepts explain why AI capabilities that were science fiction in the 1990s are now embedded in everyday consumer devices.</p>
+<h3 id="moores-law-and-computing-power">Moore's Law and Computing Power</h3>
+<p>Moore's Law, named after Intel co-founder Gordon Moore, observes that the number of transistors on integrated circuits doubles approximately every two years, leading to exponential increases in computational power while costs decrease. First articulated in 1965, this trend has held remarkably consistent for over five decades, enabling the progression from room-sized mainframes to smartphones with processing power exceeding 1990s supercomputers.</p>
+<p>For AI development, Moore's Law has profound implications. Training complex neural networks requires massive computational resources—modern large language models consume millions of GPU-hours during training. The exponential increase in available computing power has made previously infeasible AI approaches practical. Deep learning, which requires training networks with millions or billions of parameters, became viable only when GPU computing could process the necessary calculations in reasonable timeframes.</p>
+<p>The relationship between computational power and AI capability is captured in the following comparison:</p>
+<table>
+<thead>
+<tr>
+<th>Era</th>
+<th>Representative System</th>
+<th>Transistor Count</th>
+<th>AI Capability</th>
+<th>Example Application</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1970s</td>
+<td>Intel 4004</td>
+<td>2,300</td>
+<td>Rule-based expert systems</td>
+<td>Medical diagnosis (MYCIN)</td>
+</tr>
+<tr>
+<td>1990s</td>
+<td>Pentium Pro</td>
+<td>5.5 million</td>
+<td>Statistical ML, decision trees</td>
+<td>Spam filtering</td>
+</tr>
+<tr>
+<td>2000s</td>
+<td>Intel Core 2</td>
+<td>291 million</td>
+<td>Support vector machines, basic NLP</td>
+<td>Search engine ranking</td>
+</tr>
+<tr>
+<td>2010s</td>
+<td>Intel Core i7 (Skylake)</td>
+<td>1.75 billion</td>
+<td>Deep learning, CNNs</td>
+<td>Image recognition</td>
+</tr>
+<tr>
+<td>2020s</td>
+<td>Apple M1 Max</td>
+<td>57 billion</td>
+<td>Transformer models, LLMs</td>
+<td>Conversational AI, ChatGPT</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ai-doubling-rate">AI Doubling Rate</h3>
+<p>While Moore's Law describes hardware capability growth, the AI doubling rate measures the exponential improvement in AI performance on specific tasks. Research from OpenAI and others demonstrates that AI capabilities have been doubling approximately every 3.4 months in recent years, far exceeding Moore's Law's two-year doubling period. This acceleration results from algorithmic innovations, better training techniques, larger datasets, and architectural improvements, not merely hardware advances.</p>
+<details>
+    <summary>AI Performance Doubling Rate Visualization</summary>
+    Type: chart
+
+    Chart type: Line chart with logarithmic Y-axis
+
+    Purpose: Show the exponential improvement in AI performance on ImageNet classification task from 2010-2023, demonstrating doubling rate faster than Moore's Law
+
+    X-axis: Year (2010-2023)
+    Y-axis: ImageNet Top-5 Error Rate (%, logarithmic scale from 1% to 50%)
+
+    Data series:
+    1. AI Performance (blue line with markers):
+       - 2010: 28.2% error (baseline)
+       - 2011: 25.8% error
+       - 2012: 16.4% error (AlexNet breakthrough)
+       - 2013: 11.7% error
+       - 2014: 7.3% error (GoogLeNet, VGG)
+       - 2015: 3.6% error (ResNet)
+       - 2016: 3.0% error
+       - 2017: 2.3% error (squeeze-and-excitation networks)
+       - 2018-2023: 1.0-2.0% error (surpassing human performance)
+
+    2. Human Performance (horizontal red dashed line):
+       - Constant at 5.1% error across all years
+
+    3. Moore's Law Projected Improvement (orange dotted line):
+       - Starting at 28.2% in 2010
+       - Showing theoretical improvement if progress followed hardware doubling (2-year cycle)
+       - Much slower than actual AI improvement
+
+    Title: "AI Performance Improvement Exceeds Moore's Law"
+    Subtitle: "ImageNet Top-5 Classification Error Rate (2010-2023)"
+
+    Legend: Position top-right
+
+    Annotations:
+    - Arrow at 2012: "AlexNet: Deep learning breakthrough"
+    - Arrow at 2015: "ResNet: Residual connections enable very deep networks"
+    - Horizontal line at human performance: "Human-level performance (5.1%)"
+    - Shaded region below human performance: "Superhuman performance"
+
+    Key insights callout box:
+    - "AI performance doubled every 3.4 months from 2012-2018"
+    - "Exceeded Moore's Law improvement rate by 7x"
+    - "Surpassed human performance in 2015"
+
+    Implementation: Chart.js with logarithmic scale plugin
+    Canvas size: 800x500px
+</details>
+
+<p>This acceleration has profound implications for conversational AI. Language understanding capabilities that required extensive manual rule crafting in the 1990s (like ELIZA's pattern matching) now emerge from training large transformer models on internet-scale text corpora. The GPT series exemplifies this trend: GPT-1 (2018) had 117 million parameters, GPT-2 (2019) had 1.5 billion, GPT-3 (2020) had 175 billion, and GPT-4 (2023) is estimated to have over 1 trillion parameters, with each generation demonstrating qualitatively new capabilities.</p>
+<h2 id="natural-language-processing-fundamentals">Natural Language Processing Fundamentals</h2>
+<p>Natural Language Processing (NLP) constitutes the subfield of AI focused on enabling computers to understand, interpret, and generate human language. Unlike programming languages with rigid syntax and unambiguous semantics, natural languages exhibit ambiguity, context-dependence, and cultural variation. NLP systems must handle these complexities while extracting meaningful information from text or speech.</p>
+<p>Modern conversational AI systems rely heavily on NLP techniques across several stages:</p>
+<ul>
+<li><strong>Preprocessing:</strong> Cleaning and normalizing text (removing punctuation, converting to lowercase, handling special characters)</li>
+<li><strong>Tokenization:</strong> Breaking text into individual units (words, subwords, or characters)</li>
+<li><strong>Linguistic Analysis:</strong> Understanding grammar, parts of speech, and sentence structure</li>
+<li><strong>Semantic Understanding:</strong> Extracting meaning, intent, and context</li>
+<li><strong>Generation:</strong> Producing grammatically correct and contextually appropriate responses</li>
+</ul>
+<p>This course focuses primarily on conversational AI applications, but understanding fundamental text processing techniques provides essential groundwork for the more advanced embedding and transformer-based approaches we'll explore in later chapters.</p>
+<h3 id="text-processing-basics">Text Processing Basics</h3>
+<p>Before applying sophisticated machine learning models, NLP systems typically perform basic text processing to standardize and clean input data. These preprocessing steps ensure consistency and reduce noise that could confuse downstream algorithms.</p>
+<p>Common text processing operations include:</p>
+<ol>
+<li><strong>Case normalization:</strong> Converting all text to lowercase to treat "Python," "python," and "PYTHON" as identical</li>
+<li><strong>Whitespace handling:</strong> Removing extra spaces, tabs, and newlines</li>
+<li><strong>Punctuation processing:</strong> Either removing or standardizing punctuation marks</li>
+<li><strong>Number handling:</strong> Deciding whether to preserve numeric values or convert them to text</li>
+<li><strong>Special character removal:</strong> Filtering out emoji, symbols, or non-alphanumeric characters depending on application needs</li>
+</ol>
+<p>Consider processing user input to a chatbot. The raw input "Hello!!!   How's your  performance today?" might be normalized to "hello how's your performance today" before further analysis. This standardization ensures that pattern matching and text search operations function reliably.</p>
+<details>
+    <summary>Text Processing Pipeline Workflow</summary>
+    Type: workflow
+
+    Purpose: Illustrate the typical stages in preprocessing text for NLP applications
+
+    Visual style: Flowchart with process rectangles connected by arrows
+
+    Steps:
+    1. Start: "Raw Text Input"
+       Hover text: "Example: 'Hello!!! How's your performance TODAY? :)'"
+
+    2. Process: "Lowercase Conversion"
+       Hover text: "Convert all characters to lowercase for case-insensitive matching"
+       Result: "hello!!! how's your performance today? :)"
+
+    3. Process: "Special Character Removal"
+       Hover text: "Remove or replace emoji, excessive punctuation, and non-alphanumeric characters"
+       Result: "hello how's your performance today"
+
+    4. Process: "Whitespace Normalization"
+       Hover text: "Replace multiple spaces with single space, trim leading/trailing whitespace"
+       Result: "hello how's your performance today"
+
+    5. Decision: "Keep Punctuation?"
+       Hover text: "Application-dependent: keep for sentence splitting, remove for keyword matching"
+
+    6a. Process: "Remove Punctuation" (if No)
+        Hover text: "Strip all punctuation marks"
+        Result: "hello hows your performance today"
+
+    6b. Process: "Preserve Punctuation" (if Yes)
+        Hover text: "Maintain punctuation for sentence boundary detection"
+        Result: "hello how's your performance today"
+
+    7. Process: "Tokenization"
+       Hover text: "Split text into individual tokens (words or subwords)"
+       Result: "['hello', 'how's', 'your', 'performance', 'today']"
+
+    8. Decision: "Apply Stemming/Lemmatization?"
+       Hover text: "Reduce words to root forms (e.g., 'running' → 'run')"
+
+    9a. Process: "Apply Morphological Processing" (if Yes)
+        Hover text: "Stemming (simple suffix removal) or lemmatization (dictionary-based root forms)"
+
+    9b. Process: "Keep Original Tokens" (if No)
+        Hover text: "Preserve original word forms"
+
+    10. End: "Processed Tokens Ready for Analysis"
+        Hover text: "Clean tokens ready for search, classification, or embedding"
+
+    Color coding:
+    - Light blue: Input/output
+    - Green: Text transformation steps
+    - Yellow: Decision points
+    - Purple: Final tokenization
+
+    Implementation: Mermaid.js flowchart
+    Canvas size: 800x700px
+</details>
+
+<h3 id="string-matching-techniques">String Matching Techniques</h3>
+<p>String matching forms the foundation of text search and pattern recognition. At its simplest, string matching determines whether a specific sequence of characters (the pattern) appears within a larger text (the target). While modern NLP systems employ sophisticated semantic search techniques, understanding basic string matching remains essential for tasks like exact keyword search, code analysis, and log file processing.</p>
+<h4 id="exact-matching">Exact Matching</h4>
+<p>Exact string matching searches for literal character sequences. In Python, this is straightforward using the <code>in</code> operator or string methods:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;natural language processing enables conversational ai&quot;</span>
+<span class="n">pattern</span> <span class="o">=</span> <span class="s2">&quot;language processing&quot;</span>
+
+<span class="k">if</span> <span class="n">pattern</span> <span class="ow">in</span> <span class="n">text</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Found &#39;</span><span class="si">{</span><span class="n">pattern</span><span class="si">}</span><span class="s2">&#39; in text&quot;</span><span class="p">)</span>
+<span class="c1"># Output: Found &#39;language processing&#39; in text</span>
+</code></pre></div></td></tr></table></div>
+<p>Exact matching proves useful for finding specific terms, codes, or identifiers but fails when text variations exist. Searching for "color" won't find "colour," and searching for "AI" won't match "artificial intelligence" unless explicitly programmed to handle synonyms.</p>
+<h4 id="case-insensitive-matching">Case-Insensitive Matching</h4>
+<p>Many search scenarios require case-insensitive matching. This can be achieved by normalizing both the pattern and text to the same case:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;Natural Language Processing enables Conversational AI&quot;</span>
+<span class="n">pattern</span> <span class="o">=</span> <span class="s2">&quot;LANGUAGE PROCESSING&quot;</span>
+
+<span class="k">if</span> <span class="n">pattern</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">in</span> <span class="n">text</span><span class="o">.</span><span class="n">lower</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Match found (case-insensitive)&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<h4 id="substring-search-and-position-finding">Substring Search and Position Finding</h4>
+<p>Beyond boolean matching (does the pattern exist?), applications often need to locate where patterns occur or extract surrounding context:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;NLP includes tokenization, parsing, and semantic analysis&quot;</span>
+<span class="n">pattern</span> <span class="o">=</span> <span class="s2">&quot;parsing&quot;</span>
+
+<span class="n">position</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">pattern</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">position</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Found &#39;</span><span class="si">{</span><span class="n">pattern</span><span class="si">}</span><span class="s2">&#39; at position </span><span class="si">{</span><span class="n">position</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="c1"># Extract context: 10 characters before and after</span>
+    <span class="n">start</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">position</span> <span class="o">-</span> <span class="mi">10</span><span class="p">)</span>
+    <span class="n">end</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">text</span><span class="p">),</span> <span class="n">position</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">pattern</span><span class="p">)</span> <span class="o">+</span> <span class="mi">10</span><span class="p">)</span>
+    <span class="n">context</span> <span class="o">=</span> <span class="n">text</span><span class="p">[</span><span class="n">start</span><span class="p">:</span><span class="n">end</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Context: ...</span><span class="si">{</span><span class="n">context</span><span class="si">}</span><span class="s2">...&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="regular-expressions-for-pattern-matching">Regular Expressions for Pattern Matching</h3>
+<p>While exact string matching handles literal text search, regular expressions (regex) provide a powerful language for describing text patterns. Regular expressions allow matching classes of strings rather than specific strings, enabling flexible pattern recognition essential for many NLP tasks.</p>
+<p>A regular expression defines a search pattern using ordinary characters (like 'a' or '1') combined with special metacharacters that represent classes or quantities of characters:</p>
+<p>Common regex metacharacters and patterns:</p>
+<table>
+<thead>
+<tr>
+<th>Pattern</th>
+<th>Meaning</th>
+<th>Example</th>
+<th>Matches</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>.</code></td>
+<td>Any single character</td>
+<td><code>c.t</code></td>
+<td>"cat", "cot", "c9t"</td>
+</tr>
+<tr>
+<td><code>*</code></td>
+<td>Zero or more of preceding</td>
+<td><code>ab*c</code></td>
+<td>"ac", "abc", "abbc"</td>
+</tr>
+<tr>
+<td><code>+</code></td>
+<td>One or more of preceding</td>
+<td><code>ab+c</code></td>
+<td>"abc", "abbc" (not "ac")</td>
+</tr>
+<tr>
+<td><code>?</code></td>
+<td>Zero or one of preceding</td>
+<td><code>colou?r</code></td>
+<td>"color", "colour"</td>
+</tr>
+<tr>
+<td><code>\d</code></td>
+<td>Any digit</td>
+<td><code>\d{3}</code></td>
+<td>"123", "456"</td>
+</tr>
+<tr>
+<td><code>\w</code></td>
+<td>Any word character (letter, digit, underscore)</td>
+<td><code>\w+</code></td>
+<td>"hello", "test_123"</td>
+</tr>
+<tr>
+<td><code>\s</code></td>
+<td>Any whitespace</td>
+<td><code>hello\s+world</code></td>
+<td>"hello world", "hello  world"</td>
+</tr>
+<tr>
+<td><code>[abc]</code></td>
+<td>Any character in set</td>
+<td><code>[Pp]ython</code></td>
+<td>"Python", "python"</td>
+</tr>
+<tr>
+<td><code>[a-z]</code></td>
+<td>Any character in range</td>
+<td><code>[0-9]{2}</code></td>
+<td>"42", "99"</td>
+</tr>
+<tr>
+<td><code>^</code></td>
+<td>Start of string</td>
+<td><code>^Hello</code></td>
+<td>"Hello world" (not "Say Hello")</td>
+</tr>
+<tr>
+<td><code>$</code></td>
+<td>End of string</td>
+<td><code>world$</code></td>
+<td>"Hello world" (not "world peace")</td>
+</tr>
+</tbody>
+</table>
+<p>Regular expressions excel at tasks like:</p>
+<ul>
+<li><strong>Email validation:</strong> Ensuring user input matches email format patterns</li>
+<li><strong>Phone number extraction:</strong> Finding phone numbers regardless of formatting (123-456-7890, (123) 456-7890, etc.)</li>
+<li><strong>URL parsing:</strong> Extracting domain names, paths, or parameters from web addresses</li>
+<li><strong>Date formatting:</strong> Recognizing various date representations (2024-01-15, 01/15/2024, January 15, 2024)</li>
+<li><strong>Log file analysis:</strong> Extracting timestamps, error codes, or user IDs from structured logs</li>
+</ul>
+<h4 id="python-regular-expression-examples">Python Regular Expression Examples</h4>
+<p>Python's <code>re</code> module provides regular expression functionality:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">re</span>
+
+<span class="c1"># Example 1: Email validation</span>
+<span class="n">email_pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$&#39;</span>
+<span class="n">emails</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;user@example.com&quot;</span><span class="p">,</span> <span class="s2">&quot;invalid.email&quot;</span><span class="p">,</span> <span class="s2">&quot;test.user+filter@domain.co.uk&quot;</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">email</span> <span class="ow">in</span> <span class="n">emails</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">email_pattern</span><span class="p">,</span> <span class="n">email</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Valid: </span><span class="si">{</span><span class="n">email</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Invalid: </span><span class="si">{</span><span class="n">email</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Example 2: Extract all numbers from text</span>
+<span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;The model achieved 94.7</span><span class="si">% a</span><span class="s2">ccuracy on 1,250 test samples.&quot;</span>
+<span class="n">numbers</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\d+\.?\d*&#39;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Numbers found: </span><span class="si">{</span><span class="n">numbers</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>  <span class="c1"># [&#39;94.7&#39;, &#39;1&#39;, &#39;250&#39;]</span>
+
+<span class="c1"># Example 3: Find hashtags in social media text</span>
+<span class="n">tweet</span> <span class="o">=</span> <span class="s2">&quot;Excited about #AI and #MachineLearning! #NLP is fascinating.&quot;</span>
+<span class="n">hashtags</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;#\w+&#39;</span><span class="p">,</span> <span class="n">tweet</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Hashtags: </span><span class="si">{</span><span class="n">hashtags</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>  <span class="c1"># [&#39;#AI&#39;, &#39;#MachineLearning&#39;, &#39;#NLP&#39;]</span>
+
+<span class="c1"># Example 4: Replace multiple spaces with single space</span>
+<span class="n">messy_text</span> <span class="o">=</span> <span class="s2">&quot;Too    many     spaces    here&quot;</span>
+<span class="n">cleaned</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\s+&#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="n">messy_text</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Cleaned: </span><span class="si">{</span><span class="n">cleaned</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>  <span class="c1"># &quot;Too many spaces here&quot;</span>
+</code></pre></div></td></tr></table></div>
+<details>
+    <summary>Interactive Regular Expression Pattern Matcher MicroSim</summary>
+    Type: microsim
+
+    Learning objective: Allow students to experiment with regular expression patterns and immediately see what text they match, building intuition for regex syntax and capabilities
+
+    Canvas layout (900x700px):
+    - Top section (900x150): Input area
+    - Middle section (900x400): Main visualization area
+    - Right section (200x400): Control panel
+    - Bottom section (900x150): Results and explanation area
+
+    Visual elements:
+
+    Top section:
+    - Text area: "Enter test text" (600px wide)
+    - Text input: "Enter regex pattern" (600px wide)
+    - Example text: "Contact us at support@example.com or call (555) 123-4567. Visit https://www.example.com for more info."
+
+    Middle visualization area:
+    - Display the test text with matches highlighted in yellow
+    - Show capture groups in different colors (green, blue, purple)
+    - Display line numbers if multiline text
+    - Highlight current match when hovering
+
+    Right control panel:
+    - Dropdown: "Example patterns" with options:
+      - Email addresses
+      - Phone numbers
+      - URLs
+      - Dates
+      - Numbers
+      - Hashtags
+      - Custom
+    - Checkboxes for regex flags:
+      - Case insensitive (i)
+      - Multiline (m)
+      - Global (g)
+      - Dot matches all (s)
+    - Button: "Test Pattern"
+    - Button: "Clear"
+    - Display: Match count
+
+    Bottom results area:
+    - List of all matches found
+    - For each match: show the matched text, position (start-end), and any capture groups
+    - Explanation panel: dynamically explain what each part of the regex pattern means
+
+    Default parameters:
+    - Pattern: `\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b`
+    - Test text: "Contact us at support@example.com or sales@company.org"
+    - Flags: Global enabled
+
+    Example patterns (selectable from dropdown):
+    1. Email: `\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b`
+    2. Phone (US): `\(?\d{3}\)?[-.\s]?\d{3}[-.\s]?\d{4}`
+    3. URL: `https?://[^\s]+`
+    4. Date (YYYY-MM-DD): `\d{4}-\d{2}-\d{2}`
+    5. Hashtag: `#\w+`
+    6. Numbers: `\d+\.?\d*`
+
+    Behavior:
+    - When user types or selects a pattern, automatically test against text
+    - Highlight all matches in the visualization area
+    - Update match count and results list in real-time
+    - When hovering over a match in the visualization, highlight the corresponding entry in results list
+    - When selecting an example pattern, load both the pattern and appropriate test text
+    - Display error message if regex pattern is invalid
+
+    Educational features:
+    - Pattern explanation panel that breaks down the regex:
+      - `\b` = word boundary
+      - `[A-Za-z0-9._%+-]+` = one or more email-valid characters
+      - `@` = literal @ symbol
+      - etc.
+    - Show capture groups with labels if pattern includes groups
+    - Provide hints for common regex mistakes
+
+    Implementation notes:
+    - Use p5.js for rendering and interaction
+    - Use JavaScript RegExp for pattern matching
+    - Store example patterns as array of objects with {name, pattern, testText, explanation}
+    - Update visualization on each text or pattern change (debounce input for performance)
+    - Use different highlight colors for different capture groups
+    - Canvas size: 900x700px
+
+    Accessibility:
+    - Provide text description of matches for screen readers
+    - Keyboard shortcuts: Ctrl+Enter to test pattern, Esc to clear
+</details>
+
+<p>The interactive MicroSim above allows experimentation with regex patterns, building intuition for this powerful text processing tool. Regular expressions become particularly important when building conversational AI systems that need to extract structured information from user queries—for instance, parsing dates from "What's the weather next Friday?" or extracting product codes from "Show me details for item SKU-12345."</p>
+<h3 id="the-grep-command-pattern-search-in-files">The Grep Command: Pattern Search in Files</h3>
+<p>The <code>grep</code> command (Global Regular Expression Print) represents one of the most essential text processing utilities in Unix/Linux environments. Originally developed in the 1970s, grep searches files or streams for lines matching a pattern and prints those lines to standard output. While seemingly simple, grep's power and flexibility have made it indispensable for developers, system administrators, and data analysts.</p>
+<h4 id="basic-grep-usage">Basic Grep Usage</h4>
+<p>At its core, grep takes a pattern and one or more files, printing lines that match:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Search for the word &quot;error&quot; in a log file</span>
+grep<span class="w"> </span><span class="s2">&quot;error&quot;</span><span class="w"> </span>application.log
+
+<span class="c1"># Search case-insensitively</span>
+grep<span class="w"> </span>-i<span class="w"> </span><span class="s2">&quot;error&quot;</span><span class="w"> </span>application.log<span class="w">  </span><span class="c1"># matches &quot;Error&quot;, &quot;ERROR&quot;, &quot;error&quot;</span>
+
+<span class="c1"># Search recursively in all files within a directory</span>
+grep<span class="w"> </span>-r<span class="w"> </span><span class="s2">&quot;TODO&quot;</span><span class="w"> </span>./src/
+
+<span class="c1"># Count matching lines instead of displaying them</span>
+grep<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;warning&quot;</span><span class="w"> </span>system.log
+
+<span class="c1"># Show line numbers with matches</span>
+grep<span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;exception&quot;</span><span class="w"> </span>debug.log
+</code></pre></div></td></tr></table></div>
+<h4 id="grep-with-regular-expressions">Grep with Regular Expressions</h4>
+<p>Grep supports regular expressions, enabling sophisticated pattern searches:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Find lines containing email addresses</span>
+grep<span class="w"> </span>-E<span class="w"> </span><span class="s1">&#39;\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b&#39;</span><span class="w"> </span>contacts.txt
+
+<span class="c1"># Find lines starting with &quot;Error:&quot; followed by a number</span>
+grep<span class="w"> </span><span class="s1">&#39;^Error: [0-9]&#39;</span><span class="w"> </span>logs/*.log
+
+<span class="c1"># Find Python function definitions (lines starting with &quot;def &quot;)</span>
+grep<span class="w"> </span><span class="s1">&#39;^\s*def\s&#39;</span><span class="w"> </span>*.py
+
+<span class="c1"># Find lines with 3-digit numbers</span>
+grep<span class="w"> </span><span class="s1">&#39;\b[0-9]{3}\b&#39;</span><span class="w"> </span>data.txt
+</code></pre></div></td></tr></table></div>
+<h4 id="practical-grep-applications-in-nlp-and-ai-development">Practical Grep Applications in NLP and AI Development</h4>
+<p>Grep proves invaluable when working with conversational AI systems:</p>
+<ol>
+<li><strong>Log analysis:</strong> Finding errors, specific user queries, or response patterns in chatbot interaction logs</li>
+<li><strong>Code search:</strong> Locating function definitions, API calls, or configuration parameters across codebases</li>
+<li><strong>Data exploration:</strong> Quickly sampling records from large text datasets before loading into Python</li>
+<li><strong>Debugging:</strong> Finding where specific variables or functions are used during troubleshooting</li>
+<li><strong>Data validation:</strong> Checking if expected patterns appear in output files</li>
+</ol>
+<p>Example workflow for analyzing chatbot logs:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Find all queries about pricing</span>
+grep<span class="w"> </span>-i<span class="w"> </span><span class="s2">&quot;price\|cost\|pricing&quot;</span><span class="w"> </span>chatbot_logs.txt<span class="w"> </span>&gt;<span class="w"> </span>pricing_queries.txt
+
+<span class="c1"># Count how many times users encountered errors</span>
+grep<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;ERROR&quot;</span><span class="w"> </span>chatbot_logs.txt
+
+<span class="c1"># Extract timestamp and error message for all failures</span>
+grep<span class="w"> </span><span class="s2">&quot;ERROR&quot;</span><span class="w"> </span>chatbot_logs.txt<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-oE<span class="w"> </span><span class="s1">&#39;[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}:[0-9]{2}.*&#39;</span>
+
+<span class="c1"># Find queries that mentioned specific products</span>
+grep<span class="w"> </span>-E<span class="w"> </span><span class="s2">&quot;(product|item).*[A-Z]{2,4}-[0-9]{4,6}&quot;</span><span class="w"> </span>chatbot_logs.txt
+</code></pre></div></td></tr></table></div>
+<p>Common grep options:</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Purpose</th>
+<th>Example Usage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-i</code></td>
+<td>Case-insensitive search</td>
+<td><code>grep -i "python" file.txt</code></td>
+</tr>
+<tr>
+<td><code>-v</code></td>
+<td>Invert match (show non-matching lines)</td>
+<td><code>grep -v "test" data.txt</code></td>
+</tr>
+<tr>
+<td><code>-r</code> or <code>-R</code></td>
+<td>Recursive directory search</td>
+<td><code>grep -r "function" ./src/</code></td>
+</tr>
+<tr>
+<td><code>-n</code></td>
+<td>Show line numbers</td>
+<td><code>grep -n "error" log.txt</code></td>
+</tr>
+<tr>
+<td><code>-c</code></td>
+<td>Count matching lines</td>
+<td><code>grep -c "warning" log.txt</code></td>
+</tr>
+<tr>
+<td><code>-l</code></td>
+<td>Show only filenames with matches</td>
+<td><code>grep -l "TODO" *.py</code></td>
+</tr>
+<tr>
+<td><code>-A 3</code></td>
+<td>Show 3 lines after match</td>
+<td><code>grep -A 3 "exception" log.txt</code></td>
+</tr>
+<tr>
+<td><code>-B 3</code></td>
+<td>Show 3 lines before match</td>
+<td><code>grep -B 3 "error" log.txt</code></td>
+</tr>
+<tr>
+<td><code>-C 3</code></td>
+<td>Show 3 lines of context (before and after)</td>
+<td><code>grep -C 3 "critical" log.txt</code></td>
+</tr>
+<tr>
+<td><code>-E</code></td>
+<td>Extended regex (supports +, ?, |, etc.)</td>
+<td><code>grep -E "error\|warning" log.txt</code></td>
+</tr>
+<tr>
+<td><code>-w</code></td>
+<td>Match whole words only</td>
+<td><code>grep -w "is" text.txt</code></td>
+</tr>
+</tbody>
+</table>
+<p>While modern conversational AI relies primarily on semantic search using embeddings and vector databases (topics we'll cover in later chapters), grep and pattern matching remain essential for data preprocessing, log analysis, and debugging. Understanding these foundational text processing techniques provides context for appreciating why semantic search represents such a significant advancement.</p>
+<h2 id="connecting-foundations-to-conversational-ai">Connecting Foundations to Conversational AI</h2>
+<p>The concepts introduced in this chapter form the bedrock for understanding modern conversational AI systems. The exponential growth in AI capabilities, driven by both Moore's Law and algorithmic innovations, explains how today's language models achieve performance that would have seemed impossible even a decade ago. The progression from rule-based chatbots like ELIZA (which relied solely on pattern matching) to modern transformer-based systems demonstrates this evolution clearly.</p>
+<p>Text processing fundamentals—string matching, regular expressions, and pattern search—remain relevant even in the era of large language models:</p>
+<ul>
+<li><strong>Preprocessing:</strong> Before text enters embedding models or LLMs, it undergoes cleaning and normalization using techniques discussed in this chapter</li>
+<li><strong>Hybrid systems:</strong> Production chatbots often combine semantic search for understanding with regex-based extraction for structured data (dates, product codes, tracking numbers)</li>
+<li><strong>Debugging and analysis:</strong> Developers use grep and pattern matching to analyze chatbot conversation logs, identify problematic queries, and measure system performance</li>
+<li><strong>Fallback mechanisms:</strong> When semantic understanding fails, rule-based pattern matching can provide fallback responses</li>
+</ul>
+<p>As we progress through this course, we'll build increasingly sophisticated conversational AI systems. Chapter 2 introduces keyword search and its limitations, motivating the need for semantic understanding. Later chapters explore embeddings, vector stores, the RAG (Retrieval Augmented Generation) pattern, and GraphRAG implementations. Throughout this progression, the foundational concepts from this chapter—understanding AI's exponential growth, recognizing text processing requirements, and applying pattern matching techniques—will prove essential for both conceptual understanding and practical implementation.</p>
+<h2 id="key-takeaways">Key Takeaways</h2>
+<p>Before moving to the next chapter, ensure you understand these core concepts:</p>
+<ul>
+<li><strong>Artificial Intelligence</strong> encompasses computational systems performing tasks requiring human-like intelligence, with current conversational AI systems using narrow AI techniques focused on language understanding and generation</li>
+<li><strong>AI development</strong> has progressed non-linearly through multiple boom-and-bust cycles, with the modern deep learning era beginning around 2012 and transformer-based language models emerging in 2017</li>
+<li><strong>Moore's Law</strong> describes the doubling of transistor density every two years, providing the computational foundation for modern AI, while the <strong>AI doubling rate</strong> shows capability improvements occurring even faster (every 3-4 months)</li>
+<li><strong>Natural Language Processing</strong> enables computers to understand and generate human language through preprocessing, tokenization, linguistic analysis, semantic understanding, and generation</li>
+<li><strong>Text processing</strong> fundamentals include case normalization, whitespace handling, punctuation processing, and tokenization as essential preprocessing steps</li>
+<li><strong>String matching</strong> provides exact or case-insensitive literal text search, useful for specific term identification but limited by its inability to handle variations</li>
+<li><strong>Regular expressions</strong> offer a powerful pattern language enabling flexible matching of character classes, quantities, and positions, essential for extracting structured data from text</li>
+<li><strong>Grep</strong> serves as a command-line tool for pattern searching across files, invaluable for log analysis, code search, and data exploration in AI development workflows</li>
+</ul>
+<p>These foundations prepare you for exploring keyword search, semantic search, and the conversational AI architectures that build upon these basic text processing capabilities.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Overview">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Overview
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../02-search-technologies-indexing/" class="md-footer__link md-footer__link--next" aria-label="Next: Chapter 2 - Search Technologies and Indexing">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Chapter 2 - Search Technologies and Indexing
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer", "content.action.edit"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+        <script src="../../js/extra.js"></script>
+      
+    
+  </body>
+</html>
