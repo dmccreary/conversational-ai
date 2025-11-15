@@ -1,8 +1,8 @@
 {
   "metadata": {
-    "title": "Conversational AI Learning Graph",
-    "description": "A comprehensive learning graph for a college-level course on building conversational AI agents including chatbots, search technologies, RAG patterns, and GraphRAG implementations. Covers 200 concepts from AI fundamentals through advanced knowledge graph systems.",
-    "creator": "Dan McCreary",
+    "title": "Learning Graph",
+    "description": "Learning graph with 200 concepts generated from CSV",
+    "creator": "CSV to JSON Converter",
     "date": "2025-11-15",
     "version": "1.0",
     "format": "Learning Graph JSON v1.0",
@@ -10,93 +10,93 @@
     "license": "CC BY-NC-SA 4.0 DEED"
   },
   "groups": {
-    "FOUND": {
-      "classifierName": "Foundation Concepts",
-      "color": "#FF6B6B",
-      "font": {
-        "color": "black"
-      }
-    },
-    "SEARCH": {
-      "classifierName": "SEARCH",
-      "color": "#4ECDC4",
-      "font": {
-        "color": "black"
-      }
-    },
-    "METRIC": {
-      "classifierName": "METRIC",
-      "color": "#45B7D1",
-      "font": {
-        "color": "black"
-      }
-    },
-    "LLM": {
-      "classifierName": "LLM",
-      "color": "#F7B731",
+    "CHAT": {
+      "classifierName": "Chatbot Systems",
+      "color": "coral",
       "font": {
         "color": "black"
       }
     },
     "EMBED": {
-      "classifierName": "EMBED",
-      "color": "#5F27CD",
-      "font": {
-        "color": "black"
-      }
-    },
-    "CHAT": {
-      "classifierName": "CHAT",
-      "color": "#00D2D3",
-      "font": {
-        "color": "black"
-      }
-    },
-    "RAG": {
-      "classifierName": "RAG",
-      "color": "#54A0FF",
-      "font": {
-        "color": "black"
-      }
-    },
-    "GRAPH": {
-      "classifierName": "GRAPH",
-      "color": "#48DBFB",
-      "font": {
-        "color": "black"
-      }
-    },
-    "NLP": {
-      "classifierName": "NLP",
-      "color": "#1DD1A1",
-      "font": {
-        "color": "black"
-      }
-    },
-    "QUERY": {
-      "classifierName": "QUERY",
-      "color": "#FFA502",
-      "font": {
-        "color": "black"
-      }
-    },
-    "SEC": {
-      "classifierName": "SEC",
-      "color": "#EE5A6F",
+      "classifierName": "Embeddings and Vectors",
+      "color": "turquoise",
       "font": {
         "color": "black"
       }
     },
     "EVAL": {
-      "classifierName": "EVAL",
-      "color": "#C44569",
+      "classifierName": "Evaluation and Optimization",
+      "color": "skyblue",
+      "font": {
+        "color": "black"
+      }
+    },
+    "FOUND": {
+      "classifierName": "Foundation Concepts",
+      "color": "red",
+      "font": {
+        "color": "white"
+      }
+    },
+    "GRAPH": {
+      "classifierName": "Knowledge Graphs",
+      "color": "khaki",
+      "font": {
+        "color": "black"
+      }
+    },
+    "LLM": {
+      "classifierName": "Language Models",
+      "color": "peru",
+      "font": {
+        "color": "white"
+      }
+    },
+    "METRIC": {
+      "classifierName": "Search Quality Metrics",
+      "color": "chocolate",
+      "font": {
+        "color": "white"
+      }
+    },
+    "NLP": {
+      "classifierName": "NLP Processing",
+      "color": "mediumpurple",
+      "font": {
+        "color": "white"
+      }
+    },
+    "QUERY": {
+      "classifierName": "Query Systems",
+      "color": "tomato",
+      "font": {
+        "color": "black"
+      }
+    },
+    "RAG": {
+      "classifierName": "RAG Patterns",
+      "color": "cornflowerblue",
+      "font": {
+        "color": "white"
+      }
+    },
+    "SEARCH": {
+      "classifierName": "Search Technologies",
+      "color": "slateblue",
+      "font": {
+        "color": "white"
+      }
+    },
+    "SEC": {
+      "classifierName": "Security and Privacy",
+      "color": "hotpink",
       "font": {
         "color": "black"
       }
     },
     "TOOL": {
-      "classifierName": "TOOL",
-      "color": "#A55EEA",
+      "classifierName": "Tools and Projects",
+      "color": "mediumaquamarine",
       "font": {
         "color": "black"
       }

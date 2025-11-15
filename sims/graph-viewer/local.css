@@ -106,6 +106,14 @@ body {
   font-size: 16px;
 }
 
+.legend-table td:first-child {
+  min-width: 100px;
+}
+
+.legend-table td:nth-child(2) {
+  max-width: 50px;
+}
+
 .legend-table input[type="checkbox"] {
   margin-right: 5px;
 }
