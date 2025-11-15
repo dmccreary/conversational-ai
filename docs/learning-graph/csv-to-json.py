@@ -5,6 +5,8 @@ Converts the concept dependency CSV into the JSON format
 used by the existing graph viewer (vis.js network format).
 """
 
+VERSION = "0.04"
+
 import csv
 import json
 from typing import Dict, List
@@ -24,13 +26,25 @@ def csv_to_json(csv_path: str, json_path: str, color_config: dict = None, metada
                  If not provided, creates minimal metadata.
     """
     # Default taxonomy group colors for visualization
-    # Supports both text codes (FOUND, DEF, etc.) and numeric IDs (1, 2, etc.)
+    # Using CSS color names for better readability
     default_colors = {
-        # Text codes
+        # Custom taxonomies for intelligent textbook skills course
+        'AIFND': 'coral',
+        'SKILL': 'turquoise',
+        'IBOOK': 'skyblue',
+        'MKDOC': 'mediumseagreen',
+        'GRAPH': 'khaki',
+        'EDTHY': 'peru',
+        'CONTE': 'chocolate',
+        'RSRCE': 'mediumpurple',
+        'INTER': 'tomato',
+        'VERCT': 'cornflowerblue',
+        'TOOLS': 'slateblue',
+        'DATAS': 'hotpink',
+        # Standard/default text codes
         'FOUND': 'red',
         'DEF': 'orange',
         'CORE': 'gold',
-        'INTER': 'green',
         'ADV': 'blue',
         'APPL': 'cyan',
         'SPEC': 'indigo',
@@ -56,8 +70,21 @@ def csv_to_json(csv_path: str, json_path: str, color_config: dict = None, metada
     # Supports both text codes (FOUND, DEF, etc.) and numeric IDs (1, 2, etc.)
     # These are the display names (classifierName in schema) for each taxonomy
     taxonomy_names = {
-        # Text codes
+        # Custom taxonomies for conversational AI course
         'FOUND': 'Foundation Concepts',
+        'SEARCH': 'Search Technologies',
+        'METRIC': 'Search Quality Metrics',
+        'LLM': 'Language Models',
+        'EMBED': 'Embeddings and Vectors',
+        'CHAT': 'Chatbot Systems',
+        'RAG': 'RAG Patterns',
+        'GRAPH': 'Knowledge Graphs',
+        'NLP': 'NLP Processing',
+        'QUERY': 'Query Systems',
+        'SEC': 'Security and Privacy',
+        'EVAL': 'Evaluation and Optimization',
+        'TOOL': 'Tools and Projects',
+        # Standard/default text codes
         'DEF': 'Definitions',
         'CORE': 'Core Concepts',
         'INTER': 'Intermediate',
@@ -144,24 +171,36 @@ def csv_to_json(csv_path: str, json_path: str, color_config: dict = None, metada
     # Determine which taxonomy IDs are actually used
     used_taxonomies = set(node['group'] for node in nodes)
 
-    for tax_id, color in taxonomy_colors.items():
-        # Only include groups that are actually used
-        if tax_id in used_taxonomies:
-            # Get the classifier name for this taxonomy
-            classifier_name = taxonomy_names.get(tax_id, tax_id)
+    # Default colors to use when taxonomy not in color config
+    # Using CSS color names for better readability
+    fallback_colors = ['coral', 'turquoise', 'skyblue', 'mediumseagreen', 'khaki', 'peru',
+                       'chocolate', 'mediumpurple', 'tomato', 'cornflowerblue', 'slateblue', 'hotpink',
+                       'mediumaquamarine', 'paleturquoise', 'lightsalmon', 'lightcoral', 'gold', 'mediumslateblue']
 
-            # Determine font color based on background color
-            # Dark colors need white text
-            dark_colors = ['red', 'blue', 'indigo', 'violet', 'cyan']
-            font_color = 'white' if color in dark_colors else 'black'
+    for i, tax_id in enumerate(sorted(used_taxonomies)):
+        # Get color from config or use fallback
+        if tax_id in taxonomy_colors:
+            color = taxonomy_colors[tax_id]
+        else:
+            # Use fallback color cycling through the palette
+            color = fallback_colors[i % len(fallback_colors)]
 
-            groups[tax_id] = {
-                'classifierName': classifier_name,
-                'color': color,
-                'font': {
-                    'color': font_color
-                }
+        # Get the classifier name for this taxonomy
+        classifier_name = taxonomy_names.get(tax_id, tax_id)
+
+        # Determine font color based on background color
+        # Dark colors need white text
+        dark_colors = ['red', 'blue', 'indigo', 'violet', 'mediumpurple', 'chocolate',
+                       'peru', 'mediumseagreen', 'cornflowerblue', 'slateblue', 'mediumslateblue']
+        font_color = 'white' if color in dark_colors else 'black'
+
+        groups[tax_id] = {
+            'classifierName': classifier_name,
+            'color': color,
+            'font': {
+                'color': font_color
             }
+        }
 
     # Create final JSON structure
     graph_data = {
@@ -175,7 +214,7 @@ def csv_to_json(csv_path: str, json_path: str, color_config: dict = None, metada
     with open(json_path, 'w', encoding='utf-8') as f:
         json.dump(graph_data, f, indent=2)
 
-    print(f"✅ JSON graph created: {json_path}")
+    print(f"✅ JSON graph created: {json_path} (csv-to-json v{VERSION})")
     print(f"   - Title: {default_metadata['title']}")
     print(f"   - {len(groups)} groups/taxonomies")
     print(f"   - {len(nodes)} nodes")
@@ -187,50 +226,25 @@ def csv_to_json(csv_path: str, json_path: str, color_config: dict = None, metada
     return graph_data
 
 
-def create_taxonomy_legend(color_config: dict = None, taxonomy_names: dict = None):
+def create_taxonomy_legend(groups: dict = None):
     """
     Generate a legend of taxonomy colors for documentation.
 
     Args:
-        color_config: Dictionary mapping taxonomy IDs to colors
-        taxonomy_names: Dictionary mapping taxonomy IDs to classifier names
+        groups: Dictionary of groups from the generated JSON (contains classifierName, color, etc.)
     """
-    default_colors = {
-        'FOUND': 'red',
-        'DEF': 'orange',
-        'CORE': 'gold',
-        'INTER': 'green',
-        'ADV': 'blue',
-        'APPL': 'cyan',
-        'SPEC': 'indigo',
-        'PROJ': 'violet',
-        'CAP': 'gray',
-        'MISC': 'indigo',
-    }
-
-    default_names = {
-        'FOUND': 'Foundation Concepts',
-        'DEF': 'Definitions',
-        'CORE': 'Core Concepts',
-        'INTER': 'Intermediate',
-        'ADV': 'Advanced',
-        'APPL': 'Applied',
-        'SPEC': 'Specialized',
-        'PROJ': 'Project Ideas',
-        'CAP': 'Capstone Projects',
-        'MISC': 'Miscellaneous Concepts',
-    }
-
-    colors = color_config if color_config is not None else default_colors
-    names = taxonomy_names if taxonomy_names is not None else default_names
+    if not groups:
+        print("\n⚠️  No groups to display in legend")
+        return
 
     print("\n## Taxonomy Color Legend\n")
-    print("| TaxonomyID | Category | Color |")
-    print("|------------|----------|-------|")
-    for tax_id in sorted(colors.keys()):
-        name = names.get(tax_id, tax_id)
-        color = colors[tax_id]
-        print(f"| {tax_id} | {name} | {color} |")
+    print("| Category | TaxonomyID | Color |")
+    print("|----------|------------|-------|")
+    for tax_id in sorted(groups.keys()):
+        group_info = groups[tax_id]
+        name = group_info.get('classifierName', tax_id)
+        color = group_info.get('color', 'gray')
+        print(f"| {name} | {tax_id} | {color} |")
 
 
 if __name__ == "__main__":
@@ -283,7 +297,7 @@ if __name__ == "__main__":
             print(f"⚠️  Metadata file not found: {metadata_file}, using defaults")
 
     graph_data = csv_to_json(csv_path, json_path, color_config, metadata)
-    create_taxonomy_legend(color_config)
+    create_taxonomy_legend(graph_data['groups'])
 
     print("\n✅ CSV to JSON format complete.  Ready to use with graph-viewer!")
     print(f"   Validate with: ./src/schema/validate-learning-graph.sh {json_path}")
