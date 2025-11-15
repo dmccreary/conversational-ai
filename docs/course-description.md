@@ -112,15 +112,62 @@ After this course, students will be able to:
 
 ### Remember
 
+- Define key terms including LLM, tokenization, embeddings, vector stores, and RAG
+- List the components of a conversational AI system
+- Identify the differences between keyword search and semantic search
+- Recall the metrics used to measure search quality (precision, recall, F-measures)
+- Name common chatbot frameworks and JavaScript libraries
+- Recognize the structure of NLP pipelines
+
 ### Understand
+
+- Explain how semantic search improves upon traditional keyword search
+- Describe the RAG (Retrieval Augmented Generation) pattern and its components
+- Summarize the limitations of RAG and how GraphRAG addresses them
+- Discuss the role of reverse indexes and Page Rank in search performance
+- Explain how embeddings and vector stores enable semantic search
+- Interpret chatbot KPIs and dashboard metrics
+- Clarify the importance of knowledge graphs as organizational nervous systems
 
 ### Apply
 
+- Build a simple chatbot using keyword search
+- Implement a RAG-based chatbot using embeddings and vector stores
+- Use NLP pipelines to process and analyze text
+- Apply TF-IDF techniques for text analysis
+- Configure logging for chatbot responses
+- Execute queries with extracted parameters from user questions
+- Implement role-based access control for chatbot queries
+
 ### Analyze
+
+- Compare the effectiveness of keyword search versus semantic search
+- Examine chatbot logs to identify frequently asked questions with incorrect answers
+- Perform Pareto analysis on query frequency data
+- Break down the differences between RAG and GraphRAG patterns
+- Differentiate between external public knowledge and internal private knowledge sources
+- Analyze user feedback to improve chatbot performance
+- Investigate privacy concerns related to storing PII in chat logs
 
 ### Evaluate
 
+- Assess chatbot response quality using appropriate metrics
+- Critique the trade-offs between different search approaches
+- Judge the acceptance rate and user satisfaction of chatbot responses
+- Evaluate the security implications of query execution and user permissions
+- Determine which chatbot framework best fits specific use cases
+- Appraise the performance trade-offs in chatbot design decisions
+- Measure and evaluate the effectiveness of intent modeling approaches
+
 ### Create
+
+- Design and develop a complete RAG-based chatbot system
+- Construct a GraphRAG implementation with curated knowledge graphs
+- Generate a chatbot dashboard with relevant KPIs and metrics
+- Develop an entity extraction system for building knowledge graphs
+- Design a query matching system that extracts parameters from natural language questions
+- Produce a comprehensive chatbot evaluation framework
+- Complete a capstone project integrating multiple conversational AI concepts
 
 
 
