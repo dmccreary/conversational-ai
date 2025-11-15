@@ -73,6 +73,8 @@ nav:
     - FAQ Quality Report: learning-graph/faq-quality-report.md
     - FAQ Coverage Gaps: learning-graph/faq-coverage-gaps.md
     - Quiz Generation Report: learning-graph/quiz-generation-report.md
+    - Book Metrics: learning-graph/book-metrics.md
+    - Chapter Metrics: learning-graph/chapter-metrics.md
 
   - Sample Prompts:
     - prompts/01-bloom-taxonomy-enrichment.md
