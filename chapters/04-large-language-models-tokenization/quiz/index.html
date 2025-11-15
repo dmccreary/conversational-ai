@@ -1,0 +1,1927 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A college level course on creating chatbots using AI.">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/conversational-ai/chapters/04-large-language-models-tokenization/quiz/">
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../../05-embeddings-vector-databases/">
+      
+      
+      <link rel="icon" href="../../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+    
+    
+      
+        <title>Quiz - Conversational AI</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../css/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+      
+        <meta  property="og:type"  content="website" >
+      
+        <meta  property="og:title"  content="Quiz - Conversational AI" >
+      
+        <meta  property="og:description"  content="A college level course on creating chatbots using AI." >
+      
+        <meta  property="og:image"  content="https://dmccreary.github.io/conversational-ai/assets/images/social/chapters/04-large-language-models-tokenization/quiz.png" >
+      
+        <meta  property="og:image:type"  content="image/png" >
+      
+        <meta  property="og:image:width"  content="1200" >
+      
+        <meta  property="og:image:height"  content="630" >
+      
+        <meta  property="og:url"  content="https://dmccreary.github.io/conversational-ai/chapters/04-large-language-models-tokenization/quiz/" >
+      
+        <meta  name="twitter:card"  content="summary_large_image" >
+      
+        <meta  name="twitter:title"  content="Quiz - Conversational AI" >
+      
+        <meta  name="twitter:description"  content="A college level course on creating chatbots using AI." >
+      
+        <meta  name="twitter:image"  content="https://dmccreary.github.io/conversational-ai/assets/images/social/chapters/04-large-language-models-tokenization/quiz.png" >
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#chapter-4-quiz-large-language-models-and-tokenization" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Conversational AI" class="md-header__button md-logo" aria-label="Conversational AI" data-md-component="logo">
+      
+  <img src="../../../img/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Conversational AI
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Quiz
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/conversational-ai" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Conversational AI" class="md-nav__button md-logo" aria-label="Conversational AI" data-md-component="logo">
+      
+  <img src="../../../img/logo.png" alt="logo">
+
+    </a>
+    Conversational AI
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/conversational-ai" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../About.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../course-description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Chapters
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../01-foundations-ai-nlp/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Chapter 1 - Foundations of AI and NLP
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../02-search-technologies-indexing/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Chapter 2 - Search Technologies and Indexing
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../03-semantic-search-quality-metrics/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Chapter 3 - Semantic Search and Quality Metrics
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Chapter 4 - Large Language Models and Tokenization
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_5">
+            <span class="md-nav__icon md-icon"></span>
+            Chapter 4 - Large Language Models and Tokenization
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Quiz
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Quiz
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#question-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Question 1
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Question 2
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Question 3
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Question 4
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Question 5
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Question 6
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-7" class="md-nav__link">
+    <span class="md-ellipsis">
+      Question 7
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-8" class="md-nav__link">
+    <span class="md-ellipsis">
+      Question 8
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-9" class="md-nav__link">
+    <span class="md-ellipsis">
+      Question 9
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-10" class="md-nav__link">
+    <span class="md-ellipsis">
+      Question 10
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../05-embeddings-vector-databases/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Chapter 5 - Embeddings and Vector Databases
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../06-building-chatbots-intent/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Chapter 6 - Building Chatbots and Intent Recognition
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../07-chatbot-frameworks-ui/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Chapter 7 - Chatbot Frameworks and User Interfaces
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../08-user-feedback-improvement/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Chapter 8 - User Feedback and Continuous Improvement
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../09-rag-pattern/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Chapter 9 - The RAG Pattern
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../10-knowledge-graphs-graphrag/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Chapter 10 - Knowledge Graphs and GraphRAG
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../11-nlp-pipelines-processing/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Chapter 11 - NLP Pipelines and Text Processing
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../12-database-queries-parameters/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Chapter 12 - Database Queries and Parameter Extraction
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../13-security-privacy-users/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Chapter 13 - Security Privacy and User Management
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../14-evaluation-optimization-careers/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Chapter 14 - Evaluation Optimization and Career Development
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../sims/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    MicroSims
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../learning-graph/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Learning Graph
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../prompts/01-bloom-taxonomy-enrichment/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Prompts
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../glossary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Glossary
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../how-we-built-this-site/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    How We Built This Site
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../references/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    References
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../feedback/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Feedback
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../license/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    License
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../contact/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contact
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#question-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Question 1
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Question 2
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Question 3
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Question 4
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Question 5
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Question 6
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-7" class="md-nav__link">
+    <span class="md-ellipsis">
+      Question 7
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-8" class="md-nav__link">
+    <span class="md-ellipsis">
+      Question 8
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-9" class="md-nav__link">
+    <span class="md-ellipsis">
+      Question 9
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-10" class="md-nav__link">
+    <span class="md-ellipsis">
+      Question 10
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/dmccreary/conversational-ai/blob/master/docs/chapters/04-large-language-models-tokenization/quiz.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="chapter-4-quiz-large-language-models-and-tokenization">Chapter 4 Quiz: Large Language Models and Tokenization</h1>
+<p>Test your understanding of large language models and tokenization concepts covered in this chapter.</p>
+<hr />
+<h2 id="question-1">Question 1</h2>
+<div class="upper-alpha">
+<p>What is a Large Language Model (LLM)?</p>
+<ol>
+<li>A small database of predefined responses</li>
+<li>A neural network trained on vast amounts of text to understand and generate language</li>
+<li>A rule-based system for grammar checking</li>
+<li>A simple keyword matching algorithm</li>
+</ol>
+<details class="question">
+<summary>Show Answer</summary>
+<p>The correct answer is <strong>B</strong>.</p>
+<p>A <a href="../#llm">Large Language Model</a> is a neural network trained on vast amounts of text data to understand and generate human language. LLMs like GPT, Claude, and others can perform a wide range of language tasks. Option A describes a much simpler FAQ system, option C describes grammar checkers, and option D describes basic search systems.</p>
+</details>
+</div>
+<hr />
+<h2 id="question-2">Question 2</h2>
+<div class="upper-alpha">
+<p>What is the fundamental architecture that powers most modern LLMs?</p>
+<ol>
+<li>Convolutional Neural Networks</li>
+<li>Recurrent Neural Networks</li>
+<li>Transformer architecture</li>
+<li>Decision trees</li>
+</ol>
+<details class="question">
+<summary>Show Answer</summary>
+<p>The correct answer is <strong>C</strong>.</p>
+<p>The <a href="../#transformer-architecture">Transformer architecture</a> is the fundamental design that powers most modern LLMs. Introduced in the "Attention Is All You Need" paper, it uses attention mechanisms to process sequences in parallel rather than sequentially. CNNs (option A) are primarily used for image processing, RNNs (option B) were used for sequences before transformers but are now less common for LLMs, and decision trees (option D) are not used for language modeling.</p>
+</details>
+</div>
+<hr />
+<h2 id="question-3">Question 3</h2>
+<div class="upper-alpha">
+<p>What is a token in the context of LLMs?</p>
+<ol>
+<li>A password for authentication</li>
+<li>The basic unit of text that an LLM processes, such as a word or subword</li>
+<li>A type of database query</li>
+<li>A programming variable</li>
+</ol>
+<details class="question">
+<summary>Show Answer</summary>
+<p>The correct answer is <strong>B</strong>.</p>
+<p>A <a href="../#token">token</a> is the basic unit of text that an LLM processes. Tokens can be whole words, parts of words, or even individual characters, depending on the tokenization algorithm. LLMs process sequences of tokens rather than raw text. Option A relates to security, option C to databases, and option D to programming.</p>
+</details>
+</div>
+<hr />
+<h2 id="question-4">Question 4</h2>
+<div class="upper-alpha">
+<p>What does the attention mechanism in transformers allow the model to do?</p>
+<ol>
+<li>Focus on relevant parts of the input when processing each token</li>
+<li>Delete irrelevant information from the training data</li>
+<li>Authenticate users</li>
+<li>Compress text files</li>
+</ol>
+<details class="question">
+<summary>Show Answer</summary>
+<p>The correct answer is <strong>A</strong>.</p>
+<p>The <a href="../#attention-mechanism">attention mechanism</a> allows the model to focus on relevant parts of the input sequence when processing each token. It computes relationships between different positions in the sequence, enabling the model to understand context and dependencies. Options B, C, and D describe different functionalities not related to the attention mechanism.</p>
+</details>
+</div>
+<hr />
+<h2 id="question-5">Question 5</h2>
+<div class="upper-alpha">
+<p>What is tokenization?</p>
+<ol>
+<li>The process of encrypting sensitive data</li>
+<li>The process of converting text into tokens that an LLM can process</li>
+<li>The process of authenticating users</li>
+<li>The process of compressing files</li>
+</ol>
+<details class="question">
+<summary>Show Answer</summary>
+<p>The correct answer is <strong>B</strong>.</p>
+<p><a href="../#tokenization">Tokenization</a> is the process of converting raw text into tokens that an LLM can process. Different tokenization methods split text in different ways, affecting how the model interprets language. Option A describes encryption, option C describes authentication, and option D describes compression.</p>
+</details>
+</div>
+<hr />
+<h2 id="question-6">Question 6</h2>
+<div class="upper-alpha">
+<p>What is Byte Pair Encoding (BPE)?</p>
+<ol>
+<li>A data compression algorithm only</li>
+<li>A tokenization algorithm that iteratively merges frequent character pairs</li>
+<li>An encryption method</li>
+<li>A database indexing technique</li>
+</ol>
+<details class="question">
+<summary>Show Answer</summary>
+<p>The correct answer is <strong>B</strong>.</p>
+<p><a href="../#byte-pair-encoding">Byte Pair Encoding</a> is a tokenization algorithm that starts with characters and iteratively merges the most frequent pairs to create a vocabulary of subword units. This allows LLMs to handle rare words and new words by breaking them into familiar subword tokens. While BPE originated as a compression algorithm (option A), in LLMs it's used specifically for tokenization. Options C and D are unrelated.</p>
+</details>
+</div>
+<hr />
+<h2 id="question-7">Question 7</h2>
+<div class="upper-alpha">
+<p>Why do LLMs use subword tokenization methods like BPE?</p>
+<ol>
+<li>To make the model smaller</li>
+<li>To handle rare and out-of-vocabulary words efficiently</li>
+<li>To speed up training by 100x</li>
+<li>To eliminate the need for training data</li>
+</ol>
+<details class="question">
+<summary>Show Answer</summary>
+<p>The correct answer is <strong>B</strong>.</p>
+<p>Subword <a href="../#tokenization">tokenization</a> methods like <a href="../#byte-pair-encoding">BPE</a> allow LLMs to handle rare and out-of-vocabulary words efficiently by breaking them into known subword units. This provides a balance between character-level and word-level tokenization. Option A is not the primary goal, option C overstates performance gains, and option D is false (training data is still essential).</p>
+</details>
+</div>
+<hr />
+<h2 id="question-8">Question 8</h2>
+<div class="upper-alpha">
+<p>What is the typical input/output format for transformer-based LLMs?</p>
+<ol>
+<li>Audio to video</li>
+<li>Images to text</li>
+<li>Sequences of tokens to sequences of tokens</li>
+<li>Binary code to assembly language</li>
+</ol>
+<details class="question">
+<summary>Show Answer</summary>
+<p>The correct answer is <strong>C</strong>.</p>
+<p><a href="../#transformer-architecture">Transformer</a> based LLMs process sequences of <a href="../#token">tokens</a> and generate sequences of tokens as output. The input text is tokenized, processed through the transformer layers, and the output tokens are converted back to text. Some modern models are multimodal (option B is becoming possible), but the core transformer processes token sequences. Options A and D are not typical LLM applications.</p>
+</details>
+</div>
+<hr />
+<h2 id="question-9">Question 9</h2>
+<div class="upper-alpha">
+<p>In the attention mechanism, what does "self-attention" mean?</p>
+<ol>
+<li>The model pays attention only to its own previous outputs</li>
+<li>The model computes attention scores between different positions within the same sequence</li>
+<li>The model ignores external inputs</li>
+<li>The model only processes one token at a time</li>
+</ol>
+<details class="question">
+<summary>Show Answer</summary>
+<p>The correct answer is <strong>B</strong>.</p>
+<p>Self-<a href="../#attention-mechanism">attention</a> means the model computes attention scores between different positions within the same input sequence. This allows each token to "attend to" other relevant tokens in the same sequence, capturing relationships and context. Option A is incorrect (it considers all positions), option C is misleading, and option D contradicts the parallel processing nature of transformers.</p>
+</details>
+</div>
+<hr />
+<h2 id="question-10">Question 10</h2>
+<div class="upper-alpha">
+<p>How does tokenization affect the cost of using an LLM API?</p>
+<ol>
+<li>It doesn't affect cost at all</li>
+<li>More tokens generally mean higher costs since pricing is often per token</li>
+<li>Fewer tokens always cost more</li>
+<li>Only the number of characters matters, not tokens</li>
+</ol>
+<details class="question">
+<summary>Show Answer</summary>
+<p>The correct answer is <strong>B</strong>.</p>
+<p>Most LLM APIs charge based on the number of <a href="../#token">tokens</a> processed (both input and output), so more tokens generally mean higher costs. Understanding <a href="../#tokenization">tokenization</a> is important for estimating and optimizing API costs. Option A is false for most providers, option C is backwards, and option D is incorrect since providers charge per token, not per character.</p>
+</details>
+</div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Content">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Content
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../../05-embeddings-vector-databases/" class="md-footer__link md-footer__link--next" aria-label="Next: Content">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Content
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer", "content.action.edit"], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+        <script src="../../../js/extra.js"></script>
+      
+    
+  </body>
+</html>
