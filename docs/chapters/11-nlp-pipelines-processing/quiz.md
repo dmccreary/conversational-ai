@@ -18,7 +18,7 @@ What is an NLP pipeline?
 ??? question "Show Answer"
     The correct answer is **B**.
 
-    An [NLP pipeline](index.md#nlp-pipeline) is a sequence of processing steps that transform raw text into structured information. Each step performs a specific task like tokenization, part-of-speech tagging, or entity recognition. Option A describes physical infrastructure, option C describes database optimization, and option D describes networking.
+    An [NLP pipeline](../../glossary.md#nlp-pipeline) is a sequence of processing steps that transform raw text into structured information. Each step performs a specific task like tokenization, part-of-speech tagging, or entity recognition. Option A describes physical infrastructure, option C describes database optimization, and option D describes networking.
 
 </div>
 
@@ -38,7 +38,7 @@ What is text preprocessing?
 ??? question "Show Answer"
     The correct answer is **B**.
 
-    [Text preprocessing](index.md#text-preprocessing) is the initial step of cleaning and normalizing raw text before analysis. This includes removing unwanted characters, converting to lowercase, handling whitespace, and other normalization tasks to prepare text for further NLP processing. Options A, C, and D describe different activities unrelated to text preparation.
+    [Text preprocessing](../../glossary.md#text-preprocessing) is the initial step of cleaning and normalizing raw text before analysis. This includes removing unwanted characters, converting to lowercase, handling whitespace, and other normalization tasks to prepare text for further NLP processing. Options A, C, and D describe different activities unrelated to text preparation.
 
 </div>
 
@@ -58,7 +58,7 @@ What is tokenization in NLP?
 ??? question "Show Answer"
     The correct answer is **B**.
 
-    [Tokenization](index.md#tokenization) in NLP is the process of breaking text into smaller units (tokens) such as words, sentences, or subwords. This is typically the first step in an NLP pipeline after preprocessing. Option A describes security tokens, option C describes blockchain, and option D describes database optimization.
+    [Tokenization](../../glossary.md#tokenization) in NLP is the process of breaking text into smaller units (tokens) such as words, sentences, or subwords. This is typically the first step in an NLP pipeline after preprocessing. Option A describes security tokens, option C describes blockchain, and option D describes database optimization.
 
 </div>
 
@@ -78,7 +78,7 @@ What is stemming?
 ??? question "Show Answer"
     The correct answer is **A**.
 
-    [Stemming](index.md#stemming) is the process of reducing words to their root or base form by removing suffixes. For example, "running," "runs," and "ran" might all be reduced to "run." This helps treat different forms of the same word as equivalent. Options B, C, and D describe unrelated activities.
+    [Stemming](../../glossary.md#stemming) is the process of reducing words to their root or base form by removing suffixes. For example, "running," "runs," and "ran" might all be reduced to "run." This helps treat different forms of the same word as equivalent. Options B, C, and D describe unrelated activities.
 
 </div>
 
@@ -98,7 +98,7 @@ What is lemmatization?
 ??? question "Show Answer"
     The correct answer is **B**.
 
-    [Lemmatization](index.md#lemmatization) is the process of reducing words to their dictionary base form (lemma) using vocabulary and linguistic rules. Unlike stemming, lemmatization produces actual words. For example, "better" would be lemmatized to "good." Options A, C, and D describe different operations.
+    [Lemmatization](../../glossary.md#lemmatization) is the process of reducing words to their dictionary base form (lemma) using vocabulary and linguistic rules. Unlike stemming, lemmatization produces actual words. For example, "better" would be lemmatized to "good." Options A, C, and D describe different operations.
 
 </div>
 
@@ -118,7 +118,7 @@ What is Part-of-Speech (POS) tagging?
 ??? question "Show Answer"
     The correct answer is **B**.
 
-    [Part-of-Speech tagging](index.md#part-of-speech-tagging) is the process of identifying the grammatical role of each word in a sentence (noun, verb, adjective, etc.). This linguistic information is valuable for many NLP tasks like parsing and entity recognition. Option A describes social media, option C describes image metadata, and option D describes hashtags.
+    [Part-of-Speech tagging](../../glossary.md#part-of-speech-tagging) is the process of identifying the grammatical role of each word in a sentence (noun, verb, adjective, etc.). This linguistic information is valuable for many NLP tasks like parsing and entity recognition. Option A describes social media, option C describes image metadata, and option D describes hashtags.
 
 </div>
 
@@ -138,7 +138,7 @@ What is the main difference between stemming and lemmatization?
 ??? question "Show Answer"
     The correct answer is **A**.
 
-    [Stemming](index.md#stemming) is typically faster but cruder, using simple rules to chop off word endings. [Lemmatization](index.md#lemmatization) uses vocabulary and morphological analysis to produce actual dictionary words, making it more accurate but computationally expensive. Option B is false, option C is incorrect (stemming works with many languages), and option D is backwards.
+    [Stemming](../../glossary.md#stemming) is typically faster but cruder, using simple rules to chop off word endings. [Lemmatization](../../glossary.md#lemmatization) uses vocabulary and morphological analysis to produce actual dictionary words, making it more accurate but computationally expensive. Option B is false, option C is incorrect (stemming works with many languages), and option D is backwards.
 
 </div>
 
@@ -158,7 +158,7 @@ Which preprocessing step would convert "The QUICK Brown Fox" to "the quick brown
 ??? question "Show Answer"
     The correct answer is **C**.
 
-    Case normalization, specifically lowercasing, is a [text preprocessing](index.md#text-preprocessing) step that converts all text to lowercase, making "The QUICK Brown Fox" become "the quick brown fox." This helps treat the same words in different cases as identical. Tokenization (option A) splits text, stemming (option B) reduces to stems, and lemmatization (option D) reduces to lemmas.
+    Case normalization, specifically lowercasing, is a [text preprocessing](../../glossary.md#text-preprocessing) step that converts all text to lowercase, making "The QUICK Brown Fox" become "the quick brown fox." This helps treat the same words in different cases as identical. Tokenization (option A) splits text, stemming (option B) reduces to stems, and lemmatization (option D) reduces to lemmas.
 
 </div>
 
@@ -178,7 +178,7 @@ Why is tokenization an important first step in NLP pipelines?
 ??? question "Show Answer"
     The correct answer is **B**.
 
-    [Tokenization](index.md#tokenization) is crucial because it breaks text into manageable units (tokens) that can be processed individually by subsequent steps in the [NLP pipeline](index.md#nlp-pipeline). Most NLP algorithms operate on tokens rather than raw text. Option A describes encryption, option C describes translation, and option D describes compression.
+    [Tokenization](../../glossary.md#tokenization) is crucial because it breaks text into manageable units (tokens) that can be processed individually by subsequent steps in the [NLP pipeline](../../glossary.md#nlp-pipeline). Most NLP algorithms operate on tokens rather than raw text. Option A describes encryption, option C describes translation, and option D describes compression.
 
 </div>
 
@@ -198,6 +198,6 @@ In an NLP pipeline for a chatbot, which processing step would typically come fir
 ??? question "Show Answer"
     The correct answer is **C**.
 
-    [Text preprocessing](index.md#text-preprocessing) and [tokenization](index.md#tokenization) typically come first in an [NLP pipeline](index.md#nlp-pipeline), as they prepare and structure the raw text for subsequent analysis. Part-of-speech tagging (option A), entity recognition (option B), and sentiment analysis (option D) all depend on having preprocessed and tokenized text.
+    [Text preprocessing](../../glossary.md#text-preprocessing) and [tokenization](../../glossary.md#tokenization) typically come first in an [NLP pipeline](../../glossary.md#nlp-pipeline), as they prepare and structure the raw text for subsequent analysis. Part-of-speech tagging (option A), entity recognition (option B), and sentiment analysis (option D) all depend on having preprocessed and tokenized text.
 
 </div>

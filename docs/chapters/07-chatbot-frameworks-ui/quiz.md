@@ -18,7 +18,7 @@ What is a chatbot framework?
 ??? question "Show Answer"
     The correct answer is **B**.
 
-    A [chatbot framework](index.md#chatbot-framework) is a software library or platform that provides pre-built tools, components, and abstractions for building chatbots more efficiently. Frameworks handle common tasks like intent recognition, dialog management, and integrations. Option A describes hardware, option C describes storage, and option D is one component of chatbot development.
+    A [chatbot framework](../../glossary.md#chatbot-framework) is a software library or platform that provides pre-built tools, components, and abstractions for building chatbots more efficiently. Frameworks handle common tasks like intent recognition, dialog management, and integrations. Option A describes hardware, option C describes storage, and option D is one component of chatbot development.
 
 </div>
 
@@ -38,7 +38,7 @@ What is LangChain?
 ??? question "Show Answer"
     The correct answer is **B**.
 
-    [LangChain](index.md#langchain) is a framework for building applications with large language models. It provides tools for chaining together different operations, managing prompts, integrating with vector databases, and creating complex LLM-powered workflows. Option A is a play on the name but incorrect, option C describes translation tools, and option D is incorrect.
+    [LangChain](../../glossary.md#langchain) is a framework for building applications with large language models. It provides tools for chaining together different operations, managing prompts, integrating with vector databases, and creating complex LLM-powered workflows. Option A is a play on the name but incorrect, option C describes translation tools, and option D is incorrect.
 
 </div>
 
@@ -58,7 +58,7 @@ What is LlamaIndex primarily designed for?
 ??? question "Show Answer"
     The correct answer is **B**.
 
-    [LlamaIndex](index.md#llamaindex) (formerly GPT Index) is primarily designed for connecting LLMs to external data sources. It helps create searchable indexes of your data and provides tools for retrieval-augmented generation (RAG). Option A is not its main purpose, option C relates to security frameworks, and option D relates to UI libraries.
+    [LlamaIndex](../../glossary.md#llamaindex) (formerly GPT Index) is primarily designed for connecting LLMs to external data sources. It helps create searchable indexes of your data and provides tools for retrieval-augmented generation (RAG). Option A is not its main purpose, option C relates to security frameworks, and option D relates to UI libraries.
 
 </div>
 
@@ -78,7 +78,7 @@ What is Rasa?
 ??? question "Show Answer"
     The correct answer is **B**.
 
-    [Rasa](index.md#rasa) is an open-source framework for building contextual AI assistants and chatbots. It provides tools for natural language understanding, dialog management, and can be deployed on-premises for data privacy. Option A describes services like AWS S3, option C describes systems like PostgreSQL, and option D describes software like Chrome.
+    [Rasa](../../glossary.md#rasa) is an open-source framework for building contextual AI assistants and chatbots. It provides tools for natural language understanding, dialog management, and can be deployed on-premises for data privacy. Option A describes services like AWS S3, option C describes systems like PostgreSQL, and option D describes software like Chrome.
 
 </div>
 
@@ -98,7 +98,7 @@ What is a chat interface?
 ??? question "Show Answer"
     The correct answer is **A**.
 
-    A [chat interface](index.md#chat-interface) is the visual and interactive component through which users communicate with a chatbot. It typically includes a message input area, conversation history, and may include buttons, quick replies, or other interactive elements. Options B, C, and D describe backend components rather than user-facing interfaces.
+    A [chat interface](../../glossary.md#chat-interface) is the visual and interactive component through which users communicate with a chatbot. It typically includes a message input area, conversation history, and may include buttons, quick replies, or other interactive elements. Options B, C, and D describe backend components rather than user-facing interfaces.
 
 </div>
 
@@ -118,7 +118,7 @@ What is the primary purpose of a user interface in chatbot design?
 ??? question "Show Answer"
     The correct answer is **B**.
 
-    The [user interface](index.md#user-interface) provides an intuitive way for users to interact with the chatbot, making it easy to send messages, view responses, and navigate conversations. A well-designed UI is crucial for user adoption and satisfaction. Option A describes databases, option C describes the training process, and option D describes infrastructure management.
+    The [user interface](../../glossary.md#user-interface) provides an intuitive way for users to interact with the chatbot, making it easy to send messages, view responses, and navigate conversations. A well-designed UI is crucial for user adoption and satisfaction. Option A describes databases, option C describes the training process, and option D describes infrastructure management.
 
 </div>
 
@@ -138,7 +138,7 @@ Which feature is commonly provided by chatbot frameworks?
 ??? question "Show Answer"
     The correct answer is **B**.
 
-    [Chatbot frameworks](index.md#chatbot-framework) commonly provide features like intent recognition, dialog management, entity extraction, and integration capabilities. These core features help developers build conversational AI without implementing everything from scratch. Options A, C, and D are unrelated to chatbot development.
+    [Chatbot frameworks](../../glossary.md#chatbot-framework) commonly provide features like intent recognition, dialog management, entity extraction, and integration capabilities. These core features help developers build conversational AI without implementing everything from scratch. Options A, C, and D are unrelated to chatbot development.
 
 </div>
 
@@ -158,7 +158,7 @@ What advantage does LangChain provide for LLM applications?
 ??? question "Show Answer"
     The correct answer is **B**.
 
-    [LangChain](index.md#langchain) provides reusable components and chains for common LLM patterns, making it easier to build complex applications. It supports multiple LLMs and integrations, enabling developers to create sophisticated workflows without building everything from scratch. Option A contradicts its purpose, option C is false (it supports multiple LLMs), and option D is incorrect.
+    [LangChain](../../glossary.md#langchain) provides reusable components and chains for common LLM patterns, making it easier to build complex applications. It supports multiple LLMs and integrations, enabling developers to create sophisticated workflows without building everything from scratch. Option A contradicts its purpose, option C is false (it supports multiple LLMs), and option D is incorrect.
 
 </div>
 
@@ -178,7 +178,7 @@ What makes Rasa particularly attractive for enterprise deployments?
 ??? question "Show Answer"
     The correct answer is **B**.
 
-    [Rasa](index.md#rasa) is attractive for enterprise deployments because it's open-source and can be deployed on-premises, giving organizations complete control over their data and ensuring privacy compliance. Option A is false (it can run anywhere), option C is unrealistic, and option D is incorrect.
+    [Rasa](../../glossary.md#rasa) is attractive for enterprise deployments because it's open-source and can be deployed on-premises, giving organizations complete control over their data and ensuring privacy compliance. Option A is false (it can run anywhere), option C is unrealistic, and option D is incorrect.
 
 </div>
 
@@ -198,6 +198,6 @@ What is an important consideration when designing a chat interface?
 ??? question "Show Answer"
     The correct answer is **C**.
 
-    A good [chat interface](index.md#chat-interface) should have a clear, responsive design that works across different devices (desktop, mobile, tablet). Users should be able to easily read messages, type responses, and navigate the conversation regardless of their device. Option A would harm usability, option B limits accessibility, and option D would confuse users.
+    A good [chat interface](../../glossary.md#chat-interface) should have a clear, responsive design that works across different devices (desktop, mobile, tablet). Users should be able to easily read messages, type responses, and navigate the conversation regardless of their device. Option A would harm usability, option B limits accessibility, and option D would confuse users.
 
 </div>

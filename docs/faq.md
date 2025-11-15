@@ -52,7 +52,7 @@ As a typical college course, expect to invest 9-12 hours per week including clas
 
 You'll primarily use Python for chatbot development, working with frameworks like LangChain and LlamaIndex. Tools include vector databases (FAISS, Pinecone, Weaviate), graph databases (Neo4j with Cypher queries), and JavaScript libraries for frontend interfaces. You'll also work with Git/GitHub for version control, VSCode as your IDE, and various APIs for LLM integration.
 
-See [Tools & Frameworks](course-description.md#tools--frameworks) for the complete list.
+See [Tools & Frameworks](course-description.md#tools-frameworks) for the complete list.
 
 ### Will I learn to train my own language models?
 
@@ -64,7 +64,7 @@ See [What We're NOT Covering](course-description.md#what-were-not-covering-and-w
 
 This course prepares you for roles including Conversational AI Engineer, Chatbot Developer, NLP Specialist, AI Integration Engineer, and ML Engineer focused on applications rather than research. The skills are in high demand as organizations adopt AI for customer service, internal knowledge management, and process automation.
 
-See [Chatbot Careers](course-description.md#chatbot-career) and [Professional Development](course-description.md#professional-development).
+See [Chatbot Careers](glossary.md#chatbot-career) and [Professional Development](course-description.md#professional-development).
 
 ### How do I navigate this textbook?
 
@@ -376,7 +376,7 @@ Inconsistent answers often stem from poor prompt engineering, lack of context ma
 
 Reduce hallucination through: (1) RAG - ground responses in retrieved documents rather than relying on model knowledge alone, (2) Prompt engineering - explicitly instruct the model to only use provided context and admit when it doesn't know, (3) Citation - require the model to cite sources for factual claims, (4) Confidence scoring - have the model rate its confidence and filter low-confidence responses, (5) Validation - implement post-generation fact-checking against known sources, and (6) Human review - for critical applications, use human-in-the-loop validation.
 
-See [Chapter 9: The RAG Pattern](chapters/09-rag-pattern/index.md#hallucination).
+See [Hallucination](glossary.md#hallucination) in the glossary.
 
 ### My vector search is returning irrelevant results. How do I fix this?
 
@@ -392,7 +392,7 @@ Implement graceful out-of-domain handling: (1) Intent classification - detect ou
 
 Optimize response latency through: (1) Caching - cache frequent queries and their responses, (2) Smaller models - use smaller/faster LLMs for simple queries, larger models only when needed, (3) Streaming - stream responses token-by-token rather than waiting for completion, (4) Index optimization - optimize vector database indexes for faster retrieval, (5) Prompt optimization - shorter prompts generate faster responses, (6) Parallel processing - run retrieval and some processing steps in parallel, and (7) Regional deployment - deploy models closer to users geographically.
 
-See [Chapter 14: Evaluation, Optimization, and Careers](chapters/14-evaluation-optimization-careers/index.md#performance-tuning).
+See [Performance Tuning](glossary.md#performance-tuning) in the glossary.
 
 ### My chatbot works in testing but fails in production. Why?
 
@@ -460,7 +460,7 @@ See [Chapter 10: Knowledge Graphs and GraphRAG](chapters/10-knowledge-graphs-gra
 
 Effective system prompts should: (1) Define role - clearly state who the assistant is and what it does, (2) Set boundaries - specify what topics are in/out of scope, (3) Provide guidelines - explain how to format responses, when to admit uncertainty, citation requirements, (4) Include examples - show desired response patterns, (5) Set tone - specify whether formal, casual, technical, friendly, (6) Safety instructions - include guidelines for handling sensitive topics, (7) Constraints - specify response length, structure, prohibited behaviors, and (8) Quality standards - emphasize accuracy, helpfulness, conciseness. Test system prompts extensively and iterate based on real usage.
 
-See [Chapter 9: The RAG Pattern](chapters/09-rag-pattern/index.md#prompt-engineering).
+See [Prompt Engineering](glossary.md#prompt-engineering) in the glossary.
 
 ### What's the best approach for handling multilingual chatbots?
 
@@ -520,7 +520,7 @@ See [Chapter 5: Embeddings and Vector Databases](chapters/05-embeddings-vector-d
 
 Implement continuous improvement through: (1) Feedback loops - actively collect user feedback and analyze patterns, (2) A/B testing - continuously test variations in prompts, retrieval, models, (3) Active learning - identify uncertain/low-confidence cases for human review and labeling, (4) Pareto analysis - focus improvements on the 20% of queries that account for 80% of volume or issues, (5) Drift detection - monitor for changes in query patterns or performance degradation, (6) Regular retraining - periodically retrain intent classifiers and other ML components on new data, (7) Knowledge base maintenance - review and update content based on feedback and changing information, (8) Benchmark tracking - maintain evaluation sets and track performance over time, and (9) Team reviews - regular reviews of challenging queries and failure cases. Make improvement systematic, not ad-hoc.
 
-See [Chapter 8: User Feedback and Improvement](chapters/08-user-feedback-improvement/index.md#ai-flywheel).
+See [AI Flywheel](glossary.md#ai-flywheel) in the glossary.
 
 ### How do I architect a chatbot system for high availability?
 

@@ -18,7 +18,7 @@ What is a Large Language Model (LLM)?
 ??? question "Show Answer"
     The correct answer is **B**.
 
-    A [Large Language Model](index.md#llm) is a neural network trained on vast amounts of text data to understand and generate human language. LLMs like GPT, Claude, and others can perform a wide range of language tasks. Option A describes a much simpler FAQ system, option C describes grammar checkers, and option D describes basic search systems.
+    A [Large Language Model](../../glossary.md#large-language-model) is a neural network trained on vast amounts of text data to understand and generate human language. LLMs like GPT, Claude, and others can perform a wide range of language tasks. Option A describes a much simpler FAQ system, option C describes grammar checkers, and option D describes basic search systems.
 
 </div>
 
@@ -38,7 +38,7 @@ What is the fundamental architecture that powers most modern LLMs?
 ??? question "Show Answer"
     The correct answer is **C**.
 
-    The [Transformer architecture](index.md#transformer-architecture) is the fundamental design that powers most modern LLMs. Introduced in the "Attention Is All You Need" paper, it uses attention mechanisms to process sequences in parallel rather than sequentially. CNNs (option A) are primarily used for image processing, RNNs (option B) were used for sequences before transformers but are now less common for LLMs, and decision trees (option D) are not used for language modeling.
+    The [Transformer architecture](../../glossary.md#transformer-architecture) is the fundamental design that powers most modern LLMs. Introduced in the "Attention Is All You Need" paper, it uses attention mechanisms to process sequences in parallel rather than sequentially. CNNs (option A) are primarily used for image processing, RNNs (option B) were used for sequences before transformers but are now less common for LLMs, and decision trees (option D) are not used for language modeling.
 
 </div>
 
@@ -58,7 +58,7 @@ What is a token in the context of LLMs?
 ??? question "Show Answer"
     The correct answer is **B**.
 
-    A [token](index.md#token) is the basic unit of text that an LLM processes. Tokens can be whole words, parts of words, or even individual characters, depending on the tokenization algorithm. LLMs process sequences of tokens rather than raw text. Option A relates to security, option C to databases, and option D to programming.
+    A [token](../../glossary.md#token) is the basic unit of text that an LLM processes. Tokens can be whole words, parts of words, or even individual characters, depending on the tokenization algorithm. LLMs process sequences of tokens rather than raw text. Option A relates to security, option C to databases, and option D to programming.
 
 </div>
 
@@ -78,7 +78,7 @@ What does the attention mechanism in transformers allow the model to do?
 ??? question "Show Answer"
     The correct answer is **A**.
 
-    The [attention mechanism](index.md#attention-mechanism) allows the model to focus on relevant parts of the input sequence when processing each token. It computes relationships between different positions in the sequence, enabling the model to understand context and dependencies. Options B, C, and D describe different functionalities not related to the attention mechanism.
+    The [attention mechanism](../../glossary.md#attention-mechanism) allows the model to focus on relevant parts of the input sequence when processing each token. It computes relationships between different positions in the sequence, enabling the model to understand context and dependencies. Options B, C, and D describe different functionalities not related to the attention mechanism.
 
 </div>
 
@@ -98,7 +98,7 @@ What is tokenization?
 ??? question "Show Answer"
     The correct answer is **B**.
 
-    [Tokenization](index.md#tokenization) is the process of converting raw text into tokens that an LLM can process. Different tokenization methods split text in different ways, affecting how the model interprets language. Option A describes encryption, option C describes authentication, and option D describes compression.
+    [Tokenization](../../glossary.md#tokenization) is the process of converting raw text into tokens that an LLM can process. Different tokenization methods split text in different ways, affecting how the model interprets language. Option A describes encryption, option C describes authentication, and option D describes compression.
 
 </div>
 
@@ -118,7 +118,7 @@ What is Byte Pair Encoding (BPE)?
 ??? question "Show Answer"
     The correct answer is **B**.
 
-    [Byte Pair Encoding](index.md#byte-pair-encoding) is a tokenization algorithm that starts with characters and iteratively merges the most frequent pairs to create a vocabulary of subword units. This allows LLMs to handle rare words and new words by breaking them into familiar subword tokens. While BPE originated as a compression algorithm (option A), in LLMs it's used specifically for tokenization. Options C and D are unrelated.
+    [Byte Pair Encoding](../../glossary.md#byte-pair-encoding) is a tokenization algorithm that starts with characters and iteratively merges the most frequent pairs to create a vocabulary of subword units. This allows LLMs to handle rare words and new words by breaking them into familiar subword tokens. While BPE originated as a compression algorithm (option A), in LLMs it's used specifically for tokenization. Options C and D are unrelated.
 
 </div>
 
@@ -138,7 +138,7 @@ Why do LLMs use subword tokenization methods like BPE?
 ??? question "Show Answer"
     The correct answer is **B**.
 
-    Subword [tokenization](index.md#tokenization) methods like [BPE](index.md#byte-pair-encoding) allow LLMs to handle rare and out-of-vocabulary words efficiently by breaking them into known subword units. This provides a balance between character-level and word-level tokenization. Option A is not the primary goal, option C overstates performance gains, and option D is false (training data is still essential).
+    Subword [tokenization](../../glossary.md#tokenization) methods like [BPE](../../glossary.md#byte-pair-encoding) allow LLMs to handle rare and out-of-vocabulary words efficiently by breaking them into known subword units. This provides a balance between character-level and word-level tokenization. Option A is not the primary goal, option C overstates performance gains, and option D is false (training data is still essential).
 
 </div>
 
@@ -158,7 +158,7 @@ What is the typical input/output format for transformer-based LLMs?
 ??? question "Show Answer"
     The correct answer is **C**.
 
-    [Transformer](index.md#transformer-architecture) based LLMs process sequences of [tokens](index.md#token) and generate sequences of tokens as output. The input text is tokenized, processed through the transformer layers, and the output tokens are converted back to text. Some modern models are multimodal (option B is becoming possible), but the core transformer processes token sequences. Options A and D are not typical LLM applications.
+    [Transformer](../../glossary.md#transformer-architecture) based LLMs process sequences of [tokens](../../glossary.md#token) and generate sequences of tokens as output. The input text is tokenized, processed through the transformer layers, and the output tokens are converted back to text. Some modern models are multimodal (option B is becoming possible), but the core transformer processes token sequences. Options A and D are not typical LLM applications.
 
 </div>
 
@@ -178,7 +178,7 @@ In the attention mechanism, what does "self-attention" mean?
 ??? question "Show Answer"
     The correct answer is **B**.
 
-    Self-[attention](index.md#attention-mechanism) means the model computes attention scores between different positions within the same input sequence. This allows each token to "attend to" other relevant tokens in the same sequence, capturing relationships and context. Option A is incorrect (it considers all positions), option C is misleading, and option D contradicts the parallel processing nature of transformers.
+    Self-[attention](../../glossary.md#attention-mechanism) means the model computes attention scores between different positions within the same input sequence. This allows each token to "attend to" other relevant tokens in the same sequence, capturing relationships and context. Option A is incorrect (it considers all positions), option C is misleading, and option D contradicts the parallel processing nature of transformers.
 
 </div>
 
@@ -198,6 +198,6 @@ How does tokenization affect the cost of using an LLM API?
 ??? question "Show Answer"
     The correct answer is **B**.
 
-    Most LLM APIs charge based on the number of [tokens](index.md#token) processed (both input and output), so more tokens generally mean higher costs. Understanding [tokenization](index.md#tokenization) is important for estimating and optimizing API costs. Option A is false for most providers, option C is backwards, and option D is incorrect since providers charge per token, not per character.
+    Most LLM APIs charge based on the number of [tokens](../../glossary.md#token) processed (both input and output), so more tokens generally mean higher costs. Understanding [tokenization](../../glossary.md#tokenization) is important for estimating and optimizing API costs. Option A is false for most providers, option C is backwards, and option D is incorrect since providers charge per token, not per character.
 
 </div>

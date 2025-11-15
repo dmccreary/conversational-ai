@@ -18,7 +18,7 @@ What does RAG stand for?
 ??? question "Show Answer"
     The correct answer is **B**.
 
-    RAG stands for [Retrieval-Augmented Generation](index.md#rag-pattern), a pattern that combines information retrieval with language generation to provide LLMs with relevant context from external knowledge sources. Options A, C, and D are not standard terms in conversational AI.
+    RAG stands for [Retrieval-Augmented Generation](../../glossary.md#rag-pattern), a pattern that combines information retrieval with language generation to provide LLMs with relevant context from external knowledge sources. Options A, C, and D are not standard terms in conversational AI.
 
 </div>
 
@@ -38,7 +38,7 @@ What are the three main steps in the RAG pattern?
 ??? question "Show Answer"
     The correct answer is **B**.
 
-    The [RAG pattern](index.md#rag-pattern) consists of three steps: [Retrieval](index.md#retrieval-step) (finding relevant information), [Augmentation](index.md#augmentation-step) (adding that information to the prompt), and [Generation](index.md#generation-step) (producing the response). Options A, C, and D do not accurately describe the RAG workflow.
+    The [RAG pattern](../../glossary.md#rag-pattern) consists of three steps: [Retrieval](../../glossary.md#retrieval-step) (finding relevant information), [Augmentation](../../glossary.md#augmentation-step) (adding that information to the prompt), and [Generation](../../glossary.md#generation-step) (producing the response). Options A, C, and D do not accurately describe the RAG workflow.
 
 </div>
 
@@ -58,7 +58,7 @@ What happens during the retrieval step of RAG?
 ??? question "Show Answer"
     The correct answer is **B**.
 
-    During the [retrieval step](index.md#retrieval-step), the system searches for relevant information in a knowledge base, vector database, or other data source based on the user's query. This retrieved information will be used to augment the LLM's prompt. Option A describes the generation step, option C describes authentication, and option D describes caching.
+    During the [retrieval step](../../glossary.md#retrieval-step), the system searches for relevant information in a knowledge base, vector database, or other data source based on the user's query. This retrieved information will be used to augment the LLM's prompt. Option A describes the generation step, option C describes authentication, and option D describes caching.
 
 </div>
 
@@ -78,7 +78,7 @@ What is the purpose of the augmentation step in RAG?
 ??? question "Show Answer"
     The correct answer is **B**.
 
-    The [augmentation step](index.md#augmentation-step) involves adding the retrieved context to the prompt before sending it to the LLM. This provides the model with relevant information it needs to answer the question accurately. Option A is about formatting, option C is about security, and option D is about compression.
+    The [augmentation step](../../glossary.md#augmentation-step) involves adding the retrieved context to the prompt before sending it to the LLM. This provides the model with relevant information it needs to answer the question accurately. Option A is about formatting, option C is about security, and option D is about compression.
 
 </div>
 
@@ -98,7 +98,7 @@ What is a context window in LLMs?
 ??? question "Show Answer"
     The correct answer is **B**.
 
-    The [context window](index.md#context-window) is the maximum amount of text (measured in tokens) that an LLM can process at one time, including both input and output. This limitation affects how much context can be included in RAG systems. Option A describes UI, option C describes browsers, and option D describes sessions.
+    The [context window](../../glossary.md#context-window) is the maximum amount of text (measured in tokens) that an LLM can process at one time, including both input and output. This limitation affects how much context can be included in RAG systems. Option A describes UI, option C describes browsers, and option D describes sessions.
 
 </div>
 
@@ -118,7 +118,7 @@ What is a hallucination in the context of LLMs?
 ??? question "Show Answer"
     The correct answer is **B**.
 
-    A [hallucination](index.md#hallucination) occurs when an LLM generates information that sounds plausible but is actually incorrect or completely fabricated. RAG helps reduce hallucinations by grounding responses in retrieved factual information. Option A describes UI effects, option C describes charts/graphs, and option D describes security issues.
+    A [hallucination](../../glossary.md#hallucination) occurs when an LLM generates information that sounds plausible but is actually incorrect or completely fabricated. RAG helps reduce hallucinations by grounding responses in retrieved factual information. Option A describes UI effects, option C describes charts/graphs, and option D describes security issues.
 
 </div>
 
@@ -138,7 +138,7 @@ How does RAG help reduce hallucinations?
 ??? question "Show Answer"
     The correct answer is **B**.
 
-    [RAG](index.md#rag-pattern) reduces [hallucinations](index.md#hallucination) by providing the LLM with accurate, retrieved context from a knowledge base. When the model has access to factual information, it's more likely to generate accurate responses rather than fabricating information. Option A would severely limit utility, option C would prevent the chatbot from working, and option D is about security.
+    [RAG](../../glossary.md#rag-pattern) reduces [hallucinations](../../glossary.md#hallucination) by providing the LLM with accurate, retrieved context from a knowledge base. When the model has access to factual information, it's more likely to generate accurate responses rather than fabricating information. Option A would severely limit utility, option C would prevent the chatbot from working, and option D is about security.
 
 </div>
 
@@ -158,7 +158,7 @@ In which step does the LLM actually generate the response?
 ??? question "Show Answer"
     The correct answer is **C**.
 
-    The LLM generates its response in the [generation step](index.md#generation-step), after relevant context has been retrieved and augmented into the prompt. The [retrieval step](index.md#retrieval-step) finds information, the [augmentation step](index.md#augmentation-step) adds it to the prompt, and the generation step produces the final response.
+    The LLM generates its response in the [generation step](../../glossary.md#generation-step), after relevant context has been retrieved and augmented into the prompt. The [retrieval step](../../glossary.md#retrieval-step) finds information, the [augmentation step](../../glossary.md#augmentation-step) adds it to the prompt, and the generation step produces the final response.
 
 </div>
 
@@ -178,7 +178,7 @@ What type of database is commonly used in the retrieval step of RAG?
 ??? question "Show Answer"
     The correct answer is **B**.
 
-    The [retrieval step](index.md#retrieval-step) commonly uses vector databases for semantic similarity search. These databases store embeddings and can quickly find the most relevant documents based on the semantic similarity to the user's query. While relational databases (option A) can be used, vector databases are more effective for semantic search. Options C and D are not typical for RAG.
+    The [retrieval step](../../glossary.md#retrieval-step) commonly uses vector databases for semantic similarity search. These databases store embeddings and can quickly find the most relevant documents based on the semantic similarity to the user's query. While relational databases (option A) can be used, vector databases are more effective for semantic search. Options C and D are not typical for RAG.
 
 </div>
 
@@ -198,6 +198,6 @@ What is a key advantage of RAG over using an LLM alone?
 ??? question "Show Answer"
     The correct answer is **B**.
 
-    A key advantage of [RAG](index.md#rag-pattern) is that it allows the LLM to access current, domain-specific information from external knowledge sources, overcoming the limitations of the model's training data cutoff. Option A is often false (RAG adds processing steps), option C contradicts the definition of RAG, and option D depends on deployment (both RAG and standalone LLMs can work offline if deployed locally).
+    A key advantage of [RAG](../../glossary.md#rag-pattern) is that it allows the LLM to access current, domain-specific information from external knowledge sources, overcoming the limitations of the model's training data cutoff. Option A is often false (RAG adds processing steps), option C contradicts the definition of RAG, and option D depends on deployment (both RAG and standalone LLMs can work offline if deployed locally).
 
 </div>

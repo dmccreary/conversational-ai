@@ -18,7 +18,7 @@ What is user feedback in the context of chatbots?
 ??? question "Show Answer"
     The correct answer is **B**.
 
-    [User feedback](index.md#user-feedback) is information provided by users about their experience, satisfaction, and the quality of chatbot responses. This can include explicit feedback (ratings, comments) and implicit feedback (conversation abandonment, completion rates). Option A describes system errors, option C describes testing, and option D describes infrastructure metrics.
+    [User feedback](../../glossary.md#user-feedback) is information provided by users about their experience, satisfaction, and the quality of chatbot responses. This can include explicit feedback (ratings, comments) and implicit feedback (conversation abandonment, completion rates). Option A describes system errors, option C describes testing, and option D describes infrastructure metrics.
 
 </div>
 
@@ -38,7 +38,7 @@ What is a feedback loop?
 ??? question "Show Answer"
     The correct answer is **B**.
 
-    A [feedback loop](index.md#feedback-loop) is a system where outputs (like user feedback and interaction data) are fed back as inputs to improve the system continuously. In chatbots, this means using user feedback to refine responses, update training data, and improve performance over time. Option A describes a bug, option C describes UI design, and option D describes network issues.
+    A [feedback loop](../../glossary.md#feedback-loop) is a system where outputs (like user feedback and interaction data) are fed back as inputs to improve the system continuously. In chatbots, this means using user feedback to refine responses, update training data, and improve performance over time. Option A describes a bug, option C describes UI design, and option D describes network issues.
 
 </div>
 
@@ -58,7 +58,7 @@ What is the AI Flywheel?
 ??? question "Show Answer"
     The correct answer is **B**.
 
-    The [AI Flywheel](index.md#ai-flywheel) is a virtuous cycle where more users generate more data, which improves the AI model, which attracts more users, creating a self-reinforcing cycle of improvement. This concept is key to understanding how successful AI products scale. Option A describes hardware, option C describes visualization tools, and option D describes testing.
+    The [AI Flywheel](../../glossary.md#ai-flywheel) is a virtuous cycle where more users generate more data, which improves the AI model, which attracts more users, creating a self-reinforcing cycle of improvement. This concept is key to understanding how successful AI products scale. Option A describes hardware, option C describes visualization tools, and option D describes testing.
 
 </div>
 
@@ -78,7 +78,7 @@ What is continuous improvement in chatbot development?
 ??? question "Show Answer"
     The correct answer is **B**.
 
-    [Continuous improvement](index.md#continuous-improvement) is the ongoing process of using feedback, analytics, and data to iteratively enhance chatbot performance. This includes refining responses, updating training data, fixing issues, and optimizing based on real user interactions. Option A describes uptime, option C describes scaling, and option D describes feature bloat without user focus.
+    [Continuous improvement](../../glossary.md#continuous-improvement) is the ongoing process of using feedback, analytics, and data to iteratively enhance chatbot performance. This includes refining responses, updating training data, fixing issues, and optimizing based on real user interactions. Option A describes uptime, option C describes scaling, and option D describes feature bloat without user focus.
 
 </div>
 
@@ -98,7 +98,7 @@ What is acceptance rate in chatbot metrics?
 ??? question "Show Answer"
     The correct answer is **B**.
 
-    [Acceptance rate](index.md#acceptance-rate) measures the percentage of chatbot responses that users find helpful or satisfactory. This can be measured through explicit feedback (thumbs up/down) or implicit signals (user continuing the conversation vs. abandoning). Option A describes installation metrics, option C describes infrastructure, and option D describes code quality.
+    [Acceptance rate](../../glossary.md#acceptance-rate) measures the percentage of chatbot responses that users find helpful or satisfactory. This can be measured through explicit feedback (thumbs up/down) or implicit signals (user continuing the conversation vs. abandoning). Option A describes installation metrics, option C describes infrastructure, and option D describes code quality.
 
 </div>
 
@@ -118,7 +118,7 @@ Which type of user feedback is most explicit?
 ??? question "Show Answer"
     The correct answer is **C**.
 
-    Thumbs up/down ratings with optional comments are the most explicit form of [user feedback](index.md#user-feedback), as users are directly stating their satisfaction level. Options A, B, and D are implicit feedback signals that require interpretation but don't explicitly state user satisfaction.
+    Thumbs up/down ratings with optional comments are the most explicit form of [user feedback](../../glossary.md#user-feedback), as users are directly stating their satisfaction level. Options A, B, and D are implicit feedback signals that require interpretation but don't explicitly state user satisfaction.
 
 </div>
 
@@ -138,7 +138,7 @@ How does the AI Flywheel benefit chatbot development?
 ??? question "Show Answer"
     The correct answer is **B**.
 
-    The [AI Flywheel](index.md#ai-flywheel) creates a self-reinforcing cycle: more users → more interaction data → better AI models → better user experience → more users. This momentum helps successful chatbots improve faster over time. Option A is unrealistic, option C is dangerous (human oversight remains important), and option D is unrelated.
+    The [AI Flywheel](../../glossary.md#ai-flywheel) creates a self-reinforcing cycle: more users → more interaction data → better AI models → better user experience → more users. This momentum helps successful chatbots improve faster over time. Option A is unrealistic, option C is dangerous (human oversight remains important), and option D is unrelated.
 
 </div>
 
@@ -158,7 +158,7 @@ What is an example of implicit user feedback?
 ??? question "Show Answer"
     The correct answer is **C**.
 
-    Conversation abandonment is implicit [user feedback](index.md#user-feedback) - the user's behavior suggests dissatisfaction or failure to meet their needs, even though they haven't explicitly stated it. Options A, B, and D are all explicit feedback where users consciously provide their opinion.
+    Conversation abandonment is implicit [user feedback](../../glossary.md#user-feedback) - the user's behavior suggests dissatisfaction or failure to meet their needs, even though they haven't explicitly stated it. Options A, B, and D are all explicit feedback where users consciously provide their opinion.
 
 </div>
 
@@ -178,7 +178,7 @@ Why is continuous improvement important for chatbots?
 ??? question "Show Answer"
     The correct answer is **B**.
 
-    [Continuous improvement](index.md#continuous-improvement) is important because user expectations, language patterns, business needs, and product offerings all evolve over time. Without ongoing updates based on feedback, chatbots become stale and less effective. Option A is false, option C is not the primary reason, and option D is incorrect (initial training is still necessary).
+    [Continuous improvement](../../glossary.md#continuous-improvement) is important because user expectations, language patterns, business needs, and product offerings all evolve over time. Without ongoing updates based on feedback, chatbots become stale and less effective. Option A is false, option C is not the primary reason, and option D is incorrect (initial training is still necessary).
 
 </div>
 
@@ -198,6 +198,6 @@ What should you do with negative user feedback?
 ??? question "Show Answer"
     The correct answer is **C**.
 
-    Negative [user feedback](index.md#user-feedback) is valuable for identifying issues and areas for improvement. Analyzing patterns in negative feedback helps prioritize fixes and enhancements. Options A and B waste valuable improvement opportunities, and option D would alienate users and prevent learning from their experiences.
+    Negative [user feedback](../../glossary.md#user-feedback) is valuable for identifying issues and areas for improvement. Analyzing patterns in negative feedback helps prioritize fixes and enhancements. Options A and B waste valuable improvement opportunities, and option D would alienate users and prevent learning from their experiences.
 
 </div>

@@ -18,7 +18,7 @@ What is a database query?
 ??? question "Show Answer"
     The correct answer is **B**.
 
-    A [database query](index.md#database-query) is a request for information from a database using a specific query language syntax. Queries allow you to retrieve, filter, sort, and manipulate data stored in the database. Option A describes human interaction, option C describes backups, and option D describes security processes.
+    A [database query](../../glossary.md#database-query) is a request for information from a database using a specific query language syntax. Queries allow you to retrieve, filter, sort, and manipulate data stored in the database. Option A describes human interaction, option C describes backups, and option D describes security processes.
 
 </div>
 
@@ -38,7 +38,7 @@ What is SQL?
 ??? question "Show Answer"
     The correct answer is **B**.
 
-    SQL (Structured Query Language) is the standard query language for managing and querying relational databases. [SQL queries](index.md#sql-query) allow you to select, insert, update, and delete data. Option A describes languages like JavaScript, option C describes encryption methods, and option D describes services like S3.
+    SQL (Structured Query Language) is the standard query language for managing and querying relational databases. [SQL queries](../../glossary.md#sql-query) allow you to select, insert, update, and delete data. Option A describes languages like JavaScript, option C describes encryption methods, and option D describes services like S3.
 
 </div>
 
@@ -58,7 +58,7 @@ What is parameter extraction in chatbots?
 ??? question "Show Answer"
     The correct answer is **B**.
 
-    [Parameter extraction](index.md#parameter-extraction) is the process of identifying and extracting specific values from user input that are needed to execute a database query or perform an action. For example, extracting "tomorrow" and "3pm" from "Book a meeting tomorrow at 3pm." Option A describes code modification, option C describes optimization, and option D describes security.
+    [Parameter extraction](../../glossary.md#parameter-extraction) is the process of identifying and extracting specific values from user input that are needed to execute a database query or perform an action. For example, extracting "tomorrow" and "3pm" from "Book a meeting tomorrow at 3pm." Option A describes code modification, option C describes optimization, and option D describes security.
 
 </div>
 
@@ -78,7 +78,7 @@ What is Natural Language to SQL?
 ??? question "Show Answer"
     The correct answer is **B**.
 
-    [Natural Language to SQL](index.md#natural-language-to-sql) is the process of converting natural language questions or commands into executable SQL queries. This allows users to query databases using everyday language instead of learning SQL syntax. Option A is about error messages, option C is about documentation, and option D is about code formatting.
+    [Natural Language to SQL](../../glossary.md#natural-language-to-sql) is the process of converting natural language questions or commands into executable SQL queries. This allows users to query databases using everyday language instead of learning SQL syntax. Option A is about error messages, option C is about documentation, and option D is about code formatting.
 
 </div>
 
@@ -98,7 +98,7 @@ What is query execution?
 ??? question "Show Answer"
     The correct answer is **B**.
 
-    [Query execution](index.md#query-execution) is the process of running a query against a database and retrieving the results. The database engine parses the query, optimizes it, executes it, and returns the matching data. Option A describes query writing, option C describes maintenance, and option D describes logging.
+    [Query execution](../../glossary.md#query-execution) is the process of running a query against a database and retrieving the results. The database engine parses the query, optimizes it, executes it, and returns the matching data. Option A describes query writing, option C describes maintenance, and option D describes logging.
 
 </div>
 
@@ -118,7 +118,7 @@ Which is an example of parameter extraction from "Show me sales from March to Ma
 ??? question "Show Answer"
     The correct answer is **B**.
 
-    [Parameter extraction](index.md#parameter-extraction) would identify and extract the date range "March to May 2024" and the subject "sales" as key parameters needed to construct a database query. The word "Show" (option A) indicates intent but isn't a query parameter, while sentence structure (option C) and punctuation (option D) aren't extracted parameters.
+    [Parameter extraction](../../glossary.md#parameter-extraction) would identify and extract the date range "March to May 2024" and the subject "sales" as key parameters needed to construct a database query. The word "Show" (option A) indicates intent but isn't a query parameter, while sentence structure (option C) and punctuation (option D) aren't extracted parameters.
 
 </div>
 
@@ -138,7 +138,7 @@ What is a key challenge in Natural Language to SQL conversion?
 ??? question "Show Answer"
     The correct answer is **B**.
 
-    A key challenge in [Natural Language to SQL](index.md#natural-language-to-sql) is handling the ambiguity of natural language and correctly mapping user intent to the appropriate tables, columns, and relationships in the database schema. Option A is false (SQL can be complex), option C is irrelevant to the conversion challenge, and option D is false (natural language is often ambiguous).
+    A key challenge in [Natural Language to SQL](../../glossary.md#natural-language-to-sql) is handling the ambiguity of natural language and correctly mapping user intent to the appropriate tables, columns, and relationships in the database schema. Option A is false (SQL can be complex), option C is irrelevant to the conversion challenge, and option D is false (natural language is often ambiguous).
 
 </div>
 
@@ -158,7 +158,7 @@ Why is parameter extraction important for database-backed chatbots?
 ??? question "Show Answer"
     The correct answer is **B**.
 
-    [Parameter extraction](index.md#parameter-extraction) enables chatbots to construct accurate database queries based on what users are asking for. Without correctly extracting parameters like dates, names, or categories, the chatbot cannot retrieve the right information. Option A is false, option C is unrelated, and option D is about security, not functionality.
+    [Parameter extraction](../../glossary.md#parameter-extraction) enables chatbots to construct accurate database queries based on what users are asking for. Without correctly extracting parameters like dates, names, or categories, the chatbot cannot retrieve the right information. Option A is false, option C is unrelated, and option D is about security, not functionality.
 
 </div>
 
@@ -178,7 +178,7 @@ What should happen before executing a user-generated SQL query?
 ??? question "Show Answer"
     The correct answer is **B**.
 
-    Before [query execution](index.md#query-execution), user-generated queries should be validated and sanitized to prevent SQL injection attacks and other security issues. Using parameterized queries or prepared statements is a best practice. Option A is dangerous, option C would destroy data, and option D is unnecessary.
+    Before [query execution](../../glossary.md#query-execution), user-generated queries should be validated and sanitized to prevent SQL injection attacks and other security issues. Using parameterized queries or prepared statements is a best practice. Option A is dangerous, option C would destroy data, and option D is unnecessary.
 
 </div>
 
@@ -198,6 +198,6 @@ In the query "Find customers who bought products in 2024", what are the key para
 ??? question "Show Answer"
     The correct answer is **B**.
 
-    The key [parameters](index.md#parameter-extraction) are "customers" (the entity type to retrieve) and "2024" (the time constraint). These would be extracted and used to construct an appropriate [SQL query](index.md#sql-query). The word "Find" (option A) indicates intent, while grammar structure (option C) and word count (option D) aren't query parameters.
+    The key [parameters](../../glossary.md#parameter-extraction) are "customers" (the entity type to retrieve) and "2024" (the time constraint). These would be extracted and used to construct an appropriate [SQL query](../../glossary.md#sql-query). The word "Find" (option A) indicates intent, while grammar structure (option C) and word count (option D) aren't query parameters.
 
 </div>

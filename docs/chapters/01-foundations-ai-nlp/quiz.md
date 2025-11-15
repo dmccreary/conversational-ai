@@ -18,7 +18,7 @@ Test your understanding of AI fundamentals and NLP concepts with these questions
 
     **Concept Tested:** Artificial Intelligence
 
-    **See:** [AI Definition](index.md#what-is-artificial-intelligence)
+    **See:** [AI Definition](../../glossary.md#artificial-intelligence)
 
 ---
 
@@ -36,7 +36,8 @@ Test your understanding of AI fundamentals and NLP concepts with these questions
 
     **Concept Tested:** Artificial Intelligence
 
-    **See:** [AI Categories](index.md#what-is-artificial-intelligence)
+    **See:** [AI Categories](../../glossary.md#artificial-intelligence)
+    **See:** [What is AI?](./index.md#what-is-artificial-intelligence)
 
 ---
 
@@ -54,7 +55,7 @@ Test your understanding of AI fundamentals and NLP concepts with these questions
 
     **Concept Tested:** AI Timeline
 
-    **See:** [AI Timeline](index.md#evolution-of-artificial-intelligence-timeline)
+    **See:** [AI Timeline](../../glossary.md#ai-timeline)
 
 ---
 
@@ -72,7 +73,7 @@ Test your understanding of AI fundamentals and NLP concepts with these questions
 
     **Concept Tested:** AI Doubling Rate
 
-    **See:** [AI Doubling Rate](index.md#the-exponential-growth-of-ai-capabilities)
+    **See:** [AI Doubling Rate](../../glossary.md#ai-doubling-rate)
 
 ---
 
@@ -90,7 +91,7 @@ Test your understanding of AI fundamentals and NLP concepts with these questions
 
     **Concept Tested:** Moore's Law
 
-    **See:** [Moore's Law](index.md#moores-law-and-computing-power)
+    **See:** [Moore's Law](../../glossary.md#moores-law)
 
 ---
 
@@ -108,7 +109,7 @@ Test your understanding of AI fundamentals and NLP concepts with these questions
 
     **Concept Tested:** Natural Language Processing
 
-    **See:** [NLP Introduction](index.md#natural-language-processing)
+    **See:** [NLP Introduction](../../glossary.md#natural-language-processing)
 
 ---
 
@@ -126,7 +127,7 @@ Test your understanding of AI fundamentals and NLP concepts with these questions
 
     **Concept Tested:** Text Processing
 
-    **See:** [Text Processing](index.md#text-processing-fundamentals)
+    **See:** [Text Processing](../../glossary.md#text-processing)
 
 ---
 
@@ -144,7 +145,7 @@ Test your understanding of AI fundamentals and NLP concepts with these questions
 
     **Concept Tested:** String Matching
 
-    **See:** [String Matching](index.md#string-matching-techniques)
+    **See:** [String Matching](../../glossary.md#string-matching)
 
 ---
 
@@ -162,7 +163,7 @@ Test your understanding of AI fundamentals and NLP concepts with these questions
 
     **Concept Tested:** Regular Expressions
 
-    **See:** [Regular Expressions](index.md#regular-expressions)
+    **See:** [Regular Expressions](../../glossary.md#regular-expressions)
 
 ---
 
@@ -180,4 +181,4 @@ Test your understanding of AI fundamentals and NLP concepts with these questions
 
     **Concept Tested:** Grep Command
 
-    **See:** [Grep Command](index.md#grep-command-usage)
+    **See:** [Grep Command](../../glossary.md#grep-command)

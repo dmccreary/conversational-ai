@@ -18,7 +18,7 @@ What is a word embedding?
 ??? question "Show Answer"
     The correct answer is **B**.
 
-    A [word embedding](index.md#word-embedding) is a dense vector representation of a word that captures its semantic meaning in a continuous vector space. Words with similar meanings have similar vector representations. Option A describes file compression, option C describes a definition, and option D describes a thesaurus.
+    A [word embedding](../../glossary.md#word-embedding) is a dense vector representation of a word that captures its semantic meaning in a continuous vector space. Words with similar meanings have similar vector representations. Option A describes file compression, option C describes a definition, and option D describes a thesaurus.
 
 </div>
 
@@ -38,7 +38,7 @@ What is an embedding vector?
 ??? question "Show Answer"
     The correct answer is **B**.
 
-    An [embedding vector](index.md#embedding-vector) is a multi-dimensional numerical representation (typically hundreds of dimensions) that captures semantic relationships. Points that are close together in this vector space represent similar concepts. Option A is too simple, option C doesn't capture semantics, and option D describes hashing rather than embeddings.
+    An [embedding vector](../../glossary.md#embedding-vector) is a multi-dimensional numerical representation (typically hundreds of dimensions) that captures semantic relationships. Points that are close together in this vector space represent similar concepts. Option A is too simple, option C doesn't capture semantics, and option D describes hashing rather than embeddings.
 
 </div>
 
@@ -58,7 +58,7 @@ What is the primary purpose of a vector database?
 ??? question "Show Answer"
     The correct answer is **B**.
 
-    A [vector database](index.md#vector-database) is specifically designed to efficiently store and retrieve high-dimensional vectors and perform similarity searches. Unlike traditional databases, they're optimized for finding the nearest neighbors to a query vector. Option A describes relational databases, option C describes compression utilities, and option D describes JavaScript engines.
+    A [vector database](../../glossary.md#vector-database) is specifically designed to efficiently store and retrieve high-dimensional vectors and perform similarity searches. Unlike traditional databases, they're optimized for finding the nearest neighbors to a query vector. Option A describes relational databases, option C describes compression utilities, and option D describes JavaScript engines.
 
 </div>
 
@@ -78,7 +78,7 @@ Which of the following is an open-source library for similarity search developed
 ??? question "Show Answer"
     The correct answer is **C**.
 
-    [FAISS](index.md#faiss) (Facebook AI Similarity Search) is an open-source library developed by Meta/Facebook for efficient similarity search and clustering of dense vectors. [Pinecone](index.md#pinecone) (option A) and [Weaviate](index.md#weaviate) (option B) are vector databases but not specifically the Facebook library. MongoDB (option D) is a traditional document database.
+    [FAISS](../../glossary.md#faiss) (Facebook AI Similarity Search) is an open-source library developed by Meta/Facebook for efficient similarity search and clustering of dense vectors. [Pinecone](../../glossary.md#pinecone) (option A) and [Weaviate](../../glossary.md#weaviate) (option B) are vector databases but not specifically the Facebook library. MongoDB (option D) is a traditional document database.
 
 </div>
 
@@ -98,7 +98,7 @@ What is a vector store?
 ??? question "Show Answer"
     The correct answer is **B**.
 
-    A [vector store](index.md#vector-store) is a system for storing and managing embedding vectors, often used interchangeably with vector database. It provides the infrastructure for storing vectors and performing similarity searches. Option A is a play on words, option C describes hardware, and option D describes general file storage.
+    A [vector store](../../glossary.md#vector-store) is a system for storing and managing embedding vectors, often used interchangeably with vector database. It provides the infrastructure for storing vectors and performing similarity searches. Option A is a play on words, option C describes hardware, and option D describes general file storage.
 
 </div>
 
@@ -118,7 +118,7 @@ Which of the following is a cloud-based vector database service?
 ??? question "Show Answer"
     The correct answer is **C**.
 
-    [Pinecone](index.md#pinecone) is a cloud-based vector database service designed specifically for storing and searching embeddings at scale. MySQL (option A), PostgreSQL (option B), and SQLite (option D) are traditional relational databases, though PostgreSQL can support vectors through extensions.
+    [Pinecone](../../glossary.md#pinecone) is a cloud-based vector database service designed specifically for storing and searching embeddings at scale. MySQL (option A), PostgreSQL (option B), and SQLite (option D) are traditional relational databases, though PostgreSQL can support vectors through extensions.
 
 </div>
 
@@ -138,7 +138,7 @@ What is Weaviate?
 ??? question "Show Answer"
     The correct answer is **B**.
 
-    [Weaviate](index.md#weaviate) is an open-source vector database that provides GraphQL and RESTful APIs for storing and searching vectors. It supports various AI models and can be self-hosted or used as a cloud service. Option A describes software like VSCode, option C describes algorithms like gzip, and option D describes languages like Python.
+    [Weaviate](../../glossary.md#weaviate) is an open-source vector database that provides GraphQL and RESTful APIs for storing and searching vectors. It supports various AI models and can be self-hosted or used as a cloud service. Option A describes software like VSCode, option C describes algorithms like gzip, and option D describes languages like Python.
 
 </div>
 
@@ -158,7 +158,7 @@ Why are embeddings important for semantic search?
 ??? question "Show Answer"
     The correct answer is **B**.
 
-    [Embeddings](index.md#embedding-vector) represent semantic meaning in a mathematical form (vectors) that allows us to compute similarity between texts using operations like cosine similarity. This enables semantic search to find conceptually similar content, not just keyword matches. Option A is not the purpose, option C relates to encryption, and option D is not the primary goal.
+    [Embeddings](../../glossary.md#embedding-vector) represent semantic meaning in a mathematical form (vectors) that allows us to compute similarity between texts using operations like cosine similarity. This enables semantic search to find conceptually similar content, not just keyword matches. Option A is not the purpose, option C relates to encryption, and option D is not the primary goal.
 
 </div>
 
@@ -178,7 +178,7 @@ What property of word embeddings allows us to perform analogies like "king - man
 ??? question "Show Answer"
     The correct answer is **B**.
 
-    [Word embeddings](index.md#word-embedding) encode semantic relationships in vector space such that meaningful vector arithmetic is possible. The difference between "king" and "man" captures the concept of royalty, which when added to "woman" points to "queen". This demonstrates that semantic relationships are encoded geometrically. Options A, C, and D don't explain this property.
+    [Word embeddings](../../glossary.md#word-embedding) encode semantic relationships in vector space such that meaningful vector arithmetic is possible. The difference between "king" and "man" captures the concept of royalty, which when added to "woman" points to "queen". This demonstrates that semantic relationships are encoded geometrically. Options A, C, and D don't explain this property.
 
 </div>
 
@@ -198,6 +198,6 @@ In a chatbot system using RAG, what role does a vector database play?
 ??? question "Show Answer"
     The correct answer is **B**.
 
-    In RAG (Retrieval-Augmented Generation) systems, a [vector database](index.md#vector-database) stores [embeddings](index.md#embedding-vector) of documents or knowledge chunks. When a user asks a question, the system converts the query to an embedding, searches the vector database for similar embeddings, and retrieves the relevant context to augment the LLM's response. Options A and D relate to security, and option C is incorrect as the LLM generates responses, not the database.
+    In RAG (Retrieval-Augmented Generation) systems, a [vector database](../../glossary.md#vector-database) stores [embeddings](../../glossary.md#embedding-vector) of documents or knowledge chunks. When a user asks a question, the system converts the query to an embedding, searches the vector database for similar embeddings, and retrieves the relevant context to augment the LLM's response. Options A and D relate to security, and option C is incorrect as the LLM generates responses, not the database.
 
 </div>

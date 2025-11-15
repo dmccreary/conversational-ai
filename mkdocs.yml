@@ -59,7 +59,7 @@ nav:
 
   - MicroSims:
     - List of Sims: sims/index.md
-    - Learning Graph Viewer: sims/graph-viewer.md
+    - Learning Graph Viewer: sims/graph-viewer/index.md
   
   - Learning Graph:
     - Introduction: learning-graph/index.md

@@ -18,7 +18,7 @@ What is the primary goal of security in chatbot systems?
 ??? question "Show Answer"
     The correct answer is **B**.
 
-    [Security](index.md#security) in chatbot systems aims to protect the system, data, and users from unauthorized access, attacks, and threats. This includes protecting against data breaches, unauthorized access, and malicious activities. Option A relates to performance, option C to cost optimization, and option D to UX design.
+    [Security](../../glossary.md#security) in chatbot systems aims to protect the system, data, and users from unauthorized access, attacks, and threats. This includes protecting against data breaches, unauthorized access, and malicious activities. Option A relates to performance, option C to cost optimization, and option D to UX design.
 
 </div>
 
@@ -38,7 +38,7 @@ What is authentication?
 ??? question "Show Answer"
     The correct answer is **B**.
 
-    [Authentication](index.md#authentication) is the process of verifying the identity of a user or system, typically through credentials like passwords, tokens, or biometrics. It answers the question "Who are you?" Option A relates to appearance, option C describes encryption, and option D describes data backup.
+    [Authentication](../../glossary.md#authentication) is the process of verifying the identity of a user or system, typically through credentials like passwords, tokens, or biometrics. It answers the question "Who are you?" Option A relates to appearance, option C describes encryption, and option D describes data backup.
 
 </div>
 
@@ -58,7 +58,7 @@ What is authorization?
 ??? question "Show Answer"
     The correct answer is **B**.
 
-    [Authorization](index.md#authorization) is the process of determining what actions an authenticated user is permitted to perform. It answers the question "What are you allowed to do?" after authentication has answered "Who are you?" Option A relates to business licensing, option C is about account creation, and option D is about encryption.
+    [Authorization](../../glossary.md#authorization) is the process of determining what actions an authenticated user is permitted to perform. It answers the question "What are you allowed to do?" after authentication has answered "Who are you?" Option A relates to business licensing, option C is about account creation, and option D is about encryption.
 
 </div>
 
@@ -78,7 +78,7 @@ What does RBAC stand for?
 ??? question "Show Answer"
     The correct answer is **B**.
 
-    [RBAC](index.md#rbac) stands for Role-Based Access Control, a method of controlling access to resources based on user roles. Users are assigned roles (like "admin," "editor," "viewer"), and each role has specific permissions. Options A, C, and D are not standard security terms.
+    [RBAC](../../glossary.md#role-based-access-control) stands for Role-Based Access Control, a method of controlling access to resources based on user roles. Users are assigned roles (like "admin," "editor," "viewer"), and each role has specific permissions. Options A, C, and D are not standard security terms.
 
 </div>
 
@@ -98,7 +98,7 @@ What is PII?
 ??? question "Show Answer"
     The correct answer is **B**.
 
-    [PII](index.md#pii) stands for Personally Identifiable Information - any data that can be used to identify a specific individual, such as names, email addresses, social security numbers, or phone numbers. Protecting PII is crucial for privacy compliance. Options A, C, and D are not standard privacy terms.
+    [PII](../../glossary.md#pii) stands for Personally Identifiable Information - any data that can be used to identify a specific individual, such as names, email addresses, social security numbers, or phone numbers. Protecting PII is crucial for privacy compliance. Options A, C, and D are not standard privacy terms.
 
 </div>
 
@@ -118,7 +118,7 @@ What is GDPR?
 ??? question "Show Answer"
     The correct answer is **B**.
 
-    [GDPR](index.md#gdpr) stands for General Data Protection Regulation, a comprehensive privacy law in the European Union that regulates how organizations collect, store, and process personal data. It gives individuals significant rights over their data. Options A, C, and D are not the correct expansion of GDPR.
+    [GDPR](../../glossary.md#gdpr) stands for General Data Protection Regulation, a comprehensive privacy law in the European Union that regulates how organizations collect, store, and process personal data. It gives individuals significant rights over their data. Options A, C, and D are not the correct expansion of GDPR.
 
 </div>
 
@@ -138,7 +138,7 @@ What is data privacy?
 ??? question "Show Answer"
     The correct answer is **B**.
 
-    [Data privacy](index.md#data-privacy) is the practice of protecting personal information from unauthorized access and ensuring it's collected, stored, and used in compliance with privacy laws and user expectations. It encompasses consent, transparency, and user rights. Option A contradicts privacy, option C is one technique but not the whole concept, and option D is about retention.
+    [Data privacy](../../glossary.md#data-privacy) is the practice of protecting personal information from unauthorized access and ensuring it's collected, stored, and used in compliance with privacy laws and user expectations. It encompasses consent, transparency, and user rights. Option A contradicts privacy, option C is one technique but not the whole concept, and option D is about retention.
 
 </div>
 
@@ -158,7 +158,7 @@ What is the difference between authentication and authorization?
 ??? question "Show Answer"
     The correct answer is **B**.
 
-    [Authentication](index.md#authentication) verifies who you are (identity), while [authorization](index.md#authorization) determines what you're allowed to do (permissions). Authentication always comes first - you can't authorize someone until you know who they are. Option A is false, option C is backwards, and option D is incorrect.
+    [Authentication](../../glossary.md#authentication) verifies who you are (identity), while [authorization](../../glossary.md#authorization) determines what you're allowed to do (permissions). Authentication always comes first - you can't authorize someone until you know who they are. Option A is false, option C is backwards, and option D is incorrect.
 
 </div>
 
@@ -178,7 +178,7 @@ Why is RBAC useful in chatbot systems?
 ??? question "Show Answer"
     The correct answer is **B**.
 
-    [RBAC](index.md#rbac) allows chatbot systems to provide different levels of access and capabilities to different users based on their roles. For example, admins might access sensitive data while regular users cannot. This improves security and enables appropriate access control. Option A relates to performance, option C to storage, and option D to design.
+    [RBAC](../../glossary.md#role-based-access-control) allows chatbot systems to provide different levels of access and capabilities to different users based on their roles. For example, admins might access sensitive data while regular users cannot. This improves security and enables appropriate access control. Option A relates to performance, option C to storage, and option D to design.
 
 </div>
 
@@ -198,6 +198,6 @@ What should chatbots do with user PII to comply with privacy regulations?
 ??? question "Show Answer"
     The correct answer is **B**.
 
-    To comply with privacy regulations like [GDPR](index.md#gdpr), chatbots should follow privacy best practices: collect only necessary [PII](index.md#pii), store it securely, obtain proper consent, provide transparency, and give users control over their data including the ability to access, correct, or delete it. Option A violates privacy, option C makes many services impossible, and option D violates data retention principles.
+    To comply with privacy regulations like [GDPR](../../glossary.md#gdpr), chatbots should follow privacy best practices: collect only necessary [PII](../../glossary.md#pii), store it securely, obtain proper consent, provide transparency, and give users control over their data including the ability to access, correct, or delete it. Option A violates privacy, option C makes many services impossible, and option D violates data retention principles.
 
 </div>

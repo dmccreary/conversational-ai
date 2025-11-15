@@ -18,7 +18,7 @@ What is chatbot evaluation?
 ??? question "Show Answer"
     The correct answer is **B**.
 
-    [Chatbot evaluation](index.md#chatbot-evaluation) is the systematic process of measuring chatbot performance against specific metrics and criteria to understand how well it's meeting user needs and business objectives. Option A relates to business valuation, option C to deployment, and option D to design.
+    [Chatbot evaluation](../../glossary.md#chatbot-evaluation) is the systematic process of measuring chatbot performance against specific metrics and criteria to understand how well it's meeting user needs and business objectives. Option A relates to business valuation, option C to deployment, and option D to design.
 
 </div>
 
@@ -38,7 +38,7 @@ What are chatbot metrics?
 ??? question "Show Answer"
     The correct answer is **B**.
 
-    [Chatbot metrics](index.md#chatbot-metrics) are quantifiable measurements used to assess how well a chatbot is performing. These include measures like response accuracy, user satisfaction, resolution rate, and conversation completion rate. Option A relates to code size, option C to team composition, and option D to infrastructure costs.
+    [Chatbot metrics](../../glossary.md#chatbot-metrics) are quantifiable measurements used to assess how well a chatbot is performing. These include measures like response accuracy, user satisfaction, resolution rate, and conversation completion rate. Option A relates to code size, option C to team composition, and option D to infrastructure costs.
 
 </div>
 
@@ -58,7 +58,7 @@ What does KPI stand for?
 ??? question "Show Answer"
     The correct answer is **A**.
 
-    [KPI](index.md#kpi) stands for Key Performance Indicator - a measurable value that demonstrates how effectively an organization or system is achieving key business objectives. In chatbots, KPIs might include user satisfaction, resolution rate, or cost savings. Options B, C, and D are not standard business terms.
+    [KPI](../../glossary.md#key-performance-indicator) stands for Key Performance Indicator - a measurable value that demonstrates how effectively an organization or system is achieving key business objectives. In chatbots, KPIs might include user satisfaction, resolution rate, or cost savings. Options B, C, and D are not standard business terms.
 
 </div>
 
@@ -78,7 +78,7 @@ What is performance tuning?
 ??? question "Show Answer"
     The correct answer is **B**.
 
-    [Performance tuning](index.md#performance-tuning) is the process of optimizing a chatbot's configuration, algorithms, or infrastructure to improve aspects like response speed, accuracy, resource efficiency, or cost-effectiveness. Option A relates to UI design, option C to HR, and option D to infrastructure (which is one approach but not the definition).
+    [Performance tuning](../../glossary.md#performance-tuning) is the process of optimizing a chatbot's configuration, algorithms, or infrastructure to improve aspects like response speed, accuracy, resource efficiency, or cost-effectiveness. Option A relates to UI design, option C to HR, and option D to infrastructure (which is one approach but not the definition).
 
 </div>
 
@@ -98,7 +98,7 @@ What is optimization in the chatbot context?
 ??? question "Show Answer"
     The correct answer is **B**.
 
-    [Optimization](index.md#optimization) in chatbots involves systematically improving performance, efficiency, and effectiveness through techniques like refining prompts, adjusting parameters, improving retrieval, or optimizing infrastructure. Option A focuses only on code size, option C might harm functionality, and option D contradicts the efficiency goal.
+    [Optimization](../../glossary.md#optimization) in chatbots involves systematically improving performance, efficiency, and effectiveness through techniques like refining prompts, adjusting parameters, improving retrieval, or optimizing infrastructure. Option A focuses only on code size, option C might harm functionality, and option D contradicts the efficiency goal.
 
 </div>
 
@@ -118,7 +118,7 @@ Which of the following is a key metric for evaluating chatbot success?
 ??? question "Show Answer"
     The correct answer is **B**.
 
-    User satisfaction and task completion rate are key [chatbot metrics](index.md#chatbot-metrics) that directly measure whether the chatbot is successfully helping users achieve their goals. Option A relates to development team size, option C to documentation quality, and option D to visual design (which affects UX but isn't a direct success metric).
+    User satisfaction and task completion rate are key [chatbot metrics](../../glossary.md#chatbot-metrics) that directly measure whether the chatbot is successfully helping users achieve their goals. Option A relates to development team size, option C to documentation quality, and option D to visual design (which affects UX but isn't a direct success metric).
 
 </div>
 
@@ -138,7 +138,7 @@ What career role involves designing and implementing conversational AI systems?
 ??? question "Show Answer"
     The correct answer is **B**.
 
-    A [Chatbot Career](index.md#chatbot-career) path includes roles like Conversational AI Developer or Chatbot Developer, who design, implement, and maintain conversational AI systems. Graphic designers (option A) focus on visuals, network administrators (option C) manage networks, and database administrators (option D) manage databases.
+    A [Chatbot Career](../../glossary.md#chatbot-career) path includes roles like Conversational AI Developer or Chatbot Developer, who design, implement, and maintain conversational AI systems. Graphic designers (option A) focus on visuals, network administrators (option C) manage networks, and database administrators (option D) manage databases.
 
 </div>
 
@@ -158,7 +158,7 @@ Why is continuous optimization important for chatbots?
 ??? question "Show Answer"
     The correct answer is **B**.
 
-    Continuous [optimization](index.md#optimization) is important because user needs, language patterns, business requirements, and available technology all evolve over time. Regular optimization ensures the chatbot remains effective and competitive. Option A is false, option C is incorrect (initial development is still needed), and option D is unrealistic.
+    Continuous [optimization](../../glossary.md#optimization) is important because user needs, language patterns, business requirements, and available technology all evolve over time. Regular optimization ensures the chatbot remains effective and competitive. Option A is false, option C is incorrect (initial development is still needed), and option D is unrealistic.
 
 </div>
 
@@ -178,7 +178,7 @@ What is a common KPI for measuring chatbot efficiency?
 ??? question "Show Answer"
     The correct answer is **B**.
 
-    Common efficiency [KPIs](index.md#kpi) include average response time (how quickly users get answers) and cost per conversation (efficiency of resource usage). These metrics help organizations understand and optimize chatbot performance. Options A, C, and D are not relevant performance indicators.
+    Common efficiency [KPIs](../../glossary.md#key-performance-indicator) include average response time (how quickly users get answers) and cost per conversation (efficiency of resource usage). These metrics help organizations understand and optimize chatbot performance. Options A, C, and D are not relevant performance indicators.
 
 </div>
 
@@ -198,6 +198,6 @@ What skills are valuable for a career in conversational AI?
 ??? question "Show Answer"
     The correct answer is **B**.
 
-    A successful [chatbot career](index.md#chatbot-career) requires a combination of technical skills (NLP, programming, ML), domain knowledge (conversational design, linguistics), and soft skills (understanding user needs, communication). It's a multidisciplinary field. Options A, C, and D represent single domains that alone are insufficient for conversational AI work.
+    A successful [chatbot career](../../glossary.md#chatbot-career) requires a combination of technical skills (NLP, programming, ML), domain knowledge (conversational design, linguistics), and soft skills (understanding user needs, communication). It's a multidisciplinary field. Options A, C, and D represent single domains that alone are insufficient for conversational AI work.
 
 </div>
