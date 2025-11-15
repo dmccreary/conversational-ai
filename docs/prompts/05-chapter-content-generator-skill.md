@@ -12,9 +12,9 @@
 
 
 
-Use the chapter-content-generator skill on chapter 6
-@docs/chapters/06-building-chatbots-intent/index.md and write the session log 
-to logs/ch06.md.  
+Use the chapter-content-generator skill on chapter 7
+@docs/chapters/07-chatbot-framework-ui/index.md and write the session log 
+to logs/ch07.md.  
 
 Make absolutely sure that you put in a level 4 Diagram header in before
 each <details markdown="1"> element like this:
