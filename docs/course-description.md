@@ -1,3 +1,9 @@
+---
+title: Course Description for Conversational AI
+description: A comprehensive course on building conversational AI agents including chatbots, search technologies, RAG patterns, and GraphRAG implementations
+quality_score: 95
+---
+
 # Course Description for Conversational AI
 
 **Title:** Conversational AI
@@ -69,6 +75,8 @@ We wrap up with a final capstone project.
 1. Limitations of RAG
 1. The GraphRAG Pattern
 1. Knowledge Graphs
+1. Graph Databases
+1. Cypher
 1. Entity Extraction
 1. Named Entity Extraction
 1. NLP Pipelines
@@ -96,6 +104,8 @@ We wrap up with a final capstone project.
 1. Tuning Chatbots
 1. Team Projects
 1. Capstone Projects
+1. Chatbot Careers
+1. Course Evaluation
 
 ## Topics Not Covered
 
@@ -103,6 +113,9 @@ We wrap up with a final capstone project.
 2. Customizing LLMs
 3. Building LLMs from scratch
 4. LLM performance
+5. SPARQL
+6. RDF
+7. Triples
 
 ## Learning Objectives
 

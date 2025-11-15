@@ -1,0 +1,15 @@
+{
+  "FOUND": "#FF6B6B",
+  "SEARCH": "#4ECDC4",
+  "METRIC": "#45B7D1",
+  "LLM": "#F7B731",
+  "EMBED": "#5F27CD",
+  "CHAT": "#00D2D3",
+  "RAG": "#54A0FF",
+  "GRAPH": "#48DBFB",
+  "NLP": "#1DD1A1",
+  "QUERY": "#FFA502",
+  "SEC": "#EE5A6F",
+  "EVAL": "#C44569",
+  "TOOL": "#A55EEA"
+}
