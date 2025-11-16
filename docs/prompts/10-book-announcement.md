@@ -1,7 +1,11 @@
 # LinkedIn Post
 
 !!! prompt
-    create a LinkedIn post announcing this new intelligent textbook.  Make if fun and positive.  Use all the metrics in the @docs/learning-graph including book-metrics, chapter metrics and diagram table to summarize what the book has in it. 
+    Create a LinkedIn post announcing this new intelligent textbook.  Make if fun and positive.  Use all the metrics in the @docs/learning-graph including book-metrics, chapter metrics and diagram table to summarize what the book has in it. 
+
+
+!!! Warning
+  The response failed to put the link to the site in the announcement!
 
 🚀 Excited to announce: A brand new AI-powered intelligent textbook is here! 🎉
 

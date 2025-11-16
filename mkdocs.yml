@@ -86,6 +86,8 @@ nav:
     - prompts/03-rewrite-course-description.md
     - prompts/04-social-media-preview.md
     - prompts/05-chapter-content-generator-skill.md
+    - prompts/10-book-announcement.md
+    - prompts/10-doubling-rate-clairification.md
   
   - FAQs: faq.md
   - Glossary: glossary.md
