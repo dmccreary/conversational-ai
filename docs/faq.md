@@ -222,7 +222,7 @@ See [Chapter 1: Foundations of AI and NLP](chapters/01-foundations-ai-nlp/index.
 
 ### What is the AI Doubling Rate?
 
-The AI Doubling Rate refers to the rate at which AI capabilities or computational power dedicated to AI research doubles over time. Recent observations show AI training compute has doubled approximately every 3.4 months—far exceeding Moore's Law's ~24-month doubling. This explains why AI capabilities have advanced so rapidly, with models achieving in months what would have taken years under traditional growth rates.
+The AI Doubling Rate refers to the rate at which AI capabilities or computational power dedicated to AI research doubles over time. Recent observations show AI training compute has doubled approximately every 7 months—far exceeding Moore's Law's ~24-month doubling. This explains why AI capabilities have advanced so rapidly, with models achieving in months what would have taken years under traditional growth rates.
 
 See [Chapter 1: Foundations of AI and NLP](chapters/01-foundations-ai-nlp/index.md) and [glossary entry](glossary.md#ai-doubling-rate).
 

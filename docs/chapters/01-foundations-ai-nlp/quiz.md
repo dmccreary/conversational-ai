@@ -69,7 +69,7 @@ Test your understanding of AI fundamentals and NLP concepts with these questions
 </div>
 
 ??? question "Show Answer"
-    The correct answer is **C**. The AI Doubling Rate shows that AI training compute has doubled approximately every 3.4 months in recent years, far exceeding Moore's Law's approximately 24-month doubling period. This explains why AI capabilities have advanced so rapidly in recent years.
+    The correct answer is **C**. The AI Doubling Rate shows that AI training compute has doubled approximately every 7 months in recent years, far exceeding Moore's Law's approximately 24-month doubling period. This explains why AI capabilities have advanced so rapidly in recent years.
 
     **Concept Tested:** AI Doubling Rate
 

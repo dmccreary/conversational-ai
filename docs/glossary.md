@@ -27,8 +27,12 @@ A set of rules that defines which users or roles can access specific resources, 
 #### AI Doubling Rate
 
 The rate at which AI capabilities or computational power dedicated to AI research doubles over time, often observed to occur more rapidly than Moore's Law.
+months in recent years, far exceeding the doubling rate predicted by Moore's Law.
 
-**Example:** AI training compute has doubled approximately every 3.4 months in recent years, far exceeding the doubling rate predicted by Moore's Law.
+**Example:** The length of tasks that AI can complete with 50% probability of correctness has been doubling every 7 months.<br/>
+**Example:** AI training compute has doubled approximately every 7 months in recent years, far exceeding the doubling rate predicted by Moore's Law.
+
+[Measuring AI Ability to Complete Long Tasks](https://metr.org/blog/2025-03-19-measuring-ai-ability-to-complete-long-tasks/)
 
 #### AI Flywheel
 

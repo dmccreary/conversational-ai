@@ -113,7 +113,7 @@ The relationship between computational power and AI capability is captured in th
 
 ### AI Doubling Rate
 
-While Moore's Law describes hardware capability growth, the AI doubling rate measures the exponential improvement in AI performance on specific tasks. Research from OpenAI and others demonstrates that AI capabilities have been doubling approximately every 3.4 months in recent years, far exceeding Moore's Law's two-year doubling period. This acceleration results from algorithmic innovations, better training techniques, larger datasets, and architectural improvements, not merely hardware advances.
+While Moore's Law describes hardware capability growth, the AI doubling rate measures the exponential improvement in AI performance on specific tasks. Research from METR and others demonstrates that AI capabilities have been doubling approximately every 7 months in recent years, far exceeding Moore's Law's two-year doubling period. This acceleration results from algorithmic innovations, better training techniques, larger datasets, and architectural improvements, not merely hardware advances.
 
 <details>
     <summary>AI Performance Doubling Rate Visualization</summary>
@@ -158,9 +158,9 @@ While Moore's Law describes hardware capability growth, the AI doubling rate mea
     - Shaded region below human performance: "Superhuman performance"
 
     Key insights callout box:
-    - "AI performance doubled every 3.4 months from 2012-2018"
-    - "Exceeded Moore's Law improvement rate by 7x"
-    - "Surpassed human performance in 2015"
+    - "AI performance doubled every 7 months from 2019-2025"
+    - "Exceeded Moore's Law improvement rate by 3.4x"
+    - "Continues to advance rapidly with frontier models"
 
     Implementation: Chart.js with logarithmic scale plugin
     Canvas size: 800x500px
@@ -568,7 +568,7 @@ Before moving to the next chapter, ensure you understand these core concepts:
 
 - **Artificial Intelligence** encompasses computational systems performing tasks requiring human-like intelligence, with current conversational AI systems using narrow AI techniques focused on language understanding and generation
 - **AI development** has progressed non-linearly through multiple boom-and-bust cycles, with the modern deep learning era beginning around 2012 and transformer-based language models emerging in 2017
-- **Moore's Law** describes the doubling of transistor density every two years, providing the computational foundation for modern AI, while the **AI doubling rate** shows capability improvements occurring even faster (every 3-4 months)
+- **Moore's Law** describes the doubling of transistor density every two years, providing the computational foundation for modern AI, while the **AI doubling rate** shows capability improvements occurring even faster (every 7 months)
 - **Natural Language Processing** enables computers to understand and generate human language through preprocessing, tokenization, linguistic analysis, semantic understanding, and generation
 - **Text processing** fundamentals include case normalization, whitespace handling, punctuation processing, and tokenization as essential preprocessing steps
 - **String matching** provides exact or case-insensitive literal text search, useful for specific term identification but limited by its inability to handle variations

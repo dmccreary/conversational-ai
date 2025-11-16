@@ -5,22 +5,22 @@ This file contains overall metrics for the intelligent textbook.
 | Metric Name | Value | Link | Notes |
 |-------------|-------|------|-------|
 | Chapters | 14 | [Chapters](../chapters/index.md) | Number of chapter directories |
-| Concepts | 200 | [Learning Graph](learning-graph.csv) | Concepts from learning graph |
-| Glossary Terms | 0 | [Glossary](../glossary.md) | Defined terms |
+| Concepts | 200 | [Concept List](./concept-list.md) | Concepts from learning graph |
+| Glossary Terms | 200 | [Glossary](../glossary.md) | Defined terms |
 | FAQs | 6 | [FAQ](../faq.md) | Frequently asked questions |
 | Quiz Questions | 130 | - | Questions across all chapters |
 | Diagrams | 43 | - | Level 4 headers starting with '#### Diagram:' |
-| Equations | 36 | - | LaTeX expressions (inline and display) |
-| MicroSims | 1 | [Simulations](../sims/index.md) | Interactive p5.js simulations |
-| Total Words | 118,496 | - | Words in all markdown files |
-| Links | 384 | - | Hyperlinks in markdown format |
-| Equivalent Pages | 485 | - | Estimated pages (250 words/page + visuals) |
+| Equations | 37 | - | LaTeX expressions (inline and display) |
+| MicroSims | 1 | [Simulations](../sims/index.md) | Interactive MicroSims |
+| Total Words | 118,896 | - | Words in all markdown files |
+| Links | 390 | - | Hyperlinks in markdown format |
+| Equivalent Pages | 486 | - | Estimated pages (250 words/page + visuals) |
 
 ## Metrics Explanation
 
 - **Chapters**: Count of chapter directories containing index.md files
 - **Concepts**: Number of rows in learning-graph.csv
-- **Glossary Terms**: H2 and H3 headers in glossary.md
+- **Glossary Terms**: H4 headers in glossary.md
 - **FAQs**: H2 headers in faq.md
 - **Quiz Questions**: H2 headers in all quiz.md files
 - **Diagrams**: H4 headers starting with '#### Diagram:'
