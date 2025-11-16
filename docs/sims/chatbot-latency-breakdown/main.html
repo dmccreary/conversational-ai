@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot Response Latency Breakdown</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@3.0.1/dist/chartjs-plugin-annotation.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h4>Chatbot Response Latency</h4>
+        <div class="chart-container">
+            <canvas id="latencyChart"></canvas>
+        </div>   
+    </div>
+
+    <script>
+        // Chart configuration
+        const ctx = document.getElementById('latencyChart').getContext('2d');
+
+        // Color scheme
+        const colors = {
+            intentClassification: 'rgba(54, 162, 235, 0.8)',
+            templateSelection: 'rgba(75, 192, 192, 0.8)',
+            contextRetrieval: 'rgba(153, 102, 255, 0.8)',
+            vectorSearch: 'rgba(201, 203, 207, 0.8)',
+            llmGeneration: 'rgba(255, 159, 64, 0.8)',
+            formatting: 'rgba(147, 51, 234, 0.8)'
+        };
+
+        // Chart data
+        const data = {
+            labels: [
+                ['Simple Query', '(Template)'],
+                ['Complex Query', '(RAG + LLM)']
+            ],
+            datasets: [
+                {
+                    label: 'Intent Classification',
+                    data: [100, 150],
+                    backgroundColor: colors.intentClassification,
+                    borderColor: colors.intentClassification.replace('0.8', '1'),
+                    borderWidth: 1
+                },
+                {
+                    label: 'Template Selection',
+                    data: [50, 0],
+                    backgroundColor: colors.templateSelection,
+                    borderColor: colors.templateSelection.replace('0.8', '1'),
+                    borderWidth: 1
+                },
+                {
+                    label: 'Context Retrieval',
+                    data: [0, 300],
+                    backgroundColor: colors.contextRetrieval,
+                    borderColor: colors.contextRetrieval.replace('0.8', '1'),
+                    borderWidth: 1
+                },
+                {
+                    label: 'Vector Search',
+                    data: [0, 600],
+                    backgroundColor: colors.vectorSearch,
+                    borderColor: colors.vectorSearch.replace('0.8', '1'),
+                    borderWidth: 1
+                },
+                {
+                    label: 'LLM Generation',
+                    data: [0, 5000],
+                    backgroundColor: colors.llmGeneration,
+                    borderColor: colors.llmGeneration.replace('0.8', '1'),
+                    borderWidth: 1
+                },
+                {
+                    label: 'Response Formatting',
+                    data: [30, 50],
+                    backgroundColor: colors.formatting,
+                    borderColor: colors.formatting.replace('0.8', '1'),
+                    borderWidth: 1
+                }
+            ]
+        };
+
+        // Chart configuration
+        const config = {
+            type: 'bar',
+            data: data,
+            options: {
+                indexAxis: 'y', // Horizontal bars
+                responsive: true,
+                maintainAspectRatio: true,
+                aspectRatio: 1.25,
+                plugins: {
+                    title: {
+                        display: false
+                    },
+                    legend: {
+                        display: false // Using custom legend instead
+                    },
+                    tooltip: {
+                        mode: 'index',
+                        intersect: false,
+                        callbacks: {
+                            label: function(context) {
+                                const label = context.dataset.label || '';
+                                const value = context.parsed.x || 0;
+                                const datasetIndex = context.datasetIndex;
+                                const dataIndex = context.dataIndex;
+
+                                // Calculate cumulative time
+                                let cumulative = 0;
+                                for (let i = 0; i <= datasetIndex; i++) {
+                                    cumulative += data.datasets[i].data[dataIndex] || 0;
+                                }
+
+                                if (value > 0) {
+                                    return `${label}: ${value}ms (cumulative: ${cumulative}ms)`;
+                                }
+                                return null;
+                            },
+                            footer: function(tooltipItems) {
+                                if (tooltipItems.length > 0) {
+                                    const dataIndex = tooltipItems[0].dataIndex;
+                                    let total = 0;
+                                    data.datasets.forEach(dataset => {
+                                        total += dataset.data[dataIndex] || 0;
+                                    });
+                                    return `Total: ${total}ms`;
+                                }
+                                return '';
+                            }
+                        },
+                        backgroundColor: 'rgba(0, 0, 0, 0.9)',
+                        titleColor: '#fff',
+                        bodyColor: '#fff',
+                        footerColor: '#fff',
+                        padding: 12,
+                        titleFont: {
+                            size: 14,
+                            weight: 'bold'
+                        },
+                        bodyFont: {
+                            size: 13
+                        },
+                        footerFont: {
+                            size: 14,
+                            weight: 'bold'
+                        },
+                        displayColors: true,
+                        boxWidth: 12,
+                        boxHeight: 12
+                    },
+                    annotation: {
+                        annotations: {
+                            expectationLine: {
+                                type: 'line',
+                                xMin: 2000,
+                                xMax: 2000,
+                                borderColor: 'rgba(255, 206, 86, 0.9)',
+                                borderWidth: 3,
+                                borderDash: [10, 5],
+                                label: {
+                                    display: true,
+                                    content: 'User expectation threshold (2s)',
+                                    position: 'start',
+                                    backgroundColor: 'rgba(255, 206, 86, 0.9)',
+                                    color: '#000',
+                                    font: {
+                                        size: 12,
+                                        weight: 'bold'
+                                    },
+                                    padding: 6,
+                                    yAdjust: -15
+                                }
+                            },
+                            abandonmentLine: {
+                                type: 'line',
+                                xMin: 5000,
+                                xMax: 5000,
+                                borderColor: 'rgba(255, 99, 132, 0.9)',
+                                borderWidth: 3,
+                                borderDash: [10, 5],
+                                label: {
+                                    display: true,
+                                    content: 'Abandonment risk zone (5s)',
+                                    position: 'start',
+                                    backgroundColor: 'rgba(255, 99, 132, 0.9)',
+                                    color: '#fff',
+                                    font: {
+                                        size: 12,
+                                        weight: 'bold'
+                                    },
+                                    padding: 6,
+                                    yAdjust: -15
+                                }
+                            },
+                            llmAnnotation: {
+                                type: 'label',
+                                xValue: 3550, // Center of LLM segment for complex query
+                                yValue: 1, // Complex query row (0-indexed from bottom)
+                                content: ['82% of total latency'],
+                                backgroundColor: 'rgba(255, 159, 64, 0.95)',
+                                color: '#000',
+                                font: {
+                                    size: 13,
+                                    weight: 'bold'
+                                },
+                                padding: 8,
+                                borderRadius: 4,
+                                callout: {
+                                    display: true,
+                                    side: 10
+                                }
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        stacked: true,
+                        min: 0,
+                        max: 7000,
+                        title: {
+                            display: true,
+                            text: 'Time (milliseconds)',
+                            font: {
+                                size: 14,
+                                weight: 'bold'
+                            },
+                            padding: 10
+                        },
+                        ticks: {
+                            callback: function(value) {
+                                return value.toLocaleString() + 'ms';
+                            },
+                            font: {
+                                size: 12
+                            }
+                        },
+                        grid: {
+                            color: 'rgba(0, 0, 0, 0.1)',
+                            drawBorder: true,
+                            drawOnChartArea: true,
+                            drawTicks: true
+                        }
+                    },
+                    y: {
+                        stacked: true,
+                        title: {
+                            display: false
+                        },
+                        ticks: {
+                            font: {
+                                size: 11,
+                                weight: '500'
+                            },
+                            padding: 2,
+                            autoSkip: false
+                        },
+                        grid: {
+                            display: false
+                        }
+                    }
+                },
+                layout: {
+                    padding: {
+                        top: 5,
+                        right: 2,
+                        bottom: 5,
+                        left: 2
+                    }
+                }
+            }
+        };
+
+        // Create chart
+        const latencyChart = new Chart(ctx, config);
+
+        // Add animation completion callback
+        latencyChart.options.animation = {
+            duration: 2000,
+            easing: 'easeInOutQuart',
+            onComplete: function() {
+                console.log('Chart animation completed');
+            }
+        };
+    </script>
+</body>
+</html>
