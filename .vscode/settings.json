@@ -5,8 +5,10 @@
         "Coreference",
         "Dialogflow",
         "FAISS",
+        "infographics",
         "Lemmatization",
         "Rasa",
+        "Smartlogic",
         "SPARQL",
         "Subword"
     ]
