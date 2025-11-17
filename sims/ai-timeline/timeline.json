@@ -1,0 +1,237 @@
+{
+  "title": "Evolution of Artificial Intelligence Timeline",
+  "events": [
+    {
+      "start_date": {
+        "year": "1950",
+        "display_date": "1950"
+      },
+      "text": {
+        "headline": "Turing Test Proposed",
+        "text": "Alan Turing publishes 'Computing Machinery and Intelligence,' proposing the Turing Test as a measure of machine intelligence."
+      },
+      "group": "Foundational Research",
+      "notes": "This foundational paper asked 'Can machines think?' and established criteria for evaluating machine intelligence that remains influential today."
+    },
+    {
+      "start_date": {
+        "year": "1956",
+        "display_date": "1956"
+      },
+      "text": {
+        "headline": "Birth of AI Field",
+        "text": "Dartmouth Conference coins the term 'Artificial Intelligence' with John McCarthy, Marvin Minsky, and other pioneers."
+      },
+      "group": "Foundational Research",
+      "notes": "This conference is considered the birth of AI as a distinct field of study, bringing together researchers who would shape the field for decades."
+    },
+    {
+      "start_date": {
+        "year": "1957",
+        "display_date": "1957"
+      },
+      "text": {
+        "headline": "Perceptron Algorithm",
+        "text": "Frank Rosenblatt develops the Perceptron algorithm, an early neural network that could learn from examples."
+      },
+      "group": "Foundational Research",
+      "notes": "The Perceptron was one of the first algorithms capable of learning, laying groundwork for modern neural networks despite its limitations."
+    },
+    {
+      "start_date": {
+        "year": "1966",
+        "display_date": "1966"
+      },
+      "text": {
+        "headline": "ELIZA Chatbot Created",
+        "text": "Joseph Weizenbaum creates ELIZA, an early chatbot using pattern matching to simulate conversation."
+      },
+      "group": "Foundational Research",
+        "notes": "ELIZA demonstrated that simple pattern matching could create surprisingly convincing conversational interactions, though it had no true understanding."
+    },
+    {
+      "start_date": {
+        "year": "1969",
+        "display_date": "1969"
+      },
+      "end_date": {
+        "year": "1979",
+        "display_date": "1979"
+      },
+      "text": {
+        "headline": "First AI Winter",
+        "text": "Period of reduced funding and interest in AI due to unmet expectations and limited computational power."
+      },
+      "group": "AI Winter",
+      "notes": "Overpromising and underdelivering led to reduced funding and skepticism about AI's potential, slowing progress for a decade."
+    },
+    {
+      "start_date": {
+        "year": "1980",
+        "display_date": "1980"
+      },
+      "end_date": {
+        "year": "1987",
+        "display_date": "1987"
+      },
+      "text": {
+        "headline": "Expert Systems Boom",
+        "text": "Rule-based AI systems gain commercial success, with expert systems deployed in specialized domains like medical diagnosis."
+      },
+      "group": "Expert Systems Era",
+      "notes": "Expert systems like MYCIN and DENDRAL showed practical applications of AI, encoding human expertise as rules and inference engines."
+    },
+    {
+      "start_date": {
+        "year": "1987",
+        "display_date": "1987"
+      },
+      "end_date": {
+        "year": "1993",
+        "display_date": "1993"
+      },
+      "text": {
+        "headline": "Second AI Winter",
+        "text": "Expert systems limitations and hardware constraints lead to another period of reduced AI investment."
+      },
+      "group": "AI Winter",
+      "notes": "The brittleness of expert systems, high maintenance costs, and hardware limitations led to disillusionment and another funding contraction."
+    },
+    {
+      "start_date": {
+        "year": "1997",
+        "display_date": "May 1997"
+      },
+      "text": {
+        "headline": "Deep Blue Defeats Kasparov",
+        "text": "IBM's Deep Blue defeats world chess champion Garry Kasparov, demonstrating AI's capability in complex strategic games."
+      },
+      "group": "ML Renaissance",
+      "notes": "This milestone showed that AI could match human expertise in highly complex domains, though through brute-force search rather than human-like reasoning."
+    },
+    {
+      "start_date": {
+        "year": "2006",
+        "display_date": "2006"
+      },
+      "text": {
+        "headline": "Deep Learning Revival",
+        "text": "Geoffrey Hinton and colleagues achieve breakthroughs in training deep neural networks, revitalizing neural network research."
+      },
+      "group": "ML Renaissance",
+      "notes": "Hinton's work on restricted Boltzmann machines and deep belief networks showed how to train networks with many layers, overcoming previous limitations."
+    },
+    {
+      "start_date": {
+        "year": "2011",
+        "display_date": "February 2011"
+      },
+      "text": {
+        "headline": "IBM Watson Wins Jeopardy!",
+        "text": "IBM Watson defeats human champions at Jeopardy! using natural language processing and machine learning."
+      },
+      "group": "ML Renaissance",
+      "notes": "Watson demonstrated sophisticated natural language understanding, combining multiple AI techniques to interpret questions and generate answers."
+    },
+    {
+      "start_date": {
+        "year": "2012",
+        "display_date": "2012"
+      },
+      "text": {
+        "headline": "AlexNet Deep Learning Breakthrough",
+        "text": "AlexNet wins ImageNet competition using deep convolutional neural networks, sparking the modern deep learning revolution."
+      },
+      "group": "Deep Learning Era",
+      "notes": "AlexNet's dramatic performance improvement showed the power of deep CNNs trained on GPUs with large datasets, transforming computer vision."
+    },
+    {
+      "start_date": {
+        "year": "2014",
+        "display_date": "2014"
+      },
+      "text": {
+        "headline": "GANs Introduced",
+        "text": "Ian Goodfellow introduces Generative Adversarial Networks (GANs), enabling realistic image and data generation."
+      },
+      "group": "Deep Learning Era",
+      "notes": "GANs revolutionized generative modeling by pitting two neural networks against each other, leading to unprecedented realism in generated content."
+    },
+    {
+      "start_date": {
+        "year": "2017",
+        "display_date": "June 2017"
+      },
+      "text": {
+        "headline": "Transformer Architecture",
+        "text": "Google researchers publish 'Attention Is All You Need,' introducing the transformer architecture that powers modern LLMs."
+      },
+      "group": "Transformer & LLM Era",
+      "notes": "The transformer architecture with self-attention mechanisms enabled parallelized training and better handling of long-range dependencies in sequences."
+    },
+    {
+      "start_date": {
+        "year": "2018",
+        "display_date": "October 2018"
+      },
+      "text": {
+        "headline": "BERT Released",
+        "text": "Google releases BERT (Bidirectional Encoder Representations from Transformers), advancing NLP with bidirectional context understanding."
+      },
+      "group": "Transformer & LLM Era",
+      "notes": "BERT's bidirectional training enabled deeper understanding of context by considering both left and right context simultaneously, improving many NLP tasks."
+    },
+    {
+      "start_date": {
+        "year": "2020",
+        "display_date": "June 2020"
+      },
+      "text": {
+        "headline": "GPT-3 Demonstrates Few-Shot Learning",
+        "text": "OpenAI releases GPT-3 with 175 billion parameters, demonstrating impressive few-shot learning capabilities."
+      },
+      "group": "Transformer & LLM Era",
+      "notes": "GPT-3's scale enabled emergent capabilities like few-shot learning, where the model could perform new tasks from just a few examples without fine-tuning."
+    },
+    {
+      "start_date": {
+        "year": "2022",
+        "display_date": "November 2022"
+      },
+      "text": {
+        "headline": "ChatGPT Launches",
+        "text": "OpenAI releases ChatGPT, bringing conversational AI to mainstream adoption with millions of users."
+      },
+      "group": "Transformer & LLM Era",
+      "notes": "ChatGPT's intuitive interface and impressive capabilities made advanced AI accessible to the general public, accelerating AI adoption across industries."
+    },
+    {
+      "start_date": {
+        "year": "2023",
+        "display_date": "March 2023"
+      },
+      "text": {
+        "headline": "GPT-4 and Multimodal Models",
+        "text": "GPT-4 and competing models achieve multimodal capabilities, processing both text and images."
+      },
+      "group": "Transformer & LLM Era",
+      "notes": "Multimodal models expanded AI capabilities beyond text to handle images, audio, and video, enabling more versatile applications."
+    },
+    {
+      "start_date": {
+        "year": "2024",
+        "display_date": "2024"
+      },
+      "end_date": {
+        "year": "2025",
+        "display_date": "2025"
+      },
+      "text": {
+        "headline": "Enterprise AI Adoption",
+        "text": "Widespread enterprise adoption of conversational AI and RAG (Retrieval Augmented Generation) systems."
+      },
+      "group": "Transformer & LLM Era",
+      "notes": "Organizations integrate LLMs with their proprietary data using RAG patterns, enabling AI assistants with domain-specific knowledge."
+    }
+  ]
+}

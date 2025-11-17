@@ -1,0 +1,1456 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A college level course on creating chatbots using AI.">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/conversational-ai/sims/regex-matcher/">
+      
+      
+      
+      
+      <link rel="icon" href="../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
+    
+    
+      
+        <title>Interactive Regular Expression Pattern Matcher - Conversational AI</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.2afb09e1.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-4TJQPX0Y3T"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-4TJQPX0Y3T",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-4TJQPX0Y3T",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+      
+        <meta  property="og:type"  content="website" >
+      
+        <meta  property="og:title"  content="Interactive Regular Expression Pattern Matcher - Conversational AI" >
+      
+        <meta  property="og:description"  content="A college level course on creating chatbots using AI." >
+      
+        <meta  property="og:image"  content="https://dmccreary.github.io/conversational-ai/assets/images/social/sims/regex-matcher/index.png" >
+      
+        <meta  property="og:image:type"  content="image/png" >
+      
+        <meta  property="og:image:width"  content="1200" >
+      
+        <meta  property="og:image:height"  content="630" >
+      
+        <meta  property="og:url"  content="https://dmccreary.github.io/conversational-ai/sims/regex-matcher/" >
+      
+        <meta  name="twitter:card"  content="summary_large_image" >
+      
+        <meta  name="twitter:title"  content="Interactive Regular Expression Pattern Matcher - Conversational AI" >
+      
+        <meta  name="twitter:description"  content="A college level course on creating chatbots using AI." >
+      
+        <meta  name="twitter:image"  content="https://dmccreary.github.io/conversational-ai/assets/images/social/sims/regex-matcher/index.png" >
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="gold" data-md-color-accent="black">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#interactive-regular-expression-pattern-matcher" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Conversational AI" class="md-header__button md-logo" aria-label="Conversational AI" data-md-component="logo">
+      
+  <img src="../../img/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Conversational AI
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Interactive Regular Expression Pattern Matcher
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/conversational-ai" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Conversational AI" class="md-nav__button md-logo" aria-label="Conversational AI" data-md-component="logo">
+      
+  <img src="../../img/logo.png" alt="logo">
+
+    </a>
+    Conversational AI
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/conversational-ai" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    About
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course-description/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Course Description
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../chapters/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Chapters
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    MicroSims
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../learning-graph/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Learning Graph
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../prompts/01-bloom-taxonomy-enrichment/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Sample Prompts
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    FAQs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Glossary
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-we-built-this-site/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    How We Built This Site
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../references/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    References
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../feedback/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Feedback
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../license/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    License
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Contact
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#interactive-microsim" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interactive MicroSim
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#features" class="md-nav__link">
+    <span class="md-ellipsis">
+      Features
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Features">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#interactive-elements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interactive Elements
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visual-feedback" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visual Feedback
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to Use
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How to Use">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Workflow
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-matching-email-addresses" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example: Matching Email Addresses
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-matching-phone-numbers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example: Matching Phone Numbers
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-regex-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common Regex Patterns
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Regex Patterns">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-matchers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Matchers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#character-classes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Character Classes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anchors-and-boundaries" class="md-nav__link">
+    <span class="md-ellipsis">
+      Anchors and Boundaries
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#groups-and-alternation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Groups and Alternation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#educational-use-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Educational Use Cases
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practical-applications" class="md-nav__link">
+    <span class="md-ellipsis">
+      Practical Applications
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Practical Applications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-chatbot-query-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example: Chatbot Query Processing
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#limitations-and-best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Limitations and Best Practices
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Limitations and Best Practices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#when-not-to-use-regex" class="md-nav__link">
+    <span class="md-ellipsis">
+      When NOT to Use Regex
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Best Practices
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#common-pitfalls" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common Pitfalls
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#technical-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      Technical Details
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-topics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Related Topics
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      References
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing-in-p5js-editor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Testing in p5.js Editor
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/dmccreary/conversational-ai/blob/master/docs/sims/regex-matcher/index.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="interactive-regular-expression-pattern-matcher">Interactive Regular Expression Pattern Matcher</h1>
+<p>An educational MicroSim for experimenting with regular expression patterns and seeing real-time matches, building intuition for regex syntax and capabilities.</p>
+<h2 id="interactive-microsim">Interactive MicroSim</h2>
+<iframe src="main.html" width="100%" height="800px" frameborder="0"></iframe>
+
+<p><a class="md-button md-button--primary" href="main.html" target="_blank">View Fullscreen</a></p>
+<h2 id="overview">Overview</h2>
+<p>Regular expressions (regex) provide a powerful pattern language for matching and extracting text. This interactive MicroSim allows you to experiment with regex patterns and immediately see what text they match, helping you build intuition for this essential text processing tool.</p>
+<h2 id="features">Features</h2>
+<h3 id="interactive-elements">Interactive Elements</h3>
+<ul>
+<li><strong>Test Text Area:</strong> Enter or paste any text you want to search through</li>
+<li><strong>Pattern Input:</strong> Enter regex patterns using standard JavaScript regex syntax</li>
+<li><strong>Example Patterns:</strong> Dropdown menu with pre-loaded examples:</li>
+<li>Email addresses</li>
+<li>Phone numbers (US formats)</li>
+<li>URLs (HTTP/HTTPS)</li>
+<li>Dates (ISO format YYYY-MM-DD)</li>
+<li>Hashtags</li>
+<li>Numbers (integers and decimals)</li>
+<li>
+<p>Custom (create your own)</p>
+</li>
+<li>
+<p><strong>Regex Flags:</strong></p>
+</li>
+<li>Global (g): Find all matches (not just first)</li>
+<li>Case insensitive (i): Ignore case when matching</li>
+<li>
+<p>Multiline (m): Treat beginning and end characters (^ and $) as working across multiple lines</p>
+</li>
+<li>
+<p><strong>Buttons:</strong></p>
+</li>
+<li>Test Pattern: Manually trigger pattern matching (also happens automatically on input)</li>
+<li>Clear: Reset both text and pattern fields</li>
+</ul>
+<h3 id="visual-feedback">Visual Feedback</h3>
+<ul>
+<li><strong>Matches Visualization:</strong> Shows your test text with matches highlighted in yellow</li>
+<li><strong>Match Details:</strong> Lists all matches found with their positions in the text</li>
+<li><strong>Match Count:</strong> Shows total number of matches</li>
+<li><strong>Pattern Explanation:</strong> Breaks down what each part of your regex pattern means</li>
+<li><strong>Error Display:</strong> Shows helpful error messages if your pattern has syntax errors</li>
+</ul>
+<h2 id="how-to-use">How to Use</h2>
+<h3 id="basic-workflow">Basic Workflow</h3>
+<ol>
+<li><strong>Select an Example:</strong> Choose an example pattern from the dropdown (or start with Custom)</li>
+<li><strong>Observe the Match:</strong> See how the pattern matches the example text (yellow highlights)</li>
+<li><strong>Modify the Pattern:</strong> Change the regex pattern to experiment</li>
+<li><strong>Change the Text:</strong> Enter your own test text to see what matches</li>
+<li><strong>Adjust Flags:</strong> Toggle global, case insensitive, or multiline modes</li>
+<li><strong>Review Results:</strong> Check the match details section to see what was found</li>
+</ol>
+<h3 id="example-matching-email-addresses">Example: Matching Email Addresses</h3>
+<ol>
+<li>Select "Email addresses" from the dropdown</li>
+<li>Pattern: <code>\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b</code></li>
+<li>Test text: <code>Contact us at support@example.com or sales@company.org</code></li>
+<li>Observe two matches highlighted in yellow</li>
+<li>Match details show both email addresses and their positions</li>
+</ol>
+<p><strong>Pattern Breakdown:</strong>
+- <code>\b</code> = word boundary (ensures we match complete emails)
+- <code>[A-Za-z0-9._%+-]+</code> = one or more valid email characters before @
+- <code>@</code> = literal @ symbol
+- <code>[A-Za-z0-9.-]+</code> = domain name characters
+- <code>\.</code> = literal dot (escaped because . means "any character" in regex)
+- <code>[A-Z|a-z]{2,}</code> = two or more letters for top-level domain (com, org, etc.)
+- <code>\b</code> = word boundary (end of email)</p>
+<h3 id="example-matching-phone-numbers">Example: Matching Phone Numbers</h3>
+<ol>
+<li>Select "Phone numbers" from the dropdown</li>
+<li>Pattern: <code>\(?\d{3}\)?[-.\s]?\d{3}[-.\s]?\d{4}</code></li>
+<li>Test text: <code>Call (555) 123-4567 or 555.987.6543 or 555-111-2222</code></li>
+<li>Observe three different phone number formats all matching</li>
+</ol>
+<p><strong>Pattern Breakdown:</strong>
+- <code>\(?</code> = optional opening parenthesis
+- <code>\d{3}</code> = exactly 3 digits (area code)
+- <code>\)?</code> = optional closing parenthesis
+- <code>[-.\s]?</code> = optional separator (dash, dot, or space)
+- <code>\d{3}</code> = exactly 3 digits (exchange)
+- <code>[-.\s]?</code> = optional separator
+- <code>\d{4}</code> = exactly 4 digits (line number)</p>
+<h2 id="common-regex-patterns">Common Regex Patterns</h2>
+<h3 id="basic-matchers">Basic Matchers</h3>
+<table>
+<thead>
+<tr>
+<th>Pattern</th>
+<th>Meaning</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>.</code></td>
+<td>Any single character</td>
+<td><code>c.t</code> matches "cat", "cot", "c9t"</td>
+</tr>
+<tr>
+<td><code>*</code></td>
+<td>Zero or more of preceding</td>
+<td><code>ab*c</code> matches "ac", "abc", "abbc"</td>
+</tr>
+<tr>
+<td><code>+</code></td>
+<td>One or more of preceding</td>
+<td><code>ab+c</code> matches "abc", "abbc" (not "ac")</td>
+</tr>
+<tr>
+<td><code>?</code></td>
+<td>Zero or one of preceding</td>
+<td><code>colou?r</code> matches "color", "colour"</td>
+</tr>
+<tr>
+<td><code>{n}</code></td>
+<td>Exactly n of preceding</td>
+<td><code>\d{3}</code> matches "123", "456"</td>
+</tr>
+<tr>
+<td><code>{n,m}</code></td>
+<td>Between n and m</td>
+<td><code>\d{2,4}</code> matches "12", "123", "1234"</td>
+</tr>
+</tbody>
+</table>
+<h3 id="character-classes">Character Classes</h3>
+<table>
+<thead>
+<tr>
+<th>Pattern</th>
+<th>Meaning</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>\d</code></td>
+<td>Any digit (0-9)</td>
+<td><code>\d+</code> matches "123", "4567"</td>
+</tr>
+<tr>
+<td><code>\w</code></td>
+<td>Word character (a-z, A-Z, 0-9, _)</td>
+<td><code>\w+</code> matches "hello", "test_123"</td>
+</tr>
+<tr>
+<td><code>\s</code></td>
+<td>Whitespace (space, tab, newline)</td>
+<td><code>hello\s+world</code> matches "hello  world"</td>
+</tr>
+<tr>
+<td><code>\D</code></td>
+<td>Non-digit</td>
+<td><code>\D+</code> matches "abc"</td>
+</tr>
+<tr>
+<td><code>\W</code></td>
+<td>Non-word character</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>\S</code></td>
+<td>Non-whitespace</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[abc]</code></td>
+<td>Any character in set</td>
+<td><code>[Pp]ython</code> matches "Python", "python"</td>
+</tr>
+<tr>
+<td><code>[a-z]</code></td>
+<td>Any character in range</td>
+<td><code>[0-9]{2}</code> matches "42", "99"</td>
+</tr>
+<tr>
+<td><code>[^abc]</code></td>
+<td>Any character NOT in set</td>
+<td><code>[^0-9]+</code> matches any non-digit</td>
+</tr>
+</tbody>
+</table>
+<h3 id="anchors-and-boundaries">Anchors and Boundaries</h3>
+<table>
+<thead>
+<tr>
+<th>Pattern</th>
+<th>Meaning</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>^</code></td>
+<td>Start of string/line</td>
+<td><code>^Hello</code> matches "Hello world" (not "Say Hello")</td>
+</tr>
+<tr>
+<td><code>$</code></td>
+<td>End of string/line</td>
+<td><code>world$</code> matches "Hello world" (not "world peace")</td>
+</tr>
+<tr>
+<td><code>\b</code></td>
+<td>Word boundary</td>
+<td><code>\bcat\b</code> matches "cat" (not "category")</td>
+</tr>
+<tr>
+<td><code>\B</code></td>
+<td>Non-word boundary</td>
+<td><code>\Bcat</code> matches "category" (not "cat")</td>
+</tr>
+</tbody>
+</table>
+<h3 id="groups-and-alternation">Groups and Alternation</h3>
+<table>
+<thead>
+<tr>
+<th>Pattern</th>
+<th>Meaning</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>(...)</code></td>
+<td>Capture group</td>
+<td><code>(\d{3})-(\d{4})</code> captures area code and number</td>
+</tr>
+<tr>
+<td><code>(?:...)</code></td>
+<td>Non-capturing group</td>
+<td><code>(?:https?):</code> matches http or https</td>
+</tr>
+<tr>
+<td><code>|</code></td>
+<td>OR alternation</td>
+<td><code>cat|dog</code> matches "cat" or "dog"</td>
+</tr>
+</tbody>
+</table>
+<h2 id="educational-use-cases">Educational Use Cases</h2>
+<p>This MicroSim helps students:</p>
+<ol>
+<li><strong>Learn Regex Syntax:</strong> Experiment with patterns and see immediate results</li>
+<li><strong>Build Pattern Intuition:</strong> Understand what different regex elements match</li>
+<li><strong>Debug Patterns:</strong> Test patterns before using them in code</li>
+<li><strong>Extract Data:</strong> Practice extracting structured information (emails, phone numbers, dates)</li>
+<li><strong>Understand Greedy vs. Lazy:</strong> See how <code>+</code> vs <code>+?</code> affects matching</li>
+<li><strong>Test Edge Cases:</strong> Verify patterns work with unusual inputs</li>
+</ol>
+<h2 id="practical-applications">Practical Applications</h2>
+<p>Regular expressions are essential for:</p>
+<ul>
+<li><strong>Data Validation:</strong> Verify email addresses, phone numbers, credit cards</li>
+<li><strong>Text Extraction:</strong> Pull specific information from logs, documents, web pages</li>
+<li><strong>Search and Replace:</strong> Find and modify patterns in text editors</li>
+<li><strong>Log Analysis:</strong> Extract error codes, timestamps, IP addresses</li>
+<li><strong>Web Scraping:</strong> Find specific patterns in HTML content</li>
+<li><strong>Chatbot Input Processing:</strong> Extract dates, product codes, tracking numbers from user queries</li>
+</ul>
+<h3 id="example-chatbot-query-processing">Example: Chatbot Query Processing</h3>
+<p>A conversational AI system might use regex to extract structured data:</p>
+<p><strong>User Query:</strong> "What's the weather next Friday?"</p>
+<p><strong>Regex Extraction:</strong>
+- Date pattern: <code>(next|this)\s+(Monday|Tuesday|...|Sunday)</code>
+- Extracts: "next Friday"
+- Can then convert to actual date for weather API call</p>
+<p><strong>User Query:</strong> "Show me details for item SKU-12345"</p>
+<p><strong>Regex Extraction:</strong>
+- Product code pattern: <code>SKU-\d+</code>
+- Extracts: "SKU-12345"
+- Can then query product database</p>
+<h2 id="limitations-and-best-practices">Limitations and Best Practices</h2>
+<h3 id="when-not-to-use-regex">When NOT to Use Regex</h3>
+<ul>
+<li><strong>Parsing HTML/XML:</strong> Use proper parsers (BeautifulSoup, lxml) instead</li>
+<li><strong>Complex Grammars:</strong> Use dedicated parsing libraries</li>
+<li><strong>When Simpler Methods Work:</strong> String methods (<code>.contains()</code>, <code>.startsWith()</code>) are clearer</li>
+</ul>
+<h3 id="best-practices">Best Practices</h3>
+<ol>
+<li><strong>Start Simple:</strong> Begin with basic patterns and add complexity gradually</li>
+<li><strong>Test Edge Cases:</strong> Try empty strings, special characters, unexpected formats</li>
+<li><strong>Use Raw Strings:</strong> In Python, use <code>r"pattern"</code> to avoid escaping issues</li>
+<li><strong>Comment Complex Patterns:</strong> Explain what each part does</li>
+<li><strong>Consider Readability:</strong> Sometimes multiple simple patterns beat one complex pattern</li>
+</ol>
+<h3 id="common-pitfalls">Common Pitfalls</h3>
+<ul>
+<li><strong>Greedy Matching:</strong> <code>.*</code> matches too much; use <code>.*?</code> for lazy matching</li>
+<li><strong>Forgetting to Escape:</strong> <code>.</code> matches any character; use <code>\.</code> for literal dots</li>
+<li><strong>Case Sensitivity:</strong> Remember to use the <code>i</code> flag if needed</li>
+<li><strong>Word Boundaries:</strong> <code>\b</code> prevents matching inside larger words</li>
+</ul>
+<h2 id="technical-details">Technical Details</h2>
+<ul>
+<li><strong>Library:</strong> p5.js 1.11.10</li>
+<li><strong>Regex Engine:</strong> JavaScript RegExp</li>
+<li><strong>Canvas Size:</strong> 900×750px</li>
+<li><strong>Browser Compatibility:</strong> All modern browsers</li>
+<li><strong>Dependencies:</strong> p5.js (loaded from CDN)</li>
+</ul>
+<h2 id="related-topics">Related Topics</h2>
+<ul>
+<li><a href="../../chapters/01-foundations-ai-nlp/">Chapter 1: Foundations of AI and NLP</a> - Detailed discussion of text processing and regex</li>
+<li><a href="../text-processing-workflow/">Text Processing Workflow</a> - Where regex fits in the NLP pipeline</li>
+<li>String matching techniques</li>
+<li>Grep command for pattern searching in files</li>
+<li>Modern NLP alternatives (semantic search with embeddings)</li>
+</ul>
+<h2 id="references">References</h2>
+<ul>
+<li>Friedl, J. (2006). Mastering Regular Expressions. O'Reilly Media.</li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions">MDN Web Docs: Regular Expressions</a></li>
+<li><a href="https://regex101.com/">Regex101</a> - Online regex tester with detailed explanations</li>
+<li><a href="https://regexr.com/">RegExr</a> - Learn, build, and test regex</li>
+<li><a href="https://p5js.org/reference/">p5.js Documentation</a></li>
+</ul>
+<h2 id="testing-in-p5js-editor">Testing in p5.js Editor</h2>
+<p>You can test and modify this MicroSim directly in the p5.js online editor:</p>
+<ol>
+<li>Go to <a href="https://editor.p5js.org/">https://editor.p5js.org/</a></li>
+<li>Copy the contents of <code>regex-matcher.js</code></li>
+<li>Paste into the editor</li>
+<li>Click "Play" to run the simulation</li>
+<li>Modify and experiment with the code</li>
+</ol>
+<p>This allows you to understand how the simulation works and create your own variations.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer", "content.action.edit"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+        <script src="../../js/extra.js"></script>
+      
+    
+  </body>
+</html>
