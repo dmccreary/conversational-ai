@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Processing Pipeline Workflow</title>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 28px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 16px;
+        }
+
+        .mermaid {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .description {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 30px;
+            color: #0066cc;
+            text-decoration: none;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .note {
+            background-color: #e8f4f8;
+            border-left: 4px solid: #2196F3;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .note strong {
+            color: #1976D2;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Text Processing Pipeline Workflow</h1>
+        <p class="subtitle">Typical stages in preprocessing text for NLP applications</p>
+
+        <div class="description">
+            <p>
+                Before applying sophisticated machine learning models, NLP systems typically perform basic text
+                processing to standardize and clean input data. This flowchart illustrates the typical preprocessing
+                pipeline that ensures consistency and reduces noise in text data.
+            </p>
+        </div>
+
+        <div class="mermaid">
+flowchart TD
+    Start(["Raw Text Input"]):::startNode
+    Step1["Lowercase Conversion"]:::processNode
+    Step2["Special Character Removal"]:::processNode
+    Step3["Whitespace Normalization"]:::processNode
+    Decision1{"Keep Punctuation?"}:::decisionNode
+    Step4a["Remove Punctuation"]:::processNode
+    Step4b["Preserve Punctuation"]:::processNode
+    Step5["Tokenization"]:::processNode
+    Decision2{"Apply Stemming/Lemmatization?"}:::decisionNode
+    Step6a["Apply Morphological Processing"]:::processNode
+    Step6b["Keep Original Tokens"]:::processNode
+    End(["Processed Tokens Ready for Analysis"]):::endNode
+
+    Start -->|"Example: 'Hello!!! How's your performance TODAY? :)'"| Step1
+    Step1 -->|"Convert all characters to lowercase"<br/>"Result: 'hello!!! how's your performance today? :)'"| Step2
+    Step2 -->|"Remove emoji, excessive punctuation"<br/>"Result: 'hello how's your performance today'"| Step3
+    Step3 -->|"Replace multiple spaces with single space"<br/>"Result: 'hello how's your performance today'"| Decision1
+    Decision1 -->|"No - For keyword matching"| Step4a
+    Decision1 -->|"Yes - For sentence splitting"| Step4b
+    Step4a -->|"Strip all punctuation marks"<br/>"Result: 'hello hows your performance today'"| Step5
+    Step4b -->|"Maintain punctuation"<br/>"Result: 'hello how's your performance today'"| Step5
+    Step5 -->|"Split text into individual tokens"<br/>"Result: ['hello', 'how's', 'your', 'performance', 'today']"| Decision2
+    Decision2 -->|"Yes - Reduce to root forms"| Step6a
+    Decision2 -->|"No - Preserve original"| Step6b
+    Step6a -->|"Stemming (simple) or lemmatization (dictionary-based)"<br/>"e.g., 'running' → 'run'"| End
+    Step6b -->|"Keep original word forms"| End
+
+    classDef startNode fill:#667eea,stroke:#333,stroke-width:2px,color:#fff,font-size:16px
+    classDef endNode fill:#4facfe,stroke:#333,stroke-width:2px,color:#fff,font-size:16px
+    classDef processNode fill:#764ba2,stroke:#333,stroke-width:2px,color:#fff,font-size:16px
+    classDef decisionNode fill:#f093fb,stroke:#333,stroke-width:2px,color:#333,font-size:16px,font-weight:bold
+
+    linkStyle default stroke:#999,stroke-width:2px,font-size:14px
+        </div>
+
+        <div class="note">
+            <p><strong>Note:</strong> Each step in this pipeline serves a specific purpose:</p>
+            <ul>
+                <li><strong>Lowercase Conversion:</strong> Treats "Python," "python," and "PYTHON" as identical</li>
+                <li><strong>Special Character Removal:</strong> Filters out emoji, symbols, excessive punctuation</li>
+                <li><strong>Whitespace Normalization:</strong> Ensures consistent spacing</li>
+                <li><strong>Punctuation Handling:</strong> Application-dependent—keep for sentence boundaries, remove for keyword matching</li>
+                <li><strong>Tokenization:</strong> Splits text into words or subwords for analysis</li>
+                <li><strong>Stemming/Lemmatization:</strong> Reduces inflected words to their root form</li>
+            </ul>
+        </div>
+
+        <div class="description">
+            <p>
+                The choice of which steps to apply depends on the downstream NLP task. For example, sentiment analysis
+                might preserve punctuation (exclamation marks indicate emphasis), while keyword search might remove all
+                punctuation for simpler matching.
+            </p>
+        </div>
+
+        <a href="." class="back-link">Back to Documentation</a>
+    </main>
+
+    <script>
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'default',
+            flowchart: {
+                useMaxWidth: true,
+                htmlLabels: true,
+                curve: 'basis'
+            }
+        });
+    </script>
+</body>
+</html>
