@@ -61,7 +61,7 @@
 
         .note {
             background-color: #e8f4f8;
-            border-left: 4px solid: #2196F3;
+            border-left: 4px solid #2196F3;
             padding: 15px;
             margin: 20px 0;
             border-radius: 4px;
@@ -87,39 +87,39 @@
 
         <div class="mermaid">
 flowchart TD
-    Start(["Raw Text Input"]):::startNode
-    Step1["Lowercase Conversion"]:::processNode
-    Step2["Special Character Removal"]:::processNode
-    Step3["Whitespace Normalization"]:::processNode
-    Decision1{"Keep Punctuation?"}:::decisionNode
-    Step4a["Remove Punctuation"]:::processNode
-    Step4b["Preserve Punctuation"]:::processNode
-    Step5["Tokenization"]:::processNode
-    Decision2{"Apply Stemming/Lemmatization?"}:::decisionNode
-    Step6a["Apply Morphological Processing"]:::processNode
-    Step6b["Keep Original Tokens"]:::processNode
-    End(["Processed Tokens Ready for Analysis"]):::endNode
+    Start([Raw Text Input]):::startNode
+    Step1[Lowercase Conversion]:::processNode
+    Step2[Special Character Removal]:::processNode
+    Step3[Whitespace Normalization]:::processNode
+    Decision1{Keep Punctuation?}:::decisionNode
+    Step4a[Remove Punctuation]:::processNode
+    Step4b[Preserve Punctuation]:::processNode
+    Step5[Tokenization]:::processNode
+    Decision2{Apply Stemming/Lemmatization?}:::decisionNode
+    Step6a[Apply Morphological Processing]:::processNode
+    Step6b[Keep Original Tokens]:::processNode
+    End([Processed Tokens Ready]):::endNode
 
-    Start -->|"Example: 'Hello!!! How's your performance TODAY? :)'"| Step1
-    Step1 -->|"Convert all characters to lowercase"<br/>"Result: 'hello!!! how's your performance today? :)'"| Step2
-    Step2 -->|"Remove emoji, excessive punctuation"<br/>"Result: 'hello how's your performance today'"| Step3
-    Step3 -->|"Replace multiple spaces with single space"<br/>"Result: 'hello how's your performance today'"| Decision1
-    Decision1 -->|"No - For keyword matching"| Step4a
-    Decision1 -->|"Yes - For sentence splitting"| Step4b
-    Step4a -->|"Strip all punctuation marks"<br/>"Result: 'hello hows your performance today'"| Step5
-    Step4b -->|"Maintain punctuation"<br/>"Result: 'hello how's your performance today'"| Step5
-    Step5 -->|"Split text into individual tokens"<br/>"Result: ['hello', 'how's', 'your', 'performance', 'today']"| Decision2
-    Decision2 -->|"Yes - Reduce to root forms"| Step6a
-    Decision2 -->|"No - Preserve original"| Step6b
-    Step6a -->|"Stemming (simple) or lemmatization (dictionary-based)"<br/>"e.g., 'running' → 'run'"| End
-    Step6b -->|"Keep original word forms"| End
+    Start --> Step1
+    Step1 --> Step2
+    Step2 --> Step3
+    Step3 --> Decision1
+    Decision1 -->|No| Step4a
+    Decision1 -->|Yes| Step4b
+    Step4a --> Step5
+    Step4b --> Step5
+    Step5 --> Decision2
+    Decision2 -->|Yes| Step6a
+    Decision2 -->|No| Step6b
+    Step6a --> End
+    Step6b --> End
 
     classDef startNode fill:#667eea,stroke:#333,stroke-width:2px,color:#fff,font-size:16px
     classDef endNode fill:#4facfe,stroke:#333,stroke-width:2px,color:#fff,font-size:16px
     classDef processNode fill:#764ba2,stroke:#333,stroke-width:2px,color:#fff,font-size:16px
     classDef decisionNode fill:#f093fb,stroke:#333,stroke-width:2px,color:#333,font-size:16px,font-weight:bold
 
-    linkStyle default stroke:#999,stroke-width:2px,font-size:14px
+    linkStyle default stroke:#999,stroke-width:2px
         </div>
 
         <div class="note">

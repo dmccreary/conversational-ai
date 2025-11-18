@@ -61,6 +61,10 @@ nav:
     - List of Sims: sims/index.md
     - Learning Graph Viewer: sims/graph-viewer/index.md
     - Chatbot Latency Breakdown: sims/chatbot-latency-breakdown/index.md
+    - AI Timeline: sims/ai-timeline/index.md
+    - AI Performance Chart: sims/ai-performance-chart/index.md
+    - Text Processing Workflow: sims/text-processing-workflow/index.md
+    - Regex Pattern Matcher: sims/regex-matcher/index.md
   
   - Learning Graph:
     - Introduction: learning-graph/index.md
