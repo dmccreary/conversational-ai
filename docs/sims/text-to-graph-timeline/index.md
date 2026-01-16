@@ -70,11 +70,43 @@ This chart displays F1 scores from two related benchmarks:
 - **Triangle** = Open-weights models (fine-tuned)
 - **Colors by publisher**: Anthropic (orange), Google (blue), OpenAI (green), Mistral (coral), Alibaba (purple), Microsoft (cyan)
 
+## Classroom Discussion
+
+Have students examine the visualization and discuss the following questions:
+
+### Trend Analysis
+
+1. **Performance Trajectory**: What overall trend do you observe in F1 scores from 2023 to 2025? What factors might explain this rapid improvement?
+
+2. **Open vs. Closed Models**: Compare the performance of fine-tuned open-weights models to zero-shot proprietary models. What implications does this have for organizations building knowledge graph applications?
+
+3. **Metric Breakdown**: Switch between the different metrics (E, A, P, R). Which extraction task appears most challenging for models? Why might Relations (R) scores be consistently lower than Attributes (A)?
+
+### Implications for Intelligent Textbooks
+
+4. **Knowledge Graph Quality**: If an intelligent textbook uses LLMs to automatically extract concepts, relationships, and attributes from educational content, what minimum F1 score would you consider acceptable? How would extraction errors impact learning?
+
+5. **Cost-Performance Tradeoffs**: Consider that smaller fine-tuned models (e.g., Qwen3 4B at 0.81) approach the performance of large proprietary models. What are the implications for deploying knowledge extraction in resource-constrained educational settings?
+
+6. **Benchmark Evolution**: The refinement from Text2KGBench (2023) to Text2KGBench-LettrIA (2025) improved annotation quality. How might benchmark improvements influence the development of educational AI systems?
+
+### Design Exercise
+
+7. **Building a Learning Graph Pipeline**: Design a pipeline that uses text-to-knowledge-graph models to automatically generate learning graphs from textbook chapters. Consider:
+    - Which model(s) would you choose and why?
+    - How would you handle extraction errors?
+    - What human-in-the-loop validation would be needed?
+    - How would you ensure concept dependencies are correctly identified?
+
 ## Technical Details
 
 - **Library**: Chart.js 4.4.0 with date-fns adapter
 - **Chart Type**: Scatter plot with time scale (quarterly)
 - **Time Range**: January 2023 to January 2026
+- **Source Files**:
+    - `main.html` - HTML structure and styling
+    - `script.js` - Chart.js visualization logic
+    - [data.json](data.json) - Model benchmark data (34 models with scores)
 
 ## References
 
