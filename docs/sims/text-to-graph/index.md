@@ -44,6 +44,7 @@ This chart aggregates published benchmark results from multiple text-to-knowledg
 | LLaMA 2 | 0.77 | KG-Generation | General |
 | GPT-4 | 0.77 | Sepsis-KG | Sepsis |
 | BERT | 0.72 | KG-Generation | General |
+| *Claude Opus 4.5 (Est.)* | *~0.70* | *Text2KGBench-LettrIA* | *DBpedia-WebNLG (refined)* |
 | **Gemini 2.5 Pro** | 0.6595 | Text2KGBench-LettrIA | DBpedia-WebNLG (refined) |
 | **Claude Sonnet 4** | 0.6487 | Text2KGBench-LettrIA | DBpedia-WebNLG (refined) |
 | **GPT-4.1** | 0.6472 | Text2KGBench-LettrIA | DBpedia-WebNLG (refined) |
@@ -53,6 +54,9 @@ This chart aggregates published benchmark results from multiple text-to-knowledg
 | Vicuna-13B | 0.30 | Text2KGBench | DBpedia-WebNLG |
 | Alpaca-LoRA-13B | 0.27 | Text2KGBench | Wikidata-TekGen |
 | Alpaca-LoRA-13B | 0.25 | Text2KGBench | DBpedia-WebNLG |
+
+!!! warning "Estimated Value"
+    The **Claude Opus 4.5** result (~0.70 F1) is an **estimate**, not a published benchmark result. It is based on typical performance improvements between Claude Sonnet 4 (0.6487) and Opus models on reasoning tasks (~5-15% improvement). The actual performance may differ.
 
 **Note:** Results from different benchmarks are not directly comparable due to differences in evaluation methodology, datasets, and task definitions.
 
