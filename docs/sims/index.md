@@ -7,3 +7,4 @@
 - [Regex Pattern Matcher](./regex-matcher/index.md) - Tool for testing regular expression patterns
 - [Text Processing Workflow](./text-processing-workflow/index.md) - Flowchart showing NLP text processing steps
 - [Text to Graph Benchmark](./text-to-graph/index.md) - Comparison of AI models on Text2KGBench for knowledge graph extraction
+- [Text to Graph Timeline](./text-to-graph-timeline/index.md) - F1 scores timeline for Text2KGBench-LettrIA generalization benchmark
