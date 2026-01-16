@@ -1,13 +1,13 @@
 ---
-title: Text-to-Knowledge-Graph F1 Scores Timeline
-description: Interactive timeline showing F1 scores for text-to-knowledge-graph models from 2023 to present
+title: Text2KGBench-LettrIA F1 Scores Timeline
+description: Interactive timeline showing F1 scores for text-to-knowledge-graph models on the Text2KGBench-LettrIA Generalization benchmark
 ---
 
-# Text-to-Knowledge-Graph F1 Scores Timeline
+# Text2KGBench-LettrIA F1 Scores Timeline
 
-An interactive visualization showing how language models perform on text-to-knowledge-graph benchmarks over time, combining data from Text2KGBench (2023) and Text2KGBench-LettrIA (2025).
+An interactive visualization showing how language models perform on the Text2KGBench-LettrIA Generalization benchmark over time, combining data from Text2KGBench (2023) and Text2KGBench-LettrIA (2025).
 
-<iframe src="main.html" width="100%" height="650" scrolling="no" style="border: 1px solid #ddd; border-radius: 8px;"></iframe>
+<iframe src="main.html" width="100%" height="670" scrolling="no" style="border: 1px solid #ddd; border-radius: 8px;"></iframe>
 
 [View Fullscreen](main.html){ .md-button .md-button--primary }
 
