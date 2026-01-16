@@ -1,14 +1,14 @@
-run_id,benchmark_name,dataset_name,model_provider,model_name,chart_series,chart_label,chart_metric,chart_value,source_citation,source_url
-T2KGB-001,Text2KGBench,Wikidata-TekGen,Open-weights,Vicuna-13B,Vicuna-13B,Wikidata-TekGen,F1_overall,0.35,"Mihindukulasooriya et al., 2023",https://arxiv.org/abs/2308.02357
-T2KGB-002,Text2KGBench,Wikidata-TekGen,Open-weights,Alpaca-LoRA-13B,Alpaca-LoRA-13B,Wikidata-TekGen,F1_overall,0.27,"Mihindukulasooriya et al., 2023",https://arxiv.org/abs/2308.02357
-T2KGB-003,Text2KGBench,DBpedia-WebNLG,Open-weights,Vicuna-13B,Vicuna-13B,DBpedia-WebNLG,F1_overall,0.30,"Mihindukulasooriya et al., 2023",https://arxiv.org/abs/2308.02357
-T2KGB-004,Text2KGBench,DBpedia-WebNLG,Open-weights,Alpaca-LoRA-13B,Alpaca-LoRA-13B,DBpedia-WebNLG,F1_overall,0.25,"Mihindukulasooriya et al., 2023",https://arxiv.org/abs/2308.02357
-T2KGBL-001,Text2KGBench-LettrIA,DBpedia-WebNLG (refined),OpenAI,GPT-4.1,GPT-4.1,DBpedia-WebNLG (refined),F1_overall,0.6472,"Plu et al., 2025",https://ceur-ws.org/Vol-4041/paper3.pdf
-T2KGBL-002,Text2KGBench-LettrIA,DBpedia-WebNLG (refined),Google,Gemini 2.5 Pro,Gemini 2.5 Pro,DBpedia-WebNLG (refined),F1_overall,0.6595,"Plu et al., 2025",https://ceur-ws.org/Vol-4041/paper3.pdf
-T2KGBL-003,Text2KGBench-LettrIA,DBpedia-WebNLG (refined),Anthropic,Claude Sonnet 4,Claude Sonnet 4,DBpedia-WebNLG (refined),F1_overall,0.6487,"Plu et al., 2025",https://ceur-ws.org/Vol-4041/paper3.pdf
-KG-GEN-001,KG-Generation,General,OpenAI,GPT-4,GPT-4,General,F1_overall,0.82,"Trajanov et al., 2024",https://arxiv.org/abs/2412.07412
-KG-GEN-002,KG-Generation,General,Meta,LLaMA 2,LLaMA 2,General,F1_overall,0.77,"Trajanov et al., 2024",https://arxiv.org/abs/2412.07412
-KG-GEN-003,KG-Generation,General,Google,BERT,BERT,General,F1_overall,0.72,"Trajanov et al., 2024",https://arxiv.org/abs/2412.07412
-SEPSIS-001,Sepsis-KG,Sepsis,OpenAI,GPT-4.0,GPT-4,Sepsis,F1_overall,0.77,"Wang et al., 2025",https://pmc.ncbi.nlm.nih.gov/articles/PMC11986385/
-SEPSIS-002,Sepsis-KG,Sepsis,Meta,Llama3,Llama 3,Sepsis,F1_overall,0.48,"Wang et al., 2025",https://pmc.ncbi.nlm.nih.gov/articles/PMC11986385/
-SEPSIS-003,Sepsis-KG,Sepsis,Alibaba,Qwen2,Qwen2,Sepsis,F1_overall,0.44,"Wang et al., 2025",https://pmc.ncbi.nlm.nih.gov/articles/PMC11986385/
+run_id,benchmark_name,dataset_name,model_provider,model_name,model_date,chart_series,chart_label,chart_metric,chart_value,source_citation,source_url
+T2KGB-001,Text2KGBench,Wikidata-TekGen,Open-weights,Vicuna-13B,2023-03,Vicuna-13B,Wikidata-TekGen,F1_overall,0.35,"Mihindukulasooriya et al., 2023",https://arxiv.org/abs/2308.02357
+T2KGB-002,Text2KGBench,Wikidata-TekGen,Open-weights,Alpaca-LoRA-13B,2023-03,Alpaca-LoRA-13B,Wikidata-TekGen,F1_overall,0.27,"Mihindukulasooriya et al., 2023",https://arxiv.org/abs/2308.02357
+T2KGB-003,Text2KGBench,DBpedia-WebNLG,Open-weights,Vicuna-13B,2023-03,Vicuna-13B,DBpedia-WebNLG,F1_overall,0.30,"Mihindukulasooriya et al., 2023",https://arxiv.org/abs/2308.02357
+T2KGB-004,Text2KGBench,DBpedia-WebNLG,Open-weights,Alpaca-LoRA-13B,2023-03,Alpaca-LoRA-13B,DBpedia-WebNLG,F1_overall,0.25,"Mihindukulasooriya et al., 2023",https://arxiv.org/abs/2308.02357
+T2KGBL-001,Text2KGBench-LettrIA,DBpedia-WebNLG (refined),OpenAI,GPT-4.1,2025-04,GPT-4.1,DBpedia-WebNLG (refined),F1_overall,0.6472,"Plu et al., 2025",https://ceur-ws.org/Vol-4041/paper3.pdf
+T2KGBL-002,Text2KGBench-LettrIA,DBpedia-WebNLG (refined),Google,Gemini 2.5 Pro,2025-03,Gemini 2.5 Pro,DBpedia-WebNLG (refined),F1_overall,0.6595,"Plu et al., 2025",https://ceur-ws.org/Vol-4041/paper3.pdf
+T2KGBL-003,Text2KGBench-LettrIA,DBpedia-WebNLG (refined),Anthropic,Claude Sonnet 4,2025-05,Claude Sonnet 4,DBpedia-WebNLG (refined),F1_overall,0.6487,"Plu et al., 2025",https://ceur-ws.org/Vol-4041/paper3.pdf
+KG-GEN-001,KG-Generation,General,OpenAI,GPT-4,2023-03,GPT-4,General,F1_overall,0.82,"Trajanov et al., 2024",https://arxiv.org/abs/2412.07412
+KG-GEN-002,KG-Generation,General,Meta,LLaMA 2,2023-07,LLaMA 2,General,F1_overall,0.77,"Trajanov et al., 2024",https://arxiv.org/abs/2412.07412
+KG-GEN-003,KG-Generation,General,Google,BERT,2018-10,BERT,General,F1_overall,0.72,"Trajanov et al., 2024",https://arxiv.org/abs/2412.07412
+SEPSIS-001,Sepsis-KG,Sepsis,OpenAI,GPT-4.0,2023-03,GPT-4,Sepsis,F1_overall,0.77,"Wang et al., 2025",https://pmc.ncbi.nlm.nih.gov/articles/PMC11986385/
+SEPSIS-002,Sepsis-KG,Sepsis,Meta,Llama3,2024-04,Llama 3,Sepsis,F1_overall,0.48,"Wang et al., 2025",https://pmc.ncbi.nlm.nih.gov/articles/PMC11986385/
+SEPSIS-003,Sepsis-KG,Sepsis,Alibaba,Qwen2,2024-06,Qwen2,Sepsis,F1_overall,0.44,"Wang et al., 2025",https://pmc.ncbi.nlm.nih.gov/articles/PMC11986385/

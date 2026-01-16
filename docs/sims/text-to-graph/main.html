@@ -61,6 +61,7 @@
         let rawData = [];
         let datasets = new Set();
         let metrics = new Set();
+        let chartMetadata = {};
 
         // Parse CSV data
         function parseCSV(csvText) {
@@ -126,7 +127,9 @@
                     label: row.chart_label || row.model_name || 'Unknown Model',
                     value: parseFloat(row.chart_value || row.primary_metric_value) || 0,
                     metric: row.chart_metric || row.primary_metric,
-                    dataset: row.dataset_name
+                    dataset: row.dataset_name,
+                    modelDate: row.model_date || '',
+                    source: row.source_citation || ''
                 });
             });
 
@@ -141,11 +144,24 @@
 
             const labels = Array.from(allLabels);
 
+            // Store metadata for tooltips
+            const metadata = {};
+
             Object.entries(providers).forEach(([provider, models]) => {
                 const color = getProviderColor(provider);
                 const dataPoints = labels.map(label => {
                     const model = models.find(m => m.label === label);
                     return model ? model.value : null;
+                });
+
+                // Store metadata keyed by provider and label
+                models.forEach(model => {
+                    const key = `${provider}|${model.label}`;
+                    metadata[key] = {
+                        modelDate: model.modelDate,
+                        source: model.source,
+                        metric: model.metric
+                    };
                 });
 
                 chartDatasets.push({
@@ -157,7 +173,7 @@
                 });
             });
 
-            return { labels, datasets: chartDatasets };
+            return { labels, datasets: chartDatasets, metadata };
         }
 
         // Update filter dropdowns
@@ -192,6 +208,7 @@
             const metricFilter = document.getElementById('metricFilter').value;
 
             const chartData = buildChartData(rawData, datasetFilter, metricFilter);
+            chartMetadata = chartData.metadata;
 
             if (chart) {
                 chart.data.labels = chartData.labels;
@@ -223,7 +240,18 @@
                                     label: function(context) {
                                         const value = context.parsed.y;
                                         if (value === null || value === undefined) return null;
-                                        return `${context.dataset.label}: ${value.toFixed(3)}`;
+                                        const provider = context.dataset.label;
+                                        const label = context.chart.data.labels[context.dataIndex];
+                                        const key = `${provider}|${label}`;
+                                        const meta = chartMetadata[key] || {};
+                                        const lines = [`${provider}: ${value.toFixed(4)}`];
+                                        if (meta.modelDate) {
+                                            lines.push(`Model Date: ${meta.modelDate}`);
+                                        }
+                                        if (meta.source) {
+                                            lines.push(`Source: ${meta.source}`);
+                                        }
+                                        return lines;
                                     }
                                 }
                             }
