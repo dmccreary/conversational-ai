@@ -2,6 +2,8 @@
 title: Text-to-Knowledge-Graph Benchmark Comparison
 description: Interactive bar chart comparing model performance across multiple text-to-knowledge-graph benchmarks including Text2KGBench and Text2KGBench-LettrIA.
 quality_score: 90
+image: /sims/text-to-graph/text-to-graph-benchmark-chart.png
+og:image: /sims/text-to-graph/text-to-graph-benchmark-chart.png
 ---
 
 # Text-to-Knowledge-Graph Benchmark Comparison
@@ -24,8 +26,8 @@ Copy this iframe to embed in your own website:
 
 This chart aggregates published benchmark results from multiple text-to-knowledge-graph evaluation frameworks, allowing comparison of how different language models extract structured knowledge graph triples from natural language text.
 
-!!! note
-    The company Lettria now claims to have got a 99.8% F1 score by fine-tuning the 27B parameter Deepseek Gemma 3 model.  This would be impressive if true. [Lettria Perseus Reference](https://deepmind.google/models/gemma/gemmaverse/lettria/)
+!!! warning "Misleading Metric Claim"
+    Lettria claims a 99.8% score for their fine-tuned Gemma 3 27B model. However, this is a **reliability score** (percentage of outputs the system can parse), **not an F1 score**. A model can have high reliability (outputs are well-formatted) while still having lower F1 accuracy (extracted triples are incorrect). The actual F1 scores for their fine-tuned model are not provided in the text. [Lettria Perseus Reference](https://deepmind.google/models/gemma/gemmaverse/lettria/)
 
 ### Included Benchmarks
 
