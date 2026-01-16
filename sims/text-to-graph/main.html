@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text2KGBench Model Comparison</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="controls">
+            <div class="control-group">
+                <label for="datasetFilter">Dataset:</label>
+                <select id="datasetFilter">
+                    <option value="all">All Datasets</option>
+                </select>
+            </div>
+            <div class="control-group">
+                <label for="metricFilter">Metric:</label>
+                <select id="metricFilter">
+                    <option value="all">All Metrics</option>
+                </select>
+            </div>
+        </div>
+        <div class="chart-container">
+            <canvas id="benchmarkChart"></canvas>
+        </div>
+        <div class="legend-info" id="legendInfo"></div>
+    </div>
+
+    <script>
+        // Color palette for different models/providers
+        const providerColors = {
+            'OpenAI': { bg: 'rgba(16, 163, 127, 0.8)', border: 'rgb(16, 163, 127)' },
+            'Google': { bg: 'rgba(66, 133, 244, 0.8)', border: 'rgb(66, 133, 244)' },
+            'Anthropic': { bg: 'rgba(204, 133, 102, 0.8)', border: 'rgb(204, 133, 102)' },
+            'Baseline': { bg: 'rgba(128, 128, 128, 0.8)', border: 'rgb(128, 128, 128)' },
+            'Open-weights baseline': { bg: 'rgba(156, 39, 176, 0.8)', border: 'rgb(156, 39, 176)' },
+            'Meta': { bg: 'rgba(0, 122, 255, 0.8)', border: 'rgb(0, 122, 255)' },
+            'Mistral': { bg: 'rgba(255, 87, 34, 0.8)', border: 'rgb(255, 87, 34)' },
+            'Vicuna-13B': { bg: 'rgba(76, 175, 80, 0.8)', border: 'rgb(76, 175, 80)' },
+            'Alpaca-LoRA-13B': { bg: 'rgba(255, 152, 0, 0.8)', border: 'rgb(255, 152, 0)' },
+            'GPT-4': { bg: 'rgba(16, 163, 127, 0.8)', border: 'rgb(16, 163, 127)' },
+            'GPT-4.1': { bg: 'rgba(16, 163, 127, 0.8)', border: 'rgb(16, 163, 127)' },
+            'Claude 3 Opus': { bg: 'rgba(204, 133, 102, 0.8)', border: 'rgb(204, 133, 102)' },
+            'Claude Sonnet 4': { bg: 'rgba(204, 133, 102, 0.8)', border: 'rgb(204, 133, 102)' },
+            'Gemini 1.5 Pro': { bg: 'rgba(66, 133, 244, 0.8)', border: 'rgb(66, 133, 244)' },
+            'Gemini 2.5 Pro': { bg: 'rgba(66, 133, 244, 0.8)', border: 'rgb(66, 133, 244)' },
+            'LLaMA 2': { bg: 'rgba(0, 122, 255, 0.8)', border: 'rgb(0, 122, 255)' },
+            'Llama 3': { bg: 'rgba(54, 162, 235, 0.8)', border: 'rgb(54, 162, 235)' },
+            'BERT': { bg: 'rgba(255, 206, 86, 0.8)', border: 'rgb(255, 206, 86)' },
+            'Qwen2': { bg: 'rgba(153, 102, 255, 0.8)', border: 'rgb(153, 102, 255)' }
+        };
+
+        // Default color for unknown providers
+        const defaultColor = { bg: 'rgba(100, 100, 100, 0.8)', border: 'rgb(100, 100, 100)' };
+
+        let chart = null;
+        let rawData = [];
+        let datasets = new Set();
+        let metrics = new Set();
+        let chartMetadata = {};
+
+        // Parse CSV data
+        function parseCSV(csvText) {
+            const lines = csvText.trim().split('\n');
+            const headers = parseCSVLine(lines[0]);
+            const data = [];
+
+            for (let i = 1; i < lines.length; i++) {
+                if (lines[i].trim() === '') continue;
+                const values = parseCSVLine(lines[i]);
+                const row = {};
+                headers.forEach((header, index) => {
+                    row[header.trim()] = values[index] ? values[index].trim() : '';
+                });
+                data.push(row);
+            }
+            return data;
+        }
+
+        // Parse a single CSV line handling quoted fields
+        function parseCSVLine(line) {
+            const result = [];
+            let current = '';
+            let inQuotes = false;
+
+            for (let i = 0; i < line.length; i++) {
+                const char = line[i];
+                if (char === '"') {
+                    inQuotes = !inQuotes;
+                } else if (char === ',' && !inQuotes) {
+                    result.push(current);
+                    current = '';
+                } else {
+                    current += char;
+                }
+            }
+            result.push(current);
+            return result;
+        }
+
+        // Get color for a provider
+        function getProviderColor(provider) {
+            return providerColors[provider] || defaultColor;
+        }
+
+        // Build chart data from filtered records
+        function buildChartData(data, datasetFilter, metricFilter) {
+            // Filter data
+            let filtered = data.filter(row => {
+                const matchDataset = datasetFilter === 'all' || row.dataset_name === datasetFilter;
+                const matchMetric = metricFilter === 'all' || row.chart_metric === metricFilter;
+                return matchDataset && matchMetric;
+            });
+
+            // Group by provider (chart_series)
+            const providers = {};
+            filtered.forEach(row => {
+                const provider = row.chart_series || row.model_provider || 'Unknown';
+                if (!providers[provider]) {
+                    providers[provider] = [];
+                }
+                providers[provider].push({
+                    label: row.chart_label || row.model_name || 'Unknown Model',
+                    value: parseFloat(row.chart_value || row.primary_metric_value) || 0,
+                    metric: row.chart_metric || row.primary_metric,
+                    dataset: row.dataset_name,
+                    modelDate: row.model_date || '',
+                    source: row.source_citation || ''
+                });
+            });
+
+            // Create datasets for Chart.js
+            const chartDatasets = [];
+            const allLabels = new Set();
+
+            // Collect all unique labels
+            Object.values(providers).forEach(models => {
+                models.forEach(model => allLabels.add(model.label));
+            });
+
+            const labels = Array.from(allLabels);
+
+            // Store metadata for tooltips
+            const metadata = {};
+
+            Object.entries(providers).forEach(([provider, models]) => {
+                const color = getProviderColor(provider);
+                const dataPoints = labels.map(label => {
+                    const model = models.find(m => m.label === label);
+                    return model ? model.value : null;
+                });
+
+                // Store metadata keyed by provider and label
+                models.forEach(model => {
+                    const key = `${provider}|${model.label}`;
+                    metadata[key] = {
+                        modelDate: model.modelDate,
+                        source: model.source,
+                        metric: model.metric
+                    };
+                });
+
+                chartDatasets.push({
+                    label: provider,
+                    data: dataPoints,
+                    backgroundColor: color.bg,
+                    borderColor: color.border,
+                    borderWidth: 2
+                });
+            });
+
+            return { labels, datasets: chartDatasets, metadata };
+        }
+
+        // Update filter dropdowns
+        function updateFilters() {
+            const datasetSelect = document.getElementById('datasetFilter');
+            const metricSelect = document.getElementById('metricFilter');
+
+            // Clear existing options except "All"
+            datasetSelect.innerHTML = '<option value="all">All Datasets</option>';
+            metricSelect.innerHTML = '<option value="all">All Metrics</option>';
+
+            // Add dataset options
+            datasets.forEach(dataset => {
+                const option = document.createElement('option');
+                option.value = dataset;
+                option.textContent = dataset;
+                datasetSelect.appendChild(option);
+            });
+
+            // Add metric options
+            metrics.forEach(metric => {
+                const option = document.createElement('option');
+                option.value = metric;
+                option.textContent = metric;
+                metricSelect.appendChild(option);
+            });
+        }
+
+        // Create or update the chart
+        function updateChart() {
+            const datasetFilter = document.getElementById('datasetFilter').value;
+            const metricFilter = document.getElementById('metricFilter').value;
+
+            const chartData = buildChartData(rawData, datasetFilter, metricFilter);
+            chartMetadata = chartData.metadata;
+
+            if (chart) {
+                chart.data.labels = chartData.labels;
+                chart.data.datasets = chartData.datasets;
+                chart.update();
+            } else {
+                const ctx = document.getElementById('benchmarkChart').getContext('2d');
+                chart = new Chart(ctx, {
+                    type: 'bar',
+                    data: chartData,
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            title: {
+                                display: true,
+                                text: 'Text2KGBench Model Performance Comparison',
+                                font: { size: 16, weight: 'bold' }
+                            },
+                            legend: {
+                                position: 'top',
+                                labels: {
+                                    usePointStyle: true,
+                                    padding: 15
+                                }
+                            },
+                            tooltip: {
+                                callbacks: {
+                                    label: function(context) {
+                                        const value = context.parsed.y;
+                                        if (value === null || value === undefined) return null;
+                                        const provider = context.dataset.label;
+                                        const label = context.chart.data.labels[context.dataIndex];
+                                        const key = `${provider}|${label}`;
+                                        const meta = chartMetadata[key] || {};
+                                        const lines = [`${provider}: ${value.toFixed(4)}`];
+                                        if (meta.modelDate) {
+                                            lines.push(`Model Date: ${meta.modelDate}`);
+                                        }
+                                        if (meta.source) {
+                                            lines.push(`Source: ${meta.source}`);
+                                        }
+                                        return lines;
+                                    }
+                                }
+                            }
+                        },
+                        scales: {
+                            x: {
+                                title: {
+                                    display: true,
+                                    text: 'Model',
+                                    font: { weight: 'bold' }
+                                },
+                                ticks: {
+                                    maxRotation: 45,
+                                    minRotation: 0
+                                }
+                            },
+                            y: {
+                                beginAtZero: true,
+                                max: 1.0,
+                                title: {
+                                    display: true,
+                                    text: 'F1 Score',
+                                    font: { weight: 'bold' }
+                                },
+                                ticks: {
+                                    callback: function(value) {
+                                        return value.toFixed(2);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+
+            // Update legend info
+            updateLegendInfo(chartData);
+        }
+
+        // Update legend/info section
+        function updateLegendInfo(chartData) {
+            const infoDiv = document.getElementById('legendInfo');
+            const totalModels = chartData.labels.length;
+            const providers = chartData.datasets.length;
+
+            if (totalModels === 0) {
+                infoDiv.innerHTML = '<p class="no-data">No data available. Please add benchmark results to data.csv.</p>';
+            } else {
+                infoDiv.innerHTML = `<p>Showing <strong>${totalModels}</strong> model(s) from <strong>${providers}</strong> provider(s)</p>`;
+            }
+        }
+
+        // Load and initialize
+        async function init() {
+            try {
+                const response = await fetch('data.csv');
+                const csvText = await response.text();
+                rawData = parseCSV(csvText);
+
+                // Extract unique datasets and metrics
+                rawData.forEach(row => {
+                    if (row.dataset_name) datasets.add(row.dataset_name);
+                    if (row.chart_metric) metrics.add(row.chart_metric);
+                });
+
+                updateFilters();
+                updateChart();
+
+                // Add event listeners
+                document.getElementById('datasetFilter').addEventListener('change', updateChart);
+                document.getElementById('metricFilter').addEventListener('change', updateChart);
+
+            } catch (error) {
+                console.error('Error loading data:', error);
+                document.getElementById('legendInfo').innerHTML =
+                    '<p class="error">Error loading data.csv. Please ensure the file exists and is properly formatted.</p>';
+            }
+        }
+
+        // Initialize when DOM is ready
+        document.addEventListener('DOMContentLoaded', init);
+    </script>
+</body>
+</html>
