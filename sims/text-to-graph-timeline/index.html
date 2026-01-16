@@ -6,19 +6,19 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Interactive bar chart comparing model performance across multiple text-to-knowledge-graph benchmarks including Text2KGBench and Text2KGBench-LettrIA.">
+        <meta name="description" content="Interactive timeline showing F1 scores for text-to-knowledge-graph models from 2023 to present">
       
       
         <meta name="author" content="Dan McCreary">
       
       
-        <link rel="canonical" href="https://dmccreary.github.io/conversational-ai/sims/text-to-graph/">
+        <link rel="canonical" href="https://dmccreary.github.io/conversational-ai/sims/text-to-graph-timeline/">
       
       
-        <link rel="prev" href="../text-processing-workflow/">
+        <link rel="prev" href="../text-to-graph/">
       
       
-        <link rel="next" href="../text-to-graph-timeline/">
+        <link rel="next" href="../../learning-graph/">
       
       
       <link rel="icon" href="../../img/favicon.ico">
@@ -26,7 +26,7 @@
     
     
       
-        <title>Text-to-Knowledge-Graph Benchmark Comparison - Conversational AI</title>
+        <title>Text-to-Knowledge-Graph F1 Scores Timeline - Conversational AI</title>
       
     
     
@@ -73,11 +73,11 @@
       
         <meta  property="og:type"  content="website" >
       
-        <meta  property="og:title"  content="Text-to-Knowledge-Graph Benchmark Comparison - Conversational AI" >
+        <meta  property="og:title"  content="Text-to-Knowledge-Graph F1 Scores Timeline - Conversational AI" >
       
-        <meta  property="og:description"  content="Interactive bar chart comparing model performance across multiple text-to-knowledge-graph benchmarks including Text2KGBench and Text2KGBench-LettrIA." >
+        <meta  property="og:description"  content="Interactive timeline showing F1 scores for text-to-knowledge-graph models from 2023 to present" >
       
-        <meta property="og:image" content="https://dmccreary.github.io/conversational-ai/sims/text-to-graph/text-to-graph-benchmark-chart.png">
+        <meta  property="og:image"  content="https://dmccreary.github.io/conversational-ai/assets/images/social/sims/text-to-graph-timeline/index.png" >
       
         <meta  property="og:image:type"  content="image/png" >
       
@@ -85,15 +85,15 @@
       
         <meta  property="og:image:height"  content="630" >
       
-        <meta  property="og:url"  content="https://dmccreary.github.io/conversational-ai/sims/text-to-graph/" >
+        <meta  property="og:url"  content="https://dmccreary.github.io/conversational-ai/sims/text-to-graph-timeline/" >
       
         <meta  name="twitter:card"  content="summary_large_image" >
       
-        <meta  name="twitter:title"  content="Text-to-Knowledge-Graph Benchmark Comparison - Conversational AI" >
+        <meta  name="twitter:title"  content="Text-to-Knowledge-Graph F1 Scores Timeline - Conversational AI" >
       
-        <meta  name="twitter:description"  content="Interactive bar chart comparing model performance across multiple text-to-knowledge-graph benchmarks including Text2KGBench and Text2KGBench-LettrIA." >
+        <meta  name="twitter:description"  content="Interactive timeline showing F1 scores for text-to-knowledge-graph models from 2023 to present" >
       
-        <meta name="twitter:image" content="https://dmccreary.github.io/conversational-ai/sims/text-to-graph/text-to-graph-benchmark-chart.png">
+        <meta  name="twitter:image"  content="https://dmccreary.github.io/conversational-ai/assets/images/social/sims/text-to-graph-timeline/index.png" >
       
     
     
@@ -114,7 +114,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#text-to-knowledge-graph-benchmark-comparison" class="md-skip">
+        <a href="#text-to-knowledge-graph-f1-scores-timeline" class="md-skip">
           Skip to content
         </a>
       
@@ -149,7 +149,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Text-to-Knowledge-Graph Benchmark Comparison
+              Text-to-Knowledge-Graph F1 Scores Timeline
             
           </span>
         </div>
@@ -608,6 +608,27 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../text-to-graph/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Text to Graph Benchmark
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -624,7 +645,7 @@
           
   
   <span class="md-ellipsis">
-    Text to Graph Benchmark
+    Text to Graph Timeline
   </span>
   
 
@@ -635,7 +656,7 @@
         
   
   <span class="md-ellipsis">
-    Text to Graph Benchmark
+    Text to Graph Timeline
   </span>
   
 
@@ -657,15 +678,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#embed-this-microsim" class="md-nav__link">
-    <span class="md-ellipsis">
-      Embed This MicroSim
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#overview" class="md-nav__link">
     <span class="md-ellipsis">
       Overview
@@ -676,18 +688,51 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#included-benchmarks" class="md-nav__link">
+  <a href="#metrics" class="md-nav__link">
     <span class="md-ellipsis">
-      Included Benchmarks
+      Metrics
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-findings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Findings
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Summary
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Summary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#text2kgbench-2023-original-benchmark" class="md-nav__link">
+    <span class="md-ellipsis">
+      Text2KGBench (2023) - Original Benchmark
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#current-results-summary" class="md-nav__link">
+  <a href="#text2kgbench-lettria-2025-top-performers" class="md-nav__link">
     <span class="md-ellipsis">
-      Current Results Summary
+      Text2KGBench-LettrIA (2025) - Top Performers
     </span>
   </a>
   
@@ -709,75 +754,18 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#interactive-elements" class="md-nav__link">
+  <a href="#interactive-controls" class="md-nav__link">
     <span class="md-ellipsis">
-      Interactive Elements
+      Interactive Controls
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#visual-design" class="md-nav__link">
+  <a href="#visual-encoding" class="md-nav__link">
     <span class="md-ellipsis">
-      Visual Design
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#adding-your-own-data" class="md-nav__link">
-    <span class="md-ellipsis">
-      Adding Your Own Data
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Adding Your Own Data">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#example-csv-row" class="md-nav__link">
-    <span class="md-ellipsis">
-      Example CSV Row
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#customization-guide" class="md-nav__link">
-    <span class="md-ellipsis">
-      Customization Guide
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Customization Guide">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#changing-colors" class="md-nav__link">
-    <span class="md-ellipsis">
-      Changing Colors
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#adjusting-chart-height" class="md-nav__link">
-    <span class="md-ellipsis">
-      Adjusting Chart Height
+      Visual Encoding
     </span>
   </a>
   
@@ -798,66 +786,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#lesson-plan" class="md-nav__link">
-    <span class="md-ellipsis">
-      Lesson Plan
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Lesson Plan">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#learning-objectives" class="md-nav__link">
-    <span class="md-ellipsis">
-      Learning Objectives
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#target-audience" class="md-nav__link">
-    <span class="md-ellipsis">
-      Target Audience
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#prerequisites" class="md-nav__link">
-    <span class="md-ellipsis">
-      Prerequisites
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#activities" class="md-nav__link">
-    <span class="md-ellipsis">
-      Activities
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#assessment" class="md-nav__link">
-    <span class="md-ellipsis">
-      Assessment
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#references" class="md-nav__link">
     <span class="md-ellipsis">
       References
@@ -870,27 +798,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../text-to-graph-timeline/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Text to Graph Timeline
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -1202,15 +1109,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#embed-this-microsim" class="md-nav__link">
-    <span class="md-ellipsis">
-      Embed This MicroSim
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#overview" class="md-nav__link">
     <span class="md-ellipsis">
       Overview
@@ -1221,18 +1119,51 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#included-benchmarks" class="md-nav__link">
+  <a href="#metrics" class="md-nav__link">
     <span class="md-ellipsis">
-      Included Benchmarks
+      Metrics
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-findings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Findings
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Summary
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Summary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#text2kgbench-2023-original-benchmark" class="md-nav__link">
+    <span class="md-ellipsis">
+      Text2KGBench (2023) - Original Benchmark
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#current-results-summary" class="md-nav__link">
+  <a href="#text2kgbench-lettria-2025-top-performers" class="md-nav__link">
     <span class="md-ellipsis">
-      Current Results Summary
+      Text2KGBench-LettrIA (2025) - Top Performers
     </span>
   </a>
   
@@ -1254,75 +1185,18 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#interactive-elements" class="md-nav__link">
+  <a href="#interactive-controls" class="md-nav__link">
     <span class="md-ellipsis">
-      Interactive Elements
+      Interactive Controls
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#visual-design" class="md-nav__link">
+  <a href="#visual-encoding" class="md-nav__link">
     <span class="md-ellipsis">
-      Visual Design
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#adding-your-own-data" class="md-nav__link">
-    <span class="md-ellipsis">
-      Adding Your Own Data
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Adding Your Own Data">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#example-csv-row" class="md-nav__link">
-    <span class="md-ellipsis">
-      Example CSV Row
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#customization-guide" class="md-nav__link">
-    <span class="md-ellipsis">
-      Customization Guide
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Customization Guide">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#changing-colors" class="md-nav__link">
-    <span class="md-ellipsis">
-      Changing Colors
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#adjusting-chart-height" class="md-nav__link">
-    <span class="md-ellipsis">
-      Adjusting Chart Height
+      Visual Encoding
     </span>
   </a>
   
@@ -1339,66 +1213,6 @@
       Technical Details
     </span>
   </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#lesson-plan" class="md-nav__link">
-    <span class="md-ellipsis">
-      Lesson Plan
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Lesson Plan">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#learning-objectives" class="md-nav__link">
-    <span class="md-ellipsis">
-      Learning Objectives
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#target-audience" class="md-nav__link">
-    <span class="md-ellipsis">
-      Target Audience
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#prerequisites" class="md-nav__link">
-    <span class="md-ellipsis">
-      Prerequisites
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#activities" class="md-nav__link">
-    <span class="md-ellipsis">
-      Activities
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#assessment" class="md-nav__link">
-    <span class="md-ellipsis">
-      Assessment
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1426,7 +1240,7 @@
                   
 
   
-    <a href="https://github.com/dmccreary/conversational-ai/blob/master/docs/sims/text-to-graph/index.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/dmccreary/conversational-ai/blob/master/docs/sims/text-to-graph-timeline/index.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -1434,300 +1248,158 @@
   
 
 
-<h1 id="text-to-knowledge-graph-benchmark-comparison">Text-to-Knowledge-Graph Benchmark Comparison</h1>
-<p>An interactive visualization comparing AI model performance on text-to-knowledge-graph extraction tasks across multiple published benchmarks.</p>
-<iframe src="main.html" width="100%" height="550" scrolling="no" style="border:none;"></iframe>
+<h1 id="text-to-knowledge-graph-f1-scores-timeline">Text-to-Knowledge-Graph F1 Scores Timeline</h1>
+<p>An interactive visualization showing how language models perform on text-to-knowledge-graph benchmarks over time, combining data from Text2KGBench (2023) and Text2KGBench-LettrIA (2025).</p>
+<iframe src="main.html" width="100%" height="650" scrolling="no" style="border: 1px solid #ddd; border-radius: 8px;"></iframe>
 
 <p><a class="md-button md-button--primary" href="main.html">View Fullscreen</a></p>
-<h3 id="embed-this-microsim">Embed This MicroSim</h3>
-<p>Copy this iframe to embed in your own website:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://dmccreary.github.io/conversational-ai/sims/text-to-graph/main.html&quot;</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;100%&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;550&quot;</span> <span class="na">scrolling</span><span class="o">=</span><span class="s">&quot;no&quot;</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;border:none;&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
-</code></pre></div></td></tr></table></div>
 <h2 id="overview">Overview</h2>
-<p>This chart aggregates published benchmark results from multiple text-to-knowledge-graph evaluation frameworks, allowing comparison of how different language models extract structured knowledge graph triples from natural language text.</p>
-<div class="admonition warning">
-<p class="admonition-title">Misleading Metric Claim</p>
-<p>Lettria claims a 99.8% score for their fine-tuned Gemma 3 27B model. However, this is a <strong>reliability score</strong> (percentage of outputs the system can parse), <strong>not an F1 score</strong>. A model can have high reliability (outputs are well-formatted) while still having lower F1 accuracy (extracted triples are incorrect). The actual F1 scores for their fine-tuned model are not provided in the text. <a href="https://deepmind.google/models/gemma/gemmaverse/lettria/">Lettria Perseus Reference</a></p>
-</div>
-<h3 id="included-benchmarks">Included Benchmarks</h3>
-<table>
-<thead>
-<tr>
-<th>Benchmark</th>
-<th>Datasets</th>
-<th>Description</th>
-<th>Source</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Text2KGBench</strong></td>
-<td>Wikidata-TekGen, DBpedia-WebNLG</td>
-<td>Original ontology-driven KG extraction benchmark</td>
-<td>Mihindukulasooriya et al., 2023</td>
-</tr>
-<tr>
-<td><strong>Text2KGBench-LettrIA</strong></td>
-<td>DBpedia-WebNLG (refined)</td>
-<td>Refined benchmark with improved data quality</td>
-<td>Plu et al., 2025</td>
-</tr>
-<tr>
-<td><strong>KG-Generation</strong></td>
-<td>General</td>
-<td>Comparative study of KG generation</td>
-<td>Trajanov et al., 2024</td>
-</tr>
-<tr>
-<td><strong>Sepsis-KG</strong></td>
-<td>Medical/Sepsis domain</td>
-<td>Domain-specific KG construction</td>
-<td>Wang et al., 2025</td>
-</tr>
-</tbody>
-</table>
-<h3 id="current-results-summary">Current Results Summary</h3>
+<p>This chart displays F1 scores from two related benchmarks:</p>
+<ol>
+<li><strong>Text2KGBench (2023)</strong> - The original benchmark by Mihindukulasooriya et al. for evaluating ontology-guided KG construction from text</li>
+<li><strong>Text2KGBench-LettrIA (2025)</strong> - A refined version by Plu et al. with improved ontologies and annotations</li>
+</ol>
+<h3 id="metrics">Metrics</h3>
+<ul>
+<li><strong>Overall F1</strong>: Combined score for knowledge graph extraction (available for all models)</li>
+<li><strong>Entities (E)</strong>: F1 score for correctly identifying entity classes</li>
+<li><strong>Attributes (A)</strong>: F1 score for correctly extracting literal values</li>
+<li><strong>Properties (P)</strong>: F1 score for identifying datatype properties</li>
+<li><strong>Relations (R)</strong>: F1 score for identifying object properties</li>
+</ul>
+<p><em>Note: The detailed E/A/P/R breakdown is only available for Text2KGBench-LettrIA (2025) models.</em></p>
+<h2 id="key-findings">Key Findings</h2>
+<ol>
+<li>
+<p><strong>Dramatic improvement from 2023 to 2025</strong>: Early open-weights models (Vicuna, Alpaca) achieved only 0.25-0.30 Overall F1, while modern models reach 0.85+</p>
+</li>
+<li>
+<p><strong>Fine-tuned open models outperform proprietary</strong>: Models like Gemma 3 27B-IT and Qwen3 8B achieve higher scores than zero-shot proprietary models</p>
+</li>
+<li>
+<p><strong>Top performers (2025)</strong>: Claude Sonnet 4 (0.87), Gemini 2.5 Pro (0.86), and fine-tuned Qwen3 32B (0.85)</p>
+</li>
+</ol>
+<h2 id="data-summary">Data Summary</h2>
+<h3 id="text2kgbench-2023-original-benchmark">Text2KGBench (2023) - Original Benchmark</h3>
 <table>
 <thead>
 <tr>
 <th>Model</th>
-<th>F1 Score</th>
-<th>Benchmark</th>
-<th>Dataset</th>
+<th>Publisher</th>
+<th>Release</th>
+<th>Overall F1</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>GPT-4</td>
-<td>0.82</td>
-<td>KG-Generation</td>
-<td>General</td>
-</tr>
-<tr>
-<td>LLaMA 2</td>
-<td>0.77</td>
-<td>KG-Generation</td>
-<td>General</td>
-</tr>
-<tr>
-<td>GPT-4</td>
-<td>0.77</td>
-<td>Sepsis-KG</td>
-<td>Sepsis</td>
-</tr>
-<tr>
-<td>BERT</td>
-<td>0.72</td>
-<td>KG-Generation</td>
-<td>General</td>
-</tr>
-<tr>
-<td><em>Claude Opus 4.5 (Est.)</em></td>
-<td><em>~0.70</em></td>
-<td><em>Text2KGBench-LettrIA</em></td>
-<td><em>DBpedia-WebNLG (refined)</em></td>
-</tr>
-<tr>
-<td><strong>Gemini 2.5 Pro</strong></td>
-<td>0.6595</td>
-<td>Text2KGBench-LettrIA</td>
-<td>DBpedia-WebNLG (refined)</td>
-</tr>
-<tr>
-<td><strong>Claude Sonnet 4</strong></td>
-<td>0.6487</td>
-<td>Text2KGBench-LettrIA</td>
-<td>DBpedia-WebNLG (refined)</td>
-</tr>
-<tr>
-<td><strong>GPT-4.1</strong></td>
-<td>0.6472</td>
-<td>Text2KGBench-LettrIA</td>
-<td>DBpedia-WebNLG (refined)</td>
-</tr>
-<tr>
-<td>Llama 3</td>
-<td>0.48</td>
-<td>Sepsis-KG</td>
-<td>Sepsis</td>
-</tr>
-<tr>
-<td>Qwen2</td>
-<td>0.44</td>
-<td>Sepsis-KG</td>
-<td>Sepsis</td>
-</tr>
-<tr>
 <td>Vicuna-13B</td>
-<td>0.35</td>
-<td>Text2KGBench</td>
-<td>Wikidata-TekGen</td>
-</tr>
-<tr>
-<td>Vicuna-13B</td>
+<td>Open-weights</td>
+<td>2023-03</td>
 <td>0.30</td>
-<td>Text2KGBench</td>
-<td>DBpedia-WebNLG</td>
 </tr>
 <tr>
 <td>Alpaca-LoRA-13B</td>
-<td>0.27</td>
-<td>Text2KGBench</td>
-<td>Wikidata-TekGen</td>
-</tr>
-<tr>
-<td>Alpaca-LoRA-13B</td>
+<td>Open-weights</td>
+<td>2023-03</td>
 <td>0.25</td>
-<td>Text2KGBench</td>
-<td>DBpedia-WebNLG</td>
 </tr>
 </tbody>
 </table>
-<div class="admonition warning">
-<p class="admonition-title">Estimated Value</p>
-<p>The <strong>Claude Opus 4.5</strong> result (~0.70 F1) is an <strong>estimate</strong>, not a published benchmark result. It is based on typical performance improvements between Claude Sonnet 4 (0.6487) and Opus models on reasoning tasks (~5-15% improvement). The actual performance may differ.</p>
-</div>
-<p><strong>Note:</strong> Results from different benchmarks are not directly comparable due to differences in evaluation methodology, datasets, and task definitions.</p>
-<h2 id="features">Features</h2>
-<h3 id="interactive-elements">Interactive Elements</h3>
-<ul>
-<li><strong>Dataset Filter</strong>: Select specific datasets or benchmarks to compare</li>
-<li><strong>Metric Filter</strong>: Filter by evaluation metric (F1_overall, Precision, Recall)</li>
-<li><strong>Hover Tooltips</strong>: View exact scores by hovering over bars</li>
-<li><strong>Clickable Legend</strong>: Click model names to show/hide their results</li>
-</ul>
-<h3 id="visual-design">Visual Design</h3>
-<ul>
-<li>Color-coded bars by model (GPT-4 green, Gemini blue, Claude brown, etc.)</li>
-<li>Clear axis labels showing dataset names and score values</li>
-<li>Responsive layout adapting to container width</li>
-</ul>
-<h2 id="adding-your-own-data">Adding Your Own Data</h2>
-<p>Edit the <code>data.csv</code> file to add benchmark results. Key columns for the chart:</p>
+<h3 id="text2kgbench-lettria-2025-top-performers">Text2KGBench-LettrIA (2025) - Top Performers</h3>
 <table>
 <thead>
 <tr>
-<th>Column</th>
-<th>Description</th>
-<th>Example</th>
+<th>Model</th>
+<th>Publisher</th>
+<th>Release</th>
+<th>Overall</th>
+<th>Entities</th>
+<th>Attributes</th>
+<th>Properties</th>
+<th>Relations</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>chart_series</code></td>
-<td>Model name (determines color/legend)</td>
-<td>GPT-4.1, Claude Sonnet 4</td>
+<td>Claude Sonnet 4</td>
+<td>Anthropic</td>
+<td>2025-05</td>
+<td>0.870</td>
+<td>0.783</td>
+<td>0.951</td>
+<td>0.928</td>
+<td>0.718</td>
 </tr>
 <tr>
-<td><code>chart_label</code></td>
-<td>Dataset name (x-axis label)</td>
-<td>DBpedia-WebNLG (refined)</td>
+<td>Gemini 2.5 Pro</td>
+<td>Google</td>
+<td>2025-03</td>
+<td>0.860</td>
+<td>0.775</td>
+<td>0.958</td>
+<td>0.937</td>
+<td>0.724</td>
 </tr>
 <tr>
-<td><code>chart_metric</code></td>
-<td>Metric being measured</td>
-<td>F1_overall</td>
+<td>Qwen3 32B (FT)</td>
+<td>Alibaba</td>
+<td>2025-05</td>
+<td>0.851</td>
+<td>0.775</td>
+<td>0.920</td>
+<td>0.898</td>
+<td>0.709</td>
 </tr>
 <tr>
-<td><code>chart_value</code></td>
-<td>The score (0-1 scale)</td>
-<td>0.6472</td>
+<td>Gemma 3 12B-IT (FT)</td>
+<td>Google</td>
+<td>2025-03</td>
+<td>0.845</td>
+<td>0.838</td>
+<td>0.928</td>
+<td>0.892</td>
+<td>0.722</td>
 </tr>
 <tr>
-<td><code>source_citation</code></td>
-<td>Paper citation</td>
-<td>Plu et al., 2025</td>
-</tr>
-<tr>
-<td><code>source_url</code></td>
-<td>Link to source paper</td>
-<td>https://ceur-ws.org/...</td>
+<td>Mistral Small 3.2 (FT)</td>
+<td>Mistral</td>
+<td>2025-06</td>
+<td>0.843</td>
+<td>0.801</td>
+<td>0.937</td>
+<td>0.911</td>
+<td>0.722</td>
 </tr>
 </tbody>
 </table>
-<h3 id="example-csv-row">Example CSV Row</h3>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>run_id,benchmark_name,dataset_name,model_provider,model_name,chart_series,chart_label,chart_metric,chart_value,source_citation,source_url
-T2KGBL-001,Text2KGBench-LettrIA,DBpedia-WebNLG (refined),OpenAI,GPT-4.1,GPT-4.1,DBpedia-WebNLG (refined),F1_overall,0.6472,&quot;Plu et al., 2025&quot;,https://ceur-ws.org/Vol-4041/paper3.pdf
-</code></pre></div></td></tr></table></div>
-<h2 id="customization-guide">Customization Guide</h2>
-<h3 id="changing-colors">Changing Colors</h3>
-<p>Edit the <code>providerColors</code> object in <code>main.html</code>:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">providerColors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="s1">&#39;GPT-4.1&#39;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">bg</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;rgba(16, 163, 127, 0.8)&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">border</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;rgb(16, 163, 127)&#39;</span><span class="w"> </span><span class="p">},</span>
-<span class="w">    </span><span class="s1">&#39;Claude Sonnet 4&#39;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">bg</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;rgba(204, 133, 102, 0.8)&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">border</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;rgb(204, 133, 102)&#39;</span><span class="w"> </span><span class="p">},</span>
-<span class="w">    </span><span class="s1">&#39;Gemini 2.5 Pro&#39;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">bg</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;rgba(66, 133, 244, 0.8)&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">border</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;rgb(66, 133, 244)&#39;</span><span class="w"> </span><span class="p">},</span>
-<span class="w">    </span><span class="c1">// Add more models...</span>
-<span class="p">};</span>
-</code></pre></div></td></tr></table></div>
-<h3 id="adjusting-chart-height">Adjusting Chart Height</h3>
-<p>Modify the <code>.chart-container</code> height in <code>style.css</code>:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">.</span><span class="nc">chart-container</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">height</span><span class="p">:</span><span class="w"> </span><span class="mi">400</span><span class="kt">px</span><span class="p">;</span><span class="w"> </span><span class="c">/* Adjust as needed */</span>
-<span class="p">}</span>
-</code></pre></div></td></tr></table></div>
+<p><em>(FT) = Fine-tuned on Text2KGBench-LettrIA</em></p>
+<h2 id="features">Features</h2>
+<h3 id="interactive-controls">Interactive Controls</h3>
+<ul>
+<li><strong>Metric selector</strong>: Switch between Overall F1 and detailed E/A/P/R metrics</li>
+<li><strong>Model type filter</strong>: View all models, closed/proprietary only, or open-weights only</li>
+<li><strong>Benchmark filter</strong>: Compare across benchmarks or focus on one version</li>
+<li><strong>Hover tooltips</strong>: See all available scores for any data point</li>
+</ul>
+<h3 id="visual-encoding">Visual Encoding</h3>
+<ul>
+<li><strong>Circle</strong> = Closed/Proprietary models (zero-shot)</li>
+<li><strong>Triangle</strong> = Open-weights models (fine-tuned)</li>
+<li><strong>Colors by publisher</strong>: Anthropic (orange), Google (blue), OpenAI (green), Mistral (coral), Alibaba (purple), Microsoft (cyan)</li>
+</ul>
 <h2 id="technical-details">Technical Details</h2>
 <ul>
-<li><strong>Library</strong>: Chart.js 4.4.0</li>
-<li><strong>Data Source</strong>: CSV file loaded dynamically</li>
-<li><strong>Browser Compatibility</strong>: All modern browsers (Chrome, Firefox, Safari, Edge)</li>
-<li><strong>Responsive</strong>: Yes, adapts to container width</li>
-</ul>
-<h2 id="lesson-plan">Lesson Plan</h2>
-<h3 id="learning-objectives">Learning Objectives</h3>
-<p>By the end of this lesson, students will be able to:</p>
-<ol>
-<li>Explain what text-to-knowledge-graph benchmarks measure and why they matter</li>
-<li>Interpret F1 scores and compare model performance across different benchmarks</li>
-<li>Understand the importance of ontology compliance in knowledge graph extraction</li>
-<li>Analyze why frontier models (GPT-4, Claude, Gemini) outperform baseline models</li>
-<li>Recognize that benchmark results are not directly comparable across different evaluation frameworks</li>
-</ol>
-<h3 id="target-audience">Target Audience</h3>
-<ul>
-<li>College sophomores studying NLP or knowledge graphs</li>
-<li>Data scientists evaluating LLMs for information extraction</li>
-<li>Researchers working on knowledge graph construction</li>
-</ul>
-<h3 id="prerequisites">Prerequisites</h3>
-<ul>
-<li>Basic understanding of knowledge graphs (nodes, edges, triples)</li>
-<li>Familiarity with precision, recall, and F1 score metrics</li>
-<li>Introduction to large language models</li>
-</ul>
-<h3 id="activities">Activities</h3>
-<ol>
-<li>
-<p><strong>Exploration (10 min)</strong>: Use the dataset filter to compare models within the same benchmark. How do frontier models compare to baseline models on Text2KGBench-LettrIA?</p>
-</li>
-<li>
-<p><strong>Analysis (15 min)</strong>: Compare the F1 scores across benchmarks. Why might GPT-4 score 0.82 on KG-Generation but GPT-4.1 score 0.65 on Text2KGBench-LettrIA?</p>
-</li>
-<li>
-<p><strong>Discussion (10 min)</strong>: What factors affect benchmark comparability? Consider dataset size, ontology complexity, evaluation methodology, and prompting strategies.</p>
-</li>
-</ol>
-<h3 id="assessment">Assessment</h3>
-<ul>
-<li>Quiz: Why can't we directly compare F1 scores across different benchmarks?</li>
-<li>Practical: Find a published paper with KG extraction results and add them to data.csv</li>
+<li><strong>Library</strong>: Chart.js 4.4.0 with date-fns adapter</li>
+<li><strong>Chart Type</strong>: Scatter plot with time scale (quarterly)</li>
+<li><strong>Time Range</strong>: January 2023 to January 2026</li>
 </ul>
 <h2 id="references">References</h2>
-<ol>
-<li><a href="https://arxiv.org/abs/2308.02357">Text2KGBench Paper</a> - 2023 - ISWC - Mihindukulasooriya et al. Original benchmark introducing ontology-driven text-to-KG evaluation</li>
-<li><a href="https://ceur-ws.org/Vol-4041/paper3.pdf">Text2KGBench-LettrIA Paper</a> - 2025 - CEUR-WS - Plu et al. Refined benchmark with improved data quality and frontier model results</li>
-<li><a href="https://arxiv.org/abs/2412.07412">KG Generation Comparative Study</a> - 2024 - arXiv - Trajanov et al. Comparison of GPT-4, LLaMA 2, and BERT</li>
-<li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11986385/">Sepsis KG Construction</a> - 2025 - PMC - Wang et al. Domain-specific KG construction evaluation</li>
-<li><a href="https://github.com/cenguix/Text2KGBench">Text2KGBench GitHub</a> - Repository with benchmark code, datasets, and baseline implementations</li>
-<li><a href="https://www.chartjs.org/docs/latest/">Chart.js Documentation</a> - Library documentation for the visualization framework</li>
-</ol>
+<ul>
+<li><a href="https://arxiv.org/abs/2308.02357">Text2KGBench (2023)</a> - Mihindukulasooriya et al.</li>
+<li><a href="https://ceur-ws.org/Vol-4041/paper3.pdf">Text2KGBench-LettrIA (2025)</a> - Plu et al.</li>
+<li><a href="https://www.chartjs.org/docs/latest/">Chart.js Documentation</a></li>
+</ul>
 
 
 
@@ -1768,7 +1440,7 @@ T2KGBL-001,Text2KGBench-LettrIA,DBpedia-WebNLG (refined),OpenAI,GPT-4.1,GPT-4.1,
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../text-processing-workflow/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Text Processing Workflow">
+          <a href="../text-to-graph/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Text to Graph Benchmark">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1778,20 +1450,20 @@ T2KGBL-001,Text2KGBench-LettrIA,DBpedia-WebNLG (refined),OpenAI,GPT-4.1,GPT-4.1,
                 Previous
               </span>
               <div class="md-ellipsis">
-                Text Processing Workflow
+                Text to Graph Benchmark
               </div>
             </div>
           </a>
         
         
           
-          <a href="../text-to-graph-timeline/" class="md-footer__link md-footer__link--next" aria-label="Next: Text to Graph Timeline">
+          <a href="../../learning-graph/" class="md-footer__link md-footer__link--next" aria-label="Next: Introduction">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Text to Graph Timeline
+                Introduction
               </div>
             </div>
             <div class="md-footer__button md-icon">
