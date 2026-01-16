@@ -24,6 +24,9 @@ Copy this iframe to embed in your own website:
 
 This chart aggregates published benchmark results from multiple text-to-knowledge-graph evaluation frameworks, allowing comparison of how different language models extract structured knowledge graph triples from natural language text.
 
+!!! note
+    The company Lettria now claims to have got a 99.8% F1 score by fine-tuning the 27B parameter Deepseek Gemma 3 model.  This would be impressive if true. [Lettria Perseus Reference](https://deepmind.google/models/gemma/gemmaverse/lettria/)
+
 ### Included Benchmarks
 
 | Benchmark | Datasets | Description | Source |
