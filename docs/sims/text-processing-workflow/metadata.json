@@ -1,0 +1,42 @@
+{
+  "title": "Text Processing Pipeline Workflow",
+  "description": "An interactive flowchart diagram showing the typical stages in preprocessing text for Natural Language Processing applications.",
+  "subject": "Mathematics",
+  "topic": "Text Processing Pipeline Workflow",
+  "gradeLevel": "6-12",
+  "bloomsTaxonomy": [
+    "Understand",
+    "Apply"
+  ],
+  "author": "Dan McCreary",
+  "dateCreated": "2026-01-23",
+  "dateModified": "2026-01-23",
+  "version": "1.0.0",
+  "license": "MIT",
+  "language": "en",
+  "format": "text/html",
+  "type": "Interactive Simulation",
+  "framework": "mermaid",
+  "url": "https://dmccreary.github.io/conversational-ai/sims/text-processing-workflow/",
+  "identifier": "https://dmccreary.github.io/conversational-ai/sims/text-processing-workflow/",
+  "_source": {
+    "repo": "conversational-ai",
+    "sim": "text-processing-workflow",
+    "github_url": "https://github.com/dmccreary/conversational-ai/tree/main/docs/sims/text-processing-workflow",
+    "auto_generated": true,
+    "generation_date": "2026-01-23"
+  },
+  "subjects": [
+    "Mathematics",
+    "Computer Science",
+    "Statistics"
+  ],
+  "visualizationType": [
+    "simulation",
+    "chart",
+    "graph",
+    "diagram",
+    "interactive-demo",
+    "network"
+  ]
+}

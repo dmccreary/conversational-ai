@@ -1,0 +1,42 @@
+{
+  "title": "Chatbot Response Latency Breakdown",
+  "description": "An interactive visualization comparing response time components between simple template-based queries and complex RAG (Retrieval-Augmented Generation) queries with LLM processing.",
+  "subject": "Mathematics",
+  "topic": "Chatbot Response Latency Breakdown",
+  "gradeLevel": "6-12",
+  "bloomsTaxonomy": [
+    "Understand",
+    "Apply"
+  ],
+  "author": "Dan McCreary",
+  "dateCreated": "2026-01-23",
+  "dateModified": "2026-01-23",
+  "version": "1.0.0",
+  "license": "MIT",
+  "language": "en",
+  "format": "text/html",
+  "type": "Interactive Simulation",
+  "framework": "chart.js",
+  "url": "https://dmccreary.github.io/conversational-ai/sims/chatbot-latency-breakdown/",
+  "identifier": "https://dmccreary.github.io/conversational-ai/sims/chatbot-latency-breakdown/",
+  "_source": {
+    "repo": "conversational-ai",
+    "sim": "chatbot-latency-breakdown",
+    "github_url": "https://github.com/dmccreary/conversational-ai/tree/main/docs/sims/chatbot-latency-breakdown",
+    "auto_generated": true,
+    "generation_date": "2026-01-23"
+  },
+  "subjects": [
+    "Mathematics",
+    "Computer Science",
+    "Chemistry",
+    "Economics"
+  ],
+  "visualizationType": [
+    "animation",
+    "simulation",
+    "chart",
+    "interactive-demo",
+    "network"
+  ]
+}

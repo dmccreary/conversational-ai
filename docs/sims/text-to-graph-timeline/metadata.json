@@ -1,0 +1,46 @@
+{
+  "title": "Text2KGBench-LettrIA F1 Scores Timeline",
+  "description": "Interactive timeline showing F1 scores for text-to-knowledge-graph models on the Text2KGBench-LettrIA Generalization benchmark",
+  "subject": "Mathematics",
+  "topic": "Text2KGBench-LettrIA F1 Scores Timeline",
+  "gradeLevel": "6-12",
+  "bloomsTaxonomy": [
+    "Understand",
+    "Apply"
+  ],
+  "author": "Dan McCreary",
+  "dateCreated": "2026-01-23",
+  "dateModified": "2026-01-23",
+  "version": "1.0.0",
+  "license": "MIT",
+  "language": "en",
+  "format": "text/html",
+  "type": "Interactive Simulation",
+  "framework": "chart.js",
+  "url": "https://dmccreary.github.io/conversational-ai/sims/text-to-graph-timeline/",
+  "identifier": "https://dmccreary.github.io/conversational-ai/sims/text-to-graph-timeline/",
+  "_source": {
+    "repo": "conversational-ai",
+    "sim": "text-to-graph-timeline",
+    "github_url": "https://github.com/dmccreary/conversational-ai/tree/main/docs/sims/text-to-graph-timeline",
+    "auto_generated": true,
+    "generation_date": "2026-01-23"
+  },
+  "subjects": [
+    "Mathematics",
+    "Computer Science",
+    "Chemistry",
+    "Biology",
+    "Engineering",
+    "Economics"
+  ],
+  "visualizationType": [
+    "simulation",
+    "chart",
+    "graph",
+    "interactive-demo",
+    "network",
+    "timeline",
+    "map"
+  ]
+}

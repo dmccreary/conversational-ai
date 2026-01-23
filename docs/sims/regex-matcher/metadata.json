@@ -1,0 +1,42 @@
+{
+  "title": "Interactive Regular Expression Pattern Matcher",
+  "description": "An educational MicroSim for experimenting with regular expression patterns and seeing real-time matches, building intuition for regex syntax and capabilities.",
+  "subject": "Mathematics",
+  "topic": "Interactive Regular Expression Pattern Matcher",
+  "gradeLevel": "6-12",
+  "bloomsTaxonomy": [
+    "Understand",
+    "Apply"
+  ],
+  "author": "Dan McCreary",
+  "dateCreated": "2026-01-23",
+  "dateModified": "2026-01-23",
+  "version": "1.0.0",
+  "license": "MIT",
+  "language": "en",
+  "format": "text/html",
+  "type": "Interactive Simulation",
+  "framework": "p5.js",
+  "url": "https://dmccreary.github.io/conversational-ai/sims/regex-matcher/",
+  "identifier": "https://dmccreary.github.io/conversational-ai/sims/regex-matcher/",
+  "_source": {
+    "repo": "conversational-ai",
+    "sim": "regex-matcher",
+    "github_url": "https://github.com/dmccreary/conversational-ai/tree/main/docs/sims/regex-matcher",
+    "auto_generated": true,
+    "generation_date": "2026-01-23"
+  },
+  "subjects": [
+    "Mathematics",
+    "Computer Science",
+    "Chemistry",
+    "Statistics",
+    "Engineering"
+  ],
+  "visualizationType": [
+    "simulation",
+    "interactive-demo",
+    "network",
+    "map"
+  ]
+}

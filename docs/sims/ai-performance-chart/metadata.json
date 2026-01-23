@@ -1,0 +1,45 @@
+{
+  "title": "AI Performance Improvement Exceeds Moore's Law",
+  "description": "An interactive chart showing how AI performance on ImageNet classification has improved exponentially from 2010-2023, with a doubling rate that significantly exceeds Moore's Law.",
+  "subject": "Mathematics",
+  "topic": "AI Performance Improvement Exceeds Moore's Law",
+  "gradeLevel": "6-12",
+  "bloomsTaxonomy": [
+    "Understand",
+    "Apply"
+  ],
+  "author": "Dan McCreary",
+  "dateCreated": "2026-01-23",
+  "dateModified": "2026-01-23",
+  "version": "1.0.0",
+  "license": "MIT",
+  "language": "en",
+  "format": "text/html",
+  "type": "Interactive Simulation",
+  "framework": "chart.js",
+  "url": "https://dmccreary.github.io/conversational-ai/sims/ai-performance-chart/",
+  "identifier": "https://dmccreary.github.io/conversational-ai/sims/ai-performance-chart/",
+  "_source": {
+    "repo": "conversational-ai",
+    "sim": "ai-performance-chart",
+    "github_url": "https://github.com/dmccreary/conversational-ai/tree/main/docs/sims/ai-performance-chart",
+    "auto_generated": true,
+    "generation_date": "2026-01-23"
+  },
+  "subjects": [
+    "Mathematics",
+    "Physics",
+    "Computer Science",
+    "Chemistry",
+    "Biology",
+    "Statistics"
+  ],
+  "visualizationType": [
+    "simulation",
+    "chart",
+    "interactive-demo",
+    "network",
+    "timeline",
+    "map"
+  ]
+}
