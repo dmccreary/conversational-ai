@@ -38,5 +38,11 @@
     "diagram",
     "interactive-demo",
     "network"
+  ],
+  "learningObjectives": [
+    "Understand the mathematical concept of text processing pipeline workflow",
+    "Apply text processing pipeline workflow to solve problems",
+    "Visualize and interpret text processing pipeline workflow relationships",
+    "Test understanding of text processing pipeline workflow through interactive exercises"
   ]
 }

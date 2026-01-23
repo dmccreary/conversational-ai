@@ -38,5 +38,11 @@
     "chart",
     "interactive-demo",
     "network"
+  ],
+  "learningObjectives": [
+    "Understand the mathematical concept of chatbot response latency breakdown",
+    "Apply chatbot response latency breakdown to solve problems",
+    "Visualize and interpret chatbot response latency breakdown relationships",
+    "Experiment with parameters to observe their effects on chatbot response latency breakdown"
   ]
 }

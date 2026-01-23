@@ -1,17 +1,56 @@
 {
-    "title": "Text2KGBench Model Comparison",
-    "description": "Interactive bar chart comparing AI model performance on the Text2KGBench benchmark for ontology-driven text-to-knowledge-graph triple extraction tasks.",
-    "creator": "Dan McCreary",
-    "date": "2026-01-16",
-    "subject": ["knowledge graphs", "benchmarking", "natural language processing", "text-to-KG", "large language models", "ontology", "triple extraction"],
-    "type": "Interactive Simulation",
-    "format": "text/html",
-    "language": "en",
-    "rights": "CC BY-NC-SA 4.0",
-    "source": "Text2KGBench: Benchmark for Ontology-Driven Text-to-KG",
-    "relation": "https://arxiv.org/abs/2308.02357",
-    "library": "Chart.js",
-    "educationalLevel": "College",
-    "concepts": ["knowledge graph extraction", "benchmark evaluation", "model comparison", "F1 score"],
-    "prerequisites": ["Basic understanding of knowledge graphs", "Familiarity with LLM evaluation metrics"]
+  "title": "Text2KGBench Model Comparison",
+  "description": "Interactive bar chart comparing AI model performance on the Text2KGBench benchmark for ontology-driven text-to-knowledge-graph triple extraction tasks.",
+  "creator": "Dan McCreary",
+  "date": "2026-01-16",
+  "subject": [
+    "knowledge graphs",
+    "benchmarking",
+    "natural language processing",
+    "text-to-KG",
+    "large language models",
+    "ontology",
+    "triple extraction"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "source": "Text2KGBench: Benchmark for Ontology-Driven Text-to-KG",
+  "relation": "https://arxiv.org/abs/2308.02357",
+  "library": "Chart.js",
+  "educationalLevel": "College",
+  "concepts": [
+    "knowledge graph extraction",
+    "benchmark evaluation",
+    "model comparison",
+    "F1 score"
+  ],
+  "prerequisites": [
+    "Basic understanding of knowledge graphs",
+    "Familiarity with LLM evaluation metrics"
+  ],
+  "visualizationType": [
+    "animation",
+    "chart",
+    "graph",
+    "interactive-demo",
+    "map",
+    "network",
+    "simulation"
+  ],
+  "learningObjectives": [
+    "Understand the key concepts of text2kgbench model comparison",
+    "Explore text2kgbench model comparison through interactive visualization",
+    "Apply knowledge of text2kgbench model comparison to solve problems",
+    "Experiment with parameters to observe their effects on text2kgbench model comparison"
+  ],
+  "bloomsTaxonomy": [
+    "Remember",
+    "Understand",
+    "Apply",
+    "Analyze",
+    "Evaluate",
+    "Create"
+  ]
 }
