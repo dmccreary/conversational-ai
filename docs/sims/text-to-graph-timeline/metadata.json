@@ -48,5 +48,29 @@
     "Apply text2kgbench-lettria f1 scores timeline to solve problems",
     "Visualize and interpret text2kgbench-lettria f1 scores timeline relationships",
     "Test understanding of text2kgbench-lettria f1 scores timeline through interactive exercises"
-  ]
+  ],
+  "pedagogical": {
+    "pattern": "assessment",
+    "bloomAlignment": [
+      "understand",
+      "apply",
+      "analyze"
+    ],
+    "bloomVerbs": [
+      "classify",
+      "compare",
+      "explain",
+      "summarize",
+      "illustrate"
+    ],
+    "pacing": "self-paced",
+    "supportsPrediction": true,
+    "dataVisibility": "medium",
+    "feedbackType": [
+      "immediate",
+      "corrective",
+      "explanatory"
+    ],
+    "interactionStyle": "respond"
+  }
 }

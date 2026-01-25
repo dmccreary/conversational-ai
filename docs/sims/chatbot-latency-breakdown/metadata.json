@@ -44,5 +44,28 @@
     "Apply chatbot response latency breakdown to solve problems",
     "Visualize and interpret chatbot response latency breakdown relationships",
     "Experiment with parameters to observe their effects on chatbot response latency breakdown"
-  ]
+  ],
+  "pedagogical": {
+    "pattern": "reference",
+    "bloomAlignment": [
+      "understand",
+      "apply"
+    ],
+    "bloomVerbs": [
+      "classify",
+      "compare",
+      "explain",
+      "summarize",
+      "apply"
+    ],
+    "pacing": "self-paced",
+    "supportsPrediction": false,
+    "dataVisibility": "medium",
+    "feedbackType": [
+      "immediate",
+      "delayed",
+      "corrective"
+    ],
+    "interactionStyle": "observe"
+  }
 }

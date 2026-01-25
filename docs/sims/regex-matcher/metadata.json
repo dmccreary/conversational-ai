@@ -44,5 +44,29 @@
     "Apply interactive regular expression pattern matcher to solve problems",
     "Visualize and interpret interactive regular expression pattern matcher relationships",
     "Experiment with parameters to observe their effects on interactive regular expression pattern matcher"
-  ]
+  ],
+  "pedagogical": {
+    "pattern": "worked-example",
+    "bloomAlignment": [
+      "understand",
+      "apply",
+      "create"
+    ],
+    "bloomVerbs": [
+      "classify",
+      "describe",
+      "explain",
+      "interpret",
+      "summarize"
+    ],
+    "pacing": "self-paced",
+    "supportsPrediction": false,
+    "dataVisibility": "high",
+    "feedbackType": [
+      "immediate",
+      "corrective",
+      "explanatory"
+    ],
+    "interactionStyle": "explore"
+  }
 }

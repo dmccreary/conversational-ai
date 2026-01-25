@@ -46,5 +46,29 @@
     "Apply evolution of artificial intelligence timeline to solve problems",
     "Visualize and interpret evolution of artificial intelligence timeline relationships",
     "Experiment with parameters to observe their effects on evolution of artificial intelligence timeline"
-  ]
+  ],
+  "pedagogical": {
+    "pattern": "demonstration",
+    "bloomAlignment": [
+      "understand",
+      "apply"
+    ],
+    "bloomVerbs": [
+      "classify",
+      "summarize",
+      "apply",
+      "demonstrate",
+      "illustrate"
+    ],
+    "pacing": "self-paced",
+    "supportsPrediction": false,
+    "dataVisibility": "medium",
+    "feedbackType": [
+      "immediate",
+      "delayed",
+      "corrective",
+      "explanatory"
+    ],
+    "interactionStyle": "observe"
+  }
 }

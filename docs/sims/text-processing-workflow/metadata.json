@@ -44,5 +44,28 @@
     "Apply text processing pipeline workflow to solve problems",
     "Visualize and interpret text processing pipeline workflow relationships",
     "Test understanding of text processing pipeline workflow through interactive exercises"
-  ]
+  ],
+  "pedagogical": {
+    "pattern": "worked-example",
+    "bloomAlignment": [
+      "understand",
+      "apply",
+      "analyze"
+    ],
+    "bloomVerbs": [
+      "classify",
+      "compare",
+      "interpret",
+      "summarize",
+      "apply"
+    ],
+    "pacing": "step-through",
+    "supportsPrediction": false,
+    "dataVisibility": "high",
+    "feedbackType": [
+      "corrective",
+      "explanatory"
+    ],
+    "interactionStyle": "respond"
+  }
 }
