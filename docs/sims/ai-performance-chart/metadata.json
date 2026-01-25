@@ -41,5 +41,35 @@
     "network",
     "timeline",
     "map"
-  ]
+  ],
+  "learningObjectives": [
+    "Understand the mathematical concept of ai performance improvement exceeds moore's law",
+    "Apply ai performance improvement exceeds moore's law to solve problems",
+    "Visualize and interpret ai performance improvement exceeds moore's law relationships",
+    "Experiment with parameters to observe their effects on ai performance improvement exceeds moore's law"
+  ],
+  "pedagogical": {
+    "pattern": "demonstration",
+    "bloomAlignment": [
+      "understand",
+      "apply",
+      "analyze"
+    ],
+    "bloomVerbs": [
+      "classify",
+      "compare",
+      "explain",
+      "interpret",
+      "summarize"
+    ],
+    "pacing": "self-paced",
+    "supportsPrediction": true,
+    "dataVisibility": "medium",
+    "feedbackType": [
+      "immediate",
+      "corrective",
+      "explanatory"
+    ],
+    "interactionStyle": "observe"
+  }
 }
