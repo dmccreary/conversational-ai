@@ -95,6 +95,12 @@ nav:
     - prompts/10-book-announcement.md
     - prompts/10-doubling-rate-clairification.md
   
+  - Appendices:
+    - Overview: appendices/index.md
+    - CVC Pattern: appendices/01-cvc-chatbot-pattern.md
+    - CCGC Pattern: appendices/02-ccgc-chatbot-pattern.md
+    - CCGCC Pattern: appendices/03-ccgcc-chatbot-pattern.md
+
   - FAQs: faq.md
   - Glossary: glossary.md
   - How We Built This Site: how-we-built-this-site.md
