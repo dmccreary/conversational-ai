@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
+    <title>User Context Data Model</title>
+    <script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/vis-network/styles/vis-network.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, Helvetica, sans-serif; background-color: aliceblue; }
+        .container { position: relative; width: 100%; height: 100vh; overflow: hidden; }
+        #network { width: 100%; height: 100%; background-color: aliceblue; }
+        .title {
+            position: absolute; top: 8px; left: 50%; transform: translateX(-50%);
+            font-size: 19px; font-weight: bold; color: #1a3a6c; background: rgba(240,248,255,0.85);
+            padding: 2px 10px; border-radius: 6px; z-index: 10;
+        }
+        .legend {
+            position: absolute; top: 8px; left: 8px; padding: 8px 10px;
+            background: rgba(255,255,255,0.95); border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.12); z-index: 10; font-size: 11.5px; max-width: 180px;
+        }
+        .legend-title { font-weight: bold; margin-bottom: 4px; font-size: 12px; }
+        .legend-item { display: flex; align-items: center; margin: 2px 0; }
+        .legend-color { width: 13px; height: 13px; border-radius: 3px; margin-right: 5px; border: 1px solid #555; }
+        .right-panel {
+            position: absolute; top: 8px; right: 8px; width: 250px;
+            display: flex; flex-direction: column; gap: 8px; z-index: 10;
+        }
+        .filters {
+            background: rgba(255,255,255,0.96); border-radius: 8px; padding: 8px 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.12); font-size: 12px;
+        }
+        .filters .ftitle { font-weight: bold; margin-bottom: 5px; }
+        .filters label { display: flex; align-items: center; gap: 5px; margin: 2px 0; cursor: pointer; }
+        .info {
+            background: rgba(255,255,255,0.96); border-radius: 8px; padding: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.12); font-size: 12px; line-height: 1.5;
+            min-height: 90px;
+        }
+        .info .ititle { font-weight: bold; color: #1a3a6c; margin-bottom: 4px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div style="position:relative; width:100%; height:100%;">
+            <div class="title">User Context Data Model</div>
+            <div class="legend">
+                <div class="legend-title">Node types</div>
+                <div class="legend-item"><span class="legend-color" style="background:#7b3fb5"></span>User</div>
+                <div class="legend-item"><span class="legend-color" style="background:#ec407a"></span>Profile</div>
+                <div class="legend-item"><span class="legend-color" style="background:#42a5f5"></span>Preferences</div>
+                <div class="legend-item"><span class="legend-color" style="background:#2e9e5b"></span>History</div>
+                <div class="legend-item"><span class="legend-color" style="background:#fb8c00"></span>Session</div>
+                <div class="legend-item"><span class="legend-color" style="background:#90a4ae"></span>Query</div>
+                <div class="legend-item"><span class="legend-color" style="background:#90caf9"></span>Setting</div>
+                <div class="legend-item"><span class="legend-color" style="background:#a5d6a7"></span>Pattern</div>
+            </div>
+            <main id="network"></main>
+            <div class="right-panel">
+                <div class="filters">
+                    <div class="ftitle">Show node types</div>
+                    <label><input type="checkbox" class="ftog" data-grp="session" checked> Sessions &amp; Queries</label>
+                    <label><input type="checkbox" class="ftog" data-grp="setting" checked> Preference Settings</label>
+                    <label><input type="checkbox" class="ftog" data-grp="pattern" checked> Behavioral Patterns</label>
+                </div>
+                <div class="info">
+                    <div class="ititle" id="infoTitle">Click a node</div>
+                    <div id="infoBody">Hover a node to see its properties; click to highlight its
+                    connections. Use the checkboxes to focus on parts of the model.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="user-context-data-model.js"></script>
+</body>
+</html>
