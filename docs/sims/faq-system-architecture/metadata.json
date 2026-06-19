@@ -1,0 +1,36 @@
+{
+  "title": "FAQ System Architecture",
+  "description": "Mermaid data-flow diagram showing how an FAQ system processes a user question through input processing, semantic matching, retrieval, and response delivery, with a feedback loop.",
+  "creator": "Dan McCreary",
+  "author": "Dan McCreary",
+  "date": "2026-06-19",
+  "subject": "Conversational AI",
+  "type": "Interactive Diagram",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "faq-system-architecture",
+  "library": "Mermaid",
+  "bloomLevel": "Understand",
+  "bloomVerb": "explain",
+  "completion_status": "implemented",
+  "chapter_number": 6,
+  "chapter_title": "Building Chatbots Intent",
+  "chapter_dir": "06-building-chatbots-intent",
+  "educational": {
+    "gradeLevel": "Undergraduate",
+    "subjectArea": "Conversational AI",
+    "topic": "FAQ retrieval and semantic matching",
+    "learningObjectives": [
+      "Describe the stages an FAQ system uses to answer a question",
+      "Explain how semantic matching and a feedback loop improve answers"
+    ],
+    "duration": "5-10 minutes",
+    "prerequisites": "Basic understanding of embeddings and similarity search"
+  },
+  "pedagogical": {
+    "bloomLevel": "Understand",
+    "bloomVerb": "explain",
+    "interactionType": "Hover to reveal component descriptions"
+  }
+}
