@@ -1,0 +1,45 @@
+{
+  "title": "Named Entity Recognition with BIO Tagging",
+  "description": "Interactive p5.js MicroSim that labels each token in a sentence with BIO tags, showing how NER models mark entity boundaries and types.",
+  "creator": "Dan McCreary",
+  "author": "Dan McCreary",
+  "date": "2026-06-19",
+  "subject": "Conversational AI",
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "named-entity-recognition-with-bio-tagging",
+  "library": "p5.js",
+  "bloomLevel": "Analyze",
+  "bloomVerb": "demonstrate",
+  "completion_status": "implemented",
+  "chapter_number": 6,
+  "chapter_title": "Building Chatbots Intent",
+  "chapter_dir": "06-building-chatbots-intent",
+  "learningObjective": "Demonstrate how NER models label each token in a sequence with BIO tags to identify entity boundaries and types",
+  "educational": {
+    "gradeLevel": "Undergraduate",
+    "subjectArea": "Conversational AI",
+    "topic": "Named entity recognition and BIO tagging",
+    "learningObjectives": [
+      "Demonstrate how NER models label each token with B-, I-, or O tags",
+      "Identify entity boundaries and types from token-level labels"
+    ],
+    "duration": "10-15 minutes",
+    "prerequisites": "Tokenization and the concept of named entities"
+  },
+  "pedagogical": {
+    "bloomLevel": "Analyze",
+    "bloomVerb": "demonstrate",
+    "interactionType": "Dropdown, toggles, custom-sentence input, and hover tooltips"
+  },
+  "controls": [
+    { "type": "select", "label": "Example sentence", "purpose": "Choose one of five pre-labeled sentences" },
+    { "type": "checkbox", "label": "Show BIO tags", "purpose": "Toggle B-/I-/O labels" },
+    { "type": "checkbox", "label": "Show entity types", "purpose": "Toggle entity-type labels" },
+    { "type": "checkbox", "label": "Highlight entities only", "purpose": "Fade non-entity tokens" },
+    { "type": "input", "label": "Custom sentence", "purpose": "Enter a sentence to tag" },
+    { "type": "button", "label": "Tag Custom Sentence", "purpose": "Run simple rule-based NER" }
+  ]
+}
