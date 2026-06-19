@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
+    <title>Embedding Model Comparison</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body { width: 100%; height: 100%; }
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: aliceblue; color: #212529;
+        }
+        main { display: block; padding: 12px; }
+        h1.sim-title {
+            font-size: 19px; color: #1a3a6c; text-align: center; margin-bottom: 12px;
+        }
+        .panels { display: flex; gap: 12px; align-items: stretch; }
+        .panel {
+            flex: 1; background: #fff; border-radius: 8px;
+            border-top: 6px solid #999; padding: 10px; min-width: 0;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+        }
+        .panel h2 { font-size: 16px; text-align: center; margin-bottom: 4px; }
+        .panel .subtitle { font-size: 12px; text-align: center; color: #555; margin-bottom: 10px; min-height: 30px; }
+        .box {
+            border-radius: 6px; padding: 8px 6px; margin: 0 4px 6px;
+            color: #fff; font-size: 13px; text-align: center; cursor: pointer;
+            transition: filter 0.15s, transform 0.15s;
+        }
+        .box:hover { filter: brightness(1.12); transform: translateY(-1px); }
+        .box small { display: block; font-size: 11px; opacity: 0.92; margin-top: 2px; }
+        .arrow { text-align: center; color: #fb8c00; font-size: 16px; line-height: 1; margin: -2px 0 4px; }
+        .shared { background: #6a1b9a; }
+        .w2v { border-color: #1976d2; }
+        .w2v .box.model { background: #1976d2; }
+        .glv { border-color: #2e7d32; }
+        .glv .box.model { background: #2e7d32; }
+        .ft { border-color: #e65100; }
+        .ft .box.model { background: #e65100; }
+        .w2v h2 { color: #1976d2; }
+        .glv h2 { color: #2e7d32; }
+        .ft h2 { color: #e65100; }
+
+        .info {
+            margin-top: 12px; background: #fff; border: 1px solid #cfd8dc;
+            border-radius: 6px; padding: 10px 12px; font-size: 13px; min-height: 56px;
+            color: #334155;
+        }
+        .info strong { color: #1a3a6c; }
+        table.cmp { width: 100%; border-collapse: collapse; margin-top: 12px; background: #fff; font-size: 12px; }
+        table.cmp th, table.cmp td { border: 1px solid #cfd8dc; padding: 5px 7px; text-align: left; }
+        table.cmp th { background: #eef3f8; color: #1a3a6c; }
+        table.cmp td:first-child { font-weight: bold; color: #37474f; }
+    </style>
+</head>
+<body>
+    <main>
+        <h1 class="sim-title">How Word2Vec, GloVe, and FastText Learn Embeddings</h1>
+        <div class="panels">
+            <!-- Word2Vec -->
+            <div class="panel w2v">
+                <h2>Word2Vec</h2>
+                <div class="subtitle">Skip-gram: predicts context from a target word</div>
+                <div class="box model" data-info="Word2Vec Skip-gram starts from a single target word, represented as a one-hot vector the size of the vocabulary.">Input word: fox<small>one-hot encoded</small></div>
+                <div class="arrow">&#8595;</div>
+                <div class="box shared" data-info="The hidden layer IS the embedding. After training, the weights for each word become its 300-dimensional vector. This is the shared idea across all three models.">Hidden / Embedding layer<small>300 dimensions</small></div>
+                <div class="arrow">&#8595;</div>
+                <div class="box model" data-info="The network is trained to predict the surrounding context words from the target word, so words in similar contexts get similar vectors.">Predict context words<small>quick, brown, jumps</small></div>
+                <div class="arrow">&#8595;</div>
+                <div class="box model" data-info="Training maximizes the probability of the true context words given the target word - a local, prediction-based objective.">Objective<small>maximize P(context | target)</small></div>
+            </div>
+            <!-- GloVe -->
+            <div class="panel glv">
+                <h2>GloVe</h2>
+                <div class="subtitle">Factorizes global co-occurrence statistics</div>
+                <div class="box model" data-info="GloVe begins with a global co-occurrence matrix counting how often each word pair appears together across the entire corpus.">Co-occurrence matrix<small>word-pair frequencies</small></div>
+                <div class="arrow">&#8595;</div>
+                <div class="box model" data-info="GloVe factorizes that matrix, decomposing the global statistics into low-dimensional factors rather than scanning local windows.">Matrix factorization<small>decompose statistics</small></div>
+                <div class="arrow">&#8595;</div>
+                <div class="box shared" data-info="Factorization yields word vectors and context vectors; the word vectors are the embeddings used downstream.">Word + context vectors<small>the embeddings</small></div>
+                <div class="arrow">&#8595;</div>
+                <div class="box model" data-info="The objective makes each pair of vectors dot product approximate the log of their co-occurrence count - a global, statistics-based objective.">Objective<small>dot product = log co-occurrence</small></div>
+            </div>
+            <!-- FastText -->
+            <div class="panel ft">
+                <h2>FastText</h2>
+                <div class="subtitle">Combines subword (character n-gram) information</div>
+                <div class="box model" data-info="FastText breaks each word into character n-grams (plus the whole word), so morphology is captured directly.">Input word: running<small>split into char n-grams</small></div>
+                <div class="arrow">&#8595;</div>
+                <div class="box shared" data-info="Each n-gram has its own embedding. Sharing n-grams across words lets the model generalize to forms it never saw.">N-gram embeddings<small>run, unn, nni, ing, running</small></div>
+                <div class="arrow">&#8595;</div>
+                <div class="box model" data-info="A word vector is the average of its n-gram vectors, so even an unseen word can be embedded from its pieces.">Final embedding<small>average of n-gram vectors</small></div>
+                <div class="arrow">&#8595;</div>
+                <div class="box model" data-info="Because words are built from subwords, FastText handles out-of-vocabulary and rare words far better than Word2Vec or GloVe.">Handles OOV words<small>out-of-vocabulary support</small></div>
+            </div>
+        </div>
+
+        <div class="info" id="info"><strong>Tip:</strong> hover over any box to learn how that step works.</div>
+
+        <table class="cmp">
+            <tr><th>Feature</th><th>Word2Vec</th><th>GloVe</th><th>FastText</th></tr>
+            <tr><td>Training paradigm</td><td>Local context prediction</td><td>Global statistics</td><td>Subword local context</td></tr>
+            <tr><td>OOV handling</td><td>No</td><td>No</td><td>Yes</td></tr>
+            <tr><td>Training speed</td><td>Fast</td><td>Medium</td><td>Fast</td></tr>
+            <tr><td>Memory efficiency</td><td>High</td><td>Medium (large matrix)</td><td>Medium (n-grams)</td></tr>
+        </table>
+    </main>
+    <script src="embedding-model-comparison.js"></script>
+</body>
+</html>
