@@ -1,0 +1,30 @@
+{
+  "title": "RAG vs GraphRAG Architecture Comparison",
+  "description": "A side-by-side architecture comparison of standard RAG and GraphRAG, highlighting structural differences, capability gaps, and a capability table.",
+  "creator": "Dan McCreary",
+  "author": "Dan McCreary",
+  "date": "2026-06-19",
+  "subject": "Conversational AI",
+  "type": "Interactive Diagram",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "rag-vs-graphrag-architecture-comparison",
+  "library": "HTML/CSS/JavaScript",
+  "bloomLevel": "Analyze",
+  "bloomVerb": "compare",
+  "educational": {
+    "gradeLevel": "Undergraduate",
+    "learningObjective": "Compare the architectures of standard RAG and GraphRAG and explain which capabilities each one supports.",
+    "estimatedDuration": "8 minutes"
+  },
+  "pedagogical": {
+    "bloomLevel": "Analyze",
+    "bloomVerb": "compare",
+    "conceptsCovered": ["Standard RAG architecture", "GraphRAG architecture", "Query routing", "Hybrid retrieval", "Knowledge graph as strategic asset", "Multi-hop reasoning"]
+  },
+  "completion_status": "implemented",
+  "chapter_number": 10,
+  "chapter_title": "Knowledge Graphs Graphrag",
+  "chapter_dir": "10-knowledge-graphs-graphrag"
+}
