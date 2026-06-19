@@ -1,0 +1,44 @@
+{
+  "title": "POS Tagging Process Flow",
+  "description": "Flowchart of the part-of-speech tagging algorithm, showing how a tagger uses statistical probabilities, context, and unknown-word heuristics to label each word.",
+  "creator": "Dan McCreary",
+  "author": "Dan McCreary",
+  "date": "2026-06-19",
+  "subject": "Conversational AI",
+  "type": "Interactive Flowchart",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "pos-tagging-process-flow",
+  "library": "Mermaid.js",
+  "bloomLevel": "Understand",
+  "bloomVerb": "explain",
+  "completion_status": "implemented",
+  "chapter_number": 11,
+  "chapter_title": "Nlp Pipelines Processing",
+  "chapter_dir": "11-nlp-pipelines-processing",
+  "educational": {
+    "gradeLevel": "Undergraduate",
+    "learningObjectives": [
+      "Trace the steps a POS tagger takes to label each word in a sentence",
+      "Explain how statistical probabilities and context resolve tag ambiguity",
+      "Describe the heuristics used for words not seen during training"
+    ],
+    "concepts": [
+      "Part-of-speech tagging",
+      "Emission and transition probabilities",
+      "Viterbi algorithm",
+      "Unknown-word heuristics"
+    ]
+  },
+  "pedagogical": {
+    "pattern": "demonstration",
+    "bloomAlignment": ["understand", "apply"],
+    "bloomVerbs": ["explain", "trace", "describe"],
+    "pacing": "self-paced",
+    "supportsPrediction": false,
+    "dataVisibility": "high",
+    "feedbackType": ["explanatory"],
+    "interactionStyle": "explore"
+  }
+}
