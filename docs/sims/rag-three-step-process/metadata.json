@@ -1,0 +1,30 @@
+{
+  "title": "RAG Three-Step Process",
+  "description": "An interactive Mermaid flowchart of the Retrieval-Augmented Generation pattern showing a user query flowing through retrieval, augmentation, and generation with supporting data stores.",
+  "creator": "Dan McCreary",
+  "author": "Dan McCreary",
+  "date": "2026-06-19",
+  "subject": "Conversational AI",
+  "type": "Interactive Diagram",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "rag-three-step-process",
+  "library": "Mermaid",
+  "bloomLevel": "Understand",
+  "bloomVerb": "explain",
+  "educational": {
+    "gradeLevel": "Undergraduate",
+    "learningObjective": "Trace a user query through the three sequential steps of the RAG pattern and identify the supporting data stores.",
+    "estimatedDuration": "5 minutes"
+  },
+  "pedagogical": {
+    "bloomLevel": "Understand",
+    "bloomVerb": "explain",
+    "conceptsCovered": ["Retrieval-Augmented Generation", "Semantic search", "Vector database", "Prompt augmentation"]
+  },
+  "completion_status": "implemented",
+  "chapter_number": 9,
+  "chapter_title": "Rag Pattern",
+  "chapter_dir": "09-rag-pattern"
+}
