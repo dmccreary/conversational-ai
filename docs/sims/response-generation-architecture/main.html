@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
+    <title>Response Generation Architecture</title>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body { width: 100%; height: 100%; overflow: hidden; font-family: Arial, Helvetica, sans-serif; }
+        .container { display: flex; width: 100%; height: 470px; background: #ffffff; }
+        .diagram-panel {
+            width: 66.67%; height: 100%; overflow: visible;
+            background: aliceblue; padding: 8px;
+        }
+        .diagram-panel h2 { text-align: center; font-size: 18px; color: #1a3a6c; margin: 4px 0 0 0; }
+        .mermaid { width: 100%; display: flex; justify-content: center; }
+        .mermaid svg { max-width: 100%; height: auto; }
+        .info-panel {
+            width: 33.33%; height: 100%; overflow: visible;
+            padding: 12px; border-left: 1px solid #cbd5e1; background: #f8fafc;
+        }
+        .legend {
+            margin-bottom: 12px; font-size: 12px; border: 1px solid #cbd5e1;
+            border-radius: 4px; padding: 8px 10px; background: #fff;
+        }
+        .legend-title { font-weight: bold; margin-bottom: 6px; color: #334155; }
+        .legend-item { display: flex; align-items: center; margin: 3px 0; color: #334155; }
+        .legend-dot { width: 14px; height: 14px; border-radius: 3px; margin-right: 8px; flex: none; }
+        .info-panel h3 { color: #1a3a6c; font-size: 15px; margin-bottom: 6px; }
+        #panelWrap { position: relative; height: 280px; }
+        #panel {
+            position: absolute; left: 0; right: 0; top: 8px;
+            background-color: #ffffff; color: #334155;
+            border: 1px solid #e2e8f0; padding: 10px; border-radius: 6px;
+            font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 1.45;
+        }
+        .node { cursor: pointer; }
+    </style>
+</head>
+<body>
+    <main class="container">
+        <div class="diagram-panel">
+            <h2>Response Generation Architecture</h2>
+            <div class="mermaid">
+flowchart LR
+    Input["User Input"]:::io
+    Intent{"Intent<br/>Classification"}:::decision
+    Context[("Context<br/>Retrieval")]:::success
+    Strategy{"Response<br/>Strategy"}:::decision
+    Template["Template Engine"]:::success
+    Retrieval["Retrieval System"]:::success
+    LLM["LLM Generator"]:::success
+    Formatter["Response<br/>Formatter"]:::success
+    Quality{"Quality<br/>Checker"}:::quality
+    Output["User Output"]:::io
+
+    Input --> Intent
+    Intent --> Strategy
+    Context -.->|Context injection| Strategy
+    Strategy -->|Intent: FAQ| Template
+    Strategy -->|Intent: Factual| Retrieval
+    Strategy -->|Intent: Complex| LLM
+    Template --> Formatter
+    Retrieval --> Formatter
+    LLM --> Formatter
+    Context -.->|Context injection| Formatter
+    Formatter --> Quality
+    Quality -->|Pass| Output
+    Quality -.->|Validation failed| LLM
+
+    classDef io fill:#3b82f6,stroke:#1e3a8a,stroke-width:2px,color:#fff,font-size:14px
+    classDef success fill:#22c55e,stroke:#15803d,stroke-width:2px,color:#fff,font-size:14px
+    classDef decision fill:#f97316,stroke:#9a3412,stroke-width:2px,color:#fff,font-size:14px
+    classDef quality fill:#ef4444,stroke:#991b1b,stroke-width:2px,color:#fff,font-size:14px
+
+    linkStyle default stroke:#94a3b8,stroke-width:2px,font-size:12px
+            </div>
+        </div>
+        <div class="info-panel">
+            <div class="legend">
+                <div class="legend-title">Color Key</div>
+                <div class="legend-item"><div class="legend-dot" style="background:#3b82f6"></div>Input / output</div>
+                <div class="legend-item"><div class="legend-dot" style="background:#22c55e"></div>Processing and response paths</div>
+                <div class="legend-item"><div class="legend-dot" style="background:#f97316"></div>Decision points</div>
+                <div class="legend-item"><div class="legend-dot" style="background:#ef4444"></div>Quality check / validation</div>
+            </div>
+            <h3>Stage Details</h3>
+            <div id="panelWrap">
+                <div id="panel">Hover a stage to follow a user message from intent classification through one of three response strategies to a validated reply.</div>
+            </div>
+        </div>
+    </main>
+    <script src="response-generation-architecture.js"></script>
+</body>
+</html>

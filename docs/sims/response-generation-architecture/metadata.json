@@ -1,0 +1,32 @@
+{
+  "title": "Response Generation Architecture",
+  "description": "Flowchart of the chatbot response pipeline from user input through intent-based strategy selection (template, retrieval, LLM) to a quality-checked reply.",
+  "creator": "Dan McCreary",
+  "author": "Dan McCreary",
+  "date": "2026-06-19",
+  "subject": "Conversational AI",
+  "type": "Interactive Diagram",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "response-generation-architecture",
+  "library": "Mermaid.js",
+  "bloomLevel": "Understand",
+  "bloomVerb": "explain",
+  "completion_status": "implemented",
+  "chapter_number": 7,
+  "chapter_title": "Chatbot Frameworks Ui",
+  "chapter_dir": "07-chatbot-frameworks-ui",
+  "educational": {
+    "audience": "Undergraduate",
+    "learningObjective": "Explain how a chatbot routes a request to one of three response strategies and validates the result before returning it.",
+    "gradeLevel": "College",
+    "coverage": "Introductory"
+  },
+  "pedagogical": {
+    "bloomLevel": "Understand",
+    "bloomVerb": "explain",
+    "interactionType": "hover-to-explore flowchart",
+    "estimatedTimeMinutes": 9
+  }
+}
