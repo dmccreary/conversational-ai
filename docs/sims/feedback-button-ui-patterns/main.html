@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
+    <title>Feedback Button UI Patterns</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, Helvetica, sans-serif; background: aliceblue; color: #1f2933; }
+        #wrap { width: 100%; min-height: 100vh; display: flex; flex-direction: column; }
+        #title { text-align: center; font-size: 21px; font-weight: bold; color: #1a3a6c; padding: 8px 4px 1px 4px; }
+        #subtitle { text-align: center; font-size: 12.5px; color: #52606d; margin-bottom: 6px; }
+        #grid {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
+            padding: 0 10px 6px 10px;
+        }
+        @media (max-width: 620px) { #grid { grid-template-columns: 1fr; } }
+        .panel {
+            background: #fff; border: 1px solid #d0d7de; border-radius: 10px;
+            padding: 12px 14px; box-shadow: 0 2px 5px rgba(0,0,0,0.07);
+        }
+        .panel h2 { font-size: 15px; color: #1a3a6c; margin-bottom: 2px; }
+        .panel .tag { font-size: 11px; color: #7b8794; margin-bottom: 8px; }
+        .bot { display: flex; gap: 8px; align-items: flex-end; }
+        .botav { width: 26px; height: 26px; border-radius: 50%; background: #1565c0; color:#fff;
+            display:flex; align-items:center; justify-content:center; font-size:14px; flex:0 0 auto; }
+        .bubble { background: #e4e7eb; border-radius: 14px; border-bottom-left-radius: 4px;
+            padding: 8px 10px; font-size: 12.5px; max-width: 260px; line-height: 1.35; }
+
+        /* minimal pattern */
+        .thumbs { display: flex; gap: 12px; margin-top: 8px; margin-left: 34px; font-size: 20px; }
+        .tbtn { cursor: pointer; color: #b0b8c1; transition: transform .12s, color .12s; user-select: none; }
+        .tbtn:hover { transform: scale(1.15); }
+        .tbtn.up-on { color: #2e9e5b; }
+        .tbtn.down-on { color: #e53935; }
+
+        /* labeled pattern */
+        .labeled { display: flex; gap: 10px; margin-top: 10px; justify-content: center; }
+        .lbtn { display: flex; align-items: center; gap: 6px; border: 1px solid #cbd2d9;
+            border-radius: 18px; padding: 7px 14px; font-size: 13px; cursor: pointer;
+            background: #fff; transition: transform .12s, background .12s, border-color .12s; min-height:40px; }
+        .lbtn:hover { transform: scale(1.05); }
+        .lbtn.up-on { background: #e8f5e9; border-color: #2e9e5b; color: #2e9e5b; }
+        .lbtn.down-on { background: #ffebee; border-color: #e53935; color: #e53935; }
+
+        /* follow-up pattern */
+        .followup { margin-top: 10px; }
+        .followBox { margin-top: 10px; padding: 10px; border: 1px dashed #9c27b0;
+            border-radius: 8px; background: #faf2fc; display: none; }
+        .followBox.show { display: block; }
+        .followBox .opt { display: block; width: 100%; text-align: left; border: 1px solid #d0d7de;
+            border-radius: 6px; padding: 6px 10px; margin-bottom: 6px; font-size: 12.5px;
+            background: #fff; cursor: pointer; }
+        .followBox .opt:hover, .followBox .opt.sel { border-color: #9c27b0; background: #f3e5f5; }
+        .followBox textarea { width: 100%; border: 1px solid #d0d7de; border-radius: 6px;
+            padding: 6px; font-size: 12.5px; resize: vertical; min-height: 42px; display:none; margin-bottom:6px; }
+        .followBox textarea.show { display: block; }
+        .submit { background: #9c27b0; color: #fff; border: none; border-radius: 6px;
+            padding: 7px 16px; font-size: 13px; cursor: pointer; }
+        .submit:hover { background: #7b1fa2; }
+        .thanks { display:none; margin-top:8px; color:#2e9e5b; font-weight:bold; font-size:13px; }
+        .thanks.show { display:block; }
+
+        /* emoji pattern */
+        .emojis { display: flex; gap: 10px; margin-top: 10px; justify-content: center; }
+        .emoji { font-size: 26px; cursor: pointer; filter: grayscale(0.7); opacity: 0.7;
+            transition: transform .12s, filter .12s, opacity .12s; }
+        .emoji:hover { transform: scale(1.15); }
+        .emoji.sel { filter: none; opacity: 1; transform: scale(1.3); }
+
+        .note { margin-top: 10px; font-size: 11.5px; color: #486581; font-style: italic; }
+
+        #principles { margin: 0 10px 14px 10px; background: #fff8e1; border: 1px solid #ffe082;
+            border-radius: 10px; padding: 10px 14px; font-size: 12.5px; line-height: 1.6; }
+        #principles b { color: #5d4a00; }
+    </style>
+    <script src="feedback-button-ui-patterns.js" defer></script>
+</head>
+<body>
+    <div id="wrap">
+        <div id="title">Feedback Button UI Patterns</div>
+        <div id="subtitle">Four ways to collect response feedback &mdash; click the controls to see each state</div>
+        <main id="grid"><!-- panels injected by JS --></main>
+        <div id="principles">
+            <b>Shared design principles:</b>
+            Place feedback close to the content it evaluates &middot;
+            use touch-friendly targets (44x44px minimum) &middot;
+            roughly 80% of actionable insight comes from the follow-up question, not the thumb itself.
+        </div>
+    </div>
+    <br/>
+    <a href=".">Back to Documentation</a>
+</body>
+</html>
