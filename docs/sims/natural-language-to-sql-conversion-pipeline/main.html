@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
+    <title>Natural Language to SQL Conversion Pipeline</title>
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'default',
+            flowchart: {
+                useMaxWidth: true,
+                htmlLabels: true,
+                curve: 'basis',
+                subGraphTitleMargin: { top: 10, bottom: 14 }
+            }
+        });
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body { width: 100%; height: 100%; overflow: hidden; font-family: Arial, Helvetica, sans-serif; }
+        .wrapper { display: flex; width: 100%; height: 100vh; background: #fff; }
+        .diagram-panel { width: 66.666%; height: 100%; overflow: visible; background: aliceblue; padding: 8px; }
+        .diagram-panel h2 { font-size: 17px; color: #1a3a6c; text-align: center; margin: 6px 0 8px; }
+        .mermaid { width: 100%; display: flex; justify-content: center; align-items: flex-start; }
+        .mermaid svg { max-width: 100%; }
+        .info-panel { width: 33.333%; height: 100%; padding: 10px; border-left: 1px solid #cbd5e1; background: #f8fafc; overflow: visible; }
+        .legend { margin-bottom: 12px; font-size: 12px; border: 1px solid #cbd5e1; border-radius: 4px; padding: 8px 10px; background: #fff; }
+        .legend-title { font-weight: bold; margin-bottom: 6px; color: #334155; }
+        .legend-item { display: flex; align-items: center; margin: 3px 0; color: #334155; }
+        .legend-dot { display: inline-block; width: 14px; height: 14px; border-radius: 3px; margin-right: 8px; border: 1px solid #888; }
+        .info-panel h3 { font-size: 14px; color: #1a3a6c; margin-bottom: 4px; }
+        #panelWrap { position: relative; height: 480px; }
+        #panel { position: absolute; left: 0; right: 0; top: 8px; background: #fff; color: #334155; border: 1px solid #e2e8f0; padding: 10px; border-radius: 6px; font-size: 13px; line-height: 1.5; }
+    </style>
+</head>
+<body>
+    <main class="wrapper">
+        <div class="diagram-panel">
+            <h2>Natural Language to SQL Conversion Pipeline</h2>
+            <pre class="mermaid">
+flowchart TD
+    Question["Input: User question<br/>(normalized)"]:::io
+
+    subgraph Strategies["Conversion Strategies (run in parallel)"]
+        direction LR
+        subgraph Template["Template-Based Path - 90% of queries"]
+            direction TB
+            T1["Pattern matching"]:::template
+            T2["Parameter substitution<br/>Confidence: HIGH"]:::template
+            T1 --> T2
+        end
+        subgraph LLM["LLM-Based Path - novel queries"]
+            direction TB
+            L1["Schema-aware prompt"]:::llm
+            L2["LLM SQL generation<br/>Confidence: MEDIUM"]:::llm
+            L1 --> L2
+        end
+        subgraph Semantic["Semantic Parse - research"]
+            direction TB
+            P1["Logical form"]:::semantic
+            P2["SQL from logical form<br/>Confidence: MEDIUM"]:::semantic
+            P1 --> P2
+        end
+    end
+
+    Select["Select highest-confidence SQL candidate"]:::validate
+    Schema["Schema check"]:::validate
+    Pattern["Pattern check"]:::validate
+    Sanitize["Parameter sanitize"]:::validate
+    Safety["Safety + Execution<br/>5s timeout, 1K row limit"]:::safety
+    Output["Output: format, cache, log results"]:::io
+    Escalate["Fallback: human escalation /<br/>safe error message"]:::fallback
+
+    Question --> Template
+    Question --> LLM
+    Question --> Semantic
+    Template --> Select
+    LLM --> Select
+    Semantic --> Select
+    Select --> Schema --> Pattern --> Sanitize --> Safety
+    Safety --> Output
+    Sanitize -.->|validation fails| Escalate
+    Safety -.->|execution error| Escalate
+
+    classDef io fill:#90a4ae,stroke:#37474f,stroke-width:2px,color:#fff,font-size:14px
+    classDef template fill:#66bb6a,stroke:#1b5e20,stroke-width:2px,color:#fff,font-size:13px
+    classDef llm fill:#ffd54f,stroke:#f57f17,stroke-width:2px,color:#333,font-size:13px
+    classDef semantic fill:#ff8a65,stroke:#bf360c,stroke-width:2px,color:#fff,font-size:13px
+    classDef validate fill:#42a5f5,stroke:#0d47a1,stroke-width:2px,color:#fff,font-size:14px
+    classDef safety fill:#ef5350,stroke:#b71c1c,stroke-width:2px,color:#fff,font-size:14px
+    classDef fallback fill:#bdbdbd,stroke:#616161,stroke-width:2px,color:#212121,font-size:13px
+
+    style Template fill:#e8f5e9,stroke:#66bb6a
+    style LLM fill:#fff8e1,stroke:#ffca28
+    style Semantic fill:#fbe9e7,stroke:#ff8a65
+    style Strategies fill:#f1f8ff,stroke:#90caf9
+
+    linkStyle default stroke:#777,stroke-width:2px,font-size:13px
+            </pre>
+        </div>
+        <div class="info-panel">
+            <div class="legend">
+                <div class="legend-title">Layer Color Key</div>
+                <div class="legend-item"><span class="legend-dot" style="background:#90a4ae"></span>Input / output</div>
+                <div class="legend-item"><span class="legend-dot" style="background:#66bb6a"></span>Template path (high confidence)</div>
+                <div class="legend-item"><span class="legend-dot" style="background:#ffd54f"></span>LLM path (medium)</div>
+                <div class="legend-item"><span class="legend-dot" style="background:#ff8a65"></span>Semantic parse (experimental)</div>
+                <div class="legend-item"><span class="legend-dot" style="background:#42a5f5"></span>Selection + validation</div>
+                <div class="legend-item"><span class="legend-dot" style="background:#ef5350"></span>Safety constraints</div>
+                <div class="legend-item"><span class="legend-dot" style="background:#bdbdbd"></span>Error / fallback</div>
+                <div class="legend-item" style="margin-top:6px">Dotted lines = error paths</div>
+            </div>
+            <h3>Component Details</h3>
+            <div id="panelWrap">
+                <div id="panel">Hover a component to see what it does.</div>
+            </div>
+        </div>
+    </main>
+    <script src="natural-language-to-sql-conversion-pipeline.js"></script>
+</body>
+</html>

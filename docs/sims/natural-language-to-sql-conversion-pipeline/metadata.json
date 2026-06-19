@@ -1,0 +1,45 @@
+{
+  "title": "Natural Language to SQL Conversion Pipeline",
+  "description": "Architecture of a pipeline that converts natural language questions to executed SQL using parallel template, LLM, and semantic strategies plus validation and safety layers.",
+  "creator": "Dan McCreary",
+  "author": "Dan McCreary",
+  "date": "2026-06-19",
+  "subject": "Conversational AI",
+  "type": "Interactive Diagram",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "natural-language-to-sql-conversion-pipeline",
+  "library": "Mermaid.js",
+  "bloomLevel": "Analyze",
+  "bloomVerb": "analyze",
+  "completion_status": "implemented",
+  "chapter_number": 12,
+  "chapter_title": "Database Queries Parameters",
+  "chapter_dir": "12-database-queries-parameters",
+  "educational": {
+    "gradeLevel": "Undergraduate",
+    "learningObjectives": [
+      "Compare template, LLM, and semantic-parsing strategies for converting text to SQL",
+      "Explain why validation and sanitization gates run before query execution",
+      "Justify the safety constraints that protect a database from unsafe queries"
+    ],
+    "concepts": [
+      "Text-to-SQL conversion",
+      "Query templates",
+      "Schema validation",
+      "Parameter sanitization",
+      "Query safety constraints"
+    ]
+  },
+  "pedagogical": {
+    "pattern": "case-study",
+    "bloomAlignment": ["understand", "analyze", "evaluate"],
+    "bloomVerbs": ["analyze", "compare", "justify"],
+    "pacing": "self-paced",
+    "supportsPrediction": false,
+    "dataVisibility": "high",
+    "feedbackType": ["explanatory"],
+    "interactionStyle": "explore"
+  }
+}
