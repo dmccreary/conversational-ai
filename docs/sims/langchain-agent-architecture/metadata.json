@@ -1,0 +1,32 @@
+{
+  "title": "LangChain Agent Architecture",
+  "description": "Interactive p5.js animation of a LangChain agent reasoning loop that dynamically selects and executes tools, with a step-by-step execution log.",
+  "creator": "Dan McCreary",
+  "author": "Dan McCreary",
+  "date": "2026-06-19",
+  "subject": "Conversational AI",
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "langchain-agent-architecture",
+  "library": "p5.js",
+  "bloomLevel": "Analyze",
+  "bloomVerb": "demonstrate",
+  "completion_status": "implemented",
+  "chapter_number": 7,
+  "chapter_title": "Chatbot Frameworks Ui",
+  "chapter_dir": "07-chatbot-frameworks-ui",
+  "educational": {
+    "audience": "Undergraduate",
+    "learningObjective": "Demonstrate how a LangChain agent dynamically selects and executes tools based on a user query, in contrast with traditional intent-based routing.",
+    "gradeLevel": "College",
+    "coverage": "Intermediate"
+  },
+  "pedagogical": {
+    "bloomLevel": "Analyze",
+    "bloomVerb": "demonstrate",
+    "interactionType": "animated simulation with dropdown, buttons, slider, and checkbox",
+    "estimatedTimeMinutes": 12
+  }
+}
