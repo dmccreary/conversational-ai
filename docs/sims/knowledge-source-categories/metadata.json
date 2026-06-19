@@ -1,0 +1,30 @@
+{
+  "title": "Knowledge Source Categories",
+  "description": "A diagram contrasting external (public) and internal (private) knowledge sources and how a RAG system retrieves from both based on user permissions.",
+  "creator": "Dan McCreary",
+  "author": "Dan McCreary",
+  "date": "2026-06-19",
+  "subject": "Conversational AI",
+  "type": "Interactive Diagram",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "knowledge-source-categories",
+  "library": "SVG",
+  "bloomLevel": "Understand",
+  "bloomVerb": "classify",
+  "educational": {
+    "gradeLevel": "Undergraduate",
+    "learningObjective": "Distinguish external/public knowledge sources from internal/private ones and explain how a RAG system retrieves from both based on user permissions.",
+    "estimatedDuration": "5 minutes"
+  },
+  "pedagogical": {
+    "bloomLevel": "Understand",
+    "bloomVerb": "classify",
+    "conceptsCovered": ["Public knowledge bases", "Private documents", "Authentication and authorization", "Permission-aware retrieval"]
+  },
+  "completion_status": "implemented",
+  "chapter_number": 9,
+  "chapter_title": "Rag Pattern",
+  "chapter_dir": "09-rag-pattern"
+}
