@@ -1,0 +1,36 @@
+{
+  "title": "Intent Classification Pipeline",
+  "description": "Mermaid flowchart of the complete intent-classification pipeline, from user query through preprocessing and feature extraction to a classifier and confidence-scored prediction.",
+  "creator": "Dan McCreary",
+  "author": "Dan McCreary",
+  "date": "2026-06-19",
+  "subject": "Conversational AI",
+  "type": "Interactive Diagram",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "intent-classification-pipeline",
+  "library": "Mermaid",
+  "bloomLevel": "Understand",
+  "bloomVerb": "explain",
+  "completion_status": "implemented",
+  "chapter_number": 6,
+  "chapter_title": "Building Chatbots Intent",
+  "chapter_dir": "06-building-chatbots-intent",
+  "educational": {
+    "gradeLevel": "Undergraduate",
+    "subjectArea": "Conversational AI",
+    "topic": "Intent classification and confidence thresholds",
+    "learningObjectives": [
+      "Trace a user query through preprocessing, feature extraction, and classification",
+      "Explain how a confidence threshold decides between acting and escalating"
+    ],
+    "duration": "5-10 minutes",
+    "prerequisites": "Basic understanding of tokenization and machine-learning classifiers"
+  },
+  "pedagogical": {
+    "bloomLevel": "Understand",
+    "bloomVerb": "explain",
+    "interactionType": "Hover to reveal stage descriptions"
+  }
+}
