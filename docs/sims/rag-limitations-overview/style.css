@@ -1,0 +1,123 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { width: 100%; }
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #eceff1;
+    color: #263238;
+}
+#app {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 16px 18px 24px;
+}
+.title {
+    font-size: 24px;
+    color: #1a3a6c;
+    text-align: center;
+    margin-bottom: 6px;
+}
+.subtitle {
+    font-size: 13px;
+    color: #546e7a;
+    text-align: center;
+    margin-bottom: 18px;
+}
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+@media (max-width: 720px) {
+    .cards { grid-template-columns: 1fr; }
+}
+.card {
+    background: #fff;
+    border-radius: 12px;
+    border-top: 6px solid var(--accent);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+    padding: 16px 16px 18px;
+    position: relative;
+    transition: box-shadow 0.2s, transform 0.2s;
+    overflow: hidden;
+}
+.card:hover {
+    box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+    transform: translateY(-3px);
+}
+.card .icon {
+    font-size: 34px;
+    text-align: center;
+    margin-bottom: 6px;
+}
+.card .warn {
+    position: absolute;
+    top: 12px;
+    right: 14px;
+    font-size: 18px;
+}
+.card h3 {
+    font-size: 17px;
+    color: var(--accent-dark);
+    text-align: center;
+    margin-bottom: 10px;
+}
+.card .label { font-size: 11px; font-weight: bold; color: #78909c; text-transform: uppercase; letter-spacing: 0.04em; }
+.card .problem { font-size: 13.5px; margin: 2px 0 10px; }
+.card .example {
+    background: var(--accent-light);
+    border-left: 4px solid var(--accent);
+    border-radius: 4px;
+    padding: 8px 10px;
+    font-size: 12.5px;
+    cursor: pointer;
+    margin-bottom: 4px;
+}
+.card .example .ex-hint { font-size: 11px; color: var(--accent-dark); font-weight: bold; display: block; margin-top: 6px; }
+.card .example .ex-detail {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    font-size: 12px;
+    color: #37474f;
+}
+.card .example.open .ex-detail { max-height: 260px; margin-top: 8px; }
+.card .impact { font-size: 12.5px; margin-top: 10px; }
+.card .impact .label { color: #b71c1c; }
+
+/* Mitigation overlay revealed on hover */
+.card .mitigation {
+    margin-top: 12px;
+    border-top: 1px dashed #cfd8dc;
+    padding-top: 10px;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+}
+.card:hover .mitigation { max-height: 220px; opacity: 1; }
+.card .mitigation .label { color: #2e7d32; }
+.card .mitigation ul { margin: 6px 0 0 18px; font-size: 12.5px; }
+.card .mitigation li { margin-bottom: 4px; }
+
+.next-section {
+    margin-top: 22px;
+    background: linear-gradient(135deg, #4a148c, #6a1b9a);
+    color: #fff;
+    border-radius: 12px;
+    padding: 18px 22px;
+    text-align: center;
+}
+.next-section h2 { font-size: 19px; margin-bottom: 8px; }
+.next-section p { font-size: 13.5px; line-height: 1.6; max-width: 760px; margin: 0 auto 12px; }
+.next-arrow {
+    display: inline-block;
+    background: #fff;
+    color: #4a148c;
+    font-weight: bold;
+    font-size: 13.5px;
+    text-decoration: none;
+    padding: 9px 18px;
+    border-radius: 24px;
+    transition: background 0.2s;
+}
+.next-arrow:hover { background: #f3e5f5; }

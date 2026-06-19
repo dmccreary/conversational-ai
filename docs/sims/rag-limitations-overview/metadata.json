@@ -1,0 +1,30 @@
+{
+  "title": "RAG Limitations Overview",
+  "description": "An interactive infographic covering the three main categories of RAG limitations - context length, hallucination, and factual accuracy - with examples and mitigation strategies.",
+  "creator": "Dan McCreary",
+  "author": "Dan McCreary",
+  "date": "2026-06-19",
+  "subject": "Conversational AI",
+  "type": "Interactive Infographic",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "rag-limitations-overview",
+  "library": "HTML/CSS/JavaScript",
+  "bloomLevel": "Analyze",
+  "bloomVerb": "differentiate",
+  "educational": {
+    "gradeLevel": "Undergraduate",
+    "learningObjective": "Identify and differentiate the three main categories of RAG limitations and match each to appropriate mitigation strategies.",
+    "estimatedDuration": "8 minutes"
+  },
+  "pedagogical": {
+    "bloomLevel": "Analyze",
+    "bloomVerb": "differentiate",
+    "conceptsCovered": ["Context window limits", "Hallucination", "Factual accuracy", "RAG mitigation strategies", "When to use GraphRAG"]
+  },
+  "completion_status": "implemented",
+  "chapter_number": 9,
+  "chapter_title": "Rag Pattern",
+  "chapter_dir": "09-rag-pattern"
+}

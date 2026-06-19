@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
+    <title>RAG Limitations Overview</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <h1 class="title">RAG Limitations Overview</h1>
+        <p class="subtitle">Three categories of problems that standard RAG runs into.
+            Hover a card for mitigation strategies, or click the example to expand it.</p>
+
+        <div class="cards" id="cards"><!-- cards injected by JS --></div>
+
+        <div class="next-section">
+            <h2>When RAG Isn't Enough</h2>
+            <p>For complex queries requiring <strong>multi-hop reasoning</strong>,
+               <strong>relationship analysis</strong>, or <strong>deep domain
+               knowledge</strong>, consider <strong>GraphRAG</strong>.</p>
+            <a class="next-arrow" href="../graph-data-model-visualization/index.md">
+                Continue to Chapter 10: Knowledge Graphs &amp; GraphRAG &nbsp;&rarr;
+            </a>
+        </div>
+    </div>
+    <script src="rag-limitations-overview.js"></script>
+</body>
+</html>
