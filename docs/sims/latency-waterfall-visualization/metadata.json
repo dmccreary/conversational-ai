@@ -1,0 +1,32 @@
+{
+  "title": "Latency Waterfall Visualization",
+  "description": "Horizontal stacked bar chart breaking down chatbot response latency for a simple template query versus a complex RAG plus LLM query.",
+  "creator": "Dan McCreary",
+  "author": "Dan McCreary",
+  "date": "2026-06-19",
+  "subject": "Conversational AI",
+  "type": "Interactive Chart",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "latency-waterfall-visualization",
+  "library": "Chart.js",
+  "bloomLevel": "Analyze",
+  "bloomVerb": "analyze",
+  "completion_status": "implemented",
+  "chapter_number": 7,
+  "chapter_title": "Chatbot Frameworks Ui",
+  "chapter_dir": "07-chatbot-frameworks-ui",
+  "educational": {
+    "audience": "Undergraduate",
+    "learningObjective": "Analyze the latency contribution of each stage in a chatbot response pipeline and identify the dominant bottleneck.",
+    "gradeLevel": "College",
+    "coverage": "Introductory"
+  },
+  "pedagogical": {
+    "bloomLevel": "Analyze",
+    "bloomVerb": "analyze",
+    "interactionType": "interactive chart with tooltips and annotations",
+    "estimatedTimeMinutes": 8
+  }
+}
