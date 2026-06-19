@@ -1,0 +1,37 @@
+{
+  "title": "Pareto Chart for Query Distribution",
+  "description": "An interactive Chart.js Pareto chart showing how a small number of chatbot intent types accounts for the majority of query traffic, with an 80% threshold and focus zone.",
+  "creator": "Dan McCreary",
+  "author": "Dan McCreary",
+  "date": "2026-06-19",
+  "subject": "Conversational AI",
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY 4.0",
+  "identifier": "pareto-chart-for-query-distribution",
+  "library": "Chart.js",
+  "bloomLevel": "Analyze",
+  "bloomVerb": "analyze",
+  "completion_status": "implemented",
+  "chapter_number": 14,
+  "chapter_title": "Evaluation Optimization Careers",
+  "chapter_dir": "14-evaluation-optimization-careers",
+  "educational": {
+    "gradeLevel": "Undergraduate",
+    "subjectArea": "Conversational AI",
+    "topic": "Query distribution and the Pareto principle",
+    "learningObjectives": [
+      "Interpret a Pareto chart of chatbot intent frequencies",
+      "Identify the critical few intents that dominate traffic and prioritize them"
+    ],
+    "duration": "6-10 minutes",
+    "prerequisites": "Familiarity with bar and line charts and percentages"
+  },
+  "pedagogical": {
+    "bloomLevel": "Analyze",
+    "bloomVerb": "analyze",
+    "instructionalStrategy": "Interactive combined bar-and-line chart with hover tooltips and an 80% focus zone",
+    "assessment": "Students decide which intents to optimize first given the distribution"
+  }
+}
