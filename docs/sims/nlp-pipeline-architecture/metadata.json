@@ -1,0 +1,45 @@
+{
+  "title": "NLP Pipeline Architecture",
+  "description": "Layered architecture diagram showing how raw text flows through preprocessing, morphology, syntax, and semantic analysis to a structured output ready for intent recognition.",
+  "creator": "Dan McCreary",
+  "author": "Dan McCreary",
+  "date": "2026-06-19",
+  "subject": "Conversational AI",
+  "type": "Interactive Diagram",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "nlp-pipeline-architecture",
+  "library": "Mermaid.js",
+  "bloomLevel": "Understand",
+  "bloomVerb": "explain",
+  "completion_status": "implemented",
+  "chapter_number": 11,
+  "chapter_title": "Nlp Pipelines Processing",
+  "chapter_dir": "11-nlp-pipelines-processing",
+  "educational": {
+    "gradeLevel": "Undergraduate",
+    "learningObjectives": [
+      "Describe the four layers of a complete NLP pipeline and their order",
+      "Explain what annotation each layer adds to the text",
+      "Relate character, word, and sentence levels to specific processing stages"
+    ],
+    "concepts": [
+      "Text preprocessing",
+      "Morphological analysis",
+      "Syntactic analysis",
+      "Semantic analysis",
+      "Pipeline architecture"
+    ]
+  },
+  "pedagogical": {
+    "pattern": "demonstration",
+    "bloomAlignment": ["understand", "analyze"],
+    "bloomVerbs": ["explain", "describe", "order"],
+    "pacing": "self-paced",
+    "supportsPrediction": false,
+    "dataVisibility": "high",
+    "feedbackType": ["explanatory"],
+    "interactionStyle": "explore"
+  }
+}
