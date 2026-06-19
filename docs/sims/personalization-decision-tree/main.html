@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
+    <title>Personalization Decision Tree</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body { width: 100%; height: 100%; overflow: hidden; font-family: Arial, Helvetica, sans-serif; }
+        .container { display: flex; width: 100%; height: 100%; }
+        .diagram-panel {
+            width: 66.67%; height: 100%; background-color: aliceblue;
+            display: flex; justify-content: center; align-items: flex-start;
+            padding: 10px; overflow: hidden;
+        }
+        .mermaid { width: 100%; }
+        .mermaid svg { max-width: 100%; height: auto; }
+        .info-panel {
+            width: 33.33%; height: 100%; background-color: #f8f9fa;
+            border-left: 1px solid #dee2e6; padding: 14px; overflow-y: auto;
+        }
+        .panel-title { font-size: 16px; font-weight: bold; color: #1a3a6c; text-align: center; margin-bottom: 8px; }
+        .legend { font-size: 12px; border: 1px solid #cbd5e1; border-radius: 4px; padding: 8px 10px; background: #fff; margin-bottom: 10px; }
+        .legend-title { font-weight: bold; margin-bottom: 6px; }
+        .legend-item { display: flex; align-items: center; margin: 3px 0; }
+        .legend-dot { width: 13px; height: 13px; border-radius: 3px; margin-right: 6px; border: 1px solid #555; }
+        .info-panel h3 { font-size: 14px; color: #333; margin: 10px 0 6px 0; padding-bottom: 5px; border-bottom: 2px solid #f57c00; }
+        #panel { background: #fff; color: #334155; border: 1px solid #e2e8f0; padding: 10px; border-radius: 6px; font-size: 13px; line-height: 1.5; margin-bottom: 4px; }
+        .sources { background: #fff; border: 1px solid #e2e8f0; border-radius: 6px; padding: 10px; font-size: 12px; line-height: 1.55; }
+        .sources b { color: #1a3a6c; }
+        .example { background: #f3e5f5; border: 1px solid #ce93d8; border-radius: 6px; padding: 10px; font-size: 12px; line-height: 1.55; margin-top: 8px; }
+        .example b { color: #4a148c; }
+        .node { cursor: pointer; }
+        .node:hover rect, .node:hover circle, .node:hover polygon { filter: brightness(1.08); }
+    </style>
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'default',
+            flowchart: { useMaxWidth: true, htmlLabels: true, curve: 'basis', nodeSpacing: 35, rankSpacing: 40 }
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="diagram-panel">
+            <main>
+            <div class="mermaid">
+flowchart TD
+    Start(["User query received<br/>e.g. 'Show me sales data'"]):::startNode
+    Auth{"User<br/>authenticated?"}:::decision
+    Generic["Generic response<br/>public info only,<br/>standard format"]:::deny
+    Load["Load user context<br/>profile, prefs, history, session"]:::context
+    Perm{"Has data<br/>permissions?"}:::decision
+    Denied["Permission denial<br/>explain limits, offer to<br/>request access"]:::deny
+    Prefs{"Has preference<br/>settings?"}:::decision
+    Defaults["Use defaults<br/>standard verbosity,<br/>table format"]:::context
+    Apply["Apply settings<br/>preferred verbosity,<br/>format, scope"]:::person
+    History["Analyze user history<br/>patterns, expertise level"]:::context
+    Match{"Query matches<br/>a known pattern?"}:::decision
+    Enhanced["Enhanced response<br/>data + proactive<br/>follow-ups"]:::person
+    Standard["Standard personalized<br/>response<br/>data + prefs + scope"]:::person
+    Log["Log interaction<br/>capture feedback,<br/>update history"]:::context
+    End(["Deliver personalized<br/>response"]):::endNode
+
+    Start --> Auth
+    Auth -->|No| Generic
+    Auth -->|Yes| Load --> Perm
+    Perm -->|No| Denied
+    Perm -->|Yes| Prefs
+    Prefs -->|No| Defaults --> History
+    Prefs -->|Yes| Apply --> History
+    History --> Match
+    Match -->|Yes| Enhanced --> Log
+    Match -->|No| Standard --> Log
+    Log --> End
+
+    classDef startNode fill:#455a64,stroke:#263238,stroke-width:2px,color:#fff,font-size:13px
+    classDef endNode fill:#455a64,stroke:#263238,stroke-width:2px,color:#fff,font-size:13px
+    classDef decision fill:#f57c00,stroke:#e65100,stroke-width:2px,color:#fff,font-size:13px
+    classDef context fill:#2e9e5b,stroke:#1b5e20,stroke-width:2px,color:#fff,font-size:13px
+    classDef person fill:#7b3fb5,stroke:#4a148c,stroke-width:2px,color:#fff,font-size:13px
+    classDef deny fill:#e53935,stroke:#b71c1c,stroke-width:2px,color:#fff,font-size:13px
+
+    linkStyle default stroke:#888,stroke-width:2px,font-size:12px
+            </div>
+            </main>
+        </div>
+        <div class="info-panel">
+            <div class="panel-title">Personalization Decision Tree</div>
+            <div class="legend">
+                <div class="legend-title">Node colors</div>
+                <div class="legend-item"><div class="legend-dot" style="background:#f57c00"></div>Decision point</div>
+                <div class="legend-item"><div class="legend-dot" style="background:#2e9e5b"></div>Load context</div>
+                <div class="legend-item"><div class="legend-dot" style="background:#7b3fb5"></div>Personalize</div>
+                <div class="legend-item"><div class="legend-dot" style="background:#e53935"></div>Access denied</div>
+            </div>
+            <h3>Step Details</h3>
+            <div id="panel">Hover a node to see what the system does. Permission checks are security-critical; explicit preferences override learned behavior; about 80% of queries match a pattern after 20+ interactions.</div>
+            <div class="sources">
+                <b>Personalization data sources</b><br/>
+                1. User Profile &rarr; role, permissions, department<br/>
+                2. User Preferences &rarr; explicit settings<br/>
+                3. User History &rarr; learned patterns<br/>
+                4. Session Context &rarr; current task state
+            </div>
+            <div class="example">
+                <b>Example user context</b><br/>
+                Name: Bob Martinez<br/>
+                Role: Regional Sales Manager (NW)<br/>
+                Prefs: verbosity=concise, format=charts<br/>
+                History: 89 queries, 72% regional sales<br/>
+                Pattern: always asks Q-over-Q comparison
+            </div>
+        </div>
+    </div>
+    <script src="personalization-decision-tree.js"></script>
+</body>
+</html>
