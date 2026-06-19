@@ -1,0 +1,30 @@
+{
+  "title": "Cypher Query Visualization",
+  "description": "Write or pick Cypher template queries and watch pattern matching and traversal animate on a graph, with a live results table and execution stats.",
+  "creator": "Dan McCreary",
+  "author": "Dan McCreary",
+  "date": "2026-06-19",
+  "subject": "Conversational AI",
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "cypher-query-visualization",
+  "library": "vis-network",
+  "bloomLevel": "Apply",
+  "bloomVerb": "execute",
+  "educational": {
+    "gradeLevel": "Undergraduate",
+    "learningObjective": "Write and execute Cypher template queries and interpret how pattern matching and traversal select nodes and relationships in a graph.",
+    "estimatedDuration": "12 minutes"
+  },
+  "pedagogical": {
+    "bloomLevel": "Apply",
+    "bloomVerb": "execute",
+    "conceptsCovered": ["Cypher query language", "Pattern matching", "Graph traversal", "Variable-length paths", "Blast radius analysis"]
+  },
+  "completion_status": "implemented",
+  "chapter_number": 10,
+  "chapter_title": "Knowledge Graphs Graphrag",
+  "chapter_dir": "10-knowledge-graphs-graphrag"
+}
