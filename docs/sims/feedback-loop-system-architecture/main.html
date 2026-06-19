@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
+    <title>Feedback Loop System Architecture</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body { width: 100%; height: 100%; overflow: hidden; font-family: Arial, Helvetica, sans-serif; }
+        .container { display: flex; width: 100%; height: 100%; }
+        .diagram-panel {
+            width: 66.67%; height: 100%; background-color: aliceblue;
+            display: flex; justify-content: center; align-items: flex-start;
+            padding: 10px; overflow: hidden;
+        }
+        .mermaid { width: 100%; }
+        .mermaid svg { max-width: 100%; height: auto; }
+        .info-panel {
+            width: 33.33%; height: 100%; background-color: #f8f9fa;
+            border-left: 1px solid #dee2e6; padding: 14px; overflow-y: auto;
+        }
+        .panel-title { font-size: 17px; font-weight: bold; color: #1a3a6c; text-align: center; margin-bottom: 8px; }
+        .legend { font-size: 12px; border: 1px solid #cbd5e1; border-radius: 4px; padding: 8px 10px; background: #fff; margin-bottom: 12px; }
+        .legend-title { font-weight: bold; margin-bottom: 6px; }
+        .legend-item { display: flex; align-items: center; margin: 3px 0; }
+        .legend-dot { width: 13px; height: 13px; border-radius: 3px; margin-right: 6px; border: 1px solid #555; }
+        .info-panel h3 { font-size: 15px; color: #333; margin-bottom: 8px; padding-bottom: 6px; border-bottom: 2px solid #d4af37; }
+        #panelWrap { position: relative; }
+        #panel {
+            background: #fff; color: #334155; border: 1px solid #e2e8f0;
+            padding: 10px; border-radius: 6px; font-size: 13px; line-height: 1.5;
+        }
+        .node { cursor: pointer; }
+        .node:hover rect, .node:hover circle, .node:hover polygon { filter: brightness(1.08); }
+    </style>
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'default',
+            flowchart: { useMaxWidth: true, htmlLabels: true, curve: 'basis', nodeSpacing: 40, rankSpacing: 45 }
+        });
+        window.__mermaidLoaded = true;
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="diagram-panel">
+            <main>
+            <div class="mermaid">
+flowchart TD
+    U["1. User Interaction<br/>thumbs-down on a weak answer"]:::userStage
+    C["2. Feedback Collection<br/>capture query, response, type, time, user"]:::dataStage
+    S["3. Data Storage<br/>indexed by intent and quality"]:::dataStage
+    A["4. Analysis and Pattern Detection<br/>dashboards flag failing intents"]:::dataStage
+    DB[("Feedback Analytics Database<br/>all events, dashboards, trends")]:::hub
+    H["5. Human Review<br/>expert finds the root cause"]:::humanStage
+    R["6. Corrective Action<br/>update KB, retrain, fix prompt"]:::techStage
+    V["7. Validation<br/>A/B test confirms improvement"]:::goldStage
+    D["8. Deployment<br/>roll out to 100% of users"]:::goldStage
+
+    U --> C --> S --> A --> H --> R --> V --> D
+    D -.->|new baseline| U
+    S --> DB
+    DB -.-> A
+    DB -.-> V
+
+    classDef userStage fill:#1e88e5,stroke:#0d47a1,stroke-width:2px,color:#fff,font-size:14px
+    classDef dataStage fill:#2e9e5b,stroke:#1b5e20,stroke-width:2px,color:#fff,font-size:14px
+    classDef humanStage fill:#f57c00,stroke:#e65100,stroke-width:2px,color:#fff,font-size:14px
+    classDef techStage fill:#7b3fb5,stroke:#4a148c,stroke-width:2px,color:#fff,font-size:14px
+    classDef goldStage fill:#d4af37,stroke:#8a6d00,stroke-width:2px,color:#3a2f00,font-size:14px
+    classDef hub fill:#fff8e1,stroke:#d4af37,stroke-width:3px,color:#5d4a00,font-size:14px
+
+    linkStyle default stroke:#888,stroke-width:2px,font-size:13px
+            </div>
+            </main>
+        </div>
+        <div class="info-panel">
+            <div class="panel-title">Continuous Improvement Loop</div>
+            <div class="legend">
+                <div class="legend-title">Stage colors</div>
+                <div class="legend-item"><div class="legend-dot" style="background:#1e88e5"></div>User-facing</div>
+                <div class="legend-item"><div class="legend-dot" style="background:#2e9e5b"></div>Data processing</div>
+                <div class="legend-item"><div class="legend-dot" style="background:#f57c00"></div>Human decision</div>
+                <div class="legend-item"><div class="legend-dot" style="background:#7b3fb5"></div>Technical improvement</div>
+                <div class="legend-item"><div class="legend-dot" style="background:#d4af37"></div>Validate & deploy</div>
+            </div>
+            <h3>Stage Details</h3>
+            <div id="panelWrap">
+                <div id="panel">Hover a stage to see what happens there. Typical cycle time: 1-2 weeks. Participation rate: 8-12% of interactions.</div>
+            </div>
+        </div>
+    </div>
+    <script src="feedback-loop-system-architecture.js"></script>
+</body>
+</html>

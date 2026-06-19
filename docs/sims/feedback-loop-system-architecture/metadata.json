@@ -1,0 +1,37 @@
+{
+  "title": "Feedback Loop System Architecture",
+  "description": "An interactive Mermaid workflow showing the eight-stage feedback loop from user interaction through analysis, human review, corrective action, validation, and deployment.",
+  "creator": "Dan McCreary",
+  "author": "Dan McCreary",
+  "date": "2026-06-19",
+  "subject": "Conversational AI",
+  "type": "Interactive Workflow Diagram",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY 4.0",
+  "identifier": "feedback-loop-system-architecture",
+  "library": "Mermaid.js",
+  "bloomLevel": "Understand",
+  "bloomVerb": "explain",
+  "completion_status": "implemented",
+  "chapter_number": 8,
+  "chapter_title": "User Feedback Improvement",
+  "chapter_dir": "08-user-feedback-improvement",
+  "educational": {
+    "gradeLevel": "Undergraduate",
+    "subjectArea": "Conversational AI",
+    "topic": "Feedback loop architecture and continuous improvement",
+    "learningObjectives": [
+      "Describe the eight stages of a chatbot feedback loop",
+      "Explain the role of validation before deployment"
+    ],
+    "duration": "8-12 minutes",
+    "prerequisites": "Understanding of user feedback signals and databases"
+  },
+  "pedagogical": {
+    "bloomLevel": "Understand",
+    "bloomVerb": "explain",
+    "instructionalStrategy": "Interactive workflow diagram with hover-to-reveal stage details",
+    "assessment": "Students trace a feedback event through every stage and add a rollback stage"
+  }
+}
