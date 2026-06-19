@@ -1,0 +1,32 @@
+{
+  "title": "Context Management State Machine",
+  "description": "State diagram showing how conversation context evolves through single-turn, multi-turn, task-oriented, and long-term states, with a summarization loop.",
+  "creator": "Dan McCreary",
+  "author": "Dan McCreary",
+  "date": "2026-06-19",
+  "subject": "Conversational AI",
+  "type": "Interactive Diagram",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "context-management-state-machine",
+  "library": "Mermaid.js",
+  "bloomLevel": "Understand",
+  "bloomVerb": "explain",
+  "completion_status": "implemented",
+  "chapter_number": 7,
+  "chapter_title": "Chatbot Frameworks Ui",
+  "chapter_dir": "07-chatbot-frameworks-ui",
+  "educational": {
+    "audience": "Undergraduate",
+    "learningObjective": "Explain how conversation context evolves through distinct states across a multi-turn conversation and when summarization is triggered.",
+    "gradeLevel": "College",
+    "coverage": "Introductory"
+  },
+  "pedagogical": {
+    "bloomLevel": "Understand",
+    "bloomVerb": "explain",
+    "interactionType": "hover-to-explore state diagram",
+    "estimatedTimeMinutes": 8
+  }
+}
