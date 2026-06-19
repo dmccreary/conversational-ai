@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
+    <title>Graph Data Model Visualization</title>
+    <script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/vis-network/styles/vis-network.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="layout">
+        <div class="graph-wrap">
+            <div class="title">Graph Data Model</div>
+            <div id="network"></div>
+            <div class="legend">
+                <div class="legend-row"><span class="lg shape-hex"></span> Business Service (hexagon)</div>
+                <div class="legend-row"><span class="lg shape-box"></span> Application (rectangle)</div>
+                <div class="legend-row"><span class="lg shape-dia"></span> Infrastructure (diamond)</div>
+                <div class="legend-row"><span class="lg shape-cyl"></span> Database (cylinder)</div>
+                <hr>
+                <div class="legend-row"><span class="edge-line solid"></span> DEPENDS_ON</div>
+                <div class="legend-row"><span class="edge-line dashed"></span> HOSTS</div>
+                <div class="legend-row"><span class="edge-line dotted"></span> CONNECTS_TO</div>
+            </div>
+        </div>
+
+        <div class="panel">
+            <h3>Controls</h3>
+
+            <div class="ctrl-group">
+                <div class="ctrl-label">Show node types</div>
+                <label><input type="checkbox" class="type-filter" value="BusinessService" checked> Business Service</label>
+                <label><input type="checkbox" class="type-filter" value="Application" checked> Application</label>
+                <label><input type="checkbox" class="type-filter" value="Infrastructure" checked> Infrastructure</label>
+                <label><input type="checkbox" class="type-filter" value="Database" checked> Database</label>
+            </div>
+
+            <div class="ctrl-group">
+                <div class="ctrl-label">Traversal depth: <span id="depth-val">2</span> hop(s)</div>
+                <input type="range" id="depth" min="1" max="5" value="2">
+            </div>
+
+            <div class="ctrl-group btn-group">
+                <button class="btn btn-critical" id="critical-btn">Show Critical Path</button>
+                <button class="btn btn-impact" id="impact-btn">Impact Analysis</button>
+                <button class="btn btn-reset" id="reset-btn">Reset</button>
+            </div>
+
+            <div class="info" id="info">
+                <div class="info-title">Node / Edge Details</div>
+                <div class="info-body" id="info-body">
+                    Hover a node to see its properties. Click a node to highlight its
+                    neighbors. Double-click a node for a multi-hop dependency tree.
+                    Click "Impact Analysis", then click a node to see everything
+                    downstream of it.
+                </div>
+            </div>
+
+            <div class="callout-note">
+                <strong>Nodes</strong> are entities with properties.
+                <strong>Edges</strong> are relationships with properties.
+                Try double-clicking <em>VM-Web-01</em> to see impact analysis.
+            </div>
+        </div>
+    </div>
+    <script src="graph-data-model-visualization.js"></script>
+</body>
+</html>

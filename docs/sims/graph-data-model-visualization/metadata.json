@@ -1,0 +1,30 @@
+{
+  "title": "Graph Data Model Visualization",
+  "description": "An interactive vis-network graph of an IT infrastructure that demonstrates the node, edge, and property data model with filtering, multi-hop traversal, critical-path, and impact analysis.",
+  "creator": "Dan McCreary",
+  "author": "Dan McCreary",
+  "date": "2026-06-19",
+  "subject": "Conversational AI",
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "graph-data-model-visualization",
+  "library": "vis-network",
+  "bloomLevel": "Analyze",
+  "bloomVerb": "examine",
+  "educational": {
+    "gradeLevel": "Undergraduate",
+    "learningObjective": "Explore the property-graph data model by examining nodes, edges, and their properties and tracing dependencies through an IT infrastructure graph.",
+    "estimatedDuration": "10 minutes"
+  },
+  "pedagogical": {
+    "bloomLevel": "Analyze",
+    "bloomVerb": "examine",
+    "conceptsCovered": ["Property graph model", "Nodes and edges", "Node and edge properties", "Degree centrality", "Dependency traversal", "Impact analysis"]
+  },
+  "completion_status": "implemented",
+  "chapter_number": 10,
+  "chapter_title": "Knowledge Graphs Graphrag",
+  "chapter_dir": "10-knowledge-graphs-graphrag"
+}
