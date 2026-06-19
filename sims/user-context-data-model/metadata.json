@@ -1,0 +1,37 @@
+{
+  "title": "User Context Data Model",
+  "description": "An interactive vis-network graph of the user-context data model, with a central User connected to profile, preferences, history, sessions, queries, settings, and behavioral patterns.",
+  "creator": "Dan McCreary",
+  "author": "Dan McCreary",
+  "date": "2026-06-19",
+  "subject": "Conversational AI",
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY 4.0",
+  "identifier": "user-context-data-model",
+  "library": "vis-network",
+  "bloomLevel": "Understand",
+  "bloomVerb": "describe",
+  "completion_status": "implemented",
+  "chapter_number": 8,
+  "chapter_title": "User Feedback Improvement",
+  "chapter_dir": "08-user-feedback-improvement",
+  "educational": {
+    "gradeLevel": "Undergraduate",
+    "subjectArea": "Conversational AI",
+    "topic": "User context data modeling for personalization",
+    "learningObjectives": [
+      "Describe the entities and relationships in a user-context data model",
+      "Distinguish direct attributes from derived (learned) attributes"
+    ],
+    "duration": "8-12 minutes",
+    "prerequisites": "Basic understanding of graph data models and entities/relationships"
+  },
+  "pedagogical": {
+    "bloomLevel": "Understand",
+    "bloomVerb": "describe",
+    "instructionalStrategy": "Interactive node-link graph with hover properties, click-to-highlight, and type filters",
+    "assessment": "Students trace a path from User to a query and extend the model with a new node type"
+  }
+}

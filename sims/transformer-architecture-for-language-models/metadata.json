@@ -1,0 +1,30 @@
+{
+  "title": "Transformer Architecture for Language Models",
+  "description": "Interactive diagram of a decoder-only transformer showing the upward flow from token IDs through embedding, attention, and feed-forward blocks to a next-token probability distribution, with tensor dimensions at each stage.",
+  "creator": "Dan McCreary",
+  "author": "Dan McCreary",
+  "date": "2026-06-19",
+  "subject": "Conversational AI",
+  "type": "Interactive Diagram",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "transformer-architecture-for-language-models",
+  "library": "Mermaid.js",
+  "bloomLevel": "Understand",
+  "bloomVerb": "explain",
+  "completion_status": "implemented",
+  "chapter_number": 4,
+  "chapter_title": "Large Language Models Tokenization",
+  "chapter_dir": "04-large-language-models-tokenization",
+  "educational": {
+    "gradeLevel": "Undergraduate",
+    "learningObjective": "Explain how information flows through a decoder-only transformer from token IDs to a next-token probability distribution.",
+    "prerequisites": ["Token embeddings", "Matrix dimensions", "Softmax"]
+  },
+  "pedagogical": {
+    "bloomLevel": "Understand",
+    "bloomVerb": "explain",
+    "interactionType": "hover-to-explore"
+  }
+}

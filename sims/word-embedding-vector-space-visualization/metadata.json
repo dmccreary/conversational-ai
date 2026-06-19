@@ -1,0 +1,30 @@
+{
+  "title": "Word Embedding Vector Space Visualization",
+  "description": "Chart.js scatter plot showing how word embeddings place semantically related words close together in vector space, with color-coded clusters and a king-to-queen relationship arrow.",
+  "creator": "Dan McCreary",
+  "author": "Dan McCreary",
+  "date": "2026-06-19",
+  "subject": "Conversational AI",
+  "type": "Interactive Diagram",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "word-embedding-vector-space-visualization",
+  "library": "Chart.js",
+  "bloomLevel": "Understand",
+  "bloomVerb": "explain",
+  "completion_status": "implemented",
+  "chapter_number": 5,
+  "chapter_title": "Embeddings Vector Databases",
+  "chapter_dir": "05-embeddings-vector-databases",
+  "educational": {
+    "gradeLevel": "Undergraduate",
+    "learningObjective": "Explain how word embeddings encode semantic similarity as spatial proximity in vector space.",
+    "prerequisites": ["Vectors", "Coordinate plane"]
+  },
+  "pedagogical": {
+    "bloomLevel": "Understand",
+    "bloomVerb": "explain",
+    "interactionType": "hover-to-explore"
+  }
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
+    <title>Byte Pair Encoding Merge Process</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body { width: 100%; height: 100%; overflow: hidden; }
+        body { font-family: Arial, Helvetica, sans-serif; background: #ffffff; }
+        .layout { display: flex; width: 100%; height: 100vh; }
+        .diagram-panel {
+            width: 66.67%;
+            height: 100%;
+            overflow: visible;
+            background: aliceblue;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding-top: 10px;
+        }
+        .mermaid { width: 100%; }
+        .mermaid svg { max-width: 100%; height: auto; }
+        .info-panel {
+            width: 33.33%;
+            height: 100%;
+            padding: 10px 12px;
+            background: #ffffff;
+            border-left: 1px solid #cbd5e1;
+            overflow: visible;
+        }
+        .legend {
+            margin-bottom: 12px;
+            font-size: 12px;
+            border: 1px solid #cbd5e1;
+            border-radius: 4px;
+            padding: 8px 10px;
+            background: #fff;
+        }
+        .legend-title { font-weight: bold; margin-bottom: 6px; color: #1a3a6c; }
+        .legend-item { display: flex; align-items: center; margin: 3px 0; }
+        .legend-dot { width: 14px; height: 14px; border-radius: 3px; margin-right: 8px; border: 1px solid #888; }
+        .info-panel h3 { color: #1a3a6c; font-size: 15px; margin-bottom: 6px; }
+        #panelWrap { position: relative; height: 1580px; }
+        #panel {
+            position: absolute; left: 0; right: 0; top: 8px;
+            background-color: #f8fafc; color: #334155;
+            border: 1px solid #e2e8f0; padding: 10px; border-radius: 6px;
+            font-size: 13px; line-height: 1.4;
+        }
+        .node { cursor: pointer; }
+    </style>
+</head>
+<body>
+    <main class="layout">
+        <div class="diagram-panel">
+            <div class="mermaid" id="bpeDiagram"></div>
+        </div>
+        <div class="info-panel">
+            <div class="legend">
+                <div class="legend-title">Color Key</div>
+                <div class="legend-item"><div class="legend-dot" style="background:#e0e0e0"></div>Character vocabulary</div>
+                <div class="legend-item"><div class="legend-dot" style="background:#bbdefb"></div>Early subword merges</div>
+                <div class="legend-item"><div class="legend-dot" style="background:#1976d2"></div>Later subword merges</div>
+                <div class="legend-item"><div class="legend-dot" style="background:#2e7d32"></div>Whole words as tokens</div>
+                <div class="legend-item"><div class="legend-dot" style="background:#fb8c00"></div>Merge / frequency step</div>
+            </div>
+            <h3>Step Details</h3>
+            <div id="panelWrap">
+                <div id="panel">Hover over a node to see how each Byte Pair Encoding step works.</div>
+            </div>
+        </div>
+    </main>
+    <script type="module" src="byte-pair-encoding-merge-process.js"></script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+{
+  "title": "RBAC Architecture",
+  "description": "Mermaid layered diagram of role-based access control, showing users, roles with inheritance, permissions, and the authorization flow when a chatbot processes a query.",
+  "creator": "Dan McCreary",
+  "author": "Dan McCreary",
+  "date": "2026-06-19",
+  "subject": "Conversational AI",
+  "type": "Interactive Diagram",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "rbac-architecture",
+  "library": "Mermaid",
+  "bloomLevel": "Analyze",
+  "bloomVerb": "analyze",
+  "completion_status": "implemented",
+  "chapter_number": 13,
+  "chapter_title": "Security Privacy Users",
+  "chapter_dir": "13-security-privacy-users",
+  "educational": {
+    "gradeLevel": "Undergraduate",
+    "subjectArea": "Conversational AI",
+    "topic": "Role-based access control and authorization",
+    "learningObjectives": [
+      "Explain how users, roles, and permissions relate in RBAC",
+      "Resolve a user's effective permissions through role inheritance",
+      "Trace the authorization-check flow for a chatbot query"
+    ],
+    "duration": "10-15 minutes",
+    "prerequisites": "Basic understanding of authentication and access control"
+  },
+  "pedagogical": {
+    "bloomLevel": "Analyze",
+    "bloomVerb": "analyze",
+    "interactionType": "Hover to reveal node descriptions; static authorization-flow panel"
+  }
+}

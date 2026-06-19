@@ -1,0 +1,14 @@
+{
+  "sim_id": "latency-waterfall-visualization",
+  "diagram_name": "Latency Waterfall Visualization",
+  "chapter_number": 7,
+  "chapter_title": "Chatbot Frameworks Ui",
+  "chapter_dir": "07-chatbot-frameworks-ui",
+  "library": "Chart.js horizontal bar chart with custom tooltips showing exact timings",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-06-19",
+  "specification": "Type: chart\n\nChart type: Horizontal stacked bar chart (waterfall style)\n\nPurpose: Show the breakdown of latency components in a typical chatbot response pipeline, comparing fast vs. slow query scenarios\n\nX-axis: Time (milliseconds, 0 to 10,000)\nY-axis: Two scenarios - \"Simple Query (Template)\" and \"Complex Query (RAG + LLM)\"\n\nData for Simple Query:\n- Intent Classification: 100ms (0-100)\n- Template Selection: 50ms (100-150)\n- Response Formatting: 30ms (150-180)\n- Total: 180ms\n\nData for Complex Query:\n- Intent Classification: 150ms (0-150)\n- Context Retrieval: 300ms (150-450)\n- Vector Search: 600ms (450-1050)\n- LLM Generation: 5000ms (1050-6050)\n- Response Formatting: 50ms (6050-6100)\n- Total: 6100ms\n\nColor scheme:\n- Blue: Intent classification\n- Green: Retrieval operations (template, context, vector search)\n- Orange: LLM generation\n- Purple: Formatting\n\nAnnotations:\n- Vertical line at 2000ms with label \"User expectation threshold\"\n- Vertical line at 5000ms with label \"Abandonment risk zone\"\n- Arrow pointing to LLM generation segment: \"82% of total latency\"\n\nTitle: \"Chatbot Response Latency Breakdown: Simple vs. Complex Queries\"\n\nImplementation: Chart.js horizontal bar chart with custom tooltips showing exact timings"
+}

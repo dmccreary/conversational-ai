@@ -1,0 +1,14 @@
+{
+  "sim_id": "embedding-model-comparison",
+  "diagram_name": "Embedding Model Comparison",
+  "chapter_number": 5,
+  "chapter_title": "Embeddings Vector Databases",
+  "chapter_dir": "05-embeddings-vector-databases",
+  "library": "Side-by-side diagram panels with comparison table, can be created as SVG or using a diagramming tool",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-06-19",
+  "specification": "Type: diagram\n\nPurpose: Illustrate the different training approaches and architectural differences between the three major word embedding models\n\nLayout: Three side-by-side panels, one for each model\n\nPanel 1 - Word2Vec (Skip-gram):\n- Top: Input word \"fox\" (one-hot encoded)\n- Middle: Hidden layer (embedding layer) with 300 dimensions\n- Bottom: Output layer predicting context words [\"quick\", \"brown\", \"jumps\"]\n- Arrows showing forward propagation\n- Label: \"Predicts context from target word\"\n- Training objective formula: maximize P(context | target)\n\nPanel 2 - GloVe:\n- Top: Co-occurrence matrix (heat map showing word pair frequencies)\n- Middle: Matrix factorization process (arrow indicating decomposition)\n- Bottom: Two embedding matrices (word vectors and context vectors)\n- Label: \"Factorizes global co-occurrence statistics\"\n- Training objective formula: minimize difference between dot product and log co-occurrence\n\nPanel 3 - FastText:\n- Top: Input word \"running\" decomposed into character n-grams\n- Middle: N-gram embeddings [\"run\", \"unn\", \"nni\", \"nin\", \"ing\", plus full word \"running\"]\n- Bottom: Final embedding (average of all n-gram vectors)\n- Label: \"Combines subword information\"\n- Special annotation: \"Handles out-of-vocabulary words\"\n\nVisual style: Block diagrams with arrows showing data flow\n\nColor scheme:\n- Word2Vec: Blue\n- GloVe: Green\n- FastText: Orange\n- Shared elements (embeddings): Purple\n\nComparison table below diagrams:\n| Feature | Word2Vec | GloVe | FastText |\n|---------|----------|-------|----------|\n| Training paradigm | Local context prediction | Global statistics | Subword local context |\n| OOV handling | No | No | Yes |\n| Training speed | Fast | Medium | Fast |\n| Memory efficiency | High | Medium (large matrix) | Medium (n-grams) |\n\nImplementation: Side-by-side diagram panels with comparison table, can be created as SVG or using a diagramming tool"
+}

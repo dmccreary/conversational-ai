@@ -1,0 +1,36 @@
+{
+  "title": "Dialog System State Machine",
+  "description": "Interactive Mermaid state diagram showing how a task-oriented dialog system manages conversation flow through states and transitions for a flight booking task.",
+  "creator": "Dan McCreary",
+  "author": "Dan McCreary",
+  "date": "2026-06-19",
+  "subject": "Conversational AI",
+  "type": "Interactive Diagram",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "dialog-system-state-machine",
+  "library": "Mermaid",
+  "bloomLevel": "Understand",
+  "bloomVerb": "explain",
+  "completion_status": "implemented",
+  "chapter_number": 6,
+  "chapter_title": "Building Chatbots Intent",
+  "chapter_dir": "06-building-chatbots-intent",
+  "educational": {
+    "gradeLevel": "Undergraduate",
+    "subjectArea": "Conversational AI",
+    "topic": "Dialog management and state machines",
+    "learningObjectives": [
+      "Identify the states and transitions in a task-oriented dialog system",
+      "Trace how slot-filling drives the flow of a flight-booking conversation"
+    ],
+    "duration": "5-10 minutes",
+    "prerequisites": "Basic understanding of chatbots and intents"
+  },
+  "pedagogical": {
+    "bloomLevel": "Understand",
+    "bloomVerb": "explain",
+    "interactionType": "Hover to reveal state descriptions"
+  }
+}

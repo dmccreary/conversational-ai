@@ -1,0 +1,14 @@
+{
+  "sim_id": "user-query-components",
+  "diagram_name": "User Query Components",
+  "chapter_number": 6,
+  "chapter_title": "Building Chatbots Intent",
+  "chapter_dir": "06-building-chatbots-intent",
+  "library": "SVG diagram with clear visual hierarchy",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-06-19",
+  "specification": "Type: diagram\n\nPurpose: Illustrate how a natural language user query contains both intent and entity information that must be extracted\n\nComponents to show:\n- User query at top: \"Book a flight to San Francisco next Tuesday\"\n- Arrow pointing down to two branches:\n  - Left branch: \"Intent: Book Flight\" (highlighted in blue)\n  - Right branch: \"Entities\" containing:\n    - Destination: San Francisco (orange)\n    - Date: next Tuesday (green)\n- Below intent: \"System Action\" box showing \"Search available flights\"\n- Below entities: \"Parameters\" box showing structured data\n\nConnections:\n- Arrows from intent and entities converging at bottom to \"Actionable Request\" box\n- Dotted lines showing how entities fill parameter slots in the system action\n\nStyle: Flowchart with boxes and arrows, hierarchical layout\n\nLabels:\n- \"Natural Language Input\" above user query\n- \"Semantic Understanding\" in middle layer\n- \"Structured Output\" at bottom\n\nColor scheme: Blue for intent, orange/green for different entity types, gray for system components\n\nImplementation: SVG diagram with clear visual hierarchy"
+}

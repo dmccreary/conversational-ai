@@ -1,0 +1,30 @@
+{
+  "title": "Corporate Nervous System in Action",
+  "description": "An interactive p5.js impact-analysis simulator that animates the blast radius of a change or incident across an IT-infrastructure knowledge graph.",
+  "creator": "Dan McCreary",
+  "author": "Dan McCreary",
+  "date": "2026-06-19",
+  "subject": "Conversational AI",
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "corporate-nervous-system-in-action",
+  "library": "p5.js",
+  "bloomLevel": "Analyze",
+  "bloomVerb": "analyze",
+  "educational": {
+    "gradeLevel": "Undergraduate",
+    "learningObjective": "Demonstrate how a knowledge-graph-powered corporate nervous system enables real-time impact analysis for change management and incident response.",
+    "estimatedDuration": "12 minutes"
+  },
+  "pedagogical": {
+    "bloomLevel": "Analyze",
+    "bloomVerb": "analyze",
+    "conceptsCovered": ["Knowledge graph", "Impact analysis", "Blast radius", "Breadth-first traversal", "Change management", "Incident response", "GraphRAG"]
+  },
+  "completion_status": "implemented",
+  "chapter_number": 10,
+  "chapter_title": "Knowledge Graphs Graphrag",
+  "chapter_dir": "10-knowledge-graphs-graphrag"
+}

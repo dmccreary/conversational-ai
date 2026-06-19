@@ -1,0 +1,30 @@
+{
+  "title": "Vector Database Architecture Comparison",
+  "description": "Layered architecture comparison of FAISS, Pinecone, and Weaviate vector databases, with a feature matrix covering deployment, pricing, metadata, hybrid search, GPU support, and scalability.",
+  "creator": "Dan McCreary",
+  "author": "Dan McCreary",
+  "date": "2026-06-19",
+  "subject": "Conversational AI",
+  "type": "Interactive Diagram",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "vector-database-architecture-comparison",
+  "library": "HTML/CSS/JS",
+  "bloomLevel": "Analyze",
+  "bloomVerb": "compare",
+  "completion_status": "implemented",
+  "chapter_number": 5,
+  "chapter_title": "Embeddings Vector Databases",
+  "chapter_dir": "05-embeddings-vector-databases",
+  "educational": {
+    "gradeLevel": "Undergraduate",
+    "learningObjective": "Compare the architecture and deployment trade-offs of FAISS, Pinecone, and Weaviate vector databases.",
+    "prerequisites": ["Vector embeddings", "Client-server architecture"]
+  },
+  "pedagogical": {
+    "bloomLevel": "Analyze",
+    "bloomVerb": "compare",
+    "interactionType": "hover-to-explore"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "title": "User Query Components",
+  "description": "Mermaid flowchart showing how a natural-language user query splits into an intent and entities that combine into an actionable, structured request.",
+  "creator": "Dan McCreary",
+  "author": "Dan McCreary",
+  "date": "2026-06-19",
+  "subject": "Conversational AI",
+  "type": "Interactive Diagram",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "user-query-components",
+  "library": "Mermaid",
+  "bloomLevel": "Understand",
+  "bloomVerb": "explain",
+  "completion_status": "implemented",
+  "chapter_number": 6,
+  "chapter_title": "Building Chatbots Intent",
+  "chapter_dir": "06-building-chatbots-intent",
+  "educational": {
+    "gradeLevel": "Undergraduate",
+    "subjectArea": "Conversational AI",
+    "topic": "Intent and entity extraction from user queries",
+    "learningObjectives": [
+      "Distinguish the intent and entities within a natural-language query",
+      "Explain how intent and entities combine into an actionable request"
+    ],
+    "duration": "5 minutes",
+    "prerequisites": "Basic familiarity with chatbots"
+  },
+  "pedagogical": {
+    "bloomLevel": "Understand",
+    "bloomVerb": "explain",
+    "interactionType": "Hover to reveal component descriptions"
+  }
+}

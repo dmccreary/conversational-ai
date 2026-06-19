@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
+    <title>NLP Pipeline Architecture</title>
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'default',
+            flowchart: {
+                useMaxWidth: true,
+                htmlLabels: true,
+                curve: 'basis',
+                subGraphTitleMargin: { top: 10, bottom: 14 }
+            }
+        });
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body { width: 100%; height: 100%; overflow: hidden; font-family: Arial, Helvetica, sans-serif; }
+        .wrapper { display: flex; width: 100%; height: 100vh; background: #fff; }
+        .diagram-panel { width: 66.666%; height: 100%; overflow: visible; background: aliceblue; padding: 8px; }
+        .diagram-panel h2 { font-size: 18px; color: #1a3a6c; text-align: center; margin: 6px 0 8px; }
+        .mermaid { width: 100%; display: flex; justify-content: center; align-items: flex-start; }
+        .mermaid svg { max-width: 100%; }
+        .info-panel { width: 33.333%; height: 100%; padding: 10px; border-left: 1px solid #cbd5e1; background: #f8fafc; overflow: visible; }
+        .legend { margin-bottom: 12px; font-size: 12px; border: 1px solid #cbd5e1; border-radius: 4px; padding: 8px 10px; background: #fff; }
+        .legend-title { font-weight: bold; margin-bottom: 6px; color: #334155; }
+        .legend-item { display: flex; align-items: center; margin: 3px 0; color: #334155; }
+        .legend-dot { display: inline-block; width: 14px; height: 14px; border-radius: 3px; margin-right: 8px; border: 1px solid #888; }
+        .info-panel h3 { font-size: 14px; color: #1a3a6c; margin-bottom: 4px; }
+        #panelWrap { position: relative; height: 880px; }
+        #panel { position: absolute; left: 0; right: 0; top: 8px; background: #fff; color: #334155; border: 1px solid #e2e8f0; padding: 10px; border-radius: 6px; font-size: 13px; line-height: 1.5; }
+    </style>
+</head>
+<body>
+    <main class="wrapper">
+        <div class="diagram-panel">
+            <h2>NLP Pipeline Architecture</h2>
+            <pre class="mermaid">
+flowchart TD
+    Raw["Raw Text:<br/>Hey, can you show me last quarter sales?"]:::io
+
+    subgraph L1["Character Level - Layer 1: Text Preprocessing"]
+        direction LR
+        Norm["Text Normalization"]:::l1
+        Tok["Tokenization"]:::l1
+        Norm --> Tok
+    end
+
+    subgraph L2["Word Level - Layer 2: Morphological Analysis"]
+        direction LR
+        Stem["Stemming"]:::l2
+        Lemma["Lemmatization"]:::l2
+        Stem --> Lemma
+    end
+
+    subgraph L3["Word Level - Layer 3: Syntactic Analysis"]
+        direction LR
+        POS["Part-of-Speech Tagging"]:::l3
+        Dep["Dependency Parsing"]:::l3
+        POS --> Dep
+    end
+
+    subgraph L4["Sentence Level - Layer 4: Semantic Analysis"]
+        direction LR
+        NER["Named Entity Recognition"]:::l4
+        Coref["Coreference Resolution"]:::l4
+        NER --> Coref
+    end
+
+    Out["Structured Output:<br/>Ready for intent recognition and query execution"]:::io
+
+    Raw -->|normalized tokens| L1
+    L1 -->|root forms| L2
+    L2 -->|grammatical tags| L3
+    L3 -->|entity relationships| L4
+    L4 --> Out
+
+    classDef io fill:#90a4ae,stroke:#37474f,stroke-width:2px,color:#fff,font-size:14px
+    classDef l1 fill:#bbdefb,stroke:#1565c0,stroke-width:2px,color:#0d2c54,font-size:15px
+    classDef l2 fill:#90caf9,stroke:#1565c0,stroke-width:2px,color:#0d2c54,font-size:15px
+    classDef l3 fill:#42a5f5,stroke:#0d47a1,stroke-width:2px,color:#fff,font-size:15px
+    classDef l4 fill:#1565c0,stroke:#0d47a1,stroke-width:2px,color:#fff,font-size:15px
+
+    style L1 fill:#e3f2fd,stroke:#64b5f6,stroke-width:1px
+    style L2 fill:#e3f2fd,stroke:#42a5f5,stroke-width:1px
+    style L3 fill:#e3f2fd,stroke:#1e88e5,stroke-width:1px
+    style L4 fill:#e3f2fd,stroke:#1565c0,stroke-width:1px
+
+    linkStyle default stroke:#ff8f00,stroke-width:2.5px,color:#e65100,font-size:13px
+            </pre>
+        </div>
+        <div class="info-panel">
+            <div class="legend">
+                <div class="legend-title">Processing Layers (light to dark = more sophisticated)</div>
+                <div class="legend-item"><span class="legend-dot" style="background:#bbdefb"></span>Layer 1: Preprocessing</div>
+                <div class="legend-item"><span class="legend-dot" style="background:#90caf9"></span>Layer 2: Morphology</div>
+                <div class="legend-item"><span class="legend-dot" style="background:#42a5f5"></span>Layer 3: Syntax</div>
+                <div class="legend-item"><span class="legend-dot" style="background:#1565c0"></span>Layer 4: Semantics</div>
+                <div class="legend-item"><span class="legend-dot" style="background:#ff8f00"></span>Orange arrows: data transforms</div>
+            </div>
+            <h3>Stage Details</h3>
+            <div id="panelWrap">
+                <div id="panel">Hover a stage to learn what that layer does.</div>
+            </div>
+        </div>
+    </main>
+    <script src="nlp-pipeline-architecture.js"></script>
+</body>
+</html>

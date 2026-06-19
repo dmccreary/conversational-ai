@@ -1,0 +1,14 @@
+{
+  "sim_id": "vector-index-comparison",
+  "diagram_name": "Vector Index Comparison",
+  "chapter_number": 5,
+  "chapter_title": "Embeddings Vector Databases",
+  "chapter_dir": "05-embeddings-vector-databases",
+  "library": "Multi-panel diagram with comparison table, can be created as SVG or using diagramming library",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-06-19",
+  "specification": "Type: diagram\n\nPurpose: Illustrate how different vector indexing approaches organize high-dimensional data for fast search\n\nLayout: Three panels showing different index structures with the same dataset\n\nPanel 1 - Flat Index (Brute Force):\n- Show 100 small dots representing vectors in 2D space\n- Query vector shown as a red star\n- Arrows radiating from query to ALL vectors (showing exhaustive search)\n- Label: \"Flat Index: Compare query to every vector\"\n- Metrics display: \"Search time: O(n), Accuracy: 100%\"\n\nPanel 2 - IVF (Inverted File) Index:\n- Show same 100 vectors partitioned into 10 clusters (Voronoi cells)\n- Each cluster shown in different pastel color\n- Cluster centroids marked with larger dots\n- Query vector (red star) positioned between clusters\n- Arrows from query to nearest 2 cluster centroids\n- Within those clusters, arrows to vectors\n- Grayed-out clusters that aren't searched\n- Label: \"IVF Index: Search nearest cluster(s) only\"\n- Metrics display: \"Search time: O(k log n), Accuracy: ~95%\"\n\nPanel 3 - HNSW (Graph) Index:\n- Show subset of vectors (20-30) connected as a graph\n- Multiple layers (show 3 layers with decreasing node counts)\n- Query path highlighted showing navigation from top layer to bottom\n- Layer 0 (bottom): Dense connections\n- Layer 1 (middle): Moderate connections\n- Layer 2 (top): Sparse long-range connections\n- Path shown in red from entry point to query's nearest neighbors\n- Label: \"HNSW Index: Navigate multi-layer graph\"\n- Metrics display: \"Search time: O(log n), Accuracy: ~98%\"\n\nComparison table below panels:\n| Index Type | Search Speed | Accuracy | Memory | Build Time |\n|------------|-------------|----------|---------|------------|\n| Flat | Slow (linear) | 100% | Low | Instant |\n| IVF | Fast | ~95% | Medium | Minutes |\n| HNSW | Very Fast | ~98% | High | Hours |\n| PQ | Very Fast | ~90% | Very Low | Minutes |\n\nVisual style: Simplified 2D scatter plots showing conceptual structure\n\nColor scheme:\n- Query vector: Red star\n- Searched vectors: Blue\n- Skipped vectors: Gray\n- Cluster boundaries/connections: Black lines\n- Selected path: Red highlighted path\n\nAnnotations:\n- Show approximate search radius around query\n- Display distance calculations performed (numbered)\n- Highlight trade-off notes (speed vs accuracy)\n\nImplementation: Multi-panel diagram with comparison table, can be created as SVG or using diagramming library"
+}

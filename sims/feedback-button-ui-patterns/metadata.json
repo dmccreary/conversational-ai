@@ -1,0 +1,37 @@
+{
+  "title": "Feedback Button UI Patterns",
+  "description": "Four interactive panels comparing minimal, labeled, follow-up, and emoji-scale patterns for collecting feedback on chatbot responses.",
+  "creator": "Dan McCreary",
+  "author": "Dan McCreary",
+  "date": "2026-06-19",
+  "subject": "Conversational AI",
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY 4.0",
+  "identifier": "feedback-button-ui-patterns",
+  "library": "HTML/CSS/JavaScript interactive mockup",
+  "bloomLevel": "Analyze",
+  "bloomVerb": "compare",
+  "completion_status": "implemented",
+  "chapter_number": 8,
+  "chapter_title": "User Feedback Improvement",
+  "chapter_dir": "08-user-feedback-improvement",
+  "educational": {
+    "gradeLevel": "Undergraduate",
+    "subjectArea": "Conversational AI",
+    "topic": "Feedback collection UI patterns",
+    "learningObjectives": [
+      "Compare four common feedback-button patterns and their trade-offs",
+      "Explain why follow-up questions yield the most actionable feedback"
+    ],
+    "duration": "8-12 minutes",
+    "prerequisites": "Familiarity with chat interfaces"
+  },
+  "pedagogical": {
+    "bloomLevel": "Analyze",
+    "bloomVerb": "compare",
+    "instructionalStrategy": "Side-by-side live mockups with clickable state transitions",
+    "assessment": "Students select and justify the best feedback pattern for a given scenario"
+  }
+}

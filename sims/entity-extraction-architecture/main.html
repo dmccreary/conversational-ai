@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
+    <title>Entity Extraction Architecture</title>
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+        window.mermaid = mermaid;
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'default',
+            flowchart: {
+                useMaxWidth: true,
+                htmlLabels: true,
+                curve: 'basis',
+                subGraphTitleMargin: { top: 10, bottom: 14 }
+            }
+        });
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body { width: 100%; height: 100%; overflow: hidden; font-family: Arial, Helvetica, sans-serif; }
+        .container { display: flex; width: 100%; height: 700px; }
+        .diagram-panel {
+            flex: 0 0 66.67%;
+            background: aliceblue;
+            overflow: visible;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 10px;
+        }
+        .mermaid { width: 100%; }
+        .mermaid svg { max-width: 100%; height: auto; }
+        .info-panel {
+            flex: 0 0 33.33%;
+            background: #ffffff;
+            border-left: 1px solid #cbd5e1;
+            padding: 12px;
+            overflow: visible;
+        }
+        .legend {
+            margin-bottom: 12px;
+            font-size: 12px;
+            border: 1px solid #cbd5e1;
+            border-radius: 4px;
+            padding: 8px 10px;
+            background: #fff;
+        }
+        .legend-title { font-weight: bold; margin-bottom: 6px; }
+        .legend-item { display: flex; align-items: center; margin: 3px 0; }
+        .legend-dot { width: 14px; height: 14px; border-radius: 3px; margin-right: 8px; border: 1px solid #999; }
+        .info-panel h3 { font-size: 15px; color: #1a3a6c; margin-bottom: 6px; }
+        #panelWrap { position: relative; height: 520px; }
+        #panel {
+            position: absolute; left: 0; right: 0; top: 8px;
+            background-color: #f8fafc; color: #334155;
+            border: 1px solid #e2e8f0; padding: 10px; border-radius: 6px;
+            font-size: 14px; line-height: 1.4;
+        }
+        .node { cursor: pointer; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="diagram-panel">
+            <div class="mermaid">
+flowchart TD
+    Query["User Query<br/>Book 2 tickets to Boston<br/>on March 15th for John Smith"]:::inputNode
+
+    subgraph Rules["Rules - Fast, high precision"]
+        direction TB
+        Regex["Regex patterns"]:::ruleNode
+        DateP["Date parser<br/>extracts March 15th"]:::ruleNode
+        NumE["Number extractor<br/>extracts 2"]:::ruleNode
+        Regex --> DateP --> NumE
+    end
+
+    subgraph ML["ML Model - Balanced accuracy and coverage"]
+        direction TB
+        BERT["BERT-based NER"]:::mlNode
+        TokC["Token classification"]:::mlNode
+        MLout["Person John Smith 0.94<br/>Location Boston 0.89"]:::mlNode
+        BERT --> TokC --> MLout
+    end
+
+    subgraph LLM["LLM - Flexible fallback"]
+        direction TB
+        GPT["GPT-4 few-shot prompt"]:::llmNode
+        Custom["Custom extraction"]:::llmNode
+        Fallback["Fallback for<br/>ambiguous cases"]:::llmNode
+        GPT --> Custom --> Fallback
+    end
+
+    Query --> Rules
+    Query --> ML
+    Query --> LLM
+
+    Merge["Merging Layer<br/>Conflict resolution<br/>Priority Rules then ML then LLM<br/>Confidence aggregation"]:::mergeNode
+    Rules --> Merge
+    ML --> Merge
+    LLM --> Merge
+
+    Link["Entity Linking - Canonicalization<br/>Knowledge base lookup<br/>Boston to Boston MA BST-MA-US<br/>John Smith to Account 7834"]:::linkNode
+    Merge --> Link
+
+    Output["Structured Entity Dictionary<br/>quantity 2<br/>destination Boston MA<br/>destination_id BST-MA-US<br/>date 2024-03-15<br/>passenger John Smith<br/>passenger_id 7834"]:::outputNode
+    Link --> Output
+
+    classDef inputNode fill:#455a64,stroke:#263238,stroke-width:2px,color:#fff,font-size:14px
+    classDef ruleNode fill:#2e7d32,stroke:#1b5e20,stroke-width:2px,color:#fff,font-size:14px
+    classDef mlNode fill:#1976d2,stroke:#0d47a1,stroke-width:2px,color:#fff,font-size:14px
+    classDef llmNode fill:#7b1fa2,stroke:#4a148c,stroke-width:2px,color:#fff,font-size:14px
+    classDef mergeNode fill:#ef6c00,stroke:#e65100,stroke-width:2px,color:#fff,font-size:14px
+    classDef linkNode fill:#00897b,stroke:#00695c,stroke-width:2px,color:#fff,font-size:14px
+    classDef outputNode fill:#616161,stroke:#212121,stroke-width:2px,color:#fff,font-size:14px
+
+    linkStyle default stroke:#888,stroke-width:2px,font-size:14px
+            </div>
+        </div>
+        <div class="info-panel">
+            <div class="legend">
+                <div class="legend-title">Color Key</div>
+                <div class="legend-item"><div class="legend-dot" style="background:#455a64"></div>Input query</div>
+                <div class="legend-item"><div class="legend-dot" style="background:#2e7d32"></div>Rules (deterministic)</div>
+                <div class="legend-item"><div class="legend-dot" style="background:#1976d2"></div>ML model (BERT NER)</div>
+                <div class="legend-item"><div class="legend-dot" style="background:#7b1fa2"></div>LLM fallback</div>
+                <div class="legend-item"><div class="legend-dot" style="background:#ef6c00"></div>Merging logic</div>
+                <div class="legend-item"><div class="legend-dot" style="background:#00897b"></div>Entity linking</div>
+                <div class="legend-item"><div class="legend-dot" style="background:#616161"></div>Structured output</div>
+            </div>
+            <h3>Component Details</h3>
+            <div id="panelWrap">
+                <div id="panel">Hover over a box to learn what each extraction stage does.</div>
+            </div>
+        </div>
+    </div>
+    <script src="entity-extraction-architecture.js"></script>
+</body>
+</html>

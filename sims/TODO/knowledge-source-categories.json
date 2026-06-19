@@ -1,0 +1,14 @@
+{
+  "sim_id": "knowledge-source-categories",
+  "diagram_name": "Knowledge Source Categories",
+  "chapter_number": 9,
+  "chapter_title": "Rag Pattern",
+  "chapter_dir": "09-rag-pattern",
+  "library": "SVG or diagram drawing tool (Lucidchart, draw.io)",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-06-19",
+  "specification": "Type: diagram\n\nPurpose: Illustrate the relationship between external/internal knowledge and public/private knowledge bases\n\nComponents to show:\n- Two main domains: \"External Knowledge\" (left) and \"Internal Knowledge\" (right)\n- Under External Knowledge:\n  - Public Knowledge Bases (large box)\n    - Wikipedia icon\n    - ArXiv icon\n    - News icon\n    - Stack Overflow icon\n- Under Internal Knowledge:\n  - Private Documents (large box)\n    - Company wiki icon\n    - Database icon\n    - Email icon\n    - File share icon\n- Arrows showing:\n  - \"Publicly Accessible\" pointing to External Knowledge\n  - \"Access Restricted\" pointing to Internal Knowledge\n  - \"RAG System\" in center with bidirectional arrows to both domains\n\nConnections:\n- Solid arrows from \"RAG System\" to both knowledge domains\n- Dashed boundary line separating external/internal\n- Labels showing \"No Authentication Required\" vs \"Authentication + Authorization Required\"\n\nStyle: Clean modern diagram with clear visual separation\n\nLabels:\n- \"External Knowledge: Anyone can access\"\n- \"Internal Knowledge: Organization-specific\"\n- \"RAG retrieves from both based on user permissions\"\n\nColor scheme:\n- Green for External Knowledge domain\n- Blue for Internal Knowledge domain\n- Purple for RAG System (center)\n- Light gray for document/database icons\n\nImplementation: SVG or diagram drawing tool (Lucidchart, draw.io)"
+}

@@ -1,0 +1,14 @@
+{
+  "sim_id": "pos-tagging-process-flow",
+  "diagram_name": "POS Tagging Process Flow",
+  "chapter_number": 11,
+  "chapter_title": "Nlp Pipelines Processing",
+  "chapter_dir": "11-nlp-pipelines-processing",
+  "library": "Mermaid flowchart or interactive SVG with hover states",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-06-19",
+  "specification": "Type: workflow\n\nPurpose: Show how POS tagging processes a sentence using context and statistical models to assign grammatical tags\n\nVisual style: Flowchart showing the sequential tagging process with decision points\n\nSteps:\n1. Start: \"Input: Tokenized sentence\"\n   Hover text: \"Sentence has been preprocessed and tokenized: ['Can', 'you', 'show', 'sales', '?']\"\n\n2. Process: \"Initialize: Load POS tag probabilities\"\n   Hover text: \"Load trained model with P(tag|word) and P(tag|previous_tags) probabilities\"\n\n3. Process: \"For each word in sequence\"\n   Hover text: \"Process words left-to-right to use context from previous words\"\n\n4. Process: \"Lookup word in vocabulary\"\n   Hover text: \"Check if word seen during training with its possible tags and probabilities\"\n\n5. Decision: \"Word known?\"\n   Hover text: \"Has this word appeared in training data with tagged examples?\"\n\n6a. Process: \"Use trained probabilities\" (if Yes)\n    Hover text: \"Apply Viterbi algorithm considering: P(tag|word) * P(tag|previous_tags)\"\n\n6b. Process: \"Apply unknown word heuristics\" (if No)\n    Hover text: \"Use capitalization, suffixes, context: -ly → RB, -tion → NN, capitalized → NNP\"\n\n7. Process: \"Assign most probable tag\"\n   Hover text: \"Select tag with highest probability given current word and context history\"\n\n8. Decision: \"More words?\"\n   Hover text: \"Are there remaining words in the sentence to tag?\"\n\n9a. Loop back to step 3 (if Yes)\n\n9b. Process: \"Return tagged sequence\" (if No)\n    Hover text: \"Output: [('Can', 'MD'), ('you', 'PRP'), ('show', 'VB'), ('sales', 'NNS'), ('?', '.')]\"\n\n10. End: \"Tagged sentence ready for parsing\"\n    Hover text: \"POS tags enable syntactic parsing and entity extraction\"\n\nColor coding:\n- Blue: Input/output steps\n- Green: Probability calculations\n- Yellow: Decision points\n- Purple: Unknown word handling\n\nAnnotations:\n- Example probabilities shown for one word:\n  \"show\": P(VB|show)=0.65, P(NN|show)=0.35 → select VB given modal context\n\nSwimlanes:\n- Word Processing (main flow)\n- Probability Model (runs in parallel)\n- Output Accumulation (builds result)\n\nImplementation: Mermaid flowchart or interactive SVG with hover states"
+}

@@ -1,0 +1,37 @@
+{
+  "title": "Personalization Decision Tree",
+  "description": "An interactive Mermaid decision tree showing how a chatbot decides how much to personalize a response based on authentication, permissions, preferences, and history.",
+  "creator": "Dan McCreary",
+  "author": "Dan McCreary",
+  "date": "2026-06-19",
+  "subject": "Conversational AI",
+  "type": "Interactive Workflow Diagram",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY 4.0",
+  "identifier": "personalization-decision-tree",
+  "library": "Mermaid.js",
+  "bloomLevel": "Understand",
+  "bloomVerb": "explain",
+  "completion_status": "implemented",
+  "chapter_number": 8,
+  "chapter_title": "User Feedback Improvement",
+  "chapter_dir": "08-user-feedback-improvement",
+  "educational": {
+    "gradeLevel": "Undergraduate",
+    "subjectArea": "Conversational AI",
+    "topic": "Personalization logic and decision trees",
+    "learningObjectives": [
+      "Explain how a chatbot decides how much to personalize a response",
+      "Describe why permission checks precede preference application"
+    ],
+    "duration": "8-12 minutes",
+    "prerequisites": "Understanding of authentication, authorization, and user context"
+  },
+  "pedagogical": {
+    "bloomLevel": "Understand",
+    "bloomVerb": "explain",
+    "instructionalStrategy": "Interactive decision tree with hover-to-reveal node details and a worked example",
+    "assessment": "Students trace an example user's query to its leaf node and add a new branch"
+  }
+}

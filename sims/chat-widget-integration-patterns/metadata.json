@@ -1,0 +1,32 @@
+{
+  "title": "Chat Widget Integration Patterns",
+  "description": "Layered architecture diagram showing how a chat widget embeds into a website and connects through real-time protocols to backend chatbot services.",
+  "creator": "Dan McCreary",
+  "author": "Dan McCreary",
+  "date": "2026-06-19",
+  "subject": "Conversational AI",
+  "type": "Interactive Diagram",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "chat-widget-integration-patterns",
+  "library": "Mermaid.js",
+  "bloomLevel": "Understand",
+  "bloomVerb": "explain",
+  "completion_status": "implemented",
+  "chapter_number": 7,
+  "chapter_title": "Chatbot Frameworks Ui",
+  "chapter_dir": "07-chatbot-frameworks-ui",
+  "educational": {
+    "audience": "Undergraduate",
+    "learningObjective": "Explain how a chat widget embeds into a host website and communicates with backend chatbot services through real-time protocols.",
+    "gradeLevel": "College",
+    "coverage": "Introductory"
+  },
+  "pedagogical": {
+    "bloomLevel": "Understand",
+    "bloomVerb": "explain",
+    "interactionType": "hover-to-explore diagram",
+    "estimatedTimeMinutes": 8
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "title": "RAG MicroSim",
+  "description": "An interactive p5.js simulator that runs the three RAG steps - retrieval, augmentation, and generation - on a mini document corpus you can query.",
+  "creator": "Dan McCreary",
+  "author": "Dan McCreary",
+  "date": "2026-06-19",
+  "subject": "Conversational AI",
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "rag-microsim",
+  "library": "p5.js",
+  "bloomLevel": "Apply",
+  "bloomVerb": "experiment",
+  "educational": {
+    "gradeLevel": "Undergraduate",
+    "learningObjective": "Experiment with the RAG process by entering queries, observing retrieved documents and relevance scores, and seeing how the augmented prompt affects generation.",
+    "estimatedDuration": "12 minutes"
+  },
+  "pedagogical": {
+    "bloomLevel": "Apply",
+    "bloomVerb": "experiment",
+    "conceptsCovered": ["Retrieval", "Relevance scoring", "Prompt augmentation", "Generation", "Top-K retrieval", "Temperature"]
+  },
+  "completion_status": "implemented",
+  "chapter_number": 9,
+  "chapter_title": "Rag Pattern",
+  "chapter_dir": "09-rag-pattern"
+}

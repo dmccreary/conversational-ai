@@ -1,0 +1,14 @@
+{
+  "sim_id": "framework-comparison-matrix",
+  "diagram_name": "Framework Comparison Matrix",
+  "chapter_number": 7,
+  "chapter_title": "Chatbot Frameworks Ui",
+  "chapter_dir": "07-chatbot-frameworks-ui",
+  "library": "Chart.js radar chart with semi-transparent filled areas",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-06-19",
+  "specification": "Type: chart\n\nChart type: Radar/spider chart\n\nPurpose: Provide visual comparison of the five major chatbot frameworks across key evaluation dimensions\n\nDimensions (axes, 0-10 scale):\n1. Deployment Flexibility (10 = full control, 0 = vendor lock-in)\n2. Development Speed (10 = fastest time-to-production, 0 = slowest)\n3. NLU Accuracy (10 = best, 0 = weakest)\n4. Customization Depth (10 = full code access, 0 = limited)\n5. Enterprise Features (10 = complete, 0 = minimal)\n6. Learning Curve (10 = easiest, 0 = hardest)\n7. LLM Integration (10 = native, 0 = requires custom code)\n8. Cost Efficiency (10 = most affordable, 0 = most expensive)\n\nFramework scores:\n\nRasa (blue line):\n- Deployment Flexibility: 10\n- Development Speed: 4\n- NLU Accuracy: 7\n- Customization Depth: 10\n- Enterprise Features: 8\n- Learning Curve: 3\n- LLM Integration: 5\n- Cost Efficiency: 8\n\nDialogflow (green line):\n- Deployment Flexibility: 2\n- Development Speed: 9\n- NLU Accuracy: 9\n- Customization Depth: 4\n- Enterprise Features: 9\n- Learning Curve: 8\n- LLM Integration: 6\n- Cost Efficiency: 5\n\nBotpress (orange line):\n- Deployment Flexibility: 7\n- Development Speed: 7\n- NLU Accuracy: 6\n- Customization Depth: 7\n- Enterprise Features: 7\n- Learning Curve: 7\n- LLM Integration: 5\n- Cost Efficiency: 7\n\nLangChain (purple line):\n- Deployment Flexibility: 9\n- Development Speed: 6\n- NLU Accuracy: 8\n- Customization Depth: 10\n- Enterprise Features: 5\n- LLM Integration: 10\n- Cost Efficiency: 4\n\nLlamaIndex (gold line):\n- Deployment Flexibility: 9\n- Development Speed: 7\n- NLU Accuracy: 8\n- Customization Depth: 9\n- Enterprise Features: 6\n- Learning Curve: 6\n- LLM Integration: 10\n- Cost Efficiency: 6\n\nTitle: \"Chatbot Framework Comparison: Key Evaluation Dimensions\"\n\nLegend: Position bottom-right with framework names and line colors\n\nAnnotations:\n- Note near Rasa: \"Best for on-premise, heavily customized\"\n- Note near Dialogflow: \"Fastest development, Google Cloud\"\n- Note near LangChain: \"Leading LLM orchestration\"\n\nImplementation: Chart.js radar chart with semi-transparent filled areas\nCanvas size: 700x700px"
+}

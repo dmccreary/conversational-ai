@@ -1,0 +1,14 @@
+{
+  "sim_id": "chat-widget-integration-patterns",
+  "diagram_name": "Chat Widget Integration Patterns",
+  "chapter_number": 7,
+  "chapter_title": "Chatbot Frameworks Ui",
+  "chapter_dir": "07-chatbot-frameworks-ui",
+  "library": "Detailed diagram (Mermaid or static SVG)",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-06-19",
+  "specification": "Type: diagram\n\nPurpose: Show how chat widgets integrate into existing websites and communicate with backend chatbot services\n\nComponents to show (left to right):\n\n1. Website Layer (left):\n   - HTML page\n   - Existing website JavaScript\n   - Widget embed code snippet\n\n2. Chat Widget (center):\n   - Floating button (collapsed state)\n   - Chat window (expanded state)\n   - Message components\n   - Connection manager\n\n3. Backend Services (right):\n   - WebSocket/REST API gateway\n   - Chatbot framework (Rasa, Dialogflow, etc.)\n   - Session manager\n   - Database (conversation history)\n\nIntegration methods shown:\n- Script tag embed (simplest):\n  <script src=\"widget.js\"></script>\n  - Widget loads after page\n  - Self-contained bundle\n\n- NPM package (for React/Vue apps):\n  import ChatWidget from 'chat-widget'\n  - Integrated into build process\n  - Tree-shaking optimization\n\n- iFrame embed (sandboxed):\n  <iframe src=\"chat.example.com\"></iframe>\n  - Isolated from parent page\n  - Cross-domain considerations\n\nConnection types:\n- WebSocket (persistent):\n  Real-time bidirectional communication\n  Best for interactive conversations\n\n- Server-Sent Events (SSE):\n  One-way server push\n  Simpler than WebSocket\n\n- Long polling (fallback):\n  Repeated HTTP requests\n  Works through restrictive firewalls\n\nData flows:\n- User types message → Widget\n- Widget → WebSocket → API Gateway\n- API Gateway → Chatbot Framework\n- Framework processes → generates response\n- Response → API Gateway → WebSocket → Widget\n- Widget renders message\n\nState persistence:\n- LocalStorage: Conversation history (client-side)\n- Session cookie: User identification\n- Database: Long-term conversation storage\n\nStyle: Layered architecture with detailed component breakdowns\n\nLabels:\n- \"Embed methods\" on integration section\n- \"Real-time protocols\" on connection types\n- \"Persistent state\" on storage components\n\nColor scheme:\n- Blue: Frontend/website layer\n- Green: Widget components\n- Orange: Network communication\n- Purple: Backend services\n\nImplementation: Detailed diagram (Mermaid or static SVG)"
+}

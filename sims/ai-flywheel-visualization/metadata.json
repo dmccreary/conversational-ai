@@ -1,0 +1,37 @@
+{
+  "title": "AI Flywheel Visualization",
+  "description": "An interactive flywheel infographic showing how chatbot usage, feedback data, better models, and user satisfaction reinforce each other with growing momentum over time.",
+  "creator": "Dan McCreary",
+  "author": "Dan McCreary",
+  "date": "2026-06-19",
+  "subject": "Conversational AI",
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY 4.0",
+  "identifier": "ai-flywheel-visualization",
+  "library": "HTML/CSS/JavaScript SVG infographic",
+  "bloomLevel": "Understand",
+  "bloomVerb": "explain",
+  "completion_status": "implemented",
+  "chapter_number": 8,
+  "chapter_title": "User Feedback Improvement",
+  "chapter_dir": "08-user-feedback-improvement",
+  "educational": {
+    "gradeLevel": "Undergraduate",
+    "subjectArea": "Conversational AI",
+    "topic": "Continuous improvement and feedback flywheels",
+    "learningObjectives": [
+      "Explain how usage, feedback, model quality, and satisfaction reinforce each other",
+      "Describe why an improvement flywheel accelerates as data compounds"
+    ],
+    "duration": "5-10 minutes",
+    "prerequisites": "Basic understanding of chatbot feedback signals"
+  },
+  "pedagogical": {
+    "bloomLevel": "Understand",
+    "bloomVerb": "explain",
+    "instructionalStrategy": "Interactive infographic with hover metrics and click case studies",
+    "assessment": "Students identify the bottleneck quadrant for a new bot and the action that breaks it"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "title": "Vector Index Comparison",
+  "description": "Interactive p5.js panels showing how Flat, IVF, and HNSW vector indexes organize data for fast similarity search, with a comparison table covering speed, accuracy, memory, and build time.",
+  "creator": "Dan McCreary",
+  "author": "Dan McCreary",
+  "date": "2026-06-19",
+  "subject": "Conversational AI",
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "vector-index-comparison",
+  "library": "p5.js",
+  "bloomLevel": "Analyze",
+  "bloomVerb": "compare",
+  "completion_status": "implemented",
+  "chapter_number": 5,
+  "chapter_title": "Embeddings Vector Databases",
+  "chapter_dir": "05-embeddings-vector-databases",
+  "educational": {
+    "gradeLevel": "Undergraduate",
+    "learningObjective": "Compare how Flat, IVF, and HNSW vector indexes trade search speed against accuracy and memory.",
+    "prerequisites": ["Nearest neighbor search", "Vector embeddings"]
+  },
+  "pedagogical": {
+    "bloomLevel": "Analyze",
+    "bloomVerb": "compare",
+    "interactionType": "explore"
+  }
+}

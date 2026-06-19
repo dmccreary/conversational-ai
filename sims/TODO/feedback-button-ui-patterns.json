@@ -1,0 +1,14 @@
+{
+  "sim_id": "feedback-button-ui-patterns",
+  "diagram_name": "Feedback Button UI Patterns",
+  "chapter_number": 8,
+  "chapter_title": "User Feedback Improvement",
+  "chapter_dir": "08-user-feedback-improvement",
+  "library": "Static diagram (Figma mockup or illustrated)",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-06-19",
+  "specification": "Type: diagram\n\nPurpose: Illustrate different UI patterns for implementing thumbs up/down feedback buttons in chat interfaces, showing placement, states, and follow-up interactions\n\nComponents to show (grid layout with 4 variations):\n\n1. **Minimal Pattern** (top left)\n   - Simple thumbs up/down icons below bot message\n   - Neutral gray when inactive\n   - Filled green (up) or red (down) when clicked\n   - Placement: Bottom-right of message bubble\n   - Labels: None (icons only)\n\n2. **Labeled Pattern** (top right)\n   - Thumbs icons with text labels \"Helpful\" / \"Not helpful\"\n   - Button style (rounded rectangles)\n   - Placement: Centered below message bubble\n   - Hover state shown (slight scale increase)\n\n3. **Follow-up Pattern** (bottom left)\n   - Initial state: Thumbs up/down\n   - After thumbs down: Expanded view with options\n     - \"Wrong answer\"\n     - \"Too vague\"\n     - \"Harmful/unsafe\"\n     - \"Other (please explain)\"\n   - Text area appears for \"Other\"\n   - Submit button\n   - Annotate: \"Progressive disclosure captures detailed feedback\"\n\n4. **Emoji Pattern** (bottom right)\n   - Five emoji reactions: 😞 😐 😊 😍 🎉\n   - Allows gradient of satisfaction\n   - Placement: Inline below message\n   - Selected emoji highlighted and enlarged\n\nVisual elements for each pattern:\n- Sample message bubble containing bot response\n- Feedback UI components\n- State transitions (before click → after click)\n- Annotations pointing to key design decisions\n\nAdditional annotations:\n- Arrow pointing to placement: \"Close proximity to evaluated content\"\n- Arrow pointing to size: \"Touch-friendly targets (44x44px minimum)\"\n- Arrow pointing to follow-up: \"80% of actionable insights come from follow-up questions\"\n\nStyle: UI mockup with multiple panels showing different approaches\n\nColor scheme:\n- Light gray: Message bubbles\n- Blue: Bot avatar/accent\n- Green: Positive feedback\n- Red: Negative feedback\n- Purple: Interactive highlights\n\nImplementation: Static diagram (Figma mockup or illustrated)"
+}

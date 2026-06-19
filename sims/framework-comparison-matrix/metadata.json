@@ -1,0 +1,32 @@
+{
+  "title": "Framework Comparison Matrix",
+  "description": "Radar chart comparing Rasa, Dialogflow, Botpress, LangChain, and LlamaIndex across eight chatbot-framework evaluation dimensions on a 0 to 10 scale.",
+  "creator": "Dan McCreary",
+  "author": "Dan McCreary",
+  "date": "2026-06-19",
+  "subject": "Conversational AI",
+  "type": "Interactive Chart",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "framework-comparison-matrix",
+  "library": "Chart.js",
+  "bloomLevel": "Analyze",
+  "bloomVerb": "compare",
+  "completion_status": "implemented",
+  "chapter_number": 7,
+  "chapter_title": "Chatbot Frameworks Ui",
+  "chapter_dir": "07-chatbot-frameworks-ui",
+  "educational": {
+    "audience": "Undergraduate",
+    "learningObjective": "Compare five major chatbot frameworks across eight evaluation dimensions and select an appropriate framework for a given set of requirements.",
+    "gradeLevel": "College",
+    "coverage": "Introductory"
+  },
+  "pedagogical": {
+    "bloomLevel": "Analyze",
+    "bloomVerb": "compare",
+    "interactionType": "interactive radar chart with toggleable series",
+    "estimatedTimeMinutes": 10
+  }
+}

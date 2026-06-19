@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
+    <title>Cypher Query Visualization</title>
+    <script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/vis-network/styles/vis-network.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Top: query editor + controls -->
+        <div class="topbar">
+            <div class="editor-col">
+                <label class="cap">Cypher Query</label>
+                <textarea id="query" spellcheck="false"></textarea>
+            </div>
+            <div class="control-col">
+                <select id="template">
+                    <option value="0">Template: Simple node match</option>
+                    <option value="1">Template: One-hop relationship</option>
+                    <option value="2">Template: Direct dependencies</option>
+                    <option value="3">Template: Multi-hop path (1..3)</option>
+                    <option value="4">Template: Blast radius</option>
+                </select>
+                <div class="row">
+                    <button class="btn btn-run" id="run-btn">&#9654; Execute Query</button>
+                    <button class="btn btn-clear" id="clear-btn">Clear</button>
+                </div>
+                <label class="chk"><input type="checkbox" id="animate" checked> Animate traversal</label>
+                <label class="cap small">Animation speed: <span id="speed-val">450</span> ms/step</label>
+                <input type="range" id="speed" min="100" max="1000" step="50" value="450">
+                <div class="desc" id="desc">Find all applications.</div>
+            </div>
+        </div>
+
+        <!-- Middle: graph + results -->
+        <div class="middle">
+            <div class="graph-col">
+                <div id="network"></div>
+                <div class="legend">
+                    <span><span class="lg hex"></span>Service</span>
+                    <span><span class="lg box"></span>App</span>
+                    <span><span class="lg dia"></span>Infra</span>
+                    <span><span class="lg cyl"></span>DB</span>
+                    <span><span class="lg match"></span>Matched</span>
+                </div>
+                <div class="stats" id="stats">Ready. Choose a template or write a query, then Execute.</div>
+            </div>
+            <div class="results-col">
+                <div class="cap">Query Results</div>
+                <div class="table-wrap">
+                    <table id="results"><thead></thead><tbody></tbody></table>
+                </div>
+                <div class="cap" style="margin-top:8px">Pattern Explanation</div>
+                <div class="info" id="info">Keywords: <b style="color:#1565c0">MATCH</b> finds patterns,
+                    <b style="color:#2e7d32">node labels</b> filter by type,
+                    <b style="color:#e65100">relationships</b> traverse edges,
+                    <b style="color:#1565c0">RETURN</b> selects output.</div>
+            </div>
+        </div>
+    </div>
+    <script src="cypher-query-visualization.js"></script>
+</body>
+</html>

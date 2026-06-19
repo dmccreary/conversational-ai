@@ -1,0 +1,14 @@
+{
+  "sim_id": "production-pipeline-architecture",
+  "diagram_name": "Production Pipeline Architecture",
+  "chapter_number": 11,
+  "chapter_title": "Nlp Pipelines Processing",
+  "chapter_dir": "11-nlp-pipelines-processing",
+  "library": "Mermaid diagram or architectural diagram tool (draw.io, Lucidchart)",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-06-19",
+  "specification": "Type: diagram\n\nPurpose: Show a production-grade NLP pipeline architecture with fallback strategies, caching, and conditional processing paths\n\nComponents to show:\n- Input Layer (top):\n  - Raw user message\n  - Request metadata (user_id, session_id, timestamp)\n\n- Preprocessing Layer:\n  - Text normalization\n  - Tokenization\n  - Cache lookup (check if this exact query processed recently)\n  - If cache hit → return cached result (bypass pipeline)\n\n- Core Processing Layer (conditional branches):\n  - Fast path (high-confidence patterns):\n    - Simple pattern matching\n    - Keyword extraction\n    - → Route to intent handler\n\n  - Standard path (moderate complexity):\n    - POS tagging\n    - Lemmatization\n    - Named entity recognition\n    - → Intent classification + entity extraction\n\n  - Complex path (low confidence or complex query):\n    - Dependency parsing\n    - Coreference resolution\n    - Semantic role labeling\n    - → Advanced semantic parsing\n\n- Error Handling Layer:\n  - Try-catch wrappers around each component\n  - Fallback strategy: if component fails, degrade gracefully\n  - Logging: Record failures for debugging\n\n- Output Layer (bottom):\n  - Structured linguistic annotations\n  - Extracted intents and entities\n  - Cache result for future lookups\n  - → Pass to dialog manager\n\nConnections:\n- Vertical flow from input to output\n- Conditional branching based on confidence scores\n- Fallback arrows from complex → standard → fast paths\n- Cache feedback loop (write results back to cache)\n- Error handling arrows to fallback strategies\n\nStyle: Layered architecture diagram with decision diamonds for conditional processing\n\nLabels:\n- \"Fast Path: <50ms\" on simple branch\n- \"Standard Path: ~100ms\" on moderate branch\n- \"Complex Path: ~300ms\" on full pipeline\n- \"Cache Hit: <5ms\" on cache bypass\n- Error handling boxes marked \"Try/Catch with Fallback\"\n\nColor scheme:\n- Green: Fast path components\n- Yellow: Standard path components\n- Orange: Complex path components\n- Red: Error handling components\n- Blue: Caching layer\n- Gray: Input/output\n\nVisual enhancements:\n- Thickness of arrows indicating typical traffic volume (most queries → fast path)\n- Dotted lines for error/fallback paths\n- Cache shown as separate horizontal layer intersecting main flow\n\nImplementation: Mermaid diagram or architectural diagram tool (draw.io, Lucidchart)"
+}

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
+    <title>Dialog System State Machine</title>
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+        window.mermaid = mermaid;
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'default',
+            flowchart: {
+                useMaxWidth: true,
+                htmlLabels: true,
+                curve: 'basis',
+                subGraphTitleMargin: { top: 10, bottom: 14 }
+            }
+        });
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body { width: 100%; height: 100%; overflow: hidden; font-family: Arial, Helvetica, sans-serif; }
+        .container { display: flex; width: 100%; height: 1080px; }
+        .diagram-panel {
+            flex: 0 0 66.67%;
+            background: aliceblue;
+            overflow: visible;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 10px;
+        }
+        .mermaid { width: 100%; }
+        .mermaid svg { max-width: 100%; height: auto; }
+        .info-panel {
+            flex: 0 0 33.33%;
+            background: #ffffff;
+            border-left: 1px solid #cbd5e1;
+            padding: 12px;
+            overflow: visible;
+        }
+        .legend {
+            margin-bottom: 12px;
+            font-size: 12px;
+            border: 1px solid #cbd5e1;
+            border-radius: 4px;
+            padding: 8px 10px;
+            background: #fff;
+        }
+        .legend-title { font-weight: bold; margin-bottom: 6px; }
+        .legend-item { display: flex; align-items: center; margin: 3px 0; }
+        .legend-dot { width: 14px; height: 14px; border-radius: 3px; margin-right: 8px; border: 1px solid #999; }
+        .info-panel h3 { font-size: 15px; color: #1a3a6c; margin-bottom: 6px; }
+        #panelWrap { position: relative; height: 900px; }
+        #panel {
+            position: absolute; left: 0; right: 0; top: 8px;
+            background-color: #f8fafc; color: #334155;
+            border: 1px solid #e2e8f0; padding: 10px; border-radius: 6px;
+            font-size: 14px; line-height: 1.4;
+        }
+        .node { cursor: pointer; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="diagram-panel">
+            <div class="mermaid">
+stateDiagram-v2
+    direction TB
+    [*] --> Greeting
+    Greeting --> CollectDestination: flight intent
+    CollectDestination --> CollectDestination: unclear input
+    CollectDestination --> CollectOrigin: provides destination
+    CollectOrigin --> CollectDate: provides origin
+    CollectDate --> CollectTime: date validated
+    CollectTime --> AllSlotsFilled: provides time
+    AllSlotsFilled --> CollectDestination: NO - missing slot
+    AllSlotsFilled --> DisplayOptions: YES - all collected
+    DisplayOptions --> CollectDate: changes criteria
+    DisplayOptions --> ConfirmSelection: picks a flight
+    ConfirmSelection --> BookingComplete: confirms
+    BookingComplete --> [*]
+
+    Greeting: Greeting
+    CollectDestination: Collect Destination
+    CollectOrigin: Collect Origin
+    CollectDate: Collect Date
+    CollectTime: Collect Time Preference
+    AllSlotsFilled: All Slots Filled?
+    DisplayOptions: Display Options
+    ConfirmSelection: Confirm Selection
+    BookingComplete: Booking Complete
+
+    classDef startState fill:#2e7d32,stroke:#1b5e20,stroke-width:2px,color:#fff,font-size:15px
+    classDef gatherState fill:#1976d2,stroke:#0d47a1,stroke-width:2px,color:#fff,font-size:15px
+    classDef decisionState fill:#f9a825,stroke:#f57f17,stroke-width:2px,color:#000,font-size:15px
+    classDef txnState fill:#ef6c00,stroke:#e65100,stroke-width:2px,color:#fff,font-size:15px
+    classDef endState fill:#6a1b9a,stroke:#4a148c,stroke-width:2px,color:#fff,font-size:15px
+
+    class Greeting startState
+    class CollectDestination,CollectOrigin,CollectDate,CollectTime gatherState
+    class AllSlotsFilled decisionState
+    class DisplayOptions,ConfirmSelection txnState
+    class BookingComplete endState
+            </div>
+        </div>
+        <div class="info-panel">
+            <div class="legend">
+                <div class="legend-title">Color Key</div>
+                <div class="legend-item"><div class="legend-dot" style="background:#2e7d32"></div>Start state</div>
+                <div class="legend-item"><div class="legend-dot" style="background:#1976d2"></div>Information gathering</div>
+                <div class="legend-item"><div class="legend-dot" style="background:#f9a825"></div>Decision point</div>
+                <div class="legend-item"><div class="legend-dot" style="background:#ef6c00"></div>Transaction state</div>
+                <div class="legend-item"><div class="legend-dot" style="background:#6a1b9a"></div>End state</div>
+            </div>
+            <h3>State Details</h3>
+            <div id="panelWrap">
+                <div id="panel">Hover over a state to see what the dialog system does.</div>
+            </div>
+        </div>
+    </div>
+    <script src="dialog-system-state-machine.js"></script>
+</body>
+</html>

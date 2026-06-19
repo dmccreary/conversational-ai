@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
+    <title>Dependency Parse Tree</title>
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'default',
+            flowchart: { useMaxWidth: true, htmlLabels: true, curve: 'basis' }
+        });
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body { width: 100%; height: 100%; overflow: hidden; font-family: Arial, Helvetica, sans-serif; }
+        .wrapper { display: flex; width: 100%; height: 100vh; background: #fff; }
+        .diagram-panel { width: 66.666%; height: 100%; overflow: visible; background: aliceblue; padding: 8px; }
+        .diagram-panel h2 { font-size: 18px; color: #1a3a6c; text-align: center; margin: 6px 0 2px; }
+        .diagram-panel .sentence { text-align: center; font-size: 14px; color: #555; margin-bottom: 6px; font-style: italic; }
+        .mermaid { width: 100%; display: flex; justify-content: center; align-items: flex-start; }
+        .mermaid svg { max-width: 100%; }
+        .info-panel { width: 33.333%; height: 100%; padding: 10px; border-left: 1px solid #cbd5e1; background: #f8fafc; overflow: visible; }
+        .legend { margin-bottom: 12px; font-size: 12px; border: 1px solid #cbd5e1; border-radius: 4px; padding: 8px 10px; background: #fff; }
+        .legend-title { font-weight: bold; margin-bottom: 6px; color: #334155; }
+        .legend-item { display: flex; align-items: center; margin: 3px 0; color: #334155; }
+        .legend-line { display: inline-block; width: 22px; height: 0; border-top: 3px solid #000; margin-right: 8px; }
+        .info-panel h3 { font-size: 14px; color: #1a3a6c; margin-bottom: 4px; }
+        #panelWrap { position: relative; height: 470px; }
+        #panel { position: absolute; left: 0; right: 0; top: 8px; background: #fff; color: #334155; border: 1px solid #e2e8f0; padding: 10px; border-radius: 6px; font-size: 13px; line-height: 1.5; }
+    </style>
+</head>
+<body>
+    <main class="wrapper">
+        <div class="diagram-panel">
+            <h2>Dependency Parse Tree</h2>
+            <div class="sentence">"Show me the sales report for the last quarter"</div>
+            <pre class="mermaid">
+flowchart TD
+    Show["Show (VB)"]:::root
+    me["me (PRP)"]:::word
+    report["report (NN)"]:::word
+    the1["the (DT)"]:::word
+    sales["sales (NN)"]:::word
+    for["for (IN)"]:::word
+    quarter["quarter (NN)"]:::word
+    the2["the (DT)"]:::word
+    last["last (JJ)"]:::word
+
+    Show -->|dative| me
+    Show -->|dobj| report
+    report -->|det| the1
+    report -->|compound| sales
+    report -->|prep| for
+    for -->|pobj| quarter
+    quarter -->|det| the2
+    quarter -->|amod| last
+
+    classDef root fill:#e9ecef,stroke:#1a3a6c,stroke-width:3px,color:#1a3a6c,font-size:20px,font-weight:bold
+    classDef word fill:#e9ecef,stroke:#495057,stroke-width:1.5px,color:#212529,font-size:16px
+
+    linkStyle 0 stroke:#d32f2f,stroke-width:2.5px,color:#d32f2f,font-size:14px
+    linkStyle 1 stroke:#d32f2f,stroke-width:2.5px,color:#d32f2f,font-size:14px
+    linkStyle 2 stroke:#1976d2,stroke-width:2px,color:#1976d2,font-size:14px
+    linkStyle 3 stroke:#1976d2,stroke-width:2px,color:#1976d2,font-size:14px
+    linkStyle 4 stroke:#388e3c,stroke-width:2px,color:#388e3c,font-size:14px
+    linkStyle 5 stroke:#388e3c,stroke-width:2px,color:#388e3c,font-size:14px
+    linkStyle 6 stroke:#1976d2,stroke-width:2px,color:#1976d2,font-size:14px
+    linkStyle 7 stroke:#1976d2,stroke-width:2px,color:#1976d2,font-size:14px
+            </pre>
+        </div>
+        <div class="info-panel">
+            <div class="legend">
+                <div class="legend-title">Dependency Relation Color Key</div>
+                <div class="legend-item"><span class="legend-line" style="border-color:#d32f2f"></span>Core arguments (dative, dobj)</div>
+                <div class="legend-item"><span class="legend-line" style="border-color:#1976d2"></span>Modifiers (det, compound, amod)</div>
+                <div class="legend-item"><span class="legend-line" style="border-color:#388e3c"></span>Prepositional (prep, pobj)</div>
+            </div>
+            <h3>Word Details</h3>
+            <div id="panelWrap">
+                <div id="panel">Hover a word to see its grammatical role.</div>
+            </div>
+        </div>
+    </main>
+    <script src="dependency-parse-tree.js"></script>
+</body>
+</html>

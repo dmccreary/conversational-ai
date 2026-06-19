@@ -1,0 +1,30 @@
+{
+  "title": "Embedding Model Comparison",
+  "description": "Side-by-side diagram comparing how Word2Vec, GloVe, and FastText learn word embeddings, with a feature comparison table covering training paradigm, OOV handling, speed, and memory.",
+  "creator": "Dan McCreary",
+  "author": "Dan McCreary",
+  "date": "2026-06-19",
+  "subject": "Conversational AI",
+  "type": "Interactive Diagram",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "embedding-model-comparison",
+  "library": "HTML/CSS/JS",
+  "bloomLevel": "Analyze",
+  "bloomVerb": "compare",
+  "completion_status": "implemented",
+  "chapter_number": 5,
+  "chapter_title": "Embeddings Vector Databases",
+  "chapter_dir": "05-embeddings-vector-databases",
+  "educational": {
+    "gradeLevel": "Undergraduate",
+    "learningObjective": "Compare the training approaches and trade-offs of Word2Vec, GloVe, and FastText word embedding models.",
+    "prerequisites": ["Word embeddings", "One-hot encoding"]
+  },
+  "pedagogical": {
+    "bloomLevel": "Analyze",
+    "bloomVerb": "compare",
+    "interactionType": "hover-to-explore"
+  }
+}

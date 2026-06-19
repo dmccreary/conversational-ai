@@ -1,0 +1,14 @@
+{
+  "sim_id": "word-embedding-vector-space-visualization",
+  "diagram_name": "Word Embedding Vector Space Visualization",
+  "chapter_number": 5,
+  "chapter_title": "Embeddings Vector Databases",
+  "chapter_dir": "05-embeddings-vector-databases",
+  "library": "2D scatter plot diagram with annotated clusters, can be created using Chart.js scatter plot or custom SVG",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-06-19",
+  "specification": "Type: diagram\n\nPurpose: Illustrate how word embeddings position semantically related words close together in vector space\n\nComponents to show:\n- 2D coordinate plane representing a projection of high-dimensional embedding space\n- Clusters of related words positioned near each other:\n  - Royalty cluster: \"king\", \"queen\", \"prince\", \"princess\", \"throne\", \"crown\"\n  - Animals cluster: \"cat\", \"dog\", \"bird\", \"fish\", \"pet\"\n  - Technology cluster: \"computer\", \"software\", \"algorithm\", \"network\"\n  - Verbs cluster: \"run\", \"walk\", \"sprint\", \"jog\"\n- Word labels positioned at their embedding coordinates\n- Dotted circles around each semantic cluster\n- Arrows showing semantic relationships (e.g., king → queen with label \"gender\")\n- Distance annotations showing closer words are more similar\n\nVisual style: Scatter plot with labeled points\n\nColor scheme:\n- Royalty cluster: Purple\n- Animals cluster: Green\n- Technology cluster: Blue\n- Verbs cluster: Orange\n\nLabels:\n- X-axis: \"Dimension 1 (semantic feature space)\"\n- Y-axis: \"Dimension 2 (semantic feature space)\"\n- Title: \"Word Embeddings Capture Semantic Similarity Through Spatial Proximity\"\n- Note: \"Actual embeddings exist in 100-300 dimensional space\"\n\nImplementation: 2D scatter plot diagram with annotated clusters, can be created using Chart.js scatter plot or custom SVG"
+}

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
+    <title>Rasa Architecture Components</title>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body { width: 100%; height: 100%; overflow: hidden; font-family: Arial, Helvetica, sans-serif; }
+        .container { display: flex; width: 100%; height: 800px; background: #ffffff; }
+        .diagram-panel {
+            width: 66.67%; height: 100%; overflow: visible;
+            background: aliceblue; padding: 8px;
+        }
+        .diagram-panel h2 { text-align: center; font-size: 18px; color: #1a3a6c; margin: 4px 0 0 0; }
+        .mermaid { width: 100%; display: flex; justify-content: center; }
+        .mermaid svg { max-width: 100%; height: auto; }
+        .info-panel {
+            width: 33.33%; height: 100%; overflow: visible;
+            padding: 12px; border-left: 1px solid #cbd5e1; background: #f8fafc;
+        }
+        .legend {
+            margin-bottom: 12px; font-size: 12px; border: 1px solid #cbd5e1;
+            border-radius: 4px; padding: 8px 10px; background: #fff;
+        }
+        .legend-title { font-weight: bold; margin-bottom: 6px; color: #334155; }
+        .legend-item { display: flex; align-items: center; margin: 3px 0; color: #334155; }
+        .legend-dot { width: 14px; height: 14px; border-radius: 3px; margin-right: 8px; flex: none; }
+        .info-panel h3 { color: #1a3a6c; font-size: 15px; margin-bottom: 6px; }
+        #panelWrap { position: relative; height: 640px; }
+        #panel {
+            position: absolute; left: 0; right: 0; top: 8px;
+            background-color: #ffffff; color: #334155;
+            border: 1px solid #e2e8f0; padding: 10px; border-radius: 6px;
+            font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 1.45;
+        }
+        .node { cursor: pointer; }
+    </style>
+</head>
+<body>
+    <main class="container">
+        <div class="diagram-panel">
+            <h2>Rasa Architecture Components</h2>
+            <div class="mermaid">
+flowchart TD
+    subgraph INPUT["User Input"]
+        direction LR
+        Slack["Slack"]:::userface
+        Teams["Teams"]:::userface
+        Web["Web Widget"]:::userface
+    end
+
+    subgraph NLU["Rasa NLU Pipeline"]
+        direction TB
+        Tokenizer["Tokenizer"]:::nlu
+        Featurizer["Featurizer<br/>word embeddings"]:::nlu
+        Intent["Intent Classifier"]:::nlu
+        Entity["Entity Extractor"]:::nlu
+    end
+
+    subgraph CORE["Rasa Core"]
+        direction TB
+        Tracker["Tracker Store<br/>conversation history"]:::core
+        Policy["Dialog Policy<br/>ML or rule-based"]:::core
+        ActionSrv["Action Server"]:::core
+    end
+
+    subgraph ACTIONS["Custom Actions"]
+        direction TB
+        DBConn["Database Connector"]:::custom
+        APIClient["External API Client"]:::custom
+        BizLogic["Business Logic Functions"]:::custom
+    end
+
+    subgraph RASAX["Rasa X Tooling"]
+        direction TB
+        Review["Conversation Review UI"]:::rasax
+        Annotate["Training Data Annotation"]:::rasax
+        Dashboard["Performance Dashboard"]:::rasax
+    end
+
+    Output["Response Templates and<br/>Generated Messages"]:::userface
+
+    INPUT --> Tokenizer
+    Tokenizer --> Featurizer --> Intent --> Entity
+    Entity -->|Predictions| Tracker
+    Tracker <-->|State tracking| Policy
+    Policy --> ActionSrv
+    ActionSrv --> DBConn
+    ActionSrv --> APIClient
+    ActionSrv --> BizLogic
+    DBConn -.->|API calls| ExternalSys["External Systems"]:::ext
+    APIClient -.->|API calls| ExternalSys
+    ActionSrv --> Output
+    RASAX -.->|Training data| NLU
+    RASAX -.->|Training data| CORE
+
+    classDef userface fill:#3b82f6,stroke:#1e3a8a,stroke-width:2px,color:#fff,font-size:14px
+    classDef nlu fill:#22c55e,stroke:#15803d,stroke-width:2px,color:#fff,font-size:14px
+    classDef core fill:#f97316,stroke:#9a3412,stroke-width:2px,color:#fff,font-size:14px
+    classDef custom fill:#8b5cf6,stroke:#5b21b6,stroke-width:2px,color:#fff,font-size:14px
+    classDef rasax fill:#eab308,stroke:#854d0e,stroke-width:2px,color:#1f2937,font-size:14px
+    classDef ext fill:#64748b,stroke:#334155,stroke-width:2px,color:#fff,font-size:14px
+
+    linkStyle default stroke:#94a3b8,stroke-width:2px,font-size:13px
+            </div>
+        </div>
+        <div class="info-panel">
+            <div class="legend">
+                <div class="legend-title">Color Key</div>
+                <div class="legend-item"><div class="legend-dot" style="background:#3b82f6"></div>User-facing layers</div>
+                <div class="legend-item"><div class="legend-dot" style="background:#22c55e"></div>NLU components</div>
+                <div class="legend-item"><div class="legend-dot" style="background:#f97316"></div>Dialog management (Core)</div>
+                <div class="legend-item"><div class="legend-dot" style="background:#8b5cf6"></div>Custom business logic</div>
+                <div class="legend-item"><div class="legend-dot" style="background:#eab308"></div>Rasa X tooling</div>
+                <div class="legend-item"><div class="legend-dot" style="background:#64748b"></div>External systems</div>
+            </div>
+            <h3>Component Details</h3>
+            <div id="panelWrap">
+                <div id="panel">Hover a component to see its role in the Rasa pipeline, from channel input through NLU, dialog management, and custom actions.</div>
+            </div>
+        </div>
+    </main>
+    <script src="rasa-architecture-components.js"></script>
+</body>
+</html>

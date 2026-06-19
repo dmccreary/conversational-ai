@@ -1,0 +1,45 @@
+{
+  "title": "Production Pipeline Architecture",
+  "description": "Architecture diagram of a production NLP pipeline with caching, three confidence-based processing paths, graceful error fallback, and a cache write-back loop.",
+  "creator": "Dan McCreary",
+  "author": "Dan McCreary",
+  "date": "2026-06-19",
+  "subject": "Conversational AI",
+  "type": "Interactive Diagram",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "production-pipeline-architecture",
+  "library": "Mermaid.js",
+  "bloomLevel": "Analyze",
+  "bloomVerb": "analyze",
+  "completion_status": "implemented",
+  "chapter_number": 11,
+  "chapter_title": "Nlp Pipelines Processing",
+  "chapter_dir": "11-nlp-pipelines-processing",
+  "educational": {
+    "gradeLevel": "Undergraduate",
+    "learningObjectives": [
+      "Analyze how a production NLP pipeline routes queries by confidence to balance latency and accuracy",
+      "Explain how caching and graceful error fallback improve reliability and speed",
+      "Match example queries to the fast, standard, or complex processing path"
+    ],
+    "concepts": [
+      "Caching",
+      "Conditional processing paths",
+      "Graceful degradation",
+      "Latency budgets",
+      "Error handling"
+    ]
+  },
+  "pedagogical": {
+    "pattern": "case-study",
+    "bloomAlignment": ["understand", "analyze", "evaluate"],
+    "bloomVerbs": ["analyze", "explain", "compare"],
+    "pacing": "self-paced",
+    "supportsPrediction": false,
+    "dataVisibility": "high",
+    "feedbackType": ["explanatory"],
+    "interactionStyle": "explore"
+  }
+}

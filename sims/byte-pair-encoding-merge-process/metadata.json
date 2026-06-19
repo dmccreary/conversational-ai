@@ -1,0 +1,30 @@
+{
+  "title": "Byte Pair Encoding Merge Process",
+  "description": "Interactive flowchart showing how Byte Pair Encoding iteratively merges the most frequent character pairs to build a subword vocabulary used by large language model tokenizers.",
+  "creator": "Dan McCreary",
+  "author": "Dan McCreary",
+  "date": "2026-06-19",
+  "subject": "Conversational AI",
+  "type": "Interactive Diagram",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "byte-pair-encoding-merge-process",
+  "library": "Mermaid.js",
+  "bloomLevel": "Understand",
+  "bloomVerb": "explain",
+  "completion_status": "implemented",
+  "chapter_number": 4,
+  "chapter_title": "Large Language Models Tokenization",
+  "chapter_dir": "04-large-language-models-tokenization",
+  "educational": {
+    "gradeLevel": "Undergraduate",
+    "learningObjective": "Explain how Byte Pair Encoding builds a subword vocabulary by iteratively merging the most frequent character pairs.",
+    "prerequisites": ["Tokenization basics", "Frequency counts"]
+  },
+  "pedagogical": {
+    "bloomLevel": "Understand",
+    "bloomVerb": "explain",
+    "interactionType": "hover-to-explore"
+  }
+}

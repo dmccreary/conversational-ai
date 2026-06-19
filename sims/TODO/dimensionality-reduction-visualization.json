@@ -1,0 +1,14 @@
+{
+  "sim_id": "dimensionality-reduction-visualization",
+  "diagram_name": "Dimensionality Reduction Visualization",
+  "chapter_number": 5,
+  "chapter_title": "Embeddings Vector Databases",
+  "chapter_dir": "05-embeddings-vector-databases",
+  "library": null,
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": "Demonstrate how high-dimensional word embeddings can be visualized in 2D while preserving relative distances",
+  "completion_status": "specified",
+  "extracted_date": "2026-06-19",
+  "specification": "Type: microsim\n\nLearning objective: Demonstrate how high-dimensional word embeddings can be visualized in 2D while preserving relative distances\n\nCanvas layout (800x600px):\n- Left side (500x600): Drawing area showing word embeddings projected to 2D\n- Right side (300x600): Control panel\n\nVisual elements:\n- 30 word labels positioned in 2D space based on their embedding similarity\n- Words color-coded by category (animals, countries, verbs, adjectives)\n- Lines connecting semantically related pairs (with transparency)\n- Hover over any word to highlight its nearest neighbors\n- Background gradient from light to dark representing density of word clusters\n\nInteractive controls:\n- Dropdown: Select dimensionality reduction method (PCA, t-SNE, UMAP)\n- Slider: Number of dimensions in original space (50, 100, 300, 768)\n- Checkbox: Show connection lines\n- Checkbox: Color by category\n- Button: \"Randomize word set\"\n- Display: Show perplexity/variance metrics for current projection\n\nDefault parameters:\n- Method: t-SNE\n- Original dimensions: 300\n- Show connections: true\n- Color by category: true\n\nBehavior:\n- When dimensionality reduction method changes, animate the word positions transforming\n- When hovering over a word, highlight its 5 nearest neighbors with brighter colors\n- When clicking a word, show its original vector dimensions in a popup\n- Connections fade based on distance (closer = more opaque)\n\nImplementation notes:\n- Use p5.js for rendering\n- Pre-compute example embeddings for 30 sample words\n- Implement simplified PCA, t-SNE approximation for educational purposes\n- Use smooth transitions when switching methods\n- Display stress/quality metric for each projection method"
+}

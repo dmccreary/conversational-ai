@@ -1,0 +1,36 @@
+{
+  "title": "Entity Extraction Architecture",
+  "description": "Mermaid block diagram showing how modern entity extraction combines rule-based, ML, and LLM strategies in parallel, then merges and links the results into a structured output.",
+  "creator": "Dan McCreary",
+  "author": "Dan McCreary",
+  "date": "2026-06-19",
+  "subject": "Conversational AI",
+  "type": "Interactive Diagram",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "entity-extraction-architecture",
+  "library": "Mermaid",
+  "bloomLevel": "Analyze",
+  "bloomVerb": "compare",
+  "completion_status": "implemented",
+  "chapter_number": 6,
+  "chapter_title": "Building Chatbots Intent",
+  "chapter_dir": "06-building-chatbots-intent",
+  "educational": {
+    "gradeLevel": "Undergraduate",
+    "subjectArea": "Conversational AI",
+    "topic": "Entity extraction and entity linking",
+    "learningObjectives": [
+      "Compare rule-based, ML, and LLM entity-extraction strategies",
+      "Explain how merging and entity linking produce a structured output"
+    ],
+    "duration": "5-10 minutes",
+    "prerequisites": "Familiarity with named-entity recognition and intents"
+  },
+  "pedagogical": {
+    "bloomLevel": "Analyze",
+    "bloomVerb": "compare",
+    "interactionType": "Hover to reveal component descriptions"
+  }
+}

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
+    <title>Vector Database Architecture Comparison</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body { width: 100%; height: 100%; }
+        body { font-family: Arial, Helvetica, sans-serif; background: aliceblue; color: #212529; }
+        main { display: block; padding: 12px; }
+        h1.sim-title { font-size: 19px; color: #1a3a6c; text-align: center; margin-bottom: 4px; }
+        p.sim-sub { font-size: 12px; color: #555; text-align: center; margin-bottom: 12px; }
+        .columns { display: flex; gap: 12px; align-items: stretch; }
+        .col {
+            flex: 1; background: #fff; border-radius: 8px; min-width: 0;
+            border-top: 6px solid #999; padding: 10px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+            display: flex; flex-direction: column;
+        }
+        .col h2 { font-size: 16px; text-align: center; margin-bottom: 2px; }
+        .col .tag { font-size: 11px; text-align: center; color: #555; margin-bottom: 10px; }
+        .layer {
+            border-radius: 6px; padding: 7px 6px; margin-bottom: 5px;
+            font-size: 12px; text-align: center; cursor: pointer; color: #fff;
+            transition: filter 0.15s, transform 0.15s;
+        }
+        .layer:hover { filter: brightness(1.12); transform: translateY(-1px); }
+        .layer small { display: block; font-size: 10px; opacity: 0.9; }
+        .layer.common { background: #607d8b; }
+        .deploy {
+            margin-top: auto; font-size: 11px; text-align: center; font-weight: bold;
+            padding: 6px; border-radius: 6px; color: #fff;
+        }
+        /* FAISS - blue */
+        .faiss { border-color: #1565c0; }
+        .faiss h2 { color: #1565c0; }
+        .faiss .layer.brand { background: #1976d2; }
+        .faiss .deploy { background: #1565c0; }
+        /* Pinecone - green */
+        .pine { border-color: #2e7d32; }
+        .pine h2 { color: #2e7d32; }
+        .pine .layer.brand { background: #388e3c; }
+        .pine .deploy { background: #2e7d32; }
+        /* Weaviate - purple */
+        .weav { border-color: #6a1b9a; }
+        .weav h2 { color: #6a1b9a; }
+        .weav .layer.brand { background: #7b1fa2; }
+        .weav .deploy { background: #6a1b9a; }
+
+        .info {
+            margin-top: 12px; background: #fff; border: 1px solid #cfd8dc;
+            border-radius: 6px; padding: 10px 12px; font-size: 13px; min-height: 52px; color: #334155;
+        }
+        .info strong { color: #1a3a6c; }
+        table.cmp { width: 100%; border-collapse: collapse; margin-top: 12px; background: #fff; font-size: 12px; }
+        table.cmp th, table.cmp td { border: 1px solid #cfd8dc; padding: 5px 7px; text-align: left; }
+        table.cmp th { background: #eef3f8; color: #1a3a6c; }
+        table.cmp td:first-child { font-weight: bold; color: #37474f; }
+    </style>
+</head>
+<body>
+    <main>
+        <h1 class="sim-title">Vector Database Architecture Comparison</h1>
+        <p class="sim-sub">Each stack reads top (your app) to bottom (deployment). Hover a layer for details.</p>
+        <div class="columns">
+            <!-- FAISS -->
+            <div class="col faiss">
+                <h2>FAISS</h2>
+                <div class="tag">Embedded library</div>
+                <div class="layer common" data-info="Your own Python or C++ application links the FAISS library directly - there is no separate server process.">Your Python / C++ App</div>
+                <div class="layer brand" data-info="FAISS exposes index types as APIs: IndexFlatL2 for brute force, IndexIVFPQ for compressed clustered search, IndexHNSW for graph search.">Index APIs<small>FlatL2, IVFPQ, HNSW</small></div>
+                <div class="layer brand" data-info="FAISS runs on CPU or GPU using optimized BLAS and CUDA kernels, which is why it can be the fastest option when tuned well.">CPU / GPU Execution<small>BLAS, CUDA</small></div>
+                <div class="layer common" data-info="Persistence is manual: you save and load the index file yourself. There is no built-in metadata store.">File System<small>index persistence</small></div>
+                <div class="deploy" data-info="FAISS is self-managed: you own scaling, persistence, and metadata. Maximum performance and control, but more engineering work.">Self-managed library</div>
+            </div>
+            <!-- Pinecone -->
+            <div class="col pine">
+                <h2>Pinecone</h2>
+                <div class="tag">Fully managed cloud</div>
+                <div class="layer common" data-info="Your application can be written in any language; it talks to Pinecone over the network.">Your App (any language)</div>
+                <div class="layer brand" data-info="Pinecone is accessed through a REST or gRPC API - you never touch the underlying index code.">REST API / gRPC</div>
+                <div class="layer brand" data-info="Pinecone runs a proprietary managed service with its own index implementations that you cannot see or tune directly.">Managed Service<small>proprietary indexes</small></div>
+                <div class="layer brand" data-info="Storage auto-scales behind the scenes; you simply add vectors and Pinecone handles capacity.">Auto-scaling storage</div>
+                <div class="deploy" data-info="Pinecone is serverless and fully managed on AWS, GCP, or Azure. Simple API, no infrastructure to run, but cloud-only and usage-priced.">Fully managed cloud</div>
+            </div>
+            <!-- Weaviate -->
+            <div class="col weav">
+                <h2>Weaviate</h2>
+                <div class="tag">Self-hosted or cloud</div>
+                <div class="layer common" data-info="Your application in any language connects to a Weaviate instance you run or that runs in the cloud.">Your App (any language)</div>
+                <div class="layer brand" data-info="Weaviate offers both a GraphQL and a REST API for querying vectors and structured data together.">GraphQL / REST API</div>
+                <div class="layer brand" data-info="The core combines vector search with a schema, so objects have typed properties as well as embeddings.">Vector Search + Schema</div>
+                <div class="layer brand" data-info="Pluggable modules (text2vec, img2vec, ref2vec) can generate embeddings for you at insert time.">Vectorization Modules<small>text2vec, img2vec</small></div>
+                <div class="layer brand" data-info="An HNSW graph index for vectors plus an inverted (BM25) index enables hybrid keyword-and-vector search.">HNSW + Inverted Index<small>BM25 hybrid search</small></div>
+                <div class="layer common" data-info="Durable storage uses an LSM-tree engine (RocksDB-style) for fast writes and reliable persistence.">LSM-Tree Storage</div>
+                <div class="deploy" data-info="Weaviate is open source and runs self-hosted or as managed cloud. Its standout feature is built-in hybrid search.">Self-hosted or cloud</div>
+            </div>
+        </div>
+
+        <div class="info" id="info"><strong>Tip:</strong> hover over any layer to learn what it does.</div>
+
+        <table class="cmp">
+            <tr><th>Feature</th><th>FAISS</th><th>Pinecone</th><th>Weaviate</th></tr>
+            <tr><td>Deployment</td><td>Embedded library</td><td>Fully managed cloud</td><td>Self-hosted or cloud</td></tr>
+            <tr><td>Pricing</td><td>Free (open-source)</td><td>Usage-based</td><td>Free (OSS) or managed</td></tr>
+            <tr><td>Metadata</td><td>Manual</td><td>Built-in</td><td>Built-in with schema</td></tr>
+            <tr><td>Hybrid search</td><td>No</td><td>Limited</td><td>Yes (BM25 + vector)</td></tr>
+            <tr><td>GPU support</td><td>Yes (native)</td><td>No (abstracted)</td><td>No (CPU optimized)</td></tr>
+            <tr><td>Scalability</td><td>Manual sharding</td><td>Automatic</td><td>Manual or managed</td></tr>
+            <tr><td>Best for</td><td>Maximum control</td><td>Fast deployment</td><td>Hybrid search needs</td></tr>
+        </table>
+    </main>
+    <script src="vector-database-architecture-comparison.js"></script>
+</body>
+</html>

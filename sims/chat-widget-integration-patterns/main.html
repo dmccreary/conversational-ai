@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
+    <title>Chat Widget Integration Patterns</title>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body { width: 100%; height: 100%; overflow: hidden; font-family: Arial, Helvetica, sans-serif; }
+        .container {
+            display: flex;
+            width: 100%;
+            height: 858px;
+            background: #ffffff;
+        }
+        .diagram-panel {
+            width: 66.67%;
+            height: 100%;
+            overflow: visible;
+            background: aliceblue;
+            padding: 8px;
+        }
+        .diagram-panel h2 {
+            text-align: center;
+            font-size: 18px;
+            color: #1a3a6c;
+            margin: 4px 0 0 0;
+        }
+        .mermaid {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+        .mermaid svg { max-width: 100%; height: auto; }
+        .info-panel {
+            width: 33.33%;
+            height: 100%;
+            overflow: visible;
+            padding: 12px;
+            border-left: 1px solid #cbd5e1;
+            background: #f8fafc;
+        }
+        .legend {
+            margin-bottom: 12px;
+            font-size: 12px;
+            border: 1px solid #cbd5e1;
+            border-radius: 4px;
+            padding: 8px 10px;
+            background: #fff;
+        }
+        .legend-title { font-weight: bold; margin-bottom: 6px; color: #334155; }
+        .legend-item { display: flex; align-items: center; margin: 3px 0; color: #334155; }
+        .legend-dot { width: 14px; height: 14px; border-radius: 3px; margin-right: 8px; flex: none; }
+        .info-panel h3 { color: #1a3a6c; font-size: 15px; margin-bottom: 6px; }
+        #panelWrap { position: relative; height: 600px; }
+        #panel {
+            position: absolute; left: 0; right: 0; top: 8px;
+            background-color: #ffffff; color: #334155;
+            border: 1px solid #e2e8f0; padding: 10px; border-radius: 6px;
+            font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 1.45;
+        }
+        .node { cursor: pointer; }
+    </style>
+</head>
+<body>
+    <main class="container">
+        <div class="diagram-panel">
+            <h2>Chat Widget Integration Patterns</h2>
+            <div class="mermaid">
+flowchart TD
+    subgraph WEB["Website Layer"]
+        direction TB
+        HTML["HTML Page"]:::web
+        SiteJS["Existing Site JavaScript"]:::web
+        Embed["Widget Embed Code<br/>script tag, NPM, or iFrame"]:::web
+    end
+
+    subgraph WIDGET["Chat Widget (Embed Methods)"]
+        direction TB
+        FloatBtn["Floating Button<br/>collapsed state"]:::widget
+        ChatWin["Chat Window<br/>expanded state"]:::widget
+        MsgComp["Message Components"]:::widget
+        ConnMgr["Connection Manager"]:::widget
+    end
+
+    subgraph NET["Real-Time Protocols"]
+        direction TB
+        WS["WebSocket<br/>persistent, bidirectional"]:::net
+        SSE["Server-Sent Events<br/>one-way server push"]:::net
+        Poll["Long Polling<br/>firewall-friendly fallback"]:::net
+    end
+
+    subgraph BACK["Backend Services"]
+        direction TB
+        Gateway["API Gateway<br/>WebSocket and REST"]:::back
+        Framework["Chatbot Framework<br/>Rasa, Dialogflow"]:::back
+        Session["Session Manager"]:::back
+    end
+
+    subgraph STATE["Persistent State"]
+        direction TB
+        Local["LocalStorage<br/>client-side history"]:::state
+        Cookie["Session Cookie<br/>user identification"]:::state
+        DB["Database<br/>long-term storage"]:::state
+    end
+
+    HTML --> SiteJS --> Embed
+    Embed -->|loads| FloatBtn
+    FloatBtn --> ChatWin --> MsgComp --> ConnMgr
+    ConnMgr --> WS
+    ConnMgr -.-> SSE
+    ConnMgr -.-> Poll
+    WS --> Gateway
+    Gateway --> Framework --> Session
+    Session --> DB
+    ConnMgr -.-> Local
+    Embed -.-> Cookie
+
+    classDef web fill:#3b82f6,stroke:#1e3a8a,stroke-width:2px,color:#fff,font-size:14px
+    classDef widget fill:#22c55e,stroke:#15803d,stroke-width:2px,color:#fff,font-size:14px
+    classDef net fill:#f97316,stroke:#9a3412,stroke-width:2px,color:#fff,font-size:14px
+    classDef back fill:#8b5cf6,stroke:#5b21b6,stroke-width:2px,color:#fff,font-size:14px
+    classDef state fill:#64748b,stroke:#334155,stroke-width:2px,color:#fff,font-size:14px
+
+    linkStyle default stroke:#94a3b8,stroke-width:2px,font-size:13px
+            </div>
+        </div>
+        <div class="info-panel">
+            <div class="legend">
+                <div class="legend-title">Color Key</div>
+                <div class="legend-item"><div class="legend-dot" style="background:#3b82f6"></div>Frontend / website layer</div>
+                <div class="legend-item"><div class="legend-dot" style="background:#22c55e"></div>Widget components</div>
+                <div class="legend-item"><div class="legend-dot" style="background:#f97316"></div>Network communication</div>
+                <div class="legend-item"><div class="legend-dot" style="background:#8b5cf6"></div>Backend services</div>
+                <div class="legend-item"><div class="legend-dot" style="background:#64748b"></div>Persistent state</div>
+            </div>
+            <h3>Component Details</h3>
+            <div id="panelWrap">
+                <div id="panel">Hover a node to learn how each part of the chat widget integration works.</div>
+            </div>
+        </div>
+    </main>
+    <script src="chat-widget-integration-patterns.js"></script>
+</body>
+</html>

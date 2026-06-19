@@ -1,0 +1,45 @@
+{
+  "title": "Query Template Matching Flow",
+  "description": "Flowchart showing how a chatbot matches a question to a SQL query template, extracts and validates parameters, executes the query, and formats the response.",
+  "creator": "Dan McCreary",
+  "author": "Dan McCreary",
+  "date": "2026-06-19",
+  "subject": "Conversational AI",
+  "type": "Interactive Flowchart",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "query-template-matching-flow",
+  "library": "Mermaid.js",
+  "bloomLevel": "Understand",
+  "bloomVerb": "explain",
+  "completion_status": "implemented",
+  "chapter_number": 12,
+  "chapter_title": "Database Queries Parameters",
+  "chapter_dir": "12-database-queries-parameters",
+  "educational": {
+    "gradeLevel": "Undergraduate",
+    "learningObjectives": [
+      "Trace how a natural language question is matched to a SQL query template",
+      "Explain how parameters are extracted, validated, and converted to query values",
+      "Describe the error and clarification paths that keep template matching safe"
+    ],
+    "concepts": [
+      "Query templates",
+      "Similarity matching",
+      "Parameter extraction and validation",
+      "Parameterized SQL",
+      "Graceful error handling"
+    ]
+  },
+  "pedagogical": {
+    "pattern": "demonstration",
+    "bloomAlignment": ["understand", "apply"],
+    "bloomVerbs": ["explain", "trace", "describe"],
+    "pacing": "self-paced",
+    "supportsPrediction": false,
+    "dataVisibility": "high",
+    "feedbackType": ["explanatory"],
+    "interactionStyle": "explore"
+  }
+}

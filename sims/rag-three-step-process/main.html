@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
+    <title>RAG Three-Step Process</title>
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+        window.mermaid = mermaid;
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'default',
+            flowchart: {
+                useMaxWidth: true,
+                htmlLabels: true,
+                curve: 'basis',
+                subGraphTitleMargin: { top: 10, bottom: 14 }
+            }
+        });
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body { width: 100%; height: 100%; overflow: hidden; }
+        body { font-family: Arial, Helvetica, sans-serif; background-color: aliceblue; }
+        .container { display: flex; width: 100%; height: 100vh; }
+        .diagram-panel {
+            width: 66.67%;
+            height: 100%;
+            overflow: visible;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 8px;
+        }
+        .panel-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #1a3a6c;
+            margin-bottom: 6px;
+            text-align: center;
+        }
+        .mermaid {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+        .mermaid svg { max-width: 100%; height: auto; }
+        .info-panel {
+            width: 33.33%;
+            height: 100%;
+            padding: 10px 12px;
+            overflow: visible;
+            border-left: 1px solid #cbd5e1;
+            background: #f8fafc;
+        }
+        .legend {
+            margin-bottom: 12px;
+            font-size: 12px;
+            border: 1px solid #cbd5e1;
+            border-radius: 4px;
+            padding: 8px 10px;
+            background: #fff;
+        }
+        .legend-title { font-weight: bold; margin-bottom: 6px; }
+        .legend-item { display: flex; align-items: center; margin: 3px 0; }
+        .legend-dot { width: 14px; height: 14px; border-radius: 3px; margin-right: 6px; border: 1px solid #333; }
+        .info-panel h3 { font-size: 15px; color: #1a3a6c; margin-bottom: 6px; }
+        #panelWrap { position: relative; height: 880px; }
+        #panel {
+            position: absolute; left: 0; right: 0; top: 8px;
+            background-color: #fff; color: #334155;
+            border: 1px solid #e2e8f0; padding: 10px; border-radius: 6px;
+            font-size: 13px; line-height: 1.5;
+        }
+        .node { cursor: pointer; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="diagram-panel">
+            <div class="panel-title">RAG: Retrieval, Augmentation, Generation</div>
+            <div class="mermaid">
+flowchart TD
+    Q("User Query"):::userNode
+    R["Step 1: Retrieval"]:::procNode
+    DOCS[/"Retrieved Documents"/]:::dataNode
+    A["Step 2: Augmentation"]:::procNode
+    PROMPT[/"Augmented Prompt"/]:::dataNode
+    G["Step 3: Generation"]:::procNode
+    RESP("Generated Response"):::userNode
+    CORPUS[("Document Corpus")]:::storeNode
+    VDB[("Vector Database")]:::storeNode
+
+    Q --> R
+    R -. "semantic search" .-> VDB
+    VDB -. "top K docs" .-> DOCS
+    DOCS --> A
+    Q -. "original query" .-> A
+    A --> PROMPT
+    PROMPT --> G
+    G --> RESP
+    CORPUS -. "embeddings" .-> VDB
+
+    classDef userNode fill:#43a047,stroke:#1b5e20,stroke-width:2px,color:#fff,font-size:16px
+    classDef procNode fill:#1e88e5,stroke:#0d47a1,stroke-width:2px,color:#fff,font-size:16px
+    classDef dataNode fill:#fb8c00,stroke:#e65100,stroke-width:2px,color:#fff,font-size:16px
+    classDef storeNode fill:#8e24aa,stroke:#4a148c,stroke-width:2px,color:#fff,font-size:16px
+
+    linkStyle default stroke:#777,stroke-width:2px,font-size:14px
+            </div>
+        </div>
+        <div class="info-panel">
+            <div class="legend">
+                <div class="legend-title">Color Key</div>
+                <div class="legend-item"><div class="legend-dot" style="background:#43a047"></div>User input / output</div>
+                <div class="legend-item"><div class="legend-dot" style="background:#1e88e5"></div>Process step</div>
+                <div class="legend-item"><div class="legend-dot" style="background:#fb8c00"></div>Intermediate data</div>
+                <div class="legend-item"><div class="legend-dot" style="background:#8e24aa"></div>Data store</div>
+            </div>
+            <h3>Step Details</h3>
+            <div id="panelWrap">
+                <div id="panel">Hover a node for details.</div>
+            </div>
+        </div>
+    </div>
+    <script src="rag-three-step-process.js"></script>
+</body>
+</html>

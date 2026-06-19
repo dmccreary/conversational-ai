@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
+    <title>Intent Classification Pipeline</title>
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+        window.mermaid = mermaid;
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'default',
+            flowchart: {
+                useMaxWidth: true,
+                htmlLabels: true,
+                curve: 'basis',
+                subGraphTitleMargin: { top: 10, bottom: 14 }
+            }
+        });
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body { width: 100%; height: 100%; overflow: hidden; font-family: Arial, Helvetica, sans-serif; }
+        .container { display: flex; width: 100%; height: 1380px; }
+        .diagram-panel {
+            flex: 0 0 66.67%;
+            background: aliceblue;
+            overflow: visible;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 10px;
+        }
+        .mermaid { width: 100%; }
+        .mermaid svg { max-width: 100%; height: auto; }
+        .info-panel {
+            flex: 0 0 33.33%;
+            background: #ffffff;
+            border-left: 1px solid #cbd5e1;
+            padding: 12px;
+            overflow: visible;
+        }
+        .legend {
+            margin-bottom: 12px;
+            font-size: 12px;
+            border: 1px solid #cbd5e1;
+            border-radius: 4px;
+            padding: 8px 10px;
+            background: #fff;
+        }
+        .legend-title { font-weight: bold; margin-bottom: 6px; }
+        .legend-item { display: flex; align-items: center; margin: 3px 0; }
+        .legend-dot { width: 14px; height: 14px; border-radius: 3px; margin-right: 8px; border: 1px solid #999; }
+        .info-panel h3 { font-size: 15px; color: #1a3a6c; margin-bottom: 6px; }
+        #panelWrap { position: relative; height: 1200px; }
+        #panel {
+            position: absolute; left: 0; right: 0; top: 8px;
+            background-color: #f8fafc; color: #334155;
+            border: 1px solid #e2e8f0; padding: 10px; border-radius: 6px;
+            font-size: 14px; line-height: 1.4;
+        }
+        .node { cursor: pointer; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="diagram-panel">
+            <div class="mermaid">
+flowchart TD
+    Query["User Query<br/>I need to change my<br/>reservation for tomorrow"]:::inputNode
+
+    subgraph Text["Text Processing"]
+        direction TB
+        Norm["Text normalization<br/>lowercase, remove punctuation"]:::preNode
+        Tok["Tokenization"]:::preNode
+        Stop["Stopword filtering<br/>optional"]:::preOptional
+        Norm --> Tok --> Stop
+    end
+
+    subgraph Encode["Semantic Encoding"]
+        direction TB
+        TFIDF["TF-IDF vectorization"]:::featNode
+        BERT["BERT encoding<br/>Recommended: better generalization"]:::featBest
+    end
+
+    Model["Intent Classifier Neural Network<br/>softmax output layer"]:::modelNode
+
+    Probs["Intent Probabilities<br/>modify_reservation 0.87<br/>cancel_reservation 0.08<br/>make_reservation 0.03<br/>ask_hours 0.02"]:::probNode
+
+    Thresh{"Above threshold 0.70?"}:::thresholdNode
+    Final["Prediction: modify_reservation 0.87<br/>High confidence - proceed with action"]:::highNode
+
+    Query --> Text
+    Text --> TFIDF
+    Text --> BERT
+    TFIDF --> Model
+    BERT --> Model
+    Model --> Probs
+    Probs --> Thresh
+    Thresh -->|"YES 0.87 >= 0.70"| Final
+    Thresh -.->|"NO escalate to human"| Escalate["Escalate to human agent"]:::lowNode
+
+    classDef inputNode fill:#455a64,stroke:#263238,stroke-width:2px,color:#fff,font-size:14px
+    classDef preNode fill:#1976d2,stroke:#0d47a1,stroke-width:2px,color:#fff,font-size:14px
+    classDef preOptional fill:#64b5f6,stroke:#1976d2,stroke-width:2px,color:#000,stroke-dasharray:5 4,font-size:14px
+    classDef featNode fill:#7b1fa2,stroke:#4a148c,stroke-width:2px,color:#fff,font-size:14px
+    classDef featBest fill:#9c27b0,stroke:#4a148c,stroke-width:3px,color:#fff,font-size:14px
+    classDef modelNode fill:#ef6c00,stroke:#e65100,stroke-width:2px,color:#fff,font-size:14px
+    classDef probNode fill:#616161,stroke:#212121,stroke-width:2px,color:#fff,font-size:14px
+    classDef thresholdNode fill:#f9a825,stroke:#f57f17,stroke-width:2px,color:#000,font-size:14px
+    classDef highNode fill:#2e7d32,stroke:#1b5e20,stroke-width:2px,color:#fff,font-size:14px
+    classDef lowNode fill:#c62828,stroke:#8e0000,stroke-width:2px,color:#fff,font-size:14px
+
+    linkStyle default stroke:#888,stroke-width:2px,font-size:14px
+            </div>
+        </div>
+        <div class="info-panel">
+            <div class="legend">
+                <div class="legend-title">Color Key</div>
+                <div class="legend-item"><div class="legend-dot" style="background:#455a64"></div>User query</div>
+                <div class="legend-item"><div class="legend-dot" style="background:#1976d2"></div>Text processing</div>
+                <div class="legend-item"><div class="legend-dot" style="background:#7b1fa2"></div>Feature extraction</div>
+                <div class="legend-item"><div class="legend-dot" style="background:#ef6c00"></div>Classification model</div>
+                <div class="legend-item"><div class="legend-dot" style="background:#f9a825"></div>Confidence threshold</div>
+                <div class="legend-item"><div class="legend-dot" style="background:#2e7d32"></div>High-confidence prediction</div>
+                <div class="legend-item"><div class="legend-dot" style="background:#c62828"></div>Below threshold (escalate)</div>
+            </div>
+            <h3>Stage Details</h3>
+            <div id="panelWrap">
+                <div id="panel">Hover over a box to follow a query from text to predicted intent.</div>
+            </div>
+        </div>
+    </div>
+    <script src="intent-classification-pipeline.js"></script>
+</body>
+</html>

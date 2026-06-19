@@ -1,0 +1,14 @@
+{
+  "sim_id": "entity-extraction-architecture",
+  "diagram_name": "Entity Extraction Architecture",
+  "chapter_number": 6,
+  "chapter_title": "Building Chatbots Intent",
+  "chapter_dir": "06-building-chatbots-intent",
+  "library": "Block diagram with parallel data flows converging to single output",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-06-19",
+  "specification": "Type: diagram\n\nPurpose: Show how modern entity extraction systems combine rule-based, model-based, and LLM approaches for comprehensive coverage\n\nComponents to show:\n- Input (top): User query: \"Book 2 tickets to Boston on March 15th for John Smith\"\n- Parallel extraction strategies (three branches):\n\n  Branch 1 - Rules (left):\n  - Regex patterns box\n  - Date parser (extracts \"March 15th\")\n  - Number extractor (extracts \"2\")\n  - Email/phone patterns\n\n  Branch 2 - ML Model (center):\n  - BERT-based NER model\n  - Token classification layer\n  - Outputs: Person (\"John Smith\"), Location (\"Boston\")\n  - Confidence scores shown: 0.94, 0.89\n\n  Branch 3 - LLM (right):\n  - GPT-4 few-shot prompt\n  - Custom entity extraction\n  - Fallback for ambiguous cases\n  - Shown with dotted border (used when others have low confidence)\n\n- Merging layer (middle):\n  - Conflict resolution logic\n  - Priority: Rules > ML > LLM for known patterns\n  - Confidence aggregation\n\n- Entity linking layer (bottom middle):\n  - Knowledge base lookup\n  - \"Boston\" → Boston, MA (city ID: BST-MA-US)\n  - \"John Smith\" → Account #7834 (from customer database)\n\n- Output (bottom): Structured entity dictionary:\n  ```\n  {\n    \"quantity\": 2,\n    \"destination\": \"Boston, MA\",\n    \"destination_id\": \"BST-MA-US\",\n    \"date\": \"2024-03-15\",\n    \"passenger\": \"John Smith\",\n    \"passenger_id\": \"7834\"\n  }\n  ```\n\nConnections:\n- Query flows into all three extraction branches simultaneously\n- Extracted entities from each branch flow to merging layer\n- Merged entities flow to entity linking\n- Linked entities produce final structured output\n\nAnnotations:\n- \"Fast, high precision\" label on Rules branch\n- \"Balanced accuracy & coverage\" on ML branch\n- \"Flexible fallback\" on LLM branch\n- \"Canonicalization\" label on linking layer\n\nStyle: Parallel pipeline architecture with merge point\n\nColor scheme:\n- Green for rules (deterministic)\n- Blue for ML model\n- Purple for LLM\n- Orange for merging logic\n- Teal for entity linking\n- Gray for output structure\n\nImplementation: Block diagram with parallel data flows converging to single output"
+}

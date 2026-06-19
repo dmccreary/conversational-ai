@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
+    <title>RAG vs GraphRAG Architecture Comparison</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <h1 class="title">RAG vs GraphRAG: Architectural Evolution</h1>
+
+        <div class="compare">
+            <!-- LEFT: Standard RAG -->
+            <section class="col rag">
+                <h2>Standard RAG: Document Retrieval</h2>
+                <div class="pipe">
+                    <div class="box user">User Query</div>
+                    <div class="arrow">&darr;</div>
+                    <div class="box proc">Embedding Model</div>
+                    <div class="arrow">&darr;</div>
+                    <div class="box proc">Vector Search
+                        <span class="callout bad">No multi-hop reasoning</span>
+                    </div>
+                    <div class="arrow">&darr;</div>
+                    <div class="box store">📄 Document Corpus
+                        <span class="callout bad">Flat, disconnected documents</span>
+                        <span class="callout bad">No strategic asset created</span>
+                    </div>
+                    <div class="arrow">&darr;</div>
+                    <div class="box data">Retrieved Documents</div>
+                    <div class="arrow">&darr;</div>
+                    <div class="box data">Augmented Prompt</div>
+                    <div class="arrow">&darr;</div>
+                    <div class="box llm">🧠 LLM</div>
+                    <div class="arrow">&darr;</div>
+                    <div class="box user">Response</div>
+                </div>
+            </section>
+
+            <!-- CENTER separator -->
+            <div class="vs">
+                <div class="vs-line"></div>
+                <div class="vs-badge">VS</div>
+                <div class="vs-line"></div>
+            </div>
+
+            <!-- RIGHT: GraphRAG -->
+            <section class="col graphrag">
+                <h2>GraphRAG: Graph + Document Hybrid</h2>
+                <div class="pipe">
+                    <div class="box user">User Query</div>
+                    <div class="arrow">&darr;</div>
+                    <div class="box router">Query Router
+                        <span class="sub">graph vs document?</span>
+                    </div>
+                    <div class="dual">
+                        <div class="path">
+                            <div class="path-title">Graph Path</div>
+                            <div class="box proc sm">Cypher Query
+                                <span class="callout good">Relationship reasoning</span>
+                            </div>
+                            <div class="arrow sm">&darr;</div>
+                            <div class="box graph sm">🕸️ Knowledge Graph
+                                <span class="callout good">Multi-hop traversal</span>
+                                <span class="callout good">Corporate Nervous System</span>
+                            </div>
+                            <div class="arrow sm">&darr;</div>
+                            <div class="box data sm">Structured Results</div>
+                        </div>
+                        <div class="path">
+                            <div class="path-title">Document Path</div>
+                            <div class="box proc sm">Embedding + Vector Search</div>
+                            <div class="arrow sm">&darr;</div>
+                            <div class="box store sm">📄 Document Corpus</div>
+                            <div class="arrow sm">&darr;</div>
+                            <div class="box data sm">Retrieved Documents</div>
+                        </div>
+                    </div>
+                    <div class="arrow">&darr;</div>
+                    <div class="box data hybrid">Hybrid Augmented Prompt
+                        <span class="callout good">Best of both: structure + context</span>
+                    </div>
+                    <div class="arrow">&darr;</div>
+                    <div class="box llm">🧠 LLM</div>
+                    <div class="arrow">&darr;</div>
+                    <div class="box user">Response with structured citations</div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Bottom comparison table -->
+        <table class="cmp-table">
+            <thead>
+                <tr><th>Capability</th><th>Standard RAG</th><th>GraphRAG</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Simple Q&amp;A</td><td class="ok">✓ Excellent</td><td class="ok">✓ Excellent</td></tr>
+                <tr><td>Multi-hop reasoning</td><td class="no">✗ Poor</td><td class="ok">✓ Excellent</td></tr>
+                <tr><td>Relationship queries</td><td class="no">✗ Very Poor</td><td class="ok">✓ Excellent</td></tr>
+                <tr><td>Strategic asset</td><td class="no">✗ None</td><td class="ok">✓ Knowledge Graph</td></tr>
+                <tr><td>Maintenance</td><td class="no">Documents decay</td><td class="ok">Graph improves with curation</td></tr>
+            </tbody>
+        </table>
+
+        <div class="annotations">
+            <span class="ann left">For tactical queries, both work.</span>
+            <span class="ann right">For strategic intelligence, only GraphRAG scales.</span>
+        </div>
+    </div>
+    <script src="rag-vs-graphrag-architecture-comparison.js"></script>
+</body>
+</html>
