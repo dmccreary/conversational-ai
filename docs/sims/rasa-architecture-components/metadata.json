@@ -1,0 +1,32 @@
+{
+  "title": "Rasa Architecture Components",
+  "description": "Layered architecture diagram of the Rasa framework, tracing a message through channels, the NLU pipeline, Core dialog management, and custom actions.",
+  "creator": "Dan McCreary",
+  "author": "Dan McCreary",
+  "date": "2026-06-19",
+  "subject": "Conversational AI",
+  "type": "Interactive Diagram",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "rasa-architecture-components",
+  "library": "Mermaid.js",
+  "bloomLevel": "Understand",
+  "bloomVerb": "explain",
+  "completion_status": "implemented",
+  "chapter_number": 7,
+  "chapter_title": "Chatbot Frameworks Ui",
+  "chapter_dir": "07-chatbot-frameworks-ui",
+  "educational": {
+    "audience": "Undergraduate",
+    "learningObjective": "Explain how a message flows through the Rasa framework layers and the role of each component from NLU to custom actions.",
+    "gradeLevel": "College",
+    "coverage": "Intermediate"
+  },
+  "pedagogical": {
+    "bloomLevel": "Understand",
+    "bloomVerb": "explain",
+    "interactionType": "hover-to-explore architecture diagram",
+    "estimatedTimeMinutes": 10
+  }
+}
