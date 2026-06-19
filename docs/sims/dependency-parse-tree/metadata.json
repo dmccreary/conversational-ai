@@ -1,0 +1,44 @@
+{
+  "title": "Dependency Parse Tree",
+  "description": "Interactive dependency parse tree for the sentence 'Show me the sales report for the last quarter' with color-coded grammatical relations and hover details.",
+  "creator": "Dan McCreary",
+  "author": "Dan McCreary",
+  "date": "2026-06-19",
+  "subject": "Conversational AI",
+  "type": "Interactive Diagram",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "dependency-parse-tree",
+  "library": "Mermaid.js",
+  "bloomLevel": "Understand",
+  "bloomVerb": "explain",
+  "completion_status": "implemented",
+  "chapter_number": 11,
+  "chapter_title": "Nlp Pipelines Processing",
+  "chapter_dir": "11-nlp-pipelines-processing",
+  "educational": {
+    "gradeLevel": "Undergraduate",
+    "learningObjectives": [
+      "Identify the root word that governs a sentence in dependency grammar",
+      "Classify dependency relations as core arguments, modifiers, or prepositional attachments",
+      "Explain how part-of-speech tags support dependency parsing in an NLP pipeline"
+    ],
+    "concepts": [
+      "Dependency parsing",
+      "Part-of-speech tags",
+      "Grammatical relations",
+      "Syntactic structure"
+    ]
+  },
+  "pedagogical": {
+    "pattern": "demonstration",
+    "bloomAlignment": ["understand", "analyze"],
+    "bloomVerbs": ["explain", "classify", "identify"],
+    "pacing": "self-paced",
+    "supportsPrediction": false,
+    "dataVisibility": "high",
+    "feedbackType": ["explanatory"],
+    "interactionStyle": "explore"
+  }
+}
