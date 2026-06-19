@@ -1,0 +1,14 @@
+{
+  "sim_id": "faq-system-architecture",
+  "diagram_name": "FAQ System Architecture",
+  "chapter_number": 6,
+  "chapter_title": "Building Chatbots Intent",
+  "chapter_dir": "06-building-chatbots-intent",
+  "library": "Block diagram with directional arrows showing data flow",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-06-19",
+  "specification": "Type: diagram\n\nPurpose: Show how FAQ systems process user queries through matching, retrieval, and response generation\n\nComponents to show:\n- User interface (top left): Chat window with user query \"how do I reset password\"\n- Query processing layer (middle left):\n  - Text normalization box\n  - Synonym expansion box\n  - Embedding generation box\n- FAQ database (center): Collection of Q&A pairs represented as stacked cards\n- Matching engine (middle right):\n  - Similarity calculation\n  - Ranking algorithm\n  - Confidence threshold\n- Response selection (bottom right): Top-ranked answer\n- Feedback loop (bottom): Thumbs up/down returning to database\n\nConnections:\n- User query flows through processing pipeline\n- Processed query connects to matching engine\n- Matching engine queries FAQ database\n- Results ranked and filtered by confidence\n- Selected response returned to user interface\n- User feedback flows back to database for improvement\n\nStyle: Data flow diagram with layered architecture\n\nLabels:\n- \"Input Processing\" for normalization layer\n- \"Semantic Matching\" for matching engine\n- \"Response Delivery\" for output\n- Confidence scores shown on connection from matching to response (e.g., \"0.87\")\n\nColor scheme: Purple for user interface, blue for processing, orange for database, green for matching, teal for response\n\nImplementation: Block diagram with directional arrows showing data flow"
+}

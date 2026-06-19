@@ -1,0 +1,14 @@
+{
+  "sim_id": "rag-three-step-process",
+  "diagram_name": "RAG Three-Step Process",
+  "chapter_number": 9,
+  "chapter_title": "Rag Pattern",
+  "chapter_dir": "09-rag-pattern",
+  "library": "Mermaid flowchart or similar diagramming tool",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-06-19",
+  "specification": "Type: workflow\n\nPurpose: Show the three sequential steps of the RAG pattern with data flow\n\nVisual style: Flowchart with process rectangles and data flow arrows\n\nSteps:\n1. Start: \"User Query\"\n   Hover text: \"User asks: 'What is our company's remote work policy?'\"\n\n2. Process: \"Step 1: Retrieval\"\n   Hover text: \"Search the document corpus for relevant documents using semantic search with embeddings. Returns top K most similar documents.\"\n\n3. Data: \"Retrieved Documents\"\n   Hover text: \"Example: Employee Handbook (2023), Remote Work Guidelines, IT Security Policy\"\n\n4. Process: \"Step 2: Augmentation\"\n   Hover text: \"Combine the user's original query with retrieved document content to create an enriched prompt\"\n\n5. Data: \"Augmented Prompt\"\n   Hover text: \"Contains: System instructions + Retrieved document excerpts + Original user query\"\n\n6. Process: \"Step 3: Generation\"\n   Hover text: \"Send augmented prompt to LLM. Model generates response based on both its knowledge and the provided context.\"\n\n7. End: \"Generated Response\"\n   Hover text: \"Chatbot responds: 'According to our 2023 Employee Handbook, employees may work remotely up to 3 days per week...'\"\n\nColor coding:\n- Blue: Process steps (retrieval, augmentation, generation)\n- Green: User input/output\n- Orange: Intermediate data (documents, prompts)\n- Purple: Data stores (Document Corpus, Vector Database shown as side elements)\n\nSwimlanes:\n- User Interface\n- RAG System\n- Document Store\n- LLM Service\n\nConnections:\n- Solid arrows for primary flow\n- Dashed arrows for data retrieval\n- Labeled arrows showing what data passes between steps\n\nImplementation: Mermaid flowchart or similar diagramming tool"
+}

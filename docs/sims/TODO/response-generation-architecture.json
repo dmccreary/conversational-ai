@@ -1,0 +1,14 @@
+{
+  "sim_id": "response-generation-architecture",
+  "diagram_name": "Response Generation Architecture",
+  "chapter_number": 7,
+  "chapter_title": "Chatbot Frameworks Ui",
+  "chapter_dir": "07-chatbot-frameworks-ui",
+  "library": "Mermaid diagram or static SVG",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-06-19",
+  "specification": "Type: diagram\n\nPurpose: Illustrate the complete pipeline from user input to chatbot response, showing decision points and processing stages\n\nComponents to show:\n- User Input (top left)\n- Intent Classification (decision diamond)\n- Context Retrieval (database icon)\n- Response Strategy Selector (decision diamond with three paths)\n  - Path 1: Template Engine (for simple, known queries)\n  - Path 2: Retrieval System (for factual questions)\n  - Path 3: LLM Generator (for complex, open-ended questions)\n- Response Formatter (combines output with context)\n- Quality Checker (validates response)\n- User Output (bottom right)\n\nConnections:\n- Solid arrows showing primary data flow\n- Dashed arrows showing feedback loops (quality checker back to generator)\n- Dotted arrows showing context injection points\n\nStyle: Flowchart with modern design, left-to-right flow\n\nLabels:\n- \"Intent: FAQ\" on template path\n- \"Intent: Factual\" on retrieval path\n- \"Intent: Complex\" on LLM path\n- \"Context injection\" on dotted lines\n- \"Validation failed\" on feedback loop\n\nColor scheme:\n- Blue for input/output\n- Green for successful paths\n- Orange for decision points\n- Red for quality checks and validation\n\nImplementation: Mermaid diagram or static SVG"
+}

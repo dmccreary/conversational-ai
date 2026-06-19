@@ -1,0 +1,14 @@
+{
+  "sim_id": "nlp-pipeline-architecture",
+  "diagram_name": "NLP Pipeline Architecture",
+  "chapter_number": 11,
+  "chapter_title": "Nlp Pipelines Processing",
+  "chapter_dir": "11-nlp-pipelines-processing",
+  "library": "Mermaid diagram or static SVG illustration",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-06-19",
+  "specification": "Type: diagram\n\nPurpose: Illustrate the layered architecture of a complete NLP pipeline showing data flow from raw text to structured linguistic annotations\n\nComponents to show:\n- Raw Text Input (top): \"Hey, can you show me last quarter's sales?\"\n- Layer 1: Text Preprocessing\n  - Text normalization\n  - Tokenization\n  - Output: Normalized tokens\n- Layer 2: Morphological Analysis\n  - Stemming\n  - Lemmatization\n  - Output: Root forms\n- Layer 3: Syntactic Analysis\n  - Part-of-speech tagging\n  - Dependency parsing\n  - Output: Grammatical structure\n- Layer 4: Semantic Analysis\n  - Named entity recognition\n  - Coreference resolution\n  - Output: Entity relationships\n- Structured Output (bottom): Ready for intent recognition/query execution\n\nConnections:\n- Vertical arrows showing data flow between layers\n- Bidirectional arrows indicating some stages may iterate\n- Side annotations showing what each layer adds (e.g., \"adds grammatical tags,\" \"identifies entities\")\n\nStyle: Layered architecture diagram with horizontal swim lanes for each processing level\n\nLabels:\n- \"Character Level\" (Layer 1)\n- \"Word Level\" (Layers 2-3)\n- \"Sentence Level\" (Layer 4)\n- Each layer shows sample input/output\n\nColor scheme:\n- Blue gradient from light (top) to dark (bottom) showing increasing sophistication\n- Orange highlights for data transformation points\n\nImplementation: Mermaid diagram or static SVG illustration"
+}

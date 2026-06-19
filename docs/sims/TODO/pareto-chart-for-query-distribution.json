@@ -1,0 +1,14 @@
+{
+  "sim_id": "pareto-chart-for-query-distribution",
+  "diagram_name": "Pareto Chart for Query Distribution",
+  "chapter_number": 14,
+  "chapter_title": "Evaluation Optimization Careers",
+  "chapter_dir": "14-evaluation-optimization-careers",
+  "library": "Chart.js or similar charting library, can be generated as static image or interactive visualization",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-06-19",
+  "specification": "Type: diagram\n\nPurpose: Visualize the Pareto distribution of chatbot queries, showing how a small number of intent types account for the majority of traffic\n\nComponents to show:\n- X-axis: Intent types (ordered by frequency, left to right)\n- Primary Y-axis (left): Query count (bar chart)\n- Secondary Y-axis (right): Cumulative percentage (line chart)\n\nData visualization:\n- Bar chart showing query counts for each intent:\n  1. check_balance: 12,450\n  2. password_reset: 7,120\n  3. track_order: 4,890\n  4. update_address: 3,200\n  5. payment_method: 2,780\n  6. refund_status: 1,940\n  7. product_specs: 950\n  8. store_hours: 720\n  9-18. Other intents (aggregated): 4,650\n\n- Line chart showing cumulative percentage:\n  - Starts at 0%\n  - Rises steeply for first few intents\n  - Reaches 80% at intent #5-6\n  - Flattens to 100% across remaining intents\n\nVisual elements:\n- Blue bars for query counts (descending height)\n- Red line for cumulative percentage (ascending curve)\n- Horizontal dashed line at 80% cumulative mark\n- Vertical dashed line showing where cumulative reaches 80%\n- Shaded region highlighting \"critical 20%\" zone\n- Annotations:\n  - \"Top 6 intents = 84% of queries\"\n  - \"80% threshold reached at 5th intent\"\n  - \"Long tail: 12 intents = 16% of queries\"\n\nStyle: Combined bar and line chart (Pareto chart)\n\nLabels:\n- X-axis: \"Intent Types (ordered by frequency)\"\n- Left Y-axis: \"Query Count\"\n- Right Y-axis: \"Cumulative Percentage\"\n- Title: \"Query Distribution: Pareto Analysis\"\n\nColor scheme:\n- Blue gradient for bars (darker = higher frequency)\n- Red for cumulative line\n- Green shading for \"focus zone\" (top 20%)\n- Gray for long tail intents\n\nVisual enhancements:\n- Tooltip on hover showing: intent name, count, percentage, cumulative\n- Legend explaining bars vs. line\n- \"80/20 Rule\" annotation with arrow pointing to inflection point\n\nImplementation: Chart.js or similar charting library, can be generated as static image or interactive visualization"
+}

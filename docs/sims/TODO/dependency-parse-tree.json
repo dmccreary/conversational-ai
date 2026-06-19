@@ -1,0 +1,14 @@
+{
+  "sim_id": "dependency-parse-tree",
+  "diagram_name": "Dependency Parse Tree",
+  "chapter_number": 11,
+  "chapter_title": "Nlp Pipelines Processing",
+  "chapter_dir": "11-nlp-pipelines-processing",
+  "library": "Static diagram using graphviz DOT format or SVG illustration showing tree structure",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-06-19",
+  "specification": "Type: diagram\n\nPurpose: Visualize the dependency parse tree for the example sentence \"Show me the sales report for the last quarter\" to illustrate grammatical relationships\n\nComponents to show:\n- Root node: \"Show\" (VB) at the top\n- Direct dependents of \"Show\":\n  - \"me\" (PRP) with arc labeled \"dative\" (indirect object)\n  - \"report\" (NN) with arc labeled \"dobj\" (direct object)\n- Dependents of \"report\":\n  - \"the\" (DT) with arc labeled \"det\"\n  - \"sales\" (NN) with arc labeled \"compound\"\n  - \"for\" (IN) with arc labeled \"prep\"\n- Dependents of \"for\":\n  - \"quarter\" (NN) with arc labeled \"pobj\"\n- Dependents of \"quarter\":\n  - \"the\" (DT) with arc labeled \"det\"\n  - \"last\" (JJ) with arc labeled \"amod\"\n\nConnections:\n- Curved arcs from parent words to dependent words\n- Each arc labeled with dependency relation type\n- Direction arrows showing head → dependent\n\nStyle: Tree diagram with root at top, arcs curving downward\n\nLabels:\n- Each word shown with its POS tag in parentheses: \"Show (VB)\"\n- Dependency relations on arcs: \"dobj\", \"det\", \"compound\", etc.\n- Color-code arcs by relation type:\n  - Red: Core arguments (subj, obj, dative)\n  - Blue: Modifiers (det, amod, compound)\n  - Green: Prepositional attachments (prep, pobj)\n\nVisual enhancements:\n- Larger font for root word\n- Word boxes with rounded corners\n- Dotted lines for non-core dependencies\n\nColor scheme:\n- Node background: light gray\n- Core dependency arcs: red\n- Modifier arcs: blue\n- Prepositional arcs: green\n\nImplementation: Static diagram using graphviz DOT format or SVG illustration showing tree structure"
+}

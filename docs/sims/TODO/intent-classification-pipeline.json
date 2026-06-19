@@ -1,0 +1,14 @@
+{
+  "sim_id": "intent-classification-pipeline",
+  "diagram_name": "Intent Classification Pipeline",
+  "chapter_number": 6,
+  "chapter_title": "Building Chatbots Intent",
+  "chapter_dir": "06-building-chatbots-intent",
+  "library": "SVG diagram with clear information flow and decision points",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-06-19",
+  "specification": "Type: diagram\n\nPurpose: Show the complete pipeline from user query to predicted intent, including preprocessing, feature extraction, classification, and confidence scoring\n\nComponents to show:\n- Input layer (top): User query text box: \"I need to change my reservation for tomorrow\"\n- Preprocessing layer:\n  - Text normalization box (lowercasing, punctuation removal)\n  - Tokenization box\n  - Stopword filtering (optional, shown with dotted border)\n- Feature extraction layer:\n  - Option A: TF-IDF vectorization (shown on left branch)\n  - Option B: BERT encoding (shown on right branch, highlighted as preferred)\n- Model layer (center):\n  - Intent classifier neural network\n  - Input dimension matching feature vectors\n  - Output layer with softmax activation\n- Output layer (bottom):\n  - Intent probabilities table showing:\n    - modify_reservation: 0.87 (highlighted in green)\n    - cancel_reservation: 0.08\n    - make_reservation: 0.03\n    - ask_hours: 0.02\n  - Confidence threshold line at 0.70\n  - Final prediction: \"modify_reservation\" with confidence 0.87\n\nConnections:\n- User query → Preprocessing (solid arrow)\n- Preprocessing → Feature extraction (splits into two paths)\n- Both feature extraction paths → Model (merge)\n- Model → Output probabilities\n- Threshold check → Final prediction\n\nAnnotations:\n- Badge on BERT encoding: \"Recommended: Better generalization\"\n- Badge on output: \"High confidence - proceed with action\"\n- Note near threshold: \"Queries below 0.70 escalate to human\"\n\nStyle: Flowchart with layered architecture, showing parallel paths for different approaches\n\nLabels:\n- \"Text Processing\" for preprocessing layer\n- \"Semantic Encoding\" for feature extraction\n- \"Classification\" for model layer\n- \"Prediction & Confidence\" for output\n\nColor scheme:\n- Blue for preprocessing\n- Purple for feature extraction\n- Orange for model\n- Green for high-confidence predictions\n- Yellow for medium confidence\n- Red for below-threshold (not shown in this example)\n\nImplementation: SVG diagram with clear information flow and decision points"
+}

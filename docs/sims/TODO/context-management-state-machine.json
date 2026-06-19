@@ -1,0 +1,14 @@
+{
+  "sim_id": "context-management-state-machine",
+  "diagram_name": "Context Management State Machine",
+  "chapter_number": 7,
+  "chapter_title": "Chatbot Frameworks Ui",
+  "chapter_dir": "07-chatbot-frameworks-ui",
+  "library": "Mermaid state diagram or interactive SVG",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-06-19",
+  "specification": "Type: workflow\n\nPurpose: Illustrate how conversation context evolves through different states as a multi-turn conversation progresses\n\nVisual style: State diagram with rounded rectangle states and labeled transition arrows\n\nStates:\n1. Start: \"New Session\"\n   Hover text: \"User initiates conversation, context is empty except for user profile\"\n\n2. State: \"Single-Turn Context\"\n   Hover text: \"Only current user message is in context, suitable for simple FAQ queries\"\n\n3. State: \"Multi-Turn Context\"\n   Hover text: \"Last 3-5 message pairs maintained, enables pronoun resolution and follow-up questions\"\n\n4. State: \"Task-Oriented Context\"\n   Hover text: \"Structured state tracking progress through workflow (e.g., booking, troubleshooting)\"\n\n5. State: \"Long-Term Context\"\n   Hover text: \"User preferences and history from previous sessions inform current conversation\"\n\n6. Decision: \"Context Size Exceeded?\"\n   Hover text: \"Check if context exceeds token limits or relevance threshold\"\n\n7. Process: \"Context Summarization\"\n   Hover text: \"Use LLM to create summary of older context, replacing full message history\"\n\n8. End: \"Session Terminated\"\n   Hover text: \"Conversation context archived to user history, session state cleared\"\n\nTransitions:\n- New Session → Single-Turn Context: \"First user message\"\n- Single-Turn → Multi-Turn: \"Follow-up question detected\"\n- Multi-Turn → Task-Oriented: \"Intent indicates multi-step workflow\"\n- Any State → Context Size Exceeded?: \"Before each response\"\n- Context Exceeded? → Context Summarization: \"If yes\"\n- Context Summarization → Return to previous state: \"Context compressed\"\n- Any State → Session Terminated: \"User ends conversation or timeout\"\n\nColor coding:\n- Green: Active conversation states\n- Blue: Context management processes\n- Yellow: Decision points\n- Red: Terminal states\n\nImplementation: Mermaid state diagram or interactive SVG"
+}

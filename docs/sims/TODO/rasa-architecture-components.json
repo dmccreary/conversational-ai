@@ -1,0 +1,14 @@
+{
+  "sim_id": "rasa-architecture-components",
+  "diagram_name": "Rasa Architecture Components",
+  "chapter_number": 7,
+  "chapter_title": "Chatbot Frameworks Ui",
+  "chapter_dir": "07-chatbot-frameworks-ui",
+  "library": "Static diagram (SVG or Mermaid)",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-06-19",
+  "specification": "Type: diagram\n\nPurpose: Show the component architecture of Rasa framework and data flow through the system\n\nComponents to show:\n- User Input layer (top)\n  - Messaging channels (Slack, Teams, Web Widget)\n- Rasa NLU pipeline (upper middle)\n  - Tokenizer\n  - Featurizer (word embeddings)\n  - Intent Classifier\n  - Entity Extractor\n- Rasa Core (middle)\n  - Tracker Store (conversation history)\n  - Dialog Policy (ML or rule-based)\n  - Action Server\n- Custom Actions (lower middle)\n  - Database Connector\n  - External API Client\n  - Business Logic Functions\n- Rasa X (right side)\n  - Conversation Review UI\n  - Training Data Annotation\n  - Model Performance Dashboard\n- Output layer (bottom)\n  - Response templates\n  - Generated messages\n\nConnections:\n- Vertical arrows showing message flow from user input → NLU → Core → Actions → output\n- Bidirectional arrows between Tracker Store and Dialog Policy\n- Dashed arrows from Rasa X to NLU and Core (model training feedback)\n- Dotted arrows from Custom Actions to external systems\n\nStyle: Layered architecture diagram with component groupings\n\nLabels:\n- \"Training data\" on Rasa X → NLU connection\n- \"State tracking\" on Tracker ↔ Policy connection\n- \"Predictions\" on Intent Classifier output\n- \"API calls\" on Custom Actions → External systems\n\nColor scheme:\n- Blue: User-facing layers\n- Green: NLU components\n- Orange: Dialog management components\n- Purple: Custom business logic\n- Gold: Rasa X tooling\n\nImplementation: Static diagram (SVG or Mermaid)"
+}

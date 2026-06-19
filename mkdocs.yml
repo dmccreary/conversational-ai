@@ -58,15 +58,60 @@ nav:
       - Quiz: chapters/14-evaluation-optimization-careers/quiz.md
 
   - MicroSims:
-    - List of Sims: sims/index.md
-    - AI Performance Chart: sims/ai-performance-chart/index.md
-    - AI Timeline: sims/ai-timeline/index.md
-    - Chatbot Latency Breakdown: sims/chatbot-latency-breakdown/index.md
+    - List of MicroSims: sims/index.md
+    - AI Flywheel Visualization: sims/ai-flywheel-visualization/index.md
+    - AI Performance Improvement Exceeds Moore's Law: sims/ai-performance-chart/index.md
+    - Byte Pair Encoding Merge Process: sims/byte-pair-encoding-merge-process/index.md
+    - Chat Interface Anatomy: sims/chat-interface-anatomy/index.md
+    - Chat Widget Integration Patterns: sims/chat-widget-integration-patterns/index.md
+    - Chatbot Response Latency Breakdown: sims/chatbot-latency-breakdown/index.md
+    - Context Management State Machine: sims/context-management-state-machine/index.md
+    - Corporate Nervous System in Action: sims/corporate-nervous-system-in-action/index.md
+    - Cypher Query Visualization: sims/cypher-query-visualization/index.md
+    - Dependency Parse Tree: sims/dependency-parse-tree/index.md
+    - Dialog System State Machine: sims/dialog-system-state-machine/index.md
+    - Dimensionality Reduction Visualization: sims/dimensionality-reduction-visualization/index.md
+    - Embedding Model Comparison: sims/embedding-model-comparison/index.md
+    - Entity Extraction Architecture: sims/entity-extraction-architecture/index.md
+    - Evolution of Artificial Intelligence Timeline: sims/ai-timeline/index.md
+    - FAQ System Architecture: sims/faq-system-architecture/index.md
+    - Feedback Button UI Patterns: sims/feedback-button-ui-patterns/index.md
+    - Feedback Loop System Architecture: sims/feedback-loop-system-architecture/index.md
+    - Framework Comparison Matrix: sims/framework-comparison-matrix/index.md
+    - Graph Data Model Visualization: sims/graph-data-model-visualization/index.md
+    - Intent Classification Pipeline: sims/intent-classification-pipeline/index.md
+    - Interactive Regular Expression Pattern Matcher: sims/regex-matcher/index.md
+    - Knowledge Source Categories: sims/knowledge-source-categories/index.md
+    - LangChain Agent Architecture: sims/langchain-agent-architecture/index.md
+    - Latency Waterfall Visualization: sims/latency-waterfall-visualization/index.md
     - Learning Graph Viewer: sims/graph-viewer/index.md
-    - Regex Pattern Matcher: sims/regex-matcher/index.md
-    - Text Processing Workflow: sims/text-processing-workflow/index.md
-    - Text to Graph Benchmark: sims/text-to-graph/index.md
-    - Text to Graph Timeline: sims/text-to-graph-timeline/index.md
+    - Named Entity Recognition with BIO Tagging: sims/named-entity-recognition-with-bio-tagging/index.md
+    - Natural Language to SQL Conversion Pipeline: sims/natural-language-to-sql-conversion-pipeline/index.md
+    - NLP Pipeline Architecture: sims/nlp-pipeline-architecture/index.md
+    - Pareto Chart for Query Distribution: sims/pareto-chart-for-query-distribution/index.md
+    - Personalization Decision Tree: sims/personalization-decision-tree/index.md
+    - POS Tagging Process Flow: sims/pos-tagging-process-flow/index.md
+    - Production Pipeline Architecture: sims/production-pipeline-architecture/index.md
+    - Query Template Matching Flow: sims/query-template-matching-flow/index.md
+    - RAG Limitations Overview: sims/rag-limitations-overview/index.md
+    - RAG MicroSim: sims/rag-microsim/index.md
+    - RAG Three-Step Process: sims/rag-three-step-process/index.md
+    - RAG vs GraphRAG Architecture Comparison: sims/rag-vs-graphrag-architecture-comparison/index.md
+    - Rasa Architecture Components: sims/rasa-architecture-components/index.md
+    - RBAC Architecture: sims/rbac-architecture/index.md
+    - React Chat Component Architecture: sims/react-chat-component-architecture/index.md
+    - Response Generation Architecture: sims/response-generation-architecture/index.md
+    - Text Processing Pipeline Workflow: sims/text-processing-workflow/index.md
+    - Text-to-Knowledge-Graph Benchmark Comparison: sims/text-to-graph/index.md
+    - Text2KGBench-LettrIA F1 Scores Timeline: sims/text-to-graph-timeline/index.md
+    - Transformer Architecture for Language Models: sims/transformer-architecture-for-language-models/index.md
+    - User Context Data Model: sims/user-context-data-model/index.md
+    - User Query Components: sims/user-query-components/index.md
+    - Vector Database Architecture Comparison: sims/vector-database-architecture-comparison/index.md
+    - Vector Index Comparison: sims/vector-index-comparison/index.md
+    - Word Embedding Vector Space Visualization: sims/word-embedding-vector-space-visualization/index.md
+
+
 
   - Learning Graph:
     - Introduction: learning-graph/index.md

@@ -1,0 +1,14 @@
+{
+  "sim_id": "rag-limitations-overview",
+  "diagram_name": "RAG Limitations Overview",
+  "chapter_number": 9,
+  "chapter_title": "Rag Pattern",
+  "chapter_dir": "09-rag-pattern",
+  "library": "HTML/CSS/JavaScript interactive infographic",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-06-19",
+  "specification": "Type: infographic\n\nPurpose: Visually illustrate the three main categories of RAG limitations with examples\n\nLayout: Three-column layout with icons and examples\n\nColumns:\n1. **Context Length Limits**\n   - Icon: Document with \"too long\" indicator\n   - Problem: \"Relevant information exceeds context window\"\n   - Example scenario: \"Analyze all 10 quarterly reports (50,000 tokens) but context window is 8,000 tokens\"\n   - Impact: \"Must choose which documents to include, risking missing critical information\"\n\n2. **Hallucination**\n   - Icon: Brain with question mark\n   - Problem: \"Model generates plausible but incorrect information\"\n   - Example scenario: \"Query: 'What's our Q3 profit?' Context: 'Q3 revenue was $2.3M' Response: 'Q3 profit was $450K' (fabricated)\"\n   - Impact: \"Users receive confident-sounding but factually wrong answers\"\n\n3. **Factual Accuracy**\n   - Icon: Documents with conflict symbol\n   - Problem: \"Corpus contains outdated, contradictory, or incomplete information\"\n   - Example scenario: \"Retrieves both 2022 policy (2 days remote) and 2024 policy (4 days remote), produces inconsistent answer\"\n   - Impact: \"Responses based on flawed or conflicting source material\"\n\nVisual style: Clean infographic with colorful icons\n\nInteractive elements:\n- Hover over each column to see mitigation strategies\n- Click examples to expand with more details\n- Visual indicators (red warning icons) for severity\n\nColor scheme:\n- Column 1 (Context Limits): Blue\n- Column 2 (Hallucination): Red\n- Column 3 (Accuracy): Orange\n- Background: Light gray with white cards for each column\n\nBottom section: \"When RAG Isn't Enough\"\n- Text: \"For complex queries requiring multi-hop reasoning, relationship analysis, or deep domain knowledge, consider GraphRAG (Chapter 10)\"\n- Arrow pointing to next chapter\n\nImplementation: HTML/CSS/JavaScript interactive infographic"
+}
