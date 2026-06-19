@@ -1,0 +1,37 @@
+{
+  "title": "Chat Interface Anatomy",
+  "description": "An annotated, interactive chat-UI mockup with twelve numbered markers explaining each component's design rationale and best practices.",
+  "creator": "Dan McCreary",
+  "author": "Dan McCreary",
+  "date": "2026-06-19",
+  "subject": "Conversational AI",
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY 4.0",
+  "identifier": "chat-interface-anatomy",
+  "library": "HTML/CSS/JavaScript interactive mockup",
+  "bloomLevel": "Analyze",
+  "bloomVerb": "examine",
+  "completion_status": "implemented",
+  "chapter_number": 8,
+  "chapter_title": "User Feedback Improvement",
+  "chapter_dir": "08-user-feedback-improvement",
+  "educational": {
+    "gradeLevel": "Undergraduate",
+    "subjectArea": "Conversational AI",
+    "topic": "Chat interface design and UI components",
+    "learningObjectives": [
+      "Identify the standard components of a chat interface",
+      "Explain the design rationale and best practices for each component"
+    ],
+    "duration": "8-12 minutes",
+    "prerequisites": "Familiarity with using a chat or messaging app"
+  },
+  "pedagogical": {
+    "bloomLevel": "Analyze",
+    "bloomVerb": "examine",
+    "instructionalStrategy": "Annotated interactive mockup with click-to-reveal component details",
+    "assessment": "Students annotate a chat UI of their own design using the same component categories"
+  }
+}

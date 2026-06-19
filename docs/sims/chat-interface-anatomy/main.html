@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
+    <title>Chat Interface Anatomy</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, Helvetica, sans-serif; background: aliceblue; color: #1f2933; }
+        #wrap { width: 100%; height: 100vh; display: flex; flex-direction: column; overflow: hidden; }
+        #title { text-align: center; font-size: 21px; font-weight: bold; color: #1a3a6c; padding: 8px 4px 1px 4px; }
+        #subtitle { text-align: center; font-size: 12.5px; color: #52606d; margin-bottom: 6px; }
+        #stage { flex: 1; display: flex; min-height: 0; gap: 10px; padding: 0 10px 8px 10px; }
+
+        /* ---- phone mockup ---- */
+        #phonecol { flex: 0 0 340px; display: flex; align-items: flex-start; justify-content: center; }
+        .phone {
+            width: 320px; border: 2px solid #cbd2d9; border-radius: 16px;
+            background: #fff; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+        }
+        .hdr {
+            display: flex; align-items: center; gap: 8px; padding: 10px 12px;
+            background: #1565c0; color: #fff;
+        }
+        .hdr .av { width: 32px; height: 32px; border-radius: 50%; background: #fff;
+            display: flex; align-items: center; justify-content: center; font-size: 18px; }
+        .hdr .nm { font-weight: bold; font-size: 15px; }
+        .hdr .st { font-size: 11px; opacity: 0.9; display: flex; align-items: center; gap: 4px; }
+        .hdr .dot { width: 8px; height: 8px; border-radius: 50%; background: #4caf50; display: inline-block; }
+        .hdr .menu { margin-left: auto; font-size: 20px; cursor: pointer; }
+
+        .msgs { padding: 10px 12px; background: #f5f7fa; min-height: 300px; }
+        .row { display: flex; margin-bottom: 4px; align-items: flex-end; gap: 6px; }
+        .row.user { justify-content: flex-end; }
+        .botav { width: 28px; height: 28px; border-radius: 50%; background: #1565c0; color:#fff;
+            display: flex; align-items: center; justify-content: center; font-size: 15px; flex: 0 0 auto; }
+        .bubble { max-width: 210px; padding: 8px 10px; border-radius: 14px; font-size: 13px; line-height: 1.35; }
+        .bubble.bot { background: #e4e7eb; color: #1f2933; border-bottom-left-radius: 4px; }
+        .bubble.user { background: #1565c0; color: #fff; border-bottom-right-radius: 4px; }
+        .ts { text-align: center; font-size: 10.5px; color: #9aa5b1; margin: 6px 0; }
+        .typing { display: inline-flex; gap: 3px; padding: 10px 12px; }
+        .typing span { width: 6px; height: 6px; border-radius: 50%; background: #9aa5b1; animation: blink 1.2s infinite; }
+        .typing span:nth-child(2){ animation-delay: .2s; } .typing span:nth-child(3){ animation-delay: .4s; }
+        @keyframes blink { 0%,60%,100%{opacity:.3} 30%{opacity:1} }
+        .quick { display: flex; gap: 6px; margin: 4px 0 4px 34px; flex-wrap: wrap; }
+        .chip { border: 1px solid #1565c0; color: #1565c0; border-radius: 14px; padding: 3px 10px; font-size: 12px; background:#fff; }
+        .fb { display: flex; gap: 8px; margin: 2px 0 6px 34px; color: #9aa5b1; font-size: 13px; }
+
+        .inputbar { display: flex; align-items: center; gap: 6px; padding: 8px 10px; border-top: 1px solid #e4e7eb; background:#fff; }
+        .att { font-size: 18px; color: #7b8794; }
+        .inputbar input { flex: 1; border: 1px solid #cbd2d9; border-radius: 16px; padding: 7px 12px; font-size: 13px; }
+        .send { width: 32px; height: 32px; border-radius: 50%; background: #1565c0; color: #fff;
+            display: flex; align-items: center; justify-content: center; font-size: 15px; }
+
+        /* numbered callout badges */
+        .pin {
+            position: relative; display: inline-flex; align-items: center; justify-content: center;
+            width: 19px; height: 19px; border-radius: 50%; background: #ff7043; color: #fff;
+            font-size: 11px; font-weight: bold; cursor: pointer; border: 2px solid #fff;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.3); flex: 0 0 auto; vertical-align: middle;
+        }
+        .pin.cat-blue { background:#1976d2 } .pin.cat-gray { background:#607d8b }
+        .pin.cat-green { background:#2e9e5b } .pin.cat-orange { background:#f57c00 }
+        .pin.sel { outline: 3px solid gold; }
+        .pinabs { position: absolute; }
+
+        /* ---- detail panel ---- */
+        #panel { flex: 1 1 auto; min-width: 0; overflow-y: auto; padding-right: 4px; }
+        #card { background: #fff; border: 1px solid #d0d7de; border-radius: 8px; padding: 12px; box-shadow: 0 2px 5px rgba(0,0,0,0.08); }
+        #cardNum { display:inline-flex; width: 22px; height:22px; border-radius:50%; background:#ff7043; color:#fff;
+            align-items:center; justify-content:center; font-weight:bold; font-size:12px; margin-right:6px; }
+        #cardTitle { font-size: 16px; font-weight: bold; display:flex; align-items:center; margin-bottom: 6px; }
+        #cardAnno { font-style: italic; color: #334e68; font-size: 13px; margin-bottom: 8px; }
+        #cardBP { font-size: 12.5px; line-height: 1.5; }
+        #cardBP ul { margin: 4px 0 0 18px; }
+        .notes { margin-top: 10px; background:#fff8e1; border:1px solid #ffe082; border-radius:8px; padding:10px; font-size:12px; line-height:1.5; }
+        .notes b { color:#5d4a00; }
+        .legend { display:flex; gap:10px; flex-wrap:wrap; font-size:11.5px; margin-top:8px; }
+        .legend span { display:inline-flex; align-items:center; gap:4px; }
+        .lg { width:12px; height:12px; border-radius:50%; display:inline-block; }
+    </style>
+    <script src="chat-interface-anatomy.js" defer></script>
+</head>
+<body>
+    <div id="wrap">
+        <div id="title">Chat Interface Anatomy</div>
+        <div id="subtitle">Click a numbered marker to learn the design rationale for each component</div>
+        <div id="stage">
+            <main id="phonecol"><!-- phone mockup injected by JS --></main>
+            <div id="panel">
+                <div id="card">
+                    <div id="cardTitle"><span id="cardNum">?</span><span id="cardTitleText">Pick a component</span></div>
+                    <div id="cardAnno">Twelve numbered markers highlight the parts of a well-designed chat interface.</div>
+                    <div id="cardBP">Click any orange/blue/gray/green marker on the phone mockup to see the
+                    component, its design rationale, and the best practices behind it.</div>
+                </div>
+                <div class="legend">
+                    <span><span class="lg" style="background:#1976d2"></span>User-facing</span>
+                    <span><span class="lg" style="background:#607d8b"></span>Bot-controlled</span>
+                    <span><span class="lg" style="background:#2e9e5b"></span>Feedback</span>
+                    <span><span class="lg" style="background:#f57c00"></span>Layout/structure</span>
+                </div>
+                <div class="notes">
+                    <b>Mobile responsive:</b> components stack vertically below 768px.<br/>
+                    <b>Accessibility:</b> ARIA labels on every interactive element.<br/>
+                    <b>Performance:</b> virtualize the message list beyond ~100 messages.
+                </div>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <a href=".">Back to Documentation</a>
+</body>
+</html>
