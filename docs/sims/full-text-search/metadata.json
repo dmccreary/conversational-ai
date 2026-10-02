@@ -1,0 +1,74 @@
+{
+  "title": "Full-Text Search Capabilities",
+  "description": "Interactive p5.js MicroSim that runs a real full-text search over a five-document corpus. Students toggle case folding, Porter stemming, phrase matching, proximity search, and wildcards, see every matching word highlighted by match type, and watch precision, recall, and F1 change.",
+  "creator": "Dan McCreary",
+  "author": "Dan McCreary",
+  "date": "2026-10-02",
+  "subject": "Conversational AI",
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "full-text-search",
+  "library": "p5.js",
+  "bloomLevel": "Analyze",
+  "bloomVerb": "compare",
+  "completion_status": "implemented",
+  "chapter_number": 2,
+  "chapter_title": "Search Technologies and Indexing Techniques",
+  "chapter_dir": "02-search-technologies-indexing",
+  "educational": {
+    "gradeLevel": "Undergraduate",
+    "subjectArea": "Computer Science",
+    "topic": "Full-text search",
+    "learningObjective": "Compare how full-text search features change the documents a query retrieves and analyze the trade-off between precision and recall.",
+    "learningObjectives": [
+      "Compare the effect of case folding, stemming, phrase matching, proximity search, and wildcards on query results",
+      "Analyze how a feature that raises recall can lower precision",
+      "Calculate precision, recall, and F1 for a set of retrieved documents"
+    ],
+    "bloomsTaxonomy": "Analyze",
+    "duration": "15-20 minutes",
+    "prerequisites": ["Keyword search", "Inverted index", "Text processing basics"]
+  },
+  "technical": {
+    "framework": "p5.js",
+    "version": "1.11.10",
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 757
+    },
+    "responsive": true,
+    "dependencies": ["p5.js CDN"]
+  },
+  "userInterface": {
+    "controls": [
+      { "type": "input", "label": "Query", "default": "database backup", "purpose": "The search query; results update as you type" },
+      { "type": "select", "label": "Examples", "purpose": "Load an example query" },
+      { "type": "checkbox", "label": "Case-insensitive", "default": true, "purpose": "Ignore letter case when matching" },
+      { "type": "checkbox", "label": "Stemming", "default": false, "purpose": "Match words that share a Porter stem" },
+      { "type": "checkbox", "label": "Phrase", "default": false, "purpose": "Require the query words side by side, in order" },
+      { "type": "checkbox", "label": "Wildcards (* ?)", "default": false, "purpose": "Treat * and ? in the query as wildcards" },
+      { "type": "checkbox", "label": "Proximity", "default": false, "purpose": "Require the query words within N words of each other" },
+      { "type": "slider", "label": "within N words", "min": 1, "max": 10, "default": 3, "purpose": "Maximum distance for proximity search" }
+    ]
+  },
+  "simulation": {
+    "modelType": "Boolean AND retrieval over a positional index",
+    "relevantDocuments": [1, 2, 4],
+    "informationNeed": "How do I back up a database?",
+    "assumptions": [
+      "Title and body are indexed as one stream of word positions",
+      "A document matches only when every query word is found",
+      "Relevance judgments are fixed for one information need and do not change with the query"
+    ]
+  },
+  "pedagogical": {
+    "bloomLevel": "Analyze",
+    "bloomVerb": "compare",
+    "pattern": "parameter exploration with computed results",
+    "interactionType": "explore",
+    "pacing": "self-paced",
+    "dataVisibility": "high"
+  }
+}

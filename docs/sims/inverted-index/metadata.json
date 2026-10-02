@@ -1,0 +1,61 @@
+{
+  "title": "Inverted Index Structure",
+  "description": "Interactive p5.js MicroSim that builds a real inverted index from three short documents. Students step through tokenizing, normalizing, and index building, then click any term to see its postings list with document IDs, term frequency, and positions.",
+  "creator": "Dan McCreary",
+  "author": "Dan McCreary",
+  "date": "2026-10-02",
+  "subject": "Conversational AI",
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "inverted-index",
+  "library": "p5.js",
+  "bloomLevel": "Understand",
+  "bloomVerb": "explain",
+  "completion_status": "implemented",
+  "chapter_number": 2,
+  "chapter_title": "Search Technologies and Indexing Techniques",
+  "chapter_dir": "02-search-technologies-indexing",
+  "educational": {
+    "gradeLevel": "Undergraduate",
+    "subjectArea": "Computer Science",
+    "topic": "Inverted index",
+    "learningObjective": "Explain how an inverted index maps terms to documents and what tokenization, normalization, and stop word removal contribute to it.",
+    "learningObjectives": [
+      "Explain how an inverted index maps each term to a postings list of documents",
+      "Describe the tokenize, normalize, and build steps of an indexing pipeline",
+      "Interpret the term frequency and positions stored in a postings list"
+    ],
+    "bloomsTaxonomy": "Understand",
+    "duration": "10-15 minutes",
+    "prerequisites": ["Text processing basics", "Search index"]
+  },
+  "technical": {
+    "framework": "p5.js",
+    "version": "1.11.10",
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 642
+    },
+    "responsive": true,
+    "dependencies": ["p5.js CDN"]
+  },
+  "userInterface": {
+    "controls": [
+      { "type": "button", "label": "Previous step", "purpose": "Go back one step in the indexing pipeline" },
+      { "type": "button", "label": "Next step", "purpose": "Go forward one step in the indexing pipeline" },
+      { "type": "checkbox", "label": "Remove stop words", "default": true, "purpose": "Drop very common words before indexing" },
+      { "type": "select", "label": "Stemming", "options": ["None", "Plurals only", "Porter stemmer"], "default": "Plurals only", "purpose": "Choose how words are reduced to root terms" },
+      { "type": "click", "label": "Dictionary term", "purpose": "Select a term to expand its postings list and highlight it in the documents" }
+    ]
+  },
+  "pedagogical": {
+    "bloomLevel": "Understand",
+    "bloomVerb": "explain",
+    "pattern": "step-through worked example",
+    "interactionType": "explore",
+    "pacing": "self-paced",
+    "dataVisibility": "high"
+  }
+}
